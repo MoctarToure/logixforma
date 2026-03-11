@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta name="description" content="LOGIX FORMA - Plateforme vitrine de formation en ligne dédiée aux compétences numériques et professionnelles." />
+  <meta name="description" content="LOGIX FORMA - Plateforme vitrine de formation en ligne dédiée aux compétences numériques et professionnelles. Formations gratuites : bases essentielles." />
   <title>LOGIX FORMA - Plateforme LMS</title>
 
   <link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -442,6 +442,10 @@
       font-size: 12px;
       font-weight: 800;
     }
+    .course-tag.bases {
+      background: #dbeafe;
+      color: #1e40af;
+    }
     .course-price {
       font-size: 20px;
       font-weight: 800;
@@ -462,7 +466,7 @@
     }
     .course-button:hover { background: #2c5282; }
 
-    /* === MISSION PÉDAGOGIQUE (NOUVEAU - Style Udemy/Coursera) === */
+    /* === MISSION PÉDAGOGIQUE === */
     .mission-section {
       background: linear-gradient(180deg, #f8fafc 0%, #ffffff 100%);
       padding: 80px 0;
@@ -775,7 +779,7 @@
     <div class="container navbar">
       <div class="nav-left">
         <a href="#" class="logo" aria-label="Accueil LOGIX FORMA">
-          <!-- VOTRE LOGO INTÉGRÉ -->
+          <!-- VOTRE LOGO -->
           <img src="https://i.postimg.cc/xdj77pwZ/logo-logix-forma.jpg" alt="Logo LOGIX FORMA">
         </a>
         <a href="#categories" class="nav-link">Découvrir</a>
@@ -814,7 +818,7 @@
         <div class="visual-box large">Compétences numériques pour votre avenir</div>
         <div class="visual-box green">Bureautique</div>
         <div class="visual-box">Marketing digital</div>
-        <div class="visual-box">Python & IA</div>
+        <div class="visual-box">Gestion de projet</div>
       </div>
     </div>
   </section>
@@ -822,8 +826,8 @@
   <!-- CATÉGORIES -->
   <section class="section" id="categories">
     <div class="container">
-      <h2 class="section-title">Apprenez des compétences utiles pour votre carrière</h2>
-      <p class="section-subtitle">LOGIX FORMA présente des thématiques essentielles pour progresser dans un environnement professionnel en constante évolution.</p>
+      <h2 class="section-title">Apprenez les bases utiles pour votre carrière</h2>
+      <p class="section-subtitle">LOGIX FORMA propose des formations gratuites centrées sur les <strong>fondamentaux</strong> pour progresser dans un environnement professionnel en constante évolution.</p>
       <div class="category-grid">
         <div class="category-card" onclick="showAllCourses()">
           <div class="category-icon">📚</div>
@@ -840,10 +844,10 @@
           <h3>Bureautique</h3>
           <p>Maîtriser les outils essentiels comme Excel et PowerPoint.</p>
         </div>
-        <div class="category-card" onclick="filterByCategory('data')">
-          <div class="category-icon">📈</div>
-          <h3>Science des données</h3>
-          <p>Comprendre les bases de l'analyse, de la donnée et des outils métiers.</p>
+        <div class="category-card" onclick="filterByCategory('gestion')">
+          <div class="category-icon">📋</div>
+          <h3>Gestion de projet</h3>
+          <p>Comprendre les bases pour organiser et piloter vos projets.</p>
         </div>
       </div>
     </div>
@@ -867,7 +871,7 @@
         <div class="strip-visual">
           <div class="strip-box">IA générative</div>
           <div class="strip-box">Certifications</div>
-          <div class="strip-box">Python</div>
+          <div class="strip-box">Gestion de projet</div>
           <div class="strip-box">Data & outils pro</div>
         </div>
       </div>
@@ -877,11 +881,11 @@
   <!-- PILLS FILTRES -->
   <section class="section">
     <div class="container">
-      <h2 class="section-title">Des compétences pour révolutionner votre carrière et votre vie</h2>
+      <h2 class="section-title">Des bases pour révolutionner votre carrière et votre vie</h2>
       <p class="section-subtitle">Une sélection de domaines utiles pour les apprenants, les professionnels, les personnes en reconversion et les structures.</p>
       <div class="pill-row">
-        <div class="pill" onclick="filterByCategory('ia')">Artificial Intelligence (AI)</div>
-        <div class="pill" onclick="filterByCategory('web')">Python</div>
+        <div class="pill" onclick="filterByCategory('ia')">Intelligence artificielle</div>
+        <div class="pill" onclick="filterByCategory('gestion')">Gestion de projet</div>
         <div class="pill" onclick="filterByCategory('bureautique')">Microsoft Excel</div>
         <div class="pill" onclick="filterByCategory('ia')">ChatGPT</div>
         <div class="pill" onclick="filterByCategory('marketing')">Marketing numérique</div>
@@ -890,7 +894,7 @@
     </div>
   </section>
 
-  <!-- === NOUVEAU : MISSION PÉDAGOGIQUE (Style Udemy/Coursera) === -->
+  <!-- MISSION PÉDAGOGIQUE -->
   <section class="mission-section" id="mission">
     <div class="container">
       <div class="mission-grid">
@@ -1006,76 +1010,90 @@
   <section class="section" id="formations">
     <div class="container">
       <h2 class="section-title">Formations gratuites en vitrine</h2>
-      <p class="section-subtitle">Pour l'instant, LOGIX FORMA présente uniquement des contenus gratuits à titre de vitrine pédagogique.</p>
+      <p class="section-subtitle">Toutes nos formations sont des <strong>bases essentielles</strong> pour construire vos premières compétences professionnelles.</p>
 
       <div class="course-tabs">
         <div class="course-tab" onclick="showAllCourses()">Toutes</div>
         <div class="course-tab" onclick="filterByCategory('ia')">IA</div>
         <div class="course-tab" onclick="filterByCategory('bureautique')">Excel</div>
-        <div class="course-tab" onclick="filterByCategory('web')">Python</div>
+        <div class="course-tab" onclick="filterByCategory('gestion')">Projet</div>
         <div class="course-tab" onclick="filterByCategory('data')">Données</div>
       </div>
 
       <div class="course-grid" id="coursesGrid">
+        
+        <!-- Power BI -->
         <div class="course-card" data-category="bureautique">
           <div class="course-thumb">Power BI</div>
           <div class="course-body">
-            <h3>Introduction à Power BI</h3>
+            <h3>Introduction à Power BI – Les bases</h3>
             <div class="course-author">LOGIX FORMA</div>
-            <div class="course-desc">Découvrir les bases de la visualisation de données et la logique des tableaux de bord.</div>
+            <div class="course-desc">
+              Découvrir les fondamentaux de la visualisation de données : interface, imports simples et premiers graphiques.
+            </div>
             <div class="course-meta">
-              <span class="course-tag">Débutant</span>
+              <span class="course-tag bases">Les bases</span>
               <span>Français</span>
             </div>
             <div class="course-price free">Gratuit</div>
-            <a href="#contact" class="course-button" onclick="showInterest('Introduction à Power BI')">Être informé</a>
+            <a href="#contact" class="course-button" onclick="showInterest('Introduction à Power BI – Les bases')">Être informé</a>
           </div>
         </div>
 
-        <div class="course-card" data-category="web">
-          <div class="course-thumb">Python</div>
+        <!-- Gestion de projet (NOUVEAU - remplace Python) -->
+        <div class="course-card" data-category="gestion">
+          <div class="course-thumb">📋 Projet</div>
           <div class="course-body">
-            <h3>Python : les bases</h3>
+            <h3>Gestion de projet – Les bases</h3>
             <div class="course-author">LOGIX FORMA</div>
-            <div class="course-desc">Comprendre la logique du code, les variables, les conditions et les premières structures.</div>
+            <div class="course-desc">
+              Comprendre les fondamentaux : définir un objectif, organiser les tâches, suivre l'avancement et communiquer avec son équipe.
+            </div>
             <div class="course-meta">
-              <span class="course-tag">Débutant</span>
+              <span class="course-tag bases">Les bases</span>
               <span>Français</span>
             </div>
             <div class="course-price free">Gratuit</div>
-            <a href="#contact" class="course-button" onclick="showInterest('Python : les bases')">Être informé</a>
+            <a href="#contact" class="course-button" onclick="showInterest('Gestion de projet – Les bases')">Être informé</a>
           </div>
         </div>
 
+        <!-- ChatGPT -->
         <div class="course-card" data-category="ia">
           <div class="course-thumb">ChatGPT</div>
           <div class="course-body">
-            <h3>ChatGPT pour la productivité</h3>
+            <h3>ChatGPT pour la productivité – Les bases</h3>
             <div class="course-author">LOGIX FORMA</div>
-            <div class="course-desc">Apprendre à utiliser ChatGPT pour écrire, structurer, résumer et gagner du temps.</div>
+            <div class="course-desc">
+              Apprendre les fondamentaux : formuler des prompts clairs, structurer des réponses et gagner du temps au quotidien.
+            </div>
             <div class="course-meta">
-              <span class="course-tag">Débutant</span>
+              <span class="course-tag bases">Les bases</span>
               <span>Français</span>
             </div>
             <div class="course-price free">Gratuit</div>
-            <a href="#contact" class="course-button" onclick="showInterest('ChatGPT pour la productivité')">Être informé</a>
+            <a href="#contact" class="course-button" onclick="showInterest('ChatGPT pour la productivité – Les bases')">Être informé</a>
           </div>
         </div>
 
+        <!-- Analyse de données -->
         <div class="course-card" data-category="data">
           <div class="course-thumb">Données</div>
           <div class="course-body">
-            <h3>Bases de l'analyse de données</h3>
+            <h3>Analyse de données – Les bases</h3>
             <div class="course-author">LOGIX FORMA</div>
-            <div class="course-desc">Comprendre la lecture, le tri et l'interprétation des données dans un contexte professionnel.</div>
+            <div class="course-desc">
+              Comprendre les fondamentaux : lire un tableau, trier des informations et interpréter des résultats simples.
+            </div>
             <div class="course-meta">
-              <span class="course-tag">Débutant</span>
+              <span class="course-tag bases">Les bases</span>
               <span>Français</span>
             </div>
             <div class="course-price free">Gratuit</div>
-            <a href="#contact" class="course-button" onclick="showInterest('Bases de l'analyse de données')">Être informé</a>
+            <a href="#contact" class="course-button" onclick="showInterest('Analyse de données – Les bases')">Être informé</a>
           </div>
         </div>
+
       </div>
     </div>
   </section>
@@ -1098,11 +1116,11 @@
         <h3>Domaines en développement</h3>
         <p>La plateforme évoluera progressivement avec de nouveaux contenus, de nouvelles catégories et une future logique d'espace apprenant.</p>
         <ul class="info-list">
-          <li>Développement web</li>
-          <li>Science des données</li>
           <li>Communication professionnelle</li>
           <li>Leadership</li>
           <li>Marketing digital</li>
+          <li>Outils collaboratifs</li>
+          <li>Productivité personnelle</li>
         </ul>
       </div>
     </div>
@@ -1164,7 +1182,7 @@
         <div class="footer-col">
           <h4>Compétences</h4>
           <a href="#formations">Intelligence artificielle</a>
-          <a href="#formations">Python</a>
+          <a href="#formations">Gestion de projet</a>
           <a href="#formations">Excel</a>
           <a href="#formations">Analyse de données</a>
         </div>
