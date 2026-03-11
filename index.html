@@ -3,47 +3,24 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta
-    name="description"
-    content="LOGIX FORMA - Plateforme vitrine de formation en ligne dédiée aux compétences numériques et professionnelles."
-  />
+  <meta name="description" content="LOGIX FORMA - Plateforme vitrine de formation en ligne dédiée aux compétences numériques et professionnelles." />
   <title>LOGIX FORMA - Plateforme LMS</title>
 
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link
-    href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap"
-    rel="stylesheet"
-  />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet" />
 
   <style>
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-    }
-
-    html {
-      scroll-behavior: smooth;
-    }
-
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
     body {
       font-family: "Inter", Arial, sans-serif;
       background: #ffffff;
       color: #1f2937;
       line-height: 1.6;
     }
-
-    a {
-      text-decoration: none;
-      color: inherit;
-    }
-
-    img {
-      display: block;
-      max-width: 100%;
-    }
-
+    a { text-decoration: none; color: inherit; }
+    img { display: block; max-width: 100%; }
     .container {
       width: 100%;
       max-width: 1240px;
@@ -51,6 +28,7 @@
       padding: 0 20px;
     }
 
+    /* === HEADER === */
     header {
       position: sticky;
       top: 0;
@@ -59,7 +37,6 @@
       border-bottom: 1px solid #e5e7eb;
       backdrop-filter: blur(8px);
     }
-
     .navbar {
       min-height: 84px;
       display: flex;
@@ -69,19 +46,12 @@
       flex-wrap: wrap;
       padding: 14px 0;
     }
-
-    .logo {
-      display: flex;
-      align-items: center;
-      flex-shrink: 0;
-    }
-
+    .logo { display: flex; align-items: center; flex-shrink: 0; }
     .logo img {
-      width: 220px;
+      width: 200px;
       height: auto;
       object-fit: contain;
     }
-
     .nav-left {
       display: flex;
       align-items: center;
@@ -89,24 +59,19 @@
       flex: 1;
       min-width: 220px;
     }
-
     .nav-link {
       font-size: 15px;
       font-weight: 600;
       color: #334155;
       white-space: nowrap;
     }
-
-    .nav-link:hover {
-      color: #1e3a5f;
-    }
+    .nav-link:hover { color: #1e3a5f; }
 
     .search-bar {
       flex: 1;
       min-width: 260px;
       position: relative;
     }
-
     .search-bar input {
       width: 100%;
       height: 48px;
@@ -117,7 +82,6 @@
       outline: none;
       background: #ffffff;
     }
-
     .search-bar input:focus {
       border-color: #7cb342;
       box-shadow: 0 0 0 4px rgba(124, 179, 66, 0.12);
@@ -129,10 +93,7 @@
       gap: 12px;
       flex-wrap: wrap;
     }
-
-    .btn-outline,
-    .btn-primary,
-    .btn-white {
+    .btn-outline, .btn-primary, .btn-white {
       display: inline-flex;
       align-items: center;
       justify-content: center;
@@ -143,38 +104,24 @@
       transition: 0.2s ease;
       cursor: pointer;
     }
-
     .btn-outline {
       border: 1px solid #1e3a5f;
       color: #1e3a5f;
       background: #ffffff;
     }
-
-    .btn-outline:hover {
-      background: #1e3a5f;
-      color: #ffffff;
-    }
-
+    .btn-outline:hover { background: #1e3a5f; color: #ffffff; }
     .btn-primary {
       background: #7cb342;
       color: #ffffff;
       border: 1px solid #7cb342;
     }
-
-    .btn-primary:hover {
-      background: #689f38;
-      border-color: #689f38;
-    }
-
+    .btn-primary:hover { background: #689f38; border-color: #689f38; }
     .btn-white {
       background: #ffffff;
       color: #1e3a5f;
       border: 1px solid #e5e7eb;
     }
-
-    .btn-white:hover {
-      background: #f8fafc;
-    }
+    .btn-white:hover { background: #f8fafc; }
 
     .mobile-toggle {
       display: none;
@@ -184,20 +131,17 @@
       user-select: none;
     }
 
+    /* === HERO === */
     .hero {
-      background:
-        linear-gradient(135deg, rgba(30, 58, 95, 0.06), rgba(124, 179, 66, 0.08)),
-        #ffffff;
+      background: linear-gradient(135deg, rgba(30, 58, 95, 0.06), rgba(124, 179, 66, 0.08)), #ffffff;
       padding: 42px 0 36px;
     }
-
     .hero-grid {
       display: grid;
       grid-template-columns: 1.05fr 1fr;
       gap: 28px;
       align-items: center;
     }
-
     .hero-card {
       background: #ffffff;
       padding: 34px;
@@ -205,7 +149,6 @@
       box-shadow: 0 18px 40px rgba(15, 23, 42, 0.08);
       max-width: 520px;
     }
-
     .hero-badge {
       display: inline-block;
       margin-bottom: 14px;
@@ -216,7 +159,6 @@
       font-size: 13px;
       font-weight: 700;
     }
-
     .hero-card h1 {
       font-size: 44px;
       line-height: 1.08;
@@ -224,33 +166,28 @@
       margin-bottom: 14px;
       font-weight: 800;
     }
-
     .hero-card p {
       font-size: 17px;
       color: #475569;
       margin-bottom: 22px;
     }
-
     .hero-actions {
       display: flex;
       gap: 12px;
       flex-wrap: wrap;
     }
-
     .hero-visual {
       min-height: 420px;
       border-radius: 24px;
-      background:
-        radial-gradient(circle at top left, rgba(124, 179, 66, 0.22), transparent 28%),
-        radial-gradient(circle at bottom right, rgba(30, 58, 95, 0.12), transparent 32%),
-        linear-gradient(135deg, #f8fafc, #eef2f7);
+      background: radial-gradient(circle at top left, rgba(124, 179, 66, 0.22), transparent 28%),
+                  radial-gradient(circle at bottom right, rgba(30, 58, 95, 0.12), transparent 32%),
+                  linear-gradient(135deg, #f8fafc, #eef2f7);
       display: grid;
       grid-template-columns: 1fr 1fr;
       gap: 16px;
       padding: 24px;
       align-items: stretch;
     }
-
     .visual-box {
       background: #ffffff;
       border: 1px solid #e5e7eb;
@@ -265,23 +202,19 @@
       color: #1e3a5f;
       min-height: 150px;
     }
-
     .visual-box.large {
       grid-column: span 2;
       font-size: 24px;
       background: linear-gradient(135deg, #1e3a5f, #2f5f95);
       color: #ffffff;
     }
-
     .visual-box.green {
       background: linear-gradient(135deg, #7cb342, #9ccc65);
       color: #ffffff;
     }
 
-    .section {
-      padding: 70px 0;
-    }
-
+    /* === SECTIONS GÉNÉRALES === */
+    .section { padding: 70px 0; }
     .section-title {
       text-align: center;
       font-size: 34px;
@@ -290,7 +223,6 @@
       margin-bottom: 12px;
       font-weight: 800;
     }
-
     .section-subtitle {
       text-align: center;
       color: #64748b;
@@ -299,13 +231,13 @@
       margin: 0 auto 34px;
     }
 
+    /* === CATÉGORIES === */
     .pill-row {
       display: flex;
       flex-wrap: wrap;
       gap: 12px;
       justify-content: center;
     }
-
     .pill {
       padding: 12px 18px;
       border: 1px solid #e5e7eb;
@@ -317,18 +249,13 @@
       transition: 0.2s ease;
       cursor: pointer;
     }
-
-    .pill:hover {
-      border-color: #7cb342;
-      color: #7cb342;
-    }
+    .pill:hover { border-color: #7cb342; color: #7cb342; }
 
     .category-grid {
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
       gap: 18px;
     }
-
     .category-card {
       background: #ffffff;
       border: 1px solid #e5e7eb;
@@ -338,13 +265,11 @@
       transition: 0.25s ease;
       cursor: pointer;
     }
-
     .category-card:hover {
       transform: translateY(-4px);
       border-color: #7cb342;
       box-shadow: 0 18px 34px rgba(15, 23, 42, 0.07);
     }
-
     .category-icon {
       width: 52px;
       height: 52px;
@@ -357,18 +282,17 @@
       font-size: 24px;
       margin-bottom: 14px;
     }
-
     .category-card h3 {
       font-size: 20px;
       color: #111827;
       margin-bottom: 8px;
     }
-
     .category-card p {
       color: #64748b;
       font-size: 14px;
     }
 
+    /* === STRIP BANNIÈRE === */
     .strip {
       background: #0f172a;
       color: #ffffff;
@@ -379,26 +303,22 @@
       gap: 26px;
       align-items: center;
     }
-
     .strip h3 {
       font-size: 34px;
       line-height: 1.15;
       margin-bottom: 14px;
     }
-
     .strip p {
       color: #dbe4ee;
       margin-bottom: 18px;
       font-size: 16px;
     }
-
     .strip-points {
       display: grid;
       grid-template-columns: repeat(2, 1fr);
       gap: 12px;
       margin-bottom: 20px;
     }
-
     .strip-point {
       background: rgba(255, 255, 255, 0.06);
       border: 1px solid rgba(255, 255, 255, 0.08);
@@ -407,13 +327,11 @@
       font-size: 14px;
       font-weight: 600;
     }
-
     .strip-visual {
       display: grid;
       grid-template-columns: repeat(2, 1fr);
       gap: 14px;
     }
-
     .strip-box {
       min-height: 120px;
       border-radius: 18px;
@@ -426,22 +344,20 @@
       text-align: center;
       padding: 16px;
     }
-
     .strip-box:nth-child(2) {
       background: linear-gradient(135deg, #7cb342, #9ccc65);
       color: #ffffff;
     }
-
     .strip-box:nth-child(3) {
       background: linear-gradient(135deg, #1e3a5f, #2c5282);
       color: #ffffff;
     }
-
     .strip-box:nth-child(4) {
       background: linear-gradient(135deg, #f8fafc, #e2e8f0);
       color: #111827;
     }
 
+    /* === COURSES === */
     .course-tabs {
       display: flex;
       flex-wrap: wrap;
@@ -449,7 +365,6 @@
       margin-bottom: 28px;
       justify-content: center;
     }
-
     .course-tab {
       padding: 10px 16px;
       border-radius: 999px;
@@ -459,18 +374,13 @@
       font-weight: 700;
       cursor: pointer;
     }
-
-    .course-tab:hover {
-      border-color: #7cb342;
-      color: #7cb342;
-    }
+    .course-tab:hover { border-color: #7cb342; color: #7cb342; }
 
     .course-grid {
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(255px, 1fr));
       gap: 20px;
     }
-
     .course-card {
       background: #ffffff;
       border: 1px solid #e5e7eb;
@@ -479,13 +389,11 @@
       box-shadow: 0 6px 18px rgba(15, 23, 42, 0.05);
       transition: 0.25s ease;
     }
-
     .course-card:hover {
       transform: translateY(-5px);
       box-shadow: 0 18px 34px rgba(15, 23, 42, 0.08);
       border-color: #7cb342;
     }
-
     .course-thumb {
       height: 170px;
       padding: 20px;
@@ -498,30 +406,23 @@
       font-weight: 800;
       text-align: center;
     }
-
-    .course-body {
-      padding: 18px;
-    }
-
+    .course-body { padding: 18px; }
     .course-body h3 {
       font-size: 19px;
       line-height: 1.3;
       margin-bottom: 10px;
       color: #111827;
     }
-
     .course-author {
       color: #64748b;
       font-size: 13px;
       margin-bottom: 10px;
     }
-
     .course-desc {
       color: #475569;
       font-size: 14px;
       margin-bottom: 12px;
     }
-
     .course-meta {
       display: flex;
       justify-content: space-between;
@@ -532,7 +433,6 @@
       margin-bottom: 14px;
       color: #64748b;
     }
-
     .course-tag {
       display: inline-block;
       background: #ecfccb;
@@ -542,18 +442,13 @@
       font-size: 12px;
       font-weight: 800;
     }
-
     .course-price {
       font-size: 20px;
       font-weight: 800;
       color: #111827;
       margin-bottom: 12px;
     }
-
-    .course-price.free {
-      color: #7cb342;
-    }
-
+    .course-price.free { color: #7cb342; }
     .course-button {
       width: 100%;
       text-align: center;
@@ -565,17 +460,144 @@
       font-weight: 700;
       font-size: 14px;
     }
+    .course-button:hover { background: #2c5282; }
 
-    .course-button:hover {
-      background: #2c5282;
+    /* === MISSION PÉDAGOGIQUE (NOUVEAU - Style Udemy/Coursera) === */
+    .mission-section {
+      background: linear-gradient(180deg, #f8fafc 0%, #ffffff 100%);
+      padding: 80px 0;
+    }
+    .mission-grid {
+      display: grid;
+      grid-template-columns: 1.2fr 1fr;
+      gap: 40px;
+      align-items: start;
+    }
+    .mission-content h2 {
+      font-size: 32px;
+      color: #111827;
+      margin-bottom: 18px;
+      font-weight: 800;
+    }
+    .mission-content > p {
+      color: #475569;
+      font-size: 16px;
+      margin-bottom: 28px;
+      line-height: 1.7;
+    }
+    .mission-values {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 16px;
+      margin-bottom: 30px;
+    }
+    .mission-value {
+      display: flex;
+      gap: 12px;
+      align-items: flex-start;
+    }
+    .mission-value-icon {
+      width: 44px;
+      height: 44px;
+      border-radius: 12px;
+      background: linear-gradient(135deg, #1e3a5f, #7cb342);
+      color: #ffffff;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 18px;
+      flex-shrink: 0;
+    }
+    .mission-value h4 {
+      color: #111827;
+      font-size: 16px;
+      margin-bottom: 4px;
+      font-weight: 700;
+    }
+    .mission-value p {
+      color: #64748b;
+      font-size: 14px;
+      line-height: 1.5;
+    }
+    .mission-stats {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 20px;
+      padding-top: 20px;
+      border-top: 1px solid #e5e7eb;
+    }
+    .mission-stat {
+      text-align: center;
+    }
+    .mission-stat-number {
+      font-size: 28px;
+      font-weight: 800;
+      color: #7cb342;
+      display: block;
+    }
+    .mission-stat-label {
+      font-size: 13px;
+      color: #64748b;
+    }
+    .mission-visual {
+      background: #ffffff;
+      border: 1px solid #e5e7eb;
+      border-radius: 20px;
+      padding: 28px;
+      box-shadow: 0 12px 32px rgba(15, 23, 42, 0.08);
+    }
+    .mission-visual-title {
+      font-size: 18px;
+      font-weight: 700;
+      color: #111827;
+      margin-bottom: 18px;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+    .mission-visual-title i {
+      color: #7cb342;
+      font-size: 20px;
+    }
+    .progress-item {
+      margin-bottom: 18px;
+    }
+    .progress-label {
+      display: flex;
+      justify-content: space-between;
+      font-size: 13px;
+      color: #475569;
+      margin-bottom: 6px;
+      font-weight: 600;
+    }
+    .progress-bar {
+      height: 8px;
+      background: #e5e7eb;
+      border-radius: 4px;
+      overflow: hidden;
+    }
+    .progress-fill {
+      height: 100%;
+      background: linear-gradient(90deg, #7cb342, #9ccc65);
+      border-radius: 4px;
+      transition: width 0.4s ease;
+    }
+    .mission-cta {
+      margin-top: 24px;
+      text-align: center;
+    }
+    .mission-cta p {
+      font-size: 14px;
+      color: #64748b;
+      margin-bottom: 12px;
     }
 
+    /* === INFO CARDS === */
     .info-grid {
       display: grid;
       grid-template-columns: 1fr 1fr;
       gap: 28px;
     }
-
     .info-card {
       background: #ffffff;
       border: 1px solid #e5e7eb;
@@ -583,39 +605,30 @@
       padding: 28px;
       box-shadow: 0 6px 18px rgba(15, 23, 42, 0.05);
     }
-
     .info-card h3 {
       font-size: 28px;
       margin-bottom: 14px;
       color: #111827;
     }
-
     .info-card p {
       color: #64748b;
       margin-bottom: 18px;
     }
-
-    .info-list {
-      list-style: none;
-    }
-
+    .info-list { list-style: none; }
     .info-list li {
       padding: 10px 0;
       border-bottom: 1px solid #f1f5f9;
       color: #334155;
       font-weight: 600;
     }
+    .info-list li:last-child { border-bottom: none; }
 
-    .info-list li:last-child {
-      border-bottom: none;
-    }
-
+    /* === TEAM === */
     .team-grid {
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
       gap: 20px;
     }
-
     .team-card {
       background: #ffffff;
       border: 1px solid #e5e7eb;
@@ -624,7 +637,6 @@
       text-align: center;
       box-shadow: 0 6px 18px rgba(15, 23, 42, 0.05);
     }
-
     .team-avatar {
       width: 92px;
       height: 92px;
@@ -638,25 +650,23 @@
       font-size: 34px;
       border: 4px solid #d9f99d;
     }
-
     .team-card h3 {
       color: #111827;
       font-size: 18px;
       margin-bottom: 6px;
     }
-
     .team-role {
       color: #7cb342;
       font-weight: 700;
       font-size: 14px;
       margin-bottom: 8px;
     }
-
     .team-email {
       color: #64748b;
       font-size: 13px;
     }
 
+    /* === CONTACT === */
     .contact-box {
       background: linear-gradient(135deg, #ffffff, #f8fafc);
       border: 1px solid #e5e7eb;
@@ -667,57 +677,47 @@
       max-width: 900px;
       margin: 0 auto;
     }
-
     .contact-box h3 {
       font-size: 32px;
       margin-bottom: 14px;
       color: #111827;
     }
-
     .contact-box p {
       color: #64748b;
       margin-bottom: 10px;
     }
-
     .contact-box a {
       color: #7cb342;
       font-weight: 800;
     }
 
+    /* === FOOTER === */
     footer {
       background: #0f172a;
       color: #ffffff;
       margin-top: 24px;
     }
-
     .footer-top {
       padding: 46px 0 30px;
       border-bottom: 1px solid rgba(255, 255, 255, 0.08);
     }
-
     .footer-grid {
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(190px, 1fr));
       gap: 24px;
     }
-
     .footer-col h4 {
       color: #ffffff;
       font-size: 16px;
       margin-bottom: 12px;
     }
-
     .footer-col a {
       display: block;
       color: #cbd5e1;
       margin-bottom: 8px;
       font-size: 14px;
     }
-
-    .footer-col a:hover {
-      color: #cddc39;
-    }
-
+    .footer-col a:hover { color: #cddc39; }
     .footer-bottom {
       padding: 18px 0;
       text-align: center;
@@ -725,28 +725,18 @@
       color: #94a3b8;
     }
 
+    /* === RESPONSIVE === */
     @media (max-width: 980px) {
-      .hero-grid,
-      .strip,
-      .info-grid {
+      .hero-grid, .strip, .info-grid, .mission-grid {
         grid-template-columns: 1fr;
       }
-
-      .search-bar {
-        order: 3;
-        width: 100%;
-      }
+      .search-bar { order: 3; width: 100%; }
+      .mission-values { grid-template-columns: 1fr; }
+      .mission-stats { grid-template-columns: repeat(3, 1fr); }
     }
-
     @media (max-width: 720px) {
-      .mobile-toggle {
-        display: block;
-      }
-
-      .nav-left {
-        flex: 0 0 auto;
-      }
-
+      .mobile-toggle { display: block; }
+      .nav-left { flex: 0 0 auto; }
       .nav-right {
         display: none;
         position: absolute;
@@ -760,82 +750,40 @@
         flex-direction: column;
         align-items: flex-start;
       }
-
-      .nav-right.active {
-        display: flex;
-      }
-
-      .hero-card h1 {
-        font-size: 34px;
-      }
-
-      .section-title {
-        font-size: 28px;
-      }
-
-      .strip h3 {
-        font-size: 28px;
-      }
-
-      .contact-box h3 {
-        font-size: 28px;
-      }
+      .nav-right.active { display: flex; }
+      .hero-card h1 { font-size: 34px; }
+      .section-title { font-size: 28px; }
+      .strip h3 { font-size: 28px; }
+      .contact-box h3 { font-size: 28px; }
+      .mission-stats { grid-template-columns: 1fr; gap: 12px; }
     }
-
     @media (max-width: 560px) {
-      .logo img {
-        width: 170px;
-      }
-
-      .hero {
-        padding: 28px 0 22px;
-      }
-
-      .hero-card {
-        padding: 24px;
-      }
-
-      .hero-card h1 {
-        font-size: 28px;
-      }
-
-      .hero-card p {
-        font-size: 15px;
-      }
-
-      .hero-actions {
-        flex-direction: column;
-        align-items: stretch;
-      }
-
-      .btn-primary,
-      .btn-outline,
-      .btn-white {
-        width: 100%;
-      }
+      .logo img { width: 170px; }
+      .hero { padding: 28px 0 22px; }
+      .hero-card { padding: 24px; }
+      .hero-card h1 { font-size: 28px; }
+      .hero-card p { font-size: 15px; }
+      .hero-actions { flex-direction: column; align-items: stretch; }
+      .btn-primary, .btn-outline, .btn-white { width: 100%; }
     }
   </style>
 </head>
 <body>
 
+  <!-- HEADER -->
   <header>
     <div class="container navbar">
       <div class="nav-left">
         <a href="#" class="logo" aria-label="Accueil LOGIX FORMA">
-          <img src="https://i.postimg.cc/wxDH8Zy6/logo-png-logix-forma.png" alt="Logo LOGIX FORMA">
+          <!-- VOTRE LOGO INTÉGRÉ -->
+          <img src="https://i.postimg.cc/xdj77pwZ/logo-logix-forma.jpg" alt="Logo LOGIX FORMA">
         </a>
-
         <a href="#categories" class="nav-link">Découvrir</a>
         <a href="#formations" class="nav-link">Formations</a>
       </div>
 
       <div class="search-bar">
-        <input
-          type="text"
-          id="searchInput"
-          placeholder="Que souhaitez-vous apprendre ?"
-          onkeyup="filterCourses()"
-        />
+        <input type="text" id="searchInput" placeholder="Que souhaitez-vous apprendre ?" onkeyup="filterCourses()" />
       </div>
 
       <div class="mobile-toggle" onclick="toggleMenu()">☰</div>
@@ -845,26 +793,23 @@
         <a href="#equipe" class="nav-link" onclick="closeMenu()">Équipe</a>
         <a href="#contact" class="nav-link" onclick="closeMenu()">Contact</a>
         <a href="#" class="btn-outline" onclick="alert('Connexion disponible prochainement'); return false;">Se connecter</a>
-        <a href="#contact" class="btn-primary" onclick="closeMenu()">S’informer</a>
+        <a href="#contact" class="btn-primary" onclick="closeMenu()">S'informer</a>
       </div>
     </div>
   </header>
 
+  <!-- HERO -->
   <section class="hero">
     <div class="container hero-grid">
       <div class="hero-card">
         <span class="hero-badge">Plateforme vitrine de formation</span>
         <h1>Commencez à apprendre avec LOGIX FORMA</h1>
-        <p>
-          LOGIX FORMA est une vitrine LMS dédiée à la formation professionnelle à distance.
-          Découvrez des formations gratuites pour développer vos compétences numériques et professionnelles.
-        </p>
+        <p>LOGIX FORMA est une vitrine LMS dédiée à la formation professionnelle à distance. Découvrez des formations gratuites pour développer vos compétences numériques et professionnelles.</p>
         <div class="hero-actions">
           <a href="#formations" class="btn-primary">Voir les formations gratuites</a>
           <a href="#contact" class="btn-white">Nous contacter</a>
         </div>
       </div>
-
       <div class="hero-visual">
         <div class="visual-box large">Compétences numériques pour votre avenir</div>
         <div class="visual-box green">Bureautique</div>
@@ -874,60 +819,51 @@
     </div>
   </section>
 
+  <!-- CATÉGORIES -->
   <section class="section" id="categories">
     <div class="container">
       <h2 class="section-title">Apprenez des compétences utiles pour votre carrière</h2>
-      <p class="section-subtitle">
-        LOGIX FORMA présente des thématiques essentielles pour progresser dans un environnement professionnel en constante évolution.
-      </p>
-
+      <p class="section-subtitle">LOGIX FORMA présente des thématiques essentielles pour progresser dans un environnement professionnel en constante évolution.</p>
       <div class="category-grid">
         <div class="category-card" onclick="showAllCourses()">
           <div class="category-icon">📚</div>
           <h3>Toutes les formations</h3>
-          <p>Afficher l’ensemble des formations gratuites de la vitrine.</p>
+          <p>Afficher l'ensemble des formations gratuites de la vitrine.</p>
         </div>
-
         <div class="category-card" onclick="filterByCategory('ia')">
           <div class="category-icon">🤖</div>
           <h3>IA & ChatGPT</h3>
-          <p>Découvrir les usages concrets de l’intelligence artificielle.</p>
+          <p>Découvrir les usages concrets de l'intelligence artificielle.</p>
         </div>
-
         <div class="category-card" onclick="filterByCategory('bureautique')">
           <div class="category-icon">📊</div>
           <h3>Bureautique</h3>
           <p>Maîtriser les outils essentiels comme Excel et PowerPoint.</p>
         </div>
-
         <div class="category-card" onclick="filterByCategory('data')">
           <div class="category-icon">📈</div>
           <h3>Science des données</h3>
-          <p>Comprendre les bases de l’analyse, de la donnée et des outils métiers.</p>
+          <p>Comprendre les bases de l'analyse, de la donnée et des outils métiers.</p>
         </div>
       </div>
     </div>
   </section>
 
+  <!-- BANNIÈRE STRIP -->
   <section class="section">
     <div class="container">
       <div class="strip">
         <div>
           <h3>Des compétences pour faire évoluer votre parcours</h3>
-          <p>
-            LOGIX FORMA a pour objectif de proposer des contenus pédagogiques accessibles, structurés et adaptés aux besoins professionnels d’aujourd’hui.
-          </p>
-
+          <p>LOGIX FORMA a pour objectif de proposer des contenus pédagogiques accessibles, structurés et adaptés aux besoins professionnels d'aujourd'hui.</p>
           <div class="strip-points">
             <div class="strip-point">Formation 100 % à distance</div>
             <div class="strip-point">Compétences numériques</div>
             <div class="strip-point">Approche pédagogique claire</div>
             <div class="strip-point">Vitrine gratuite de formations</div>
           </div>
-
           <a href="#formations" class="btn-white">En savoir plus</a>
         </div>
-
         <div class="strip-visual">
           <div class="strip-box">IA générative</div>
           <div class="strip-box">Certifications</div>
@@ -938,13 +874,11 @@
     </div>
   </section>
 
+  <!-- PILLS FILTRES -->
   <section class="section">
     <div class="container">
       <h2 class="section-title">Des compétences pour révolutionner votre carrière et votre vie</h2>
-      <p class="section-subtitle">
-        Une sélection de domaines utiles pour les apprenants, les professionnels, les personnes en reconversion et les structures.
-      </p>
-
+      <p class="section-subtitle">Une sélection de domaines utiles pour les apprenants, les professionnels, les personnes en reconversion et les structures.</p>
       <div class="pill-row">
         <div class="pill" onclick="filterByCategory('ia')">Artificial Intelligence (AI)</div>
         <div class="pill" onclick="filterByCategory('web')">Python</div>
@@ -956,12 +890,123 @@
     </div>
   </section>
 
+  <!-- === NOUVEAU : MISSION PÉDAGOGIQUE (Style Udemy/Coursera) === -->
+  <section class="mission-section" id="mission">
+    <div class="container">
+      <div class="mission-grid">
+        <div class="mission-content">
+          <h2>Notre mission pédagogique</h2>
+          <p>
+            Chez LOGIX FORMA, nous croyons que l'apprentissage doit être accessible, engageant et aligné avec les besoins réels du marché du travail. 
+            Notre approche pédagogique s'inspire des meilleures pratiques des plateformes internationales, tout en restant ancrée dans le contexte francophone.
+          </p>
+          
+          <div class="mission-values">
+            <div class="mission-value">
+              <div class="mission-value-icon">🎯</div>
+              <div>
+                <h4>Objectifs clairs</h4>
+                <p>Chaque formation définit des compétences précises à acquérir.</p>
+              </div>
+            </div>
+            <div class="mission-value">
+              <div class="mission-value-icon">🔄</div>
+              <div>
+                <h4>Apprentissage actif</h4>
+                <p>Exercices pratiques, projets concrets et mises en situation.</p>
+              </div>
+            </div>
+            <div class="mission-value">
+              <div class="mission-value-icon">📊</div>
+              <div>
+                <h4>Suivi personnalisé</h4>
+                <p>Progression visible et recommandations adaptées à votre rythme.</p>
+              </div>
+            </div>
+            <div class="mission-value">
+              <div class="mission-value-icon">🤝</div>
+              <div>
+                <h4>Communauté d'apprenants</h4>
+                <p>Échanges, entraide et partage d'expériences entre pairs.</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="mission-stats">
+            <div class="mission-stat">
+              <span class="mission-stat-number">100%</span>
+              <span class="mission-stat-label">Contenus gratuits en vitrine</span>
+            </div>
+            <div class="mission-stat">
+              <span class="mission-stat-number">FR</span>
+              <span class="mission-stat-label">Contenus en français</span>
+            </div>
+            <div class="mission-stat">
+              <span class="mission-stat-number">∞</span>
+              <span class="mission-stat-label">Accès à vie</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="mission-visual">
+          <div class="mission-visual-title">
+            <i>📈</i> Votre progression type
+          </div>
+          
+          <div class="progress-item">
+            <div class="progress-label">
+              <span>Découverte des bases</span>
+              <span>100%</span>
+            </div>
+            <div class="progress-bar">
+              <div class="progress-fill" style="width: 100%"></div>
+            </div>
+          </div>
+          
+          <div class="progress-item">
+            <div class="progress-label">
+              <span>Pratique guidée</span>
+              <span>75%</span>
+            </div>
+            <div class="progress-bar">
+              <div class="progress-fill" style="width: 75%"></div>
+            </div>
+          </div>
+          
+          <div class="progress-item">
+            <div class="progress-label">
+              <span>Projet autonome</span>
+              <span>45%</span>
+            </div>
+            <div class="progress-bar">
+              <div class="progress-fill" style="width: 45%"></div>
+            </div>
+          </div>
+          
+          <div class="progress-item">
+            <div class="progress-label">
+              <span>Certification</span>
+              <span>20%</span>
+            </div>
+            <div class="progress-bar">
+              <div class="progress-fill" style="width: 20%"></div>
+            </div>
+          </div>
+
+          <div class="mission-cta">
+            <p><strong>Commencez gratuitement</strong> et progressez à votre rythme</p>
+            <a href="#formations" class="btn-primary">Explorer les formations</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FORMATIONS -->
   <section class="section" id="formations">
     <div class="container">
       <h2 class="section-title">Formations gratuites en vitrine</h2>
-      <p class="section-subtitle">
-        Pour l’instant, LOGIX FORMA présente uniquement des contenus gratuits à titre de vitrine pédagogique.
-      </p>
+      <p class="section-subtitle">Pour l'instant, LOGIX FORMA présente uniquement des contenus gratuits à titre de vitrine pédagogique.</p>
 
       <div class="course-tabs">
         <div class="course-tab" onclick="showAllCourses()">Toutes</div>
@@ -977,9 +1022,7 @@
           <div class="course-body">
             <h3>Introduction à Power BI</h3>
             <div class="course-author">LOGIX FORMA</div>
-            <div class="course-desc">
-              Découvrir les bases de la visualisation de données et la logique des tableaux de bord.
-            </div>
+            <div class="course-desc">Découvrir les bases de la visualisation de données et la logique des tableaux de bord.</div>
             <div class="course-meta">
               <span class="course-tag">Débutant</span>
               <span>Français</span>
@@ -994,9 +1037,7 @@
           <div class="course-body">
             <h3>Python : les bases</h3>
             <div class="course-author">LOGIX FORMA</div>
-            <div class="course-desc">
-              Comprendre la logique du code, les variables, les conditions et les premières structures.
-            </div>
+            <div class="course-desc">Comprendre la logique du code, les variables, les conditions et les premières structures.</div>
             <div class="course-meta">
               <span class="course-tag">Débutant</span>
               <span>Français</span>
@@ -1011,9 +1052,7 @@
           <div class="course-body">
             <h3>ChatGPT pour la productivité</h3>
             <div class="course-author">LOGIX FORMA</div>
-            <div class="course-desc">
-              Apprendre à utiliser ChatGPT pour écrire, structurer, résumer et gagner du temps.
-            </div>
+            <div class="course-desc">Apprendre à utiliser ChatGPT pour écrire, structurer, résumer et gagner du temps.</div>
             <div class="course-meta">
               <span class="course-tag">Débutant</span>
               <span>Français</span>
@@ -1026,30 +1065,27 @@
         <div class="course-card" data-category="data">
           <div class="course-thumb">Données</div>
           <div class="course-body">
-            <h3>Bases de l’analyse de données</h3>
+            <h3>Bases de l'analyse de données</h3>
             <div class="course-author">LOGIX FORMA</div>
-            <div class="course-desc">
-              Comprendre la lecture, le tri et l’interprétation des données dans un contexte professionnel.
-            </div>
+            <div class="course-desc">Comprendre la lecture, le tri et l'interprétation des données dans un contexte professionnel.</div>
             <div class="course-meta">
               <span class="course-tag">Débutant</span>
               <span>Français</span>
             </div>
             <div class="course-price free">Gratuit</div>
-            <a href="#contact" class="course-button" onclick="showInterest('Bases de l’analyse de données')">Être informé</a>
+            <a href="#contact" class="course-button" onclick="showInterest('Bases de l'analyse de données')">Être informé</a>
           </div>
         </div>
       </div>
     </div>
   </section>
 
+  <!-- INFO CARDS -->
   <section class="section">
     <div class="container info-grid">
       <div class="info-card">
         <h3>Certifications et compétences</h3>
-        <p>
-          LOGIX FORMA a vocation à présenter des parcours liés à des compétences utiles, concrètes et transférables dans le monde professionnel.
-        </p>
+        <p>LOGIX FORMA a vocation à présenter des parcours liés à des compétences utiles, concrètes et transférables dans le monde professionnel.</p>
         <ul class="info-list">
           <li>Certification en bureautique</li>
           <li>Certification en gestion de projet</li>
@@ -1058,12 +1094,9 @@
           <li>Certification en compétences numériques</li>
         </ul>
       </div>
-
       <div class="info-card">
         <h3>Domaines en développement</h3>
-        <p>
-          La plateforme évoluera progressivement avec de nouveaux contenus, de nouvelles catégories et une future logique d’espace apprenant.
-        </p>
+        <p>La plateforme évoluera progressivement avec de nouveaux contenus, de nouvelles catégories et une future logique d'espace apprenant.</p>
         <ul class="info-list">
           <li>Développement web</li>
           <li>Science des données</li>
@@ -1075,13 +1108,11 @@
     </div>
   </section>
 
+  <!-- ÉQUIPE -->
   <section class="section" id="equipe">
     <div class="container">
       <h2 class="section-title">Notre équipe</h2>
-      <p class="section-subtitle">
-        Une équipe engagée dans la structuration et le développement de LOGIX FORMA.
-      </p>
-
+      <p class="section-subtitle">Une équipe engagée dans la structuration et le développement de LOGIX FORMA.</p>
       <div class="team-grid">
         <div class="team-card">
           <div class="team-avatar">👤</div>
@@ -1089,14 +1120,12 @@
           <div class="team-role">Présidente</div>
           <div class="team-email">logix.forma@gmail.com</div>
         </div>
-
         <div class="team-card">
           <div class="team-avatar">👤</div>
           <h3>Aboubacar-Dao Touré</h3>
           <div class="team-role">Trésorier</div>
           <div class="team-email">logix.forma@gmail.com</div>
         </div>
-
         <div class="team-card">
           <div class="team-avatar">🎓</div>
           <h3>Moctar Touré</h3>
@@ -1107,6 +1136,7 @@
     </div>
   </section>
 
+  <!-- CONTACT -->
   <section class="section" id="contact">
     <div class="container">
       <div class="contact-box">
@@ -1115,13 +1145,12 @@
         <p><strong>Projet :</strong> LOGIX FORMA</p>
         <p><strong>Type :</strong> Plateforme LMS vitrine de formation en ligne</p>
         <p><strong>Public :</strong> étudiants, professionnels, particuliers et entreprises</p>
-        <p style="margin-top: 14px;">
-          Vous souhaitez être informé du lancement d’une formation gratuite ? Écrivez-nous.
-        </p>
+        <p style="margin-top: 14px;">Vous souhaitez être informé du lancement d'une formation gratuite ? Écrivez-nous.</p>
       </div>
     </div>
   </section>
 
+  <!-- FOOTER -->
   <footer>
     <div class="container footer-top">
       <div class="footer-grid">
@@ -1132,7 +1161,6 @@
           <a href="#formations">Formations</a>
           <a href="#contact">Contact</a>
         </div>
-
         <div class="footer-col">
           <h4>Compétences</h4>
           <a href="#formations">Intelligence artificielle</a>
@@ -1140,37 +1168,31 @@
           <a href="#formations">Excel</a>
           <a href="#formations">Analyse de données</a>
         </div>
-
         <div class="footer-col">
           <h4>Informations</h4>
           <a href="#" onclick="alert('Association loi 1901 - France'); return false;">À propos</a>
           <a href="#" onclick="alert('Mentions légales en préparation.'); return false;">Mentions légales</a>
           <a href="#" onclick="alert('Politique de confidentialité en préparation.'); return false;">Confidentialité</a>
         </div>
-
         <div class="footer-col">
           <h4>Contact</h4>
           <a href="mailto:logix.forma@gmail.com">logix.forma@gmail.com</a>
         </div>
       </div>
     </div>
-
-    <div class="footer-bottom">
-      © 2026 LOGIX FORMA - Association loi 1901 - Tous droits réservés
-    </div>
+    <div class="footer-bottom">© 2026 LOGIX FORMA - Association loi 1901 - Tous droits réservés</div>
   </footer>
 
+  <!-- JAVASCRIPT -->
   <script>
     function toggleMenu() {
       document.getElementById("navMenu").classList.toggle("active");
     }
-
     function closeMenu() {
       if (window.innerWidth <= 720) {
         document.getElementById("navMenu").classList.remove("active");
       }
     }
-
     function filterCourses() {
       const term = document.getElementById("searchInput").value.toLowerCase();
       document.querySelectorAll(".course-card").forEach((card) => {
@@ -1178,34 +1200,22 @@
         card.style.display = text.includes(term) ? "block" : "none";
       });
     }
-
     function filterByCategory(category) {
       document.querySelectorAll(".course-card").forEach((card) => {
         card.style.display = card.dataset.category === category ? "block" : "none";
       });
-
-      document.getElementById("formations").scrollIntoView({
-        behavior: "smooth",
-        block: "start"
-      });
+      document.getElementById("formations").scrollIntoView({ behavior: "smooth", block: "start" });
     }
-
     function showAllCourses() {
       document.querySelectorAll(".course-card").forEach((card) => {
         card.style.display = "block";
       });
-
-      document.getElementById("formations").scrollIntoView({
-        behavior: "smooth",
-        block: "start"
-      });
+      document.getElementById("formations").scrollIntoView({ behavior: "smooth", block: "start" });
     }
-
     function showInterest(courseName) {
       const email = "logix.forma@gmail.com";
       const subject = `Intérêt pour la formation : ${courseName}`;
-      const body =
-        `Bonjour,%0D%0A%0D%0AJe souhaite être informé(e) du lancement de la formation gratuite : ${courseName}.%0D%0A%0D%0ACordialement`;
+      const body = `Bonjour,%0D%0A%0D%0AJe souhaite être informé(e) du lancement de la formation gratuite : ${courseName}.%0D%0A%0D%0ACordialement`;
       window.location.href = `mailto:${email}?subject=${subject}&body=${body}`;
     }
   </script>
