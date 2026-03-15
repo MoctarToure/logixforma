@@ -129,16 +129,17 @@
 
         /* ===== TEAM SECTION ===== */
         .team { padding: var(--spacing-lg) 0; }
-        .team-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: var(--spacing-md); margin-top: var(--spacing-md); }
+        .team-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: var(--spacing-lg); margin-top: var(--spacing-md); }
         .team-member { text-align: center; padding: var(--spacing-md); }
         .member-avatar {
-            width: 96px; height: 96px; border-radius: 50%;
+            width: 100px; height: 100px; border-radius: 50%;
             background: linear-gradient(135deg, var(--color-green) 0%, var(--color-blue) 100%);
             margin: 0 auto var(--spacing-sm); display: flex; align-items: center;
             justify-content: center; color: white; font-weight: 600; font-size: 1.5rem;
         }
         .team-member h3 { color: var(--color-text); font-size: 1.1rem; }
         .team-member p { font-size: 0.9rem; }
+        .team-member .role { font-weight: 500; color: var(--color-green); margin-top: 0.25rem; }
 
         /* ===== CONTACT SECTION ===== */
         .contact { padding: var(--spacing-lg) 0; background-color: rgba(124,179,66,0.06); text-align: center; }
@@ -191,12 +192,12 @@
     <!-- ===== HEADER ===== -->
     <header>
         <div class="container header-inner">
-            <a href="#" class="logo" aria-label="LOGIX Format - Page d'accueil">
+            <a href="#" class="logo" aria-label="LOGIX FORMA - Page d'accueil">
                 <svg class="logo-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
                     <rect x="3" y="3" width="18" height="18" rx="3" stroke-linecap="round" stroke-linejoin="round"/>
                     <path d="M9 9h6v6H9z" stroke-linecap="round" stroke-linejoin="round"/>
                 </svg>
-                LOGIX Format
+                LOGIX FORMA
             </a>
             <button class="mobile-toggle" aria-label="Menu de navigation" aria-expanded="false">
                 <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
@@ -221,7 +222,7 @@
         <!-- ===== HERO SECTION ===== -->
         <section class="hero">
             <div class="container">
-                <h1>LOGIX Format : renforcer vos compétences dans les domaines clés</h1>
+                <h1>LOGIX FORMA : renforcer vos compétences dans les domaines clés</h1>
                 <p>Un accompagnement sobre et efficace pour les particuliers et les professionnels, conçu pour progresser à votre rythme, avec clarté et confiance.</p>
                 <a href="#formations" class="btn btn-primary">Découvrir nos formations</a>
             </div>
@@ -319,18 +320,13 @@
                 <div class="team-grid">
                     <article class="team-member">
                         <div class="member-avatar" aria-hidden="true">MF</div>
-                        <h3>Missade Fofana</h3>
-                        <p>Expertise en gestion et accompagnement pédagogique</p>
-                    </article>
-                    <article class="team-member">
-                        <div class="member-avatar" aria-hidden="true">ADT</div>
-                        <h3>Aboubacar-Dao Touré</h3>
-                        <p>Spécialiste des outils numériques et de la formation</p>
+                        <h3>Missade FOFANA</h3>
+                        <p class="role">Responsable de formation</p>
                     </article>
                     <article class="team-member">
                         <div class="member-avatar" aria-hidden="true">MT</div>
-                        <h3>Moctar Touré</h3>
-                        <p>Conseil en développement de compétences et stratégie</p>
+                        <h3>Moctar TOURÉ</h3>
+                        <p class="role">Directeur Pédagogique</p>
                     </article>
                 </div>
             </div>
@@ -352,7 +348,7 @@
     <footer>
         <div class="container">
             <p><a href="#">Mentions légales</a> · <a href="#">Politique de confidentialité</a></p>
-            <p style="margin-top: var(--spacing-xs);">© 2026 LOGIX Format - Association loi 1901</p>
+            <p style="margin-top: var(--spacing-xs);">© 2026 LOGIX FORMA - Association loi 1901</p>
         </div>
     </footer>
 
