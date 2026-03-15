@@ -1,1241 +1,437 @@
 <!DOCTYPE html>
 <html lang="fr">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta name="description" content="LOGIX FORMA - Plateforme vitrine de formation en ligne dédiée aux compétences numériques et professionnelles. Formations gratuites : bases essentielles." />
-  <title>LOGIX FORMA - Plateforme LMS</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>LOGIX Format - Renforcer vos compétences dans les domaines clés</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        /* ===== RESET & BASE ===== */
+        *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
 
-  <link rel="preconnect" href="https://fonts.googleapis.com" />
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet" />
+        :root {
+            --color-white: #ffffff;
+            --color-text: #1f2937;
+            --color-text-light: #6b7280;
+            --color-green: #7cb342;
+            --color-green-hover: #689f38;
+            --color-blue: #1e3a5f;
+            --color-blue-light: #334e68;
+            --shadow-light: 0 1px 3px rgba(0,0,0,0.08);
+            --shadow-hover: 0 4px 12px rgba(0,0,0,0.12);
+            --transition: all 0.25s ease;
+            --radius: 8px;
+            --spacing-xs: 0.5rem;
+            --spacing-sm: 1rem;
+            --spacing-md: 2rem;
+            --spacing-lg: 4rem;
+            --spacing-xl: 6rem;
+        }
 
-  <style>
-    * { margin: 0; padding: 0; box-sizing: border-box; }
-    html { scroll-behavior: smooth; }
-    body {
-      font-family: "Inter", Arial, sans-serif;
-      background: #ffffff;
-      color: #1f2937;
-      line-height: 1.6;
-    }
-    a { text-decoration: none; color: inherit; }
-    img { display: block; max-width: 100%; }
-    .container {
-      width: 100%;
-      max-width: 1240px;
-      margin: 0 auto;
-      padding: 0 20px;
-    }
+        html { scroll-behavior: smooth; }
 
-    /* === HEADER === */
-    header {
-      position: sticky;
-      top: 0;
-      z-index: 1000;
-      background: rgba(255, 255, 255, 0.98);
-      border-bottom: 1px solid #e5e7eb;
-      backdrop-filter: blur(8px);
-    }
-    .navbar {
-      min-height: 84px;
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      gap: 20px;
-      flex-wrap: wrap;
-      padding: 14px 0;
-    }
-    .logo { display: flex; align-items: center; flex-shrink: 0; }
-    .logo img {
-      width: 200px;
-      height: auto;
-      object-fit: contain;
-    }
-    .nav-left {
-      display: flex;
-      align-items: center;
-      gap: 18px;
-      flex: 1;
-      min-width: 220px;
-    }
-    .nav-link {
-      font-size: 15px;
-      font-weight: 600;
-      color: #334155;
-      white-space: nowrap;
-    }
-    .nav-link:hover { color: #1e3a5f; }
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            background-color: var(--color-white);
+            color: var(--color-text);
+            line-height: 1.6;
+            font-weight: 400;
+            -webkit-font-smoothing: antialiased;
+        }
 
-    .search-bar {
-      flex: 1;
-      min-width: 260px;
-      position: relative;
-    }
-    .search-bar input {
-      width: 100%;
-      height: 48px;
-      border: 1px solid #d1d5db;
-      border-radius: 999px;
-      padding: 0 18px;
-      font-size: 15px;
-      outline: none;
-      background: #ffffff;
-    }
-    .search-bar input:focus {
-      border-color: #7cb342;
-      box-shadow: 0 0 0 4px rgba(124, 179, 66, 0.12);
-    }
+        /* ===== UTILITIES ===== */
+        .container { width: 100%; max-width: 1200px; margin: 0 auto; padding: 0 var(--spacing-sm); }
+        .sr-only { position: absolute; width: 1px; height: 1px; padding: 0; margin: -1px; overflow: hidden; clip: rect(0, 0, 0, 0); white-space: nowrap; border: 0; }
 
-    .nav-right {
-      display: flex;
-      align-items: center;
-      gap: 12px;
-      flex-wrap: wrap;
-    }
-    .btn-outline, .btn-primary, .btn-white {
-      display: inline-flex;
-      align-items: center;
-      justify-content: center;
-      padding: 11px 16px;
-      border-radius: 10px;
-      font-weight: 700;
-      font-size: 14px;
-      transition: 0.2s ease;
-      cursor: pointer;
-    }
-    .btn-outline {
-      border: 1px solid #1e3a5f;
-      color: #1e3a5f;
-      background: #ffffff;
-    }
-    .btn-outline:hover { background: #1e3a5f; color: #ffffff; }
-    .btn-primary {
-      background: #7cb342;
-      color: #ffffff;
-      border: 1px solid #7cb342;
-    }
-    .btn-primary:hover { background: #689f38; border-color: #689f38; }
-    .btn-white {
-      background: #ffffff;
-      color: #1e3a5f;
-      border: 1px solid #e5e7eb;
-    }
-    .btn-white:hover { background: #f8fafc; }
+        /* ===== TYPOGRAPHY ===== */
+        h1, h2, h3, h4 { font-weight: 600; line-height: 1.3; color: var(--color-blue); }
+        h1 { font-size: clamp(2rem, 5vw, 3rem); margin-bottom: var(--spacing-sm); }
+        h2 { font-size: clamp(1.5rem, 4vw, 2.25rem); margin-bottom: var(--spacing-md); text-align: center; }
+        h3 { font-size: 1.25rem; margin-bottom: var(--spacing-xs); }
+        p { color: var(--color-text-light); margin-bottom: var(--spacing-sm); }
 
-    .mobile-toggle {
-      display: none;
-      font-size: 28px;
-      color: #1e3a5f;
-      cursor: pointer;
-      user-select: none;
-    }
+        /* ===== BUTTONS ===== */
+        .btn {
+            display: inline-flex; align-items: center; justify-content: center;
+            padding: 0.75rem 1.5rem; font-size: 0.95rem; font-weight: 500;
+            text-decoration: none; border: none; border-radius: var(--radius);
+            cursor: pointer; transition: var(--transition); white-space: nowrap;
+        }
+        .btn-primary { background-color: var(--color-green); color: var(--color-white); }
+        .btn-primary:hover { background-color: var(--color-green-hover); transform: translateY(-1px); box-shadow: var(--shadow-hover); }
+        .btn-secondary { background-color: transparent; color: var(--color-blue); border: 1px solid var(--color-blue); }
+        .btn-secondary:hover { background-color: var(--color-blue); color: var(--color-white); }
+        .btn-login { background-color: transparent; color: var(--color-text); font-size: 0.9rem; padding: 0.5rem 1rem; }
+        .btn-login:hover { color: var(--color-blue); }
 
-    /* === HERO === */
-    .hero {
-      background: linear-gradient(135deg, rgba(30, 58, 95, 0.06), rgba(124, 179, 66, 0.08)), #ffffff;
-      padding: 42px 0 36px;
-    }
-    .hero-grid {
-      display: grid;
-      grid-template-columns: 1.05fr 1fr;
-      gap: 28px;
-      align-items: center;
-    }
-    .hero-card {
-      background: #ffffff;
-      padding: 34px;
-      border-radius: 18px;
-      box-shadow: 0 18px 40px rgba(15, 23, 42, 0.08);
-      max-width: 520px;
-    }
-    .hero-badge {
-      display: inline-block;
-      margin-bottom: 14px;
-      background: #f1f5f9;
-      color: #1e3a5f;
-      padding: 8px 14px;
-      border-radius: 999px;
-      font-size: 13px;
-      font-weight: 700;
-    }
-    .hero-card h1 {
-      font-size: 44px;
-      line-height: 1.08;
-      color: #111827;
-      margin-bottom: 14px;
-      font-weight: 800;
-    }
-    .hero-card p {
-      font-size: 17px;
-      color: #475569;
-      margin-bottom: 22px;
-    }
-    .hero-actions {
-      display: flex;
-      gap: 12px;
-      flex-wrap: wrap;
-    }
-    .hero-visual {
-      min-height: 420px;
-      border-radius: 24px;
-      background: radial-gradient(circle at top left, rgba(124, 179, 66, 0.22), transparent 28%),
-                  radial-gradient(circle at bottom right, rgba(30, 58, 95, 0.12), transparent 32%),
-                  linear-gradient(135deg, #f8fafc, #eef2f7);
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 16px;
-      padding: 24px;
-      align-items: stretch;
-    }
-    .visual-box {
-      background: #ffffff;
-      border: 1px solid #e5e7eb;
-      border-radius: 18px;
-      box-shadow: 0 10px 24px rgba(15, 23, 42, 0.06);
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      padding: 18px;
-      text-align: center;
-      font-weight: 800;
-      color: #1e3a5f;
-      min-height: 150px;
-    }
-    .visual-box.large {
-      grid-column: span 2;
-      font-size: 24px;
-      background: linear-gradient(135deg, #1e3a5f, #2f5f95);
-      color: #ffffff;
-    }
-    .visual-box.green {
-      background: linear-gradient(135deg, #7cb342, #9ccc65);
-      color: #ffffff;
-    }
+        /* ===== HEADER ===== */
+        header {
+            position: sticky; top: 0; z-index: 100;
+            background-color: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(8px);
+            border-bottom: 1px solid rgba(0,0,0,0.06);
+            padding: var(--spacing-sm) 0;
+        }
+        .header-inner { display: flex; align-items: center; justify-content: space-between; }
+        .logo {
+            font-size: 1.4rem; font-weight: 700; color: var(--color-blue);
+            text-decoration: none; display: flex; align-items: center; gap: 0.5rem;
+        }
+        .logo-icon { width: 28px; height: 28px; }
+        nav ul { display: flex; list-style: none; gap: var(--spacing-md); align-items: center; }
+        nav a {
+            text-decoration: none; color: var(--color-text); font-weight: 500;
+            font-size: 0.95rem; transition: var(--transition); padding: 0.25rem 0;
+        }
+        nav a:hover, nav a:focus { color: var(--color-green); }
+        .mobile-toggle { display: none; background: none; border: none; cursor: pointer; padding: var(--spacing-xs); }
+        .mobile-toggle svg { width: 24px; height: 24px; stroke: var(--color-text); }
 
-    /* === SECTIONS GÉNÉRALES === */
-    .section { padding: 70px 0; }
-    .section-title {
-      text-align: center;
-      font-size: 34px;
-      line-height: 1.2;
-      color: #111827;
-      margin-bottom: 12px;
-      font-weight: 800;
-    }
-    .section-subtitle {
-      text-align: center;
-      color: #64748b;
-      font-size: 17px;
-      max-width: 780px;
-      margin: 0 auto 34px;
-    }
+        /* ===== HERO SECTION ===== */
+        .hero {
+            padding: var(--spacing-xl) 0 var(--spacing-lg);
+            text-align: center;
+            background: linear-gradient(180deg, rgba(124,179,66,0.04) 0%, rgba(255,255,255,1) 100%);
+        }
+        .hero h1 { max-width: 800px; margin: 0 auto var(--spacing-sm); }
+        .hero p { font-size: 1.15rem; max-width: 600px; margin: 0 auto var(--spacing-md); }
 
-    /* === CATÉGORIES === */
-    .pill-row {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 12px;
-      justify-content: center;
-    }
-    .pill {
-      padding: 12px 18px;
-      border: 1px solid #e5e7eb;
-      border-radius: 999px;
-      background: #ffffff;
-      color: #1e3a5f;
-      font-weight: 700;
-      font-size: 14px;
-      transition: 0.2s ease;
-      cursor: pointer;
-    }
-    .pill:hover { border-color: #7cb342; color: #7cb342; }
+        /* ===== APPROACH SECTION ===== */
+        .approach { padding: var(--spacing-lg) 0; }
+        .pillars { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: var(--spacing-md); margin-top: var(--spacing-md); }
+        .pillar { text-align: center; padding: var(--spacing-md); border-radius: var(--radius); transition: var(--transition); }
+        .pillar:hover { background-color: rgba(124,179,66,0.06); }
+        .pillar-icon { width: 56px; height: 56px; margin: 0 auto var(--spacing-sm); color: var(--color-green); }
+        .pillar h3 { color: var(--color-text); }
 
-    .category-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-      gap: 18px;
-    }
-    .category-card {
-      background: #ffffff;
-      border: 1px solid #e5e7eb;
-      border-radius: 18px;
-      padding: 22px;
-      box-shadow: 0 8px 20px rgba(15, 23, 42, 0.04);
-      transition: 0.25s ease;
-      cursor: pointer;
-    }
-    .category-card:hover {
-      transform: translateY(-4px);
-      border-color: #7cb342;
-      box-shadow: 0 18px 34px rgba(15, 23, 42, 0.07);
-    }
-    .category-icon {
-      width: 52px;
-      height: 52px;
-      border-radius: 14px;
-      background: linear-gradient(135deg, #1e3a5f, #7cb342);
-      color: #ffffff;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      font-size: 24px;
-      margin-bottom: 14px;
-    }
-    .category-card h3 {
-      font-size: 20px;
-      color: #111827;
-      margin-bottom: 8px;
-    }
-    .category-card p {
-      color: #64748b;
-      font-size: 14px;
-    }
+        /* ===== CATALOG SECTION ===== */
+        .catalog { padding: var(--spacing-lg) 0; background-color: rgba(30,58,95,0.03); }
+        .catalog-filters { display: flex; justify-content: center; gap: var(--spacing-sm); margin-bottom: var(--spacing-md); flex-wrap: wrap; }
+        .filter-btn {
+            padding: 0.5rem 1.25rem; background: transparent; border: 1px solid var(--color-blue-light);
+            border-radius: 20px; font-size: 0.9rem; color: var(--color-text);
+            cursor: pointer; transition: var(--transition);
+        }
+        .filter-btn:hover, .filter-btn.active { background-color: var(--color-blue); color: var(--color-white); border-color: var(--color-blue); }
+        .cards-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: var(--spacing-md); }
+        .card {
+            background: var(--color-white); border-radius: var(--radius); padding: var(--spacing-md);
+            box-shadow: var(--shadow-light); transition: var(--transition);
+            display: flex; flex-direction: column; min-height: 280px;
+        }
+        .card:hover { transform: translateY(-3px); box-shadow: var(--shadow-hover); }
+        .card-icon { width: 48px; height: 48px; margin-bottom: var(--spacing-sm); color: var(--color-blue); }
+        .card h3 { color: var(--color-text); margin-bottom: var(--spacing-xs); }
+        .card p { flex-grow: 1; font-size: 0.95rem; }
+        .card .btn { margin-top: auto; align-self: flex-start; }
 
-    /* === STRIP BANNIÈRE === */
-    .strip {
-      background: #0f172a;
-      color: #ffffff;
-      border-radius: 26px;
-      padding: 30px;
-      display: grid;
-      grid-template-columns: 1.1fr 1fr;
-      gap: 26px;
-      align-items: center;
-    }
-    .strip h3 {
-      font-size: 34px;
-      line-height: 1.15;
-      margin-bottom: 14px;
-    }
-    .strip p {
-      color: #dbe4ee;
-      margin-bottom: 18px;
-      font-size: 16px;
-    }
-    .strip-points {
-      display: grid;
-      grid-template-columns: repeat(2, 1fr);
-      gap: 12px;
-      margin-bottom: 20px;
-    }
-    .strip-point {
-      background: rgba(255, 255, 255, 0.06);
-      border: 1px solid rgba(255, 255, 255, 0.08);
-      padding: 14px;
-      border-radius: 12px;
-      font-size: 14px;
-      font-weight: 600;
-    }
-    .strip-visual {
-      display: grid;
-      grid-template-columns: repeat(2, 1fr);
-      gap: 14px;
-    }
-    .strip-box {
-      min-height: 120px;
-      border-radius: 18px;
-      background: linear-gradient(135deg, #ffffff, #f8fafc);
-      color: #1e3a5f;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      font-weight: 800;
-      text-align: center;
-      padding: 16px;
-    }
-    .strip-box:nth-child(2) {
-      background: linear-gradient(135deg, #7cb342, #9ccc65);
-      color: #ffffff;
-    }
-    .strip-box:nth-child(3) {
-      background: linear-gradient(135deg, #1e3a5f, #2c5282);
-      color: #ffffff;
-    }
-    .strip-box:nth-child(4) {
-      background: linear-gradient(135deg, #f8fafc, #e2e8f0);
-      color: #111827;
-    }
+        /* ===== TEAM SECTION ===== */
+        .team { padding: var(--spacing-lg) 0; }
+        .team-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: var(--spacing-md); margin-top: var(--spacing-md); }
+        .team-member { text-align: center; padding: var(--spacing-md); }
+        .member-avatar {
+            width: 96px; height: 96px; border-radius: 50%;
+            background: linear-gradient(135deg, var(--color-green) 0%, var(--color-blue) 100%);
+            margin: 0 auto var(--spacing-sm); display: flex; align-items: center;
+            justify-content: center; color: white; font-weight: 600; font-size: 1.5rem;
+        }
+        .team-member h3 { color: var(--color-text); font-size: 1.1rem; }
+        .team-member p { font-size: 0.9rem; }
 
-    /* === COURSES === */
-    .course-tabs {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 12px;
-      margin-bottom: 28px;
-      justify-content: center;
-    }
-    .course-tab {
-      padding: 10px 16px;
-      border-radius: 999px;
-      border: 1px solid #e5e7eb;
-      background: #ffffff;
-      color: #334155;
-      font-weight: 700;
-      cursor: pointer;
-    }
-    .course-tab:hover { border-color: #7cb342; color: #7cb342; }
+        /* ===== CONTACT SECTION ===== */
+        .contact { padding: var(--spacing-lg) 0; background-color: rgba(124,179,66,0.06); text-align: center; }
+        .contact-block { max-width: 500px; margin: 0 auto; padding: var(--spacing-md); }
+        .contact-email {
+            display: inline-block; margin-top: var(--spacing-sm); font-size: 1.2rem;
+            font-weight: 500; color: var(--color-blue); text-decoration: none; transition: var(--transition);
+        }
+        .contact-email:hover { color: var(--color-green); }
 
-    .course-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(255px, 1fr));
-      gap: 20px;
-    }
-    .course-card {
-      background: #ffffff;
-      border: 1px solid #e5e7eb;
-      border-radius: 18px;
-      overflow: hidden;
-      box-shadow: 0 6px 18px rgba(15, 23, 42, 0.05);
-      transition: 0.25s ease;
-    }
-    .course-card:hover {
-      transform: translateY(-5px);
-      box-shadow: 0 18px 34px rgba(15, 23, 42, 0.08);
-      border-color: #7cb342;
-    }
-    .course-thumb {
-      height: 170px;
-      padding: 20px;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      background: linear-gradient(135deg, #1e3a5f, #7cb342);
-      color: #ffffff;
-      font-size: 24px;
-      font-weight: 800;
-      text-align: center;
-    }
-    .course-body { padding: 18px; }
-    .course-body h3 {
-      font-size: 19px;
-      line-height: 1.3;
-      margin-bottom: 10px;
-      color: #111827;
-    }
-    .course-author {
-      color: #64748b;
-      font-size: 13px;
-      margin-bottom: 10px;
-    }
-    .course-desc {
-      color: #475569;
-      font-size: 14px;
-      margin-bottom: 12px;
-    }
-    .course-meta {
-      display: flex;
-      justify-content: space-between;
-      gap: 10px;
-      flex-wrap: wrap;
-      align-items: center;
-      font-size: 13px;
-      margin-bottom: 14px;
-      color: #64748b;
-    }
-    .course-tag {
-      display: inline-block;
-      background: #ecfccb;
-      color: #3f6212;
-      padding: 6px 10px;
-      border-radius: 999px;
-      font-size: 12px;
-      font-weight: 800;
-    }
-    .course-tag.bases {
-      background: #dbeafe;
-      color: #1e40af;
-    }
-    .course-price {
-      font-size: 20px;
-      font-weight: 800;
-      color: #111827;
-      margin-bottom: 12px;
-    }
-    .course-price.free { color: #7cb342; }
-    .course-button {
-      width: 100%;
-      text-align: center;
-      display: inline-block;
-      padding: 11px 14px;
-      border-radius: 10px;
-      background: #1e3a5f;
-      color: #ffffff;
-      font-weight: 700;
-      font-size: 14px;
-    }
-    .course-button:hover { background: #2c5282; }
+        /* ===== FOOTER ===== */
+        footer {
+            padding: var(--spacing-md) 0; border-top: 1px solid rgba(0,0,0,0.08);
+            text-align: center; font-size: 0.9rem; color: var(--color-text-light);
+        }
+        footer a { color: var(--color-blue); text-decoration: none; }
 
-    /* === MISSION PÉDAGOGIQUE === */
-    .mission-section {
-      background: linear-gradient(180deg, #f8fafc 0%, #ffffff 100%);
-      padding: 80px 0;
-    }
-    .mission-grid {
-      display: grid;
-      grid-template-columns: 1.2fr 1fr;
-      gap: 40px;
-      align-items: start;
-    }
-    .mission-content h2 {
-      font-size: 32px;
-      color: #111827;
-      margin-bottom: 18px;
-      font-weight: 800;
-    }
-    .mission-content > p {
-      color: #475569;
-      font-size: 16px;
-      margin-bottom: 28px;
-      line-height: 1.7;
-    }
-    .mission-values {
-      display: grid;
-      grid-template-columns: repeat(2, 1fr);
-      gap: 16px;
-      margin-bottom: 30px;
-    }
-    .mission-value {
-      display: flex;
-      gap: 12px;
-      align-items: flex-start;
-    }
-    .mission-value-icon {
-      width: 44px;
-      height: 44px;
-      border-radius: 12px;
-      background: linear-gradient(135deg, #1e3a5f, #7cb342);
-      color: #ffffff;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      font-size: 18px;
-      flex-shrink: 0;
-    }
-    .mission-value h4 {
-      color: #111827;
-      font-size: 16px;
-      margin-bottom: 4px;
-      font-weight: 700;
-    }
-    .mission-value p {
-      color: #64748b;
-      font-size: 14px;
-      line-height: 1.5;
-    }
-    .mission-stats {
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 20px;
-      padding-top: 20px;
-      border-top: 1px solid #e5e7eb;
-    }
-    .mission-stat {
-      text-align: center;
-    }
-    .mission-stat-number {
-      font-size: 28px;
-      font-weight: 800;
-      color: #7cb342;
-      display: block;
-    }
-    .mission-stat-label {
-      font-size: 13px;
-      color: #64748b;
-    }
-    .mission-visual {
-      background: #ffffff;
-      border: 1px solid #e5e7eb;
-      border-radius: 20px;
-      padding: 28px;
-      box-shadow: 0 12px 32px rgba(15, 23, 42, 0.08);
-    }
-    .mission-visual-title {
-      font-size: 18px;
-      font-weight: 700;
-      color: #111827;
-      margin-bottom: 18px;
-      display: flex;
-      align-items: center;
-      gap: 10px;
-    }
-    .mission-visual-title i {
-      color: #7cb342;
-      font-size: 20px;
-    }
-    .progress-item {
-      margin-bottom: 18px;
-    }
-    .progress-label {
-      display: flex;
-      justify-content: space-between;
-      font-size: 13px;
-      color: #475569;
-      margin-bottom: 6px;
-      font-weight: 600;
-    }
-    .progress-bar {
-      height: 8px;
-      background: #e5e7eb;
-      border-radius: 4px;
-      overflow: hidden;
-    }
-    .progress-fill {
-      height: 100%;
-      background: linear-gradient(90deg, #7cb342, #9ccc65);
-      border-radius: 4px;
-      transition: width 0.4s ease;
-    }
-    .mission-cta {
-      margin-top: 24px;
-      text-align: center;
-    }
-    .mission-cta p {
-      font-size: 14px;
-      color: #64748b;
-      margin-bottom: 12px;
-    }
+        /* ===== RESPONSIVE ===== */
+        @media (max-width: 768px) {
+            .mobile-toggle { display: block; }
+            nav ul {
+                position: absolute; top: 100%; left: 0; right: 0;
+                background: var(--color-white); flex-direction: column;
+                padding: var(--spacing-md); gap: var(--spacing-sm);
+                border-bottom: 1px solid rgba(0,0,0,0.08);
+                transform: translateY(-150%); transition: transform 0.3s ease; z-index: 99;
+            }
+            nav ul.active { transform: translateY(0); }
+            .hero { padding: var(--spacing-lg) 0 var(--spacing-md); }
+            .catalog-filters { gap: var(--spacing-xs); }
+            .filter-btn { padding: 0.4rem 1rem; font-size: 0.85rem; }
+        }
 
-    /* === INFO CARDS === */
-    .info-grid {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 28px;
-    }
-    .info-card {
-      background: #ffffff;
-      border: 1px solid #e5e7eb;
-      border-radius: 20px;
-      padding: 28px;
-      box-shadow: 0 6px 18px rgba(15, 23, 42, 0.05);
-    }
-    .info-card h3 {
-      font-size: 28px;
-      margin-bottom: 14px;
-      color: #111827;
-    }
-    .info-card p {
-      color: #64748b;
-      margin-bottom: 18px;
-    }
-    .info-list { list-style: none; }
-    .info-list li {
-      padding: 10px 0;
-      border-bottom: 1px solid #f1f5f9;
-      color: #334155;
-      font-weight: 600;
-    }
-    .info-list li:last-child { border-bottom: none; }
-
-    /* === TEAM === */
-    .team-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
-      gap: 20px;
-    }
-    .team-card {
-      background: #ffffff;
-      border: 1px solid #e5e7eb;
-      border-radius: 18px;
-      padding: 24px;
-      text-align: center;
-      box-shadow: 0 6px 18px rgba(15, 23, 42, 0.05);
-    }
-    .team-avatar {
-      width: 92px;
-      height: 92px;
-      border-radius: 50%;
-      margin: 0 auto 14px;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      background: linear-gradient(135deg, #1e3a5f, #7cb342);
-      color: #ffffff;
-      font-size: 34px;
-      border: 4px solid #d9f99d;
-    }
-    .team-card h3 {
-      color: #111827;
-      font-size: 18px;
-      margin-bottom: 6px;
-    }
-    .team-role {
-      color: #7cb342;
-      font-weight: 700;
-      font-size: 14px;
-      margin-bottom: 8px;
-    }
-    .team-email {
-      color: #64748b;
-      font-size: 13px;
-    }
-
-    /* === CONTACT === */
-    .contact-box {
-      background: linear-gradient(135deg, #ffffff, #f8fafc);
-      border: 1px solid #e5e7eb;
-      border-radius: 22px;
-      padding: 34px 24px;
-      text-align: center;
-      box-shadow: 0 10px 24px rgba(15, 23, 42, 0.05);
-      max-width: 900px;
-      margin: 0 auto;
-    }
-    .contact-box h3 {
-      font-size: 32px;
-      margin-bottom: 14px;
-      color: #111827;
-    }
-    .contact-box p {
-      color: #64748b;
-      margin-bottom: 10px;
-    }
-    .contact-box a {
-      color: #7cb342;
-      font-weight: 800;
-    }
-
-    /* === FOOTER === */
-    footer {
-      background: #0f172a;
-      color: #ffffff;
-      margin-top: 24px;
-    }
-    .footer-top {
-      padding: 46px 0 30px;
-      border-bottom: 1px solid rgba(255, 255, 255, 0.08);
-    }
-    .footer-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(190px, 1fr));
-      gap: 24px;
-    }
-    .footer-col h4 {
-      color: #ffffff;
-      font-size: 16px;
-      margin-bottom: 12px;
-    }
-    .footer-col a {
-      display: block;
-      color: #cbd5e1;
-      margin-bottom: 8px;
-      font-size: 14px;
-    }
-    .footer-col a:hover { color: #cddc39; }
-    .footer-bottom {
-      padding: 18px 0;
-      text-align: center;
-      font-size: 13px;
-      color: #94a3b8;
-    }
-
-    /* === RESPONSIVE === */
-    @media (max-width: 980px) {
-      .hero-grid, .strip, .info-grid, .mission-grid {
-        grid-template-columns: 1fr;
-      }
-      .search-bar { order: 3; width: 100%; }
-      .mission-values { grid-template-columns: 1fr; }
-      .mission-stats { grid-template-columns: repeat(3, 1fr); }
-    }
-    @media (max-width: 720px) {
-      .mobile-toggle { display: block; }
-      .nav-left { flex: 0 0 auto; }
-      .nav-right {
-        display: none;
-        position: absolute;
-        top: 100%;
-        left: 0;
-        right: 0;
-        background: #ffffff;
-        padding: 16px 20px;
-        border-top: 1px solid #e5e7eb;
-        box-shadow: 0 12px 28px rgba(15, 23, 42, 0.08);
-        flex-direction: column;
-        align-items: flex-start;
-      }
-      .nav-right.active { display: flex; }
-      .hero-card h1 { font-size: 34px; }
-      .section-title { font-size: 28px; }
-      .strip h3 { font-size: 28px; }
-      .contact-box h3 { font-size: 28px; }
-      .mission-stats { grid-template-columns: 1fr; gap: 12px; }
-    }
-    @media (max-width: 560px) {
-      .logo img { width: 170px; }
-      .hero { padding: 28px 0 22px; }
-      .hero-card { padding: 24px; }
-      .hero-card h1 { font-size: 28px; }
-      .hero-card p { font-size: 15px; }
-      .hero-actions { flex-direction: column; align-items: stretch; }
-      .btn-primary, .btn-outline, .btn-white { width: 100%; }
-    }
-  </style>
+        /* ===== ACCESSIBILITY ===== */
+        @media (prefers-reduced-motion: reduce) {
+            *, *::before, *::after {
+                animation-duration: 0.01ms !important;
+                animation-iteration-count: 1 !important;
+                transition-duration: 0.01ms !important;
+            }
+            html { scroll-behavior: auto; }
+        }
+        a:focus-visible, button:focus-visible, .filter-btn:focus-visible {
+            outline: 2px solid var(--color-green); outline-offset: 2px;
+        }
+    </style>
 </head>
 <body>
 
-  <!-- HEADER -->
-  <header>
-    <div class="container navbar">
-      <div class="nav-left">
-        <a href="#" class="logo" aria-label="Accueil LOGIX FORMA">
-          <!-- VOTRE LOGO -->
-          <img src="https://i.postimg.cc/xdj77pwZ/logo-logix-forma.jpg" alt="Logo LOGIX FORMA">
-        </a>
-        <a href="#categories" class="nav-link">Découvrir</a>
-        <a href="#formations" class="nav-link">Formations</a>
-      </div>
-
-      <div class="search-bar">
-        <input type="text" id="searchInput" placeholder="Que souhaitez-vous apprendre ?" onkeyup="filterCourses()" />
-      </div>
-
-      <div class="mobile-toggle" onclick="toggleMenu()">☰</div>
-
-      <div class="nav-right" id="navMenu">
-        <a href="#formations" class="nav-link" onclick="closeMenu()">Compétences</a>
-        <a href="#equipe" class="nav-link" onclick="closeMenu()">Équipe</a>
-        <a href="#contact" class="nav-link" onclick="closeMenu()">Contact</a>
-        <a href="#" class="btn-outline" onclick="alert('Connexion disponible prochainement'); return false;">Se connecter</a>
-        <a href="#contact" class="btn-primary" onclick="closeMenu()">S'informer</a>
-      </div>
-    </div>
-  </header>
-
-  <!-- HERO -->
-  <section class="hero">
-    <div class="container hero-grid">
-      <div class="hero-card">
-        <span class="hero-badge">Plateforme vitrine de formation</span>
-        <h1>Commencez à apprendre avec LOGIX FORMA</h1>
-        <p>LOGIX FORMA est une vitrine LMS dédiée à la formation professionnelle à distance. Découvrez des formations gratuites pour développer vos compétences numériques et professionnelles.</p>
-        <div class="hero-actions">
-          <a href="#formations" class="btn-primary">Voir les formations gratuites</a>
-          <a href="#contact" class="btn-white">Nous contacter</a>
+    <!-- ===== HEADER ===== -->
+    <header>
+        <div class="container header-inner">
+            <a href="#" class="logo" aria-label="LOGIX Format - Page d'accueil">
+                <svg class="logo-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+                    <rect x="3" y="3" width="18" height="18" rx="3" stroke-linecap="round" stroke-linejoin="round"/>
+                    <path d="M9 9h6v6H9z" stroke-linecap="round" stroke-linejoin="round"/>
+                </svg>
+                LOGIX Format
+            </a>
+            <button class="mobile-toggle" aria-label="Menu de navigation" aria-expanded="false">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <line x1="3" y1="6" x2="21" y2="6"/>
+                    <line x1="3" y1="12" x2="21" y2="12"/>
+                    <line x1="3" y1="18" x2="21" y2="18"/>
+                </svg>
+            </button>
+            <nav>
+                <ul id="main-menu">
+                    <li><a href="#approche">Notre approche</a></li>
+                    <li><a href="#formations">Formations</a></li>
+                    <li><a href="#equipe">Équipe</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                    <li><button class="btn btn-login">Se connecter</button></li>
+                </ul>
+            </nav>
         </div>
-      </div>
-      <div class="hero-visual">
-        <div class="visual-box large">Compétences numériques pour votre avenir</div>
-        <div class="visual-box green">Bureautique</div>
-        <div class="visual-box">Marketing digital</div>
-        <div class="visual-box">Gestion de projet</div>
-      </div>
-    </div>
-  </section>
+    </header>
 
-  <!-- CATÉGORIES -->
-  <section class="section" id="categories">
-    <div class="container">
-      <h2 class="section-title">Apprenez les bases utiles pour votre carrière</h2>
-      <p class="section-subtitle">LOGIX FORMA propose des formations gratuites centrées sur les <strong>fondamentaux</strong> pour progresser dans un environnement professionnel en constante évolution.</p>
-      <div class="category-grid">
-        <div class="category-card" onclick="showAllCourses()">
-          <div class="category-icon">📚</div>
-          <h3>Toutes les formations</h3>
-          <p>Afficher l'ensemble des formations gratuites de la vitrine.</p>
-        </div>
-        <div class="category-card" onclick="filterByCategory('ia')">
-          <div class="category-icon">🤖</div>
-          <h3>IA & ChatGPT</h3>
-          <p>Découvrir les usages concrets de l'intelligence artificielle.</p>
-        </div>
-        <div class="category-card" onclick="filterByCategory('bureautique')">
-          <div class="category-icon">📊</div>
-          <h3>Bureautique</h3>
-          <p>Maîtriser les outils essentiels comme Excel et PowerPoint.</p>
-        </div>
-        <div class="category-card" onclick="filterByCategory('gestion')">
-          <div class="category-icon">📋</div>
-          <h3>Gestion de projet</h3>
-          <p>Comprendre les bases pour organiser et piloter vos projets.</p>
-        </div>
-      </div>
-    </div>
-  </section>
+    <main>
+        <!-- ===== HERO SECTION ===== -->
+        <section class="hero">
+            <div class="container">
+                <h1>LOGIX Format : renforcer vos compétences dans les domaines clés</h1>
+                <p>Un accompagnement sobre et efficace pour les particuliers et les professionnels, conçu pour progresser à votre rythme, avec clarté et confiance.</p>
+                <a href="#formations" class="btn btn-primary">Découvrir nos formations</a>
+            </div>
+        </section>
 
-  <!-- BANNIÈRE STRIP -->
-  <section class="section">
-    <div class="container">
-      <div class="strip">
-        <div>
-          <h3>Des compétences pour faire évoluer votre parcours</h3>
-          <p>LOGIX FORMA a pour objectif de proposer des contenus pédagogiques accessibles, structurés et adaptés aux besoins professionnels d'aujourd'hui.</p>
-          <div class="strip-points">
-            <div class="strip-point">Formation 100 % à distance</div>
-            <div class="strip-point">Compétences numériques</div>
-            <div class="strip-point">Approche pédagogique claire</div>
-            <div class="strip-point">Vitrine gratuite de formations</div>
-          </div>
-          <a href="#formations" class="btn-white">En savoir plus</a>
+        <!-- ===== APPROACH SECTION ===== -->
+        <section id="approche" class="approach">
+            <div class="container">
+                <h2>Notre approche</h2>
+                <div class="pillars">
+                    <article class="pillar">
+                        <svg class="pillar-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true">
+                            <circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 3" stroke-linecap="round"/>
+                        </svg>
+                        <h3>Essentiel</h3>
+                        <p>Nous allons à l'essentiel pour un apprentissage efficace et sans surcharge.</p>
+                    </article>
+                    <article class="pillar">
+                        <svg class="pillar-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true">
+                            <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/>
+                            <path d="M14 2v6h6M16 13H8M16 17H8M10 9H8"/>
+                        </svg>
+                        <h3>Pratique</h3>
+                        <p>Des exercices concrets et des mises en situation pour ancrer les connaissances.</p>
+                    </article>
+                    <article class="pillar">
+                        <svg class="pillar-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true">
+                            <path d="M2 12s3-7 10-7 10 7 10 7-3 7-10 7-10-7-10-7z"/><circle cx="12" cy="12" r="3"/>
+                        </svg>
+                        <h3>Clarté</h3>
+                        <p>Des explications limpides, adaptées à tous les niveaux et à tous les profils.</p>
+                    </article>
+                    <article class="pillar">
+                        <svg class="pillar-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true">
+                            <path d="M12 2v4M12 18v4M4.93 4.93l2.83 2.83M16.24 16.24l2.83 2.83M2 12h4M18 12h4M4.93 19.07l2.83-2.83M16.24 7.76l2.83-2.83"/>
+                        </svg>
+                        <h3>Liberté</h3>
+                        <p>Apprenez à votre rythme, où que vous soyez, avec un suivi bienveillant.</p>
+                    </article>
+                </div>
+            </div>
+        </section>
+
+        <!-- ===== CATALOG SECTION ===== -->
+        <section id="formations" class="catalog">
+            <div class="container">
+                <h2>Nos formations</h2>
+                <div class="catalog-filters" role="tablist" aria-label="Filtrer les formations par catégorie">
+                    <button class="filter-btn active" data-filter="all" role="tab" aria-selected="true">Toutes</button>
+                    <button class="filter-btn" data-filter="bureautique" role="tab" aria-selected="false">Bureautique</button>
+                    <button class="filter-btn" data-filter="numerique" role="tab" aria-selected="false">Numérique</button>
+                    <button class="filter-btn" data-filter="gestion" role="tab" aria-selected="false">Gestion</button>
+                </div>
+                <div class="cards-grid">
+                    <article class="card" data-category="bureautique">
+                        <svg class="card-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true">
+                            <rect x="3" y="4" width="18" height="16" rx="2"/><path d="M7 8h10M7 12h6M7 16h8"/>
+                        </svg>
+                        <h3>Excel - Les bases</h3>
+                        <p>Maîtrisez les fondamentaux : tableaux, formules simples, mise en forme et impressions professionnelles.</p>
+                        <button class="btn btn-secondary" aria-label="Être informé de la formation Excel">Être informé</button>
+                    </article>
+                    <article class="card" data-category="numerique">
+                        <svg class="card-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true">
+                            <path d="M12 2a10 10 0 1 0 10 10A10 10 0 0 0 12 2z"/><path d="M12 6v6l4 2"/>
+                        </svg>
+                        <h3>Intelligence Artificielle</h3>
+                        <p>Découvrez ChatGPT et les outils d'IA pour améliorer votre productivité au quotidien, en toute simplicité.</p>
+                        <button class="btn btn-secondary" aria-label="Être informé de la formation Intelligence Artificielle">Être informé</button>
+                    </article>
+                    <article class="card" data-category="gestion">
+                        <svg class="card-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true">
+                            <path d="M3 7v10a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V7"/><path d="M8 7V5a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v2"/><path d="M9 12h6M9 16h6"/>
+                        </svg>
+                        <h3>Gestion de Projet</h3>
+                        <p>Les méthodes agiles et traditionnelles pour organiser, planifier et mener vos projets à bien.</p>
+                        <button class="btn btn-secondary" aria-label="Être informé de la formation Gestion de Projet">Être informé</button>
+                    </article>
+                    <article class="card" data-category="numerique">
+                        <svg class="card-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true">
+                            <path d="M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h7"/><path d="M16 3l5 5-9 9H7v-5z"/>
+                        </svg>
+                        <h3>Analyse de données</h3>
+                        <p>Initiation à la lecture, l'interprétation et la visualisation de données pour éclairer vos décisions.</p>
+                        <button class="btn btn-secondary" aria-label="Être informé de la formation Analyse de données">Être informé</button>
+                    </article>
+                </div>
+            </div>
+        </section>
+
+        <!-- ===== TEAM SECTION ===== -->
+        <section id="equipe" class="team">
+            <div class="container">
+                <h2>L'équipe</h2>
+                <div class="team-grid">
+                    <article class="team-member">
+                        <div class="member-avatar" aria-hidden="true">MF</div>
+                        <h3>Missade Fofana</h3>
+                        <p>Expertise en gestion et accompagnement pédagogique</p>
+                    </article>
+                    <article class="team-member">
+                        <div class="member-avatar" aria-hidden="true">ADT</div>
+                        <h3>Aboubacar-Dao Touré</h3>
+                        <p>Spécialiste des outils numériques et de la formation</p>
+                    </article>
+                    <article class="team-member">
+                        <div class="member-avatar" aria-hidden="true">MT</div>
+                        <h3>Moctar Touré</h3>
+                        <p>Conseil en développement de compétences et stratégie</p>
+                    </article>
+                </div>
+            </div>
+        </section>
+
+        <!-- ===== CONTACT SECTION ===== -->
+        <section id="contact" class="contact">
+            <div class="container">
+                <div class="contact-block">
+                    <h2>Nous contacter</h2>
+                    <p>Une question, un projet de formation ? N'hésitez pas à nous écrire.</p>
+                    <a href="mailto:logix.forma@gmail.com" class="contact-email">logix.forma@gmail.com</a>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- ===== FOOTER ===== -->
+    <footer>
+        <div class="container">
+            <p><a href="#">Mentions légales</a> · <a href="#">Politique de confidentialité</a></p>
+            <p style="margin-top: var(--spacing-xs);">© 2026 LOGIX Format - Association loi 1901</p>
         </div>
-        <div class="strip-visual">
-          <div class="strip-box">IA générative</div>
-          <div class="strip-box">Certifications</div>
-          <div class="strip-box">Gestion de projet</div>
-          <div class="strip-box">Data & outils pro</div>
-        </div>
-      </div>
-    </div>
-  </section>
+    </footer>
 
-  <!-- PILLS FILTRES -->
-  <section class="section">
-    <div class="container">
-      <h2 class="section-title">Des bases pour révolutionner votre carrière et votre vie</h2>
-      <p class="section-subtitle">Une sélection de domaines utiles pour les apprenants, les professionnels, les personnes en reconversion et les structures.</p>
-      <div class="pill-row">
-        <div class="pill" onclick="filterByCategory('ia')">Intelligence artificielle</div>
-        <div class="pill" onclick="filterByCategory('gestion')">Gestion de projet</div>
-        <div class="pill" onclick="filterByCategory('bureautique')">Microsoft Excel</div>
-        <div class="pill" onclick="filterByCategory('ia')">ChatGPT</div>
-        <div class="pill" onclick="filterByCategory('marketing')">Marketing numérique</div>
-        <div class="pill" onclick="filterByCategory('data')">Analyse de données</div>
-      </div>
-    </div>
-  </section>
-
-  <!-- MISSION PÉDAGOGIQUE -->
-  <section class="mission-section" id="mission">
-    <div class="container">
-      <div class="mission-grid">
-        <div class="mission-content">
-          <h2>Notre mission pédagogique</h2>
-          <p>
-            Chez LOGIX FORMA, nous croyons que l'apprentissage doit être accessible, engageant et aligné avec les besoins réels du marché du travail. 
-            Notre approche pédagogique s'inspire des meilleures pratiques des plateformes internationales, tout en restant ancrée dans le contexte francophone.
-          </p>
-          
-          <div class="mission-values">
-            <div class="mission-value">
-              <div class="mission-value-icon">🎯</div>
-              <div>
-                <h4>Objectifs clairs</h4>
-                <p>Chaque formation définit des compétences précises à acquérir.</p>
-              </div>
-            </div>
-            <div class="mission-value">
-              <div class="mission-value-icon">🔄</div>
-              <div>
-                <h4>Apprentissage actif</h4>
-                <p>Exercices pratiques, projets concrets et mises en situation.</p>
-              </div>
-            </div>
-            <div class="mission-value">
-              <div class="mission-value-icon">📊</div>
-              <div>
-                <h4>Suivi personnalisé</h4>
-                <p>Progression visible et recommandations adaptées à votre rythme.</p>
-              </div>
-            </div>
-            <div class="mission-value">
-              <div class="mission-value-icon">🤝</div>
-              <div>
-                <h4>Communauté d'apprenants</h4>
-                <p>Échanges, entraide et partage d'expériences entre pairs.</p>
-              </div>
-            </div>
-          </div>
-
-          <div class="mission-stats">
-            <div class="mission-stat">
-              <span class="mission-stat-number">100%</span>
-              <span class="mission-stat-label">Contenus gratuits en vitrine</span>
-            </div>
-            <div class="mission-stat">
-              <span class="mission-stat-number">FR</span>
-              <span class="mission-stat-label">Contenus en français</span>
-            </div>
-            <div class="mission-stat">
-              <span class="mission-stat-number">∞</span>
-              <span class="mission-stat-label">Accès à vie</span>
-            </div>
-          </div>
-        </div>
-
-        <div class="mission-visual">
-          <div class="mission-visual-title">
-            <i>📈</i> Votre progression type
-          </div>
-          
-          <div class="progress-item">
-            <div class="progress-label">
-              <span>Découverte des bases</span>
-              <span>100%</span>
-            </div>
-            <div class="progress-bar">
-              <div class="progress-fill" style="width: 100%"></div>
-            </div>
-          </div>
-          
-          <div class="progress-item">
-            <div class="progress-label">
-              <span>Pratique guidée</span>
-              <span>75%</span>
-            </div>
-            <div class="progress-bar">
-              <div class="progress-fill" style="width: 75%"></div>
-            </div>
-          </div>
-          
-          <div class="progress-item">
-            <div class="progress-label">
-              <span>Projet autonome</span>
-              <span>45%</span>
-            </div>
-            <div class="progress-bar">
-              <div class="progress-fill" style="width: 45%"></div>
-            </div>
-          </div>
-          
-          <div class="progress-item">
-            <div class="progress-label">
-              <span>Certification</span>
-              <span>20%</span>
-            </div>
-            <div class="progress-bar">
-              <div class="progress-fill" style="width: 20%"></div>
-            </div>
-          </div>
-
-          <div class="mission-cta">
-            <p><strong>Commencez gratuitement</strong> et progressez à votre rythme</p>
-            <a href="#formations" class="btn-primary">Explorer les formations</a>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- FORMATIONS -->
-  <section class="section" id="formations">
-    <div class="container">
-      <h2 class="section-title">Formations gratuites en vitrine</h2>
-      <p class="section-subtitle">Toutes nos formations sont des <strong>bases essentielles</strong> pour construire vos premières compétences professionnelles.</p>
-
-      <div class="course-tabs">
-        <div class="course-tab" onclick="showAllCourses()">Toutes</div>
-        <div class="course-tab" onclick="filterByCategory('ia')">IA</div>
-        <div class="course-tab" onclick="filterByCategory('bureautique')">Excel</div>
-        <div class="course-tab" onclick="filterByCategory('gestion')">Projet</div>
-        <div class="course-tab" onclick="filterByCategory('data')">Données</div>
-      </div>
-
-      <div class="course-grid" id="coursesGrid">
-        
-        <!-- Power BI -->
-        <div class="course-card" data-category="bureautique">
-          <div class="course-thumb">Power BI</div>
-          <div class="course-body">
-            <h3>Introduction à Power BI – Les bases</h3>
-            <div class="course-author">LOGIX FORMA</div>
-            <div class="course-desc">
-              Découvrir les fondamentaux de la visualisation de données : interface, imports simples et premiers graphiques.
-            </div>
-            <div class="course-meta">
-              <span class="course-tag bases">Les bases</span>
-              <span>Français</span>
-            </div>
-            <div class="course-price free">Gratuit</div>
-            <a href="#contact" class="course-button" onclick="showInterest('Introduction à Power BI – Les bases')">Être informé</a>
-          </div>
-        </div>
-
-        <!-- Gestion de projet (NOUVEAU - remplace Python) -->
-        <div class="course-card" data-category="gestion">
-          <div class="course-thumb">📋 Projet</div>
-          <div class="course-body">
-            <h3>Gestion de projet – Les bases</h3>
-            <div class="course-author">LOGIX FORMA</div>
-            <div class="course-desc">
-              Comprendre les fondamentaux : définir un objectif, organiser les tâches, suivre l'avancement et communiquer avec son équipe.
-            </div>
-            <div class="course-meta">
-              <span class="course-tag bases">Les bases</span>
-              <span>Français</span>
-            </div>
-            <div class="course-price free">Gratuit</div>
-            <a href="#contact" class="course-button" onclick="showInterest('Gestion de projet – Les bases')">Être informé</a>
-          </div>
-        </div>
-
-        <!-- ChatGPT -->
-        <div class="course-card" data-category="ia">
-          <div class="course-thumb">ChatGPT</div>
-          <div class="course-body">
-            <h3>ChatGPT pour la productivité – Les bases</h3>
-            <div class="course-author">LOGIX FORMA</div>
-            <div class="course-desc">
-              Apprendre les fondamentaux : formuler des prompts clairs, structurer des réponses et gagner du temps au quotidien.
-            </div>
-            <div class="course-meta">
-              <span class="course-tag bases">Les bases</span>
-              <span>Français</span>
-            </div>
-            <div class="course-price free">Gratuit</div>
-            <a href="#contact" class="course-button" onclick="showInterest('ChatGPT pour la productivité – Les bases')">Être informé</a>
-          </div>
-        </div>
-
-        <!-- Analyse de données -->
-        <div class="course-card" data-category="data">
-          <div class="course-thumb">Données</div>
-          <div class="course-body">
-            <h3>Analyse de données – Les bases</h3>
-            <div class="course-author">LOGIX FORMA</div>
-            <div class="course-desc">
-              Comprendre les fondamentaux : lire un tableau, trier des informations et interpréter des résultats simples.
-            </div>
-            <div class="course-meta">
-              <span class="course-tag bases">Les bases</span>
-              <span>Français</span>
-            </div>
-            <div class="course-price free">Gratuit</div>
-            <a href="#contact" class="course-button" onclick="showInterest('Analyse de données – Les bases')">Être informé</a>
-          </div>
-        </div>
-
-      </div>
-    </div>
-  </section>
-
-  <!-- INFO CARDS -->
-  <section class="section">
-    <div class="container info-grid">
-      <div class="info-card">
-        <h3>Certifications et compétences</h3>
-        <p>LOGIX FORMA a vocation à présenter des parcours liés à des compétences utiles, concrètes et transférables dans le monde professionnel.</p>
-        <ul class="info-list">
-          <li>Certification en bureautique</li>
-          <li>Certification en gestion de projet</li>
-          <li>Certification en analyse de données</li>
-          <li>Certification en communication</li>
-          <li>Certification en compétences numériques</li>
-        </ul>
-      </div>
-      <div class="info-card">
-        <h3>Domaines en développement</h3>
-        <p>La plateforme évoluera progressivement avec de nouveaux contenus, de nouvelles catégories et une future logique d'espace apprenant.</p>
-        <ul class="info-list">
-          <li>Communication professionnelle</li>
-          <li>Leadership</li>
-          <li>Marketing digital</li>
-          <li>Outils collaboratifs</li>
-          <li>Productivité personnelle</li>
-        </ul>
-      </div>
-    </div>
-  </section>
-
-  <!-- ÉQUIPE -->
-  <section class="section" id="equipe">
-    <div class="container">
-      <h2 class="section-title">Notre équipe</h2>
-      <p class="section-subtitle">Une équipe engagée dans la structuration et le développement de LOGIX FORMA.</p>
-      <div class="team-grid">
-        <div class="team-card">
-          <div class="team-avatar">👤</div>
-          <h3>Missade Fofana</h3>
-          <div class="team-role">Présidente</div>
-          <div class="team-email">logix.forma@gmail.com</div>
-        </div>
-        <div class="team-card">
-          <div class="team-avatar">👤</div>
-          <h3>Aboubacar-Dao Touré</h3>
-          <div class="team-role">Trésorier</div>
-          <div class="team-email">logix.forma@gmail.com</div>
-        </div>
-        <div class="team-card">
-          <div class="team-avatar">🎓</div>
-          <h3>Moctar Touré</h3>
-          <div class="team-role">Responsable pédagogique</div>
-          <div class="team-email">logix.forma@gmail.com</div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- CONTACT -->
-  <section class="section" id="contact">
-    <div class="container">
-      <div class="contact-box">
-        <h3>Contactez-nous</h3>
-        <p><strong>Email :</strong> <a href="mailto:logix.forma@gmail.com">logix.forma@gmail.com</a></p>
-        <p><strong>Projet :</strong> LOGIX FORMA</p>
-        <p><strong>Type :</strong> Plateforme LMS vitrine de formation en ligne</p>
-        <p><strong>Public :</strong> étudiants, professionnels, particuliers et entreprises</p>
-        <p style="margin-top: 14px;">Vous souhaitez être informé du lancement d'une formation gratuite ? Écrivez-nous.</p>
-      </div>
-    </div>
-  </section>
-
-  <!-- FOOTER -->
-  <footer>
-    <div class="container footer-top">
-      <div class="footer-grid">
-        <div class="footer-col">
-          <h4>LOGIX FORMA</h4>
-          <a href="#">Accueil</a>
-          <a href="#categories">Découvrir</a>
-          <a href="#formations">Formations</a>
-          <a href="#contact">Contact</a>
-        </div>
-        <div class="footer-col">
-          <h4>Compétences</h4>
-          <a href="#formations">Intelligence artificielle</a>
-          <a href="#formations">Gestion de projet</a>
-          <a href="#formations">Excel</a>
-          <a href="#formations">Analyse de données</a>
-        </div>
-        <div class="footer-col">
-          <h4>Informations</h4>
-          <a href="#" onclick="alert('Association loi 1901 - France'); return false;">À propos</a>
-          <a href="#" onclick="alert('Mentions légales en préparation.'); return false;">Mentions légales</a>
-          <a href="#" onclick="alert('Politique de confidentialité en préparation.'); return false;">Confidentialité</a>
-        </div>
-        <div class="footer-col">
-          <h4>Contact</h4>
-          <a href="mailto:logix.forma@gmail.com">logix.forma@gmail.com</a>
-        </div>
-      </div>
-    </div>
-    <div class="footer-bottom">© 2026 LOGIX FORMA - Association loi 1901 - Tous droits réservés</div>
-  </footer>
-
-  <!-- JAVASCRIPT -->
-  <script>
-    function toggleMenu() {
-      document.getElementById("navMenu").classList.toggle("active");
-    }
-    function closeMenu() {
-      if (window.innerWidth <= 720) {
-        document.getElementById("navMenu").classList.remove("active");
-      }
-    }
-    function filterCourses() {
-      const term = document.getElementById("searchInput").value.toLowerCase();
-      document.querySelectorAll(".course-card").forEach((card) => {
-        const text = card.textContent.toLowerCase();
-        card.style.display = text.includes(term) ? "block" : "none";
-      });
-    }
-    function filterByCategory(category) {
-      document.querySelectorAll(".course-card").forEach((card) => {
-        card.style.display = card.dataset.category === category ? "block" : "none";
-      });
-      document.getElementById("formations").scrollIntoView({ behavior: "smooth", block: "start" });
-    }
-    function showAllCourses() {
-      document.querySelectorAll(".course-card").forEach((card) => {
-        card.style.display = "block";
-      });
-      document.getElementById("formations").scrollIntoView({ behavior: "smooth", block: "start" });
-    }
-    function showInterest(courseName) {
-      const email = "logix.forma@gmail.com";
-      const subject = `Intérêt pour la formation : ${courseName}`;
-      const body = `Bonjour,%0D%0A%0D%0AJe souhaite être informé(e) du lancement de la formation gratuite : ${courseName}.%0D%0A%0D%0ACordialement`;
-      window.location.href = `mailto:${email}?subject=${subject}&body=${body}`;
-    }
-  </script>
+    <!-- ===== JAVASCRIPT ===== -->
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            // Mobile menu toggle
+            const mobileToggle = document.querySelector('.mobile-toggle');
+            const mainMenu = document.getElementById('main-menu');
+            mobileToggle.addEventListener('click', function() {
+                const isExpanded = this.getAttribute('aria-expanded') === 'true';
+                this.setAttribute('aria-expanded', !isExpanded);
+                mainMenu.classList.toggle('active');
+            });
+            mainMenu.querySelectorAll('a').forEach(link => {
+                link.addEventListener('click', () => {
+                    mainMenu.classList.remove('active');
+                    mobileToggle.setAttribute('aria-expanded', 'false');
+                });
+            });
+            
+            // Filter functionality
+            const filterBtns = document.querySelectorAll('.filter-btn');
+            const cards = document.querySelectorAll('.card');
+            filterBtns.forEach(btn => {
+                btn.addEventListener('click', function() {
+                    filterBtns.forEach(b => { b.classList.remove('active'); b.setAttribute('aria-selected', 'false'); });
+                    this.classList.add('active'); this.setAttribute('aria-selected', 'true');
+                    const filter = this.dataset.filter;
+                    cards.forEach(card => {
+                        if (filter === 'all' || card.dataset.category === filter) {
+                            card.style.display = 'flex';
+                            setTimeout(() => { card.style.opacity = '1'; card.style.transform = 'translateY(0)'; }, 50);
+                        } else {
+                            card.style.opacity = '0'; card.style.transform = 'translateY(10px)';
+                            setTimeout(() => { card.style.display = 'none'; }, 250);
+                        }
+                    });
+                });
+            });
+            
+            // Smooth scroll enhancement
+            document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+                anchor.addEventListener('click', function(e) {
+                    e.preventDefault();
+                    const target = document.querySelector(this.getAttribute('href'));
+                    if (target) {
+                        const headerOffset = 80;
+                        const elementPosition = target.getBoundingClientRect().top;
+                        const offsetPosition = elementPosition + window.pageYOffset - headerOffset;
+                        window.scrollTo({ top: offsetPosition, behavior: 'smooth' });
+                    }
+                });
+            });
+            
+            // "Être informé" button interaction
+            document.querySelectorAll('.card .btn-secondary').forEach(btn => {
+                btn.addEventListener('click', function() {
+                    const formation = this.closest('.card').querySelector('h3').textContent;
+                    alert(`Merci de votre intérêt pour "${formation}".\n\nVous recevrez prochainement les informations pratiques par email.`);
+                });
+            });
+            
+            // Accessibility: keyboard navigation for filters
+            filterBtns.forEach((btn, index) => {
+                btn.addEventListener('keydown', function(e) {
+                    if (e.key === 'ArrowRight' || e.key === 'ArrowDown') {
+                        e.preventDefault();
+                        const next = filterBtns[(index + 1) % filterBtns.length];
+                        next.focus(); next.click();
+                    }
+                    if (e.key === 'ArrowLeft' || e.key === 'ArrowUp') {
+                        e.preventDefault();
+                        const prev = filterBtns[(index - 1 + filterBtns.length) % filterBtns.length];
+                        prev.focus(); prev.click();
+                    }
+                });
+            });
+        });
+    </script>
 </body>
 </html>
