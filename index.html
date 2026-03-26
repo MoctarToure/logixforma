@@ -3,8 +3,8 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>LOGIX FORMA — Formation FLE A1/A2 et Blog Reconversion 2026</title>
-  <meta name="description" content="LOGIX FORMA : Formation FLE A1 et A2 en autonomie à 29€/mois. Blog expertise par Moctar TOURÉ, Directeur pédagogique. Publications février 2026." />
+  <title>LOGIX FORMA — Formations en ligne pour l'insertion et la reconversion professionnelle</title>
+  <meta name="description" content="LOGIX FORMA : association de formation en ligne pour l'insertion professionnelle, la reconversion et la montée en compétences. Ouverture prévisionnelle avril 2026." />
   <style>
     * {
       margin: 0;
@@ -17,13 +17,14 @@
       --primary-green: #7cb342;
       --accent-yellow: #fdd835;
       --orange: #ff6b35;
-      --purple: #9c27b0;
+      --purple: #6f42c1;
       --text-dark: #212529;
       --text-light: #6c757d;
       --bg-light: #f8f9fa;
       --white: #ffffff;
       --border: #e6e9ed;
       --shadow: 0 4px 16px rgba(0, 0, 0, 0.08);
+      --shadow-lg: 0 8px 32px rgba(0, 0, 0, 0.12);
       --radius: 14px;
       --max: 1200px;
     }
@@ -132,15 +133,33 @@
       color: var(--primary-blue);
     }
 
-    /* Hero */
+    /* Hero Section - Udemy Style */
     .hero {
       background: linear-gradient(135deg, var(--primary-blue) 0%, #0d2538 100%);
       color: var(--white);
-      padding: 84px 0;
-      text-align: center;
+      padding: 80px 0;
+      position: relative;
+      overflow: hidden;
     }
 
-    .badge {
+    .hero::before {
+      content: "";
+      position: absolute;
+      top: 0;
+      right: 0;
+      width: 50%;
+      height: 100%;
+      background: linear-gradient(135deg, rgba(124, 179, 66, 0.2) 0%, rgba(253, 216, 53, 0.15) 100%);
+      border-radius: 0 0 0 100px;
+    }
+
+    .hero-content {
+      position: relative;
+      z-index: 1;
+      max-width: 650px;
+    }
+
+    .hero-badge {
       display: inline-block;
       background: var(--orange);
       color: var(--white);
@@ -148,25 +167,51 @@
       border-radius: 999px;
       font-size: 0.9rem;
       font-weight: 700;
-      margin-bottom: 18px;
+      margin-bottom: 20px;
     }
 
     .hero h1 {
       font-size: clamp(2rem, 5vw, 3rem);
       line-height: 1.15;
-      margin-bottom: 18px;
+      margin-bottom: 20px;
+      font-weight: 800;
     }
 
     .hero p.lead {
-      max-width: 760px;
-      margin: 0 auto 28px;
-      font-size: 1.12rem;
-      opacity: 0.96;
+      font-size: 1.15rem;
+      margin-bottom: 30px;
+      opacity: 0.95;
+      line-height: 1.7;
+    }
+
+    .hero-features {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 15px;
+      margin-bottom: 30px;
+    }
+
+    .hero-feature {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      font-size: 0.95rem;
+    }
+
+    .hero-feature .icon {
+      width: 24px;
+      height: 24px;
+      background: var(--primary-green);
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 0.8rem;
     }
 
     .btn-group {
       display: flex;
-      justify-content: center;
+      justify-content: flex-start;
       gap: 14px;
       flex-wrap: wrap;
     }
@@ -176,7 +221,7 @@
       align-items: center;
       justify-content: center;
       gap: 8px;
-      padding: 14px 24px;
+      padding: 14px 28px;
       border-radius: 10px;
       border: none;
       cursor: pointer;
@@ -213,6 +258,42 @@
       background: #689f38;
     }
 
+    /* Status Section */
+    .status-section {
+      background: var(--white);
+      padding: 50px 0;
+      border-bottom: 1px solid var(--border);
+    }
+
+    .status-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 30px;
+    }
+
+    .status-card {
+      text-align: center;
+      padding: 25px;
+      background: var(--bg-light);
+      border-radius: var(--radius);
+    }
+
+    .status-card .icon {
+      font-size: 2.5rem;
+      margin-bottom: 15px;
+    }
+
+    .status-card h3 {
+      color: var(--primary-blue);
+      margin-bottom: 10px;
+      font-size: 1.1rem;
+    }
+
+    .status-card p {
+      color: var(--text-light);
+      font-size: 0.95rem;
+    }
+
     /* Sections */
     section {
       padding: 64px 0;
@@ -222,7 +303,15 @@
       text-align: center;
       color: var(--primary-blue);
       font-size: clamp(1.7rem, 3vw, 2.3rem);
-      margin-bottom: 38px;
+      margin-bottom: 18px;
+    }
+
+    .section-subtitle {
+      text-align: center;
+      color: var(--text-light);
+      font-size: 1.1rem;
+      max-width: 700px;
+      margin: 0 auto 50px;
     }
 
     .grid {
@@ -231,7 +320,7 @@
     }
 
     .features-grid {
-      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
     }
 
     .feature-card,
@@ -252,6 +341,12 @@
     .feature-card {
       padding: 28px;
       text-align: center;
+      transition: transform 0.2s ease, box-shadow 0.2s ease;
+    }
+
+    .feature-card:hover {
+      transform: translateY(-4px);
+      box-shadow: var(--shadow-lg);
     }
 
     .feature-card .icon {
@@ -264,9 +359,9 @@
       margin-bottom: 10px;
     }
 
-    /* Formations */
+    /* Formations Grid */
     .formations-grid {
-      grid-template-columns: repeat(auto-fit, minmax(290px, 1fr));
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
     }
 
     .formation-card {
@@ -278,6 +373,12 @@
       display: flex;
       flex-direction: column;
       gap: 12px;
+      transition: transform 0.2s ease, box-shadow 0.2s ease;
+    }
+
+    .formation-card:hover {
+      transform: translateY(-4px);
+      box-shadow: var(--shadow-lg);
     }
 
     .formation-card.green {
@@ -286,6 +387,15 @@
 
     .formation-card.yellow {
       border-top-color: var(--accent-yellow);
+    }
+
+    .formation-card.purple {
+      border-top-color: var(--purple);
+    }
+
+    .formation-card.coming-soon {
+      border-top-color: var(--text-light);
+      opacity: 0.85;
     }
 
     .formation-card h3 {
@@ -339,6 +449,53 @@
     }
 
     .muted {
+      color: var(--text-light);
+    }
+
+    /* Domains Section */
+    .domains-grid {
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    }
+
+    .domain-card {
+      background: var(--white);
+      border-radius: var(--radius);
+      box-shadow: var(--shadow);
+      padding: 30px;
+      text-align: center;
+      transition: transform 0.2s ease;
+    }
+
+    .domain-card:hover {
+      transform: translateY(-4px);
+    }
+
+    .domain-card .icon {
+      font-size: 3rem;
+      margin-bottom: 15px;
+    }
+
+    .domain-card h3 {
+      color: var(--primary-blue);
+      margin-bottom: 10px;
+    }
+
+    .domain-card .status {
+      display: inline-block;
+      padding: 4px 12px;
+      border-radius: 999px;
+      font-size: 0.8rem;
+      font-weight: 700;
+      margin-top: 10px;
+    }
+
+    .domain-card .status.available {
+      background: var(--primary-green);
+      color: var(--white);
+    }
+
+    .domain-card .status.coming {
+      background: var(--bg-light);
       color: var(--text-light);
     }
 
@@ -421,16 +578,11 @@
 
     /* Values Grid */
     .values-grid,
-    .info-grid,
-    .article-grid {
+    .info-grid {
       display: grid;
       gap: 18px;
       grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
       margin-top: 22px;
-    }
-
-    .article-grid {
-      grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
     }
 
     .value-card,
@@ -661,7 +813,7 @@
 
     .article-card:hover {
       transform: translateY(-4px);
-      box-shadow: 0 8px 24px rgba(0, 0, 0, 0.12);
+      box-shadow: var(--shadow-lg);
     }
 
     .article-card .category {
@@ -1025,6 +1177,10 @@
         padding: 70px 0;
       }
 
+      .hero-features {
+        grid-template-columns: 1fr;
+      }
+
       .article-meta {
         flex-direction: column;
         gap: 8px;
@@ -1067,104 +1223,215 @@
 
   <!-- HOME PAGE -->
   <div id="home" class="page active">
+    <!-- Hero Section -->
     <section class="hero">
       <div class="container">
-        <span class="badge">🎯 Formations FLE 100 % en ligne</span>
-        <h1>Apprenez le français à votre rythme<br />avec LOGIX FORMA</h1>
-        <p class="lead">
-          LOGIX FORMA propose des formations FLE niveau A1 et A2 en <strong>autonomie</strong>,
-          accessibles 24h/24 et 7j/7. Tarif solidaire de <strong>29 € la formation</strong>.
-          Accompagnement individualisé disponible en option.
-        </p>
-        <div class="btn-group">
-          <button class="btn btn-primary" onclick="showPage('contact')">📧 Demander une information</button>
-          <button class="btn btn-secondary" onclick="showPage('formations')">🎓 Voir les formations</button>
-          <button class="btn btn-green" onclick="showPage('blog')">📖 Lire le blog</button>
+        <div class="hero-content">
+          <span class="hero-badge">🎯 Ouverture prévisionnelle : 15 avril 2026</span>
+          <h1>Formations en ligne pour l'insertion et la reconversion professionnelle</h1>
+          <p class="lead">
+            LOGIX FORMA accompagne les adultes dans leur développement professionnel grâce à des parcours de formation en ligne accessibles, progressifs et orientés vers l'emploi.
+          </p>
+          <div class="hero-features">
+            <div class="hero-feature">
+              <div class="icon">✓</div>
+              <span>Insertion professionnelle</span>
+            </div>
+            <div class="hero-feature">
+              <div class="icon">✓</div>
+              <span>Reconversion de carrière</span>
+            </div>
+            <div class="hero-feature">
+              <div class="icon">✓</div>
+              <span>Français professionnel</span>
+            </div>
+            <div class="hero-feature">
+              <div class="icon">✓</div>
+              <span>Compétences numériques</span>
+            </div>
+          </div>
+          <div class="btn-group">
+            <button class="btn btn-primary" onclick="showPage('formations')">Voir les formations</button>
+            <button class="btn btn-secondary" onclick="showPage('contact')">Nous contacter</button>
+            <button class="btn btn-green" onclick="showPage('blog')">Lire le blog</button>
+          </div>
         </div>
       </div>
     </section>
 
+    <!-- Status Section -->
+    <section class="status-section">
+      <div class="container">
+        <div class="status-grid">
+          <div class="status-card">
+            <div class="icon">🏛️</div>
+            <h3>Association existante</h3>
+            <p>LOGIX FORMA est une association loi 1901 déclarée</p>
+          </div>
+          <div class="status-card">
+            <div class="icon">⚙️</div>
+            <h3>Activité en préparation</h3>
+            <p>Les parcours de formation sont en cours de finalisation</p>
+          </div>
+          <div class="status-card">
+            <div class="icon">📅</div>
+            <h3>Ouverture : 15 avril 2026</h3>
+            <p>Lancement prévisionnel des premiers parcours</p>
+          </div>
+          <div class="status-card">
+            <div class="icon">💻</div>
+            <h3>100% en ligne</h3>
+            <p>Formation accessible à distance, à votre rythme</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Why Choose Section -->
     <section>
       <div class="container">
         <h2 class="section-title">Pourquoi choisir LOGIX FORMA ?</h2>
+        <p class="section-subtitle">
+          Une approche pédagogique conçue pour l'autonomie et la progression professionnelle
+        </p>
         <div class="grid features-grid">
           <div class="feature-card">
             <div class="icon">💻</div>
-            <h3>100 % en ligne</h3>
+            <h3>100% en ligne</h3>
             <p>Accédez à vos cours depuis chez vous, à votre rythme, 24h/24 et 7j/7. Compatible ordinateur, tablette et mobile.</p>
           </div>
           <div class="feature-card">
             <div class="icon">⏱️</div>
-            <h3>Formation en autonomie</h3>
+            <h3>Apprentissage en autonomie</h3>
             <p>Apprenez à votre propre rythme sans contrainte d'horaire. Accès illimité aux contenus pendant la durée de la formation.</p>
           </div>
           <div class="feature-card">
-            <div class="icon">🎓</div>
-            <h3>Accompagnement en option</h3>
-            <p>Un suivi individualisé est disponible en complément : corrections personnalisées, feedbacks et conseils de progression.</p>
+            <div class="icon">🎯</div>
+            <h3>Orientation professionnelle</h3>
+            <p>Des contenus pensés pour l'insertion, la reconversion et l'évolution de carrière.</p>
           </div>
           <div class="feature-card">
             <div class="icon">💶</div>
-            <h3>Tarif solidaire</h3>
-            <p>Un tarif unique et accessible : <strong>29 € la formation</strong>, pour les niveaux A1 et A2.</p>
+            <h3>Tarif accessible</h3>
+            <p>Un tarif unique et accessible : <strong>29 € la formation</strong> pour les niveaux A1 et A2.</p>
           </div>
           <div class="feature-card">
-            <div class="icon">📘</div>
-            <h3>Parcours certifiants</h3>
-            <p>Des parcours structurés alignés sur le CECRL (Cadre Européen Commun de Référence pour les Langues).</p>
+            <div class="icon">📚</div>
+            <h3>Parcours progressifs</h3>
+            <p>Des parcours structurés et alignés sur des objectifs pédagogiques clairs.</p>
+          </div>
+          <div class="feature-card">
+            <div class="icon">🔍</div>
+            <h3>Transparence</h3>
+            <p>Une communication claire sur l'offre, les tarifs et les conditions d'accès.</p>
           </div>
         </div>
       </div>
     </section>
 
+    <!-- French Professional Levels -->
     <section style="background: var(--white);">
       <div class="container">
-        <h2 class="section-title">Nos formations</h2>
+        <h2 class="section-title">Français professionnel</h2>
+        <p class="section-subtitle">
+          Des parcours de français adaptés aux besoins professionnels, du niveau débutant au niveau avancé
+        </p>
         <div class="grid formations-grid">
           <article class="formation-card">
-            <h3>Français Langue Étrangère — Niveau A1</h3>
-            <p>Un parcours complet pour acquérir les bases : se présenter, parler de soi, comprendre les situations quotidiennes et communiquer simplement.</p>
+            <h3>Niveau A1 — Débutant</h3>
+            <p>Acquérir les bases : se présenter, comprendre les situations quotidiennes et communiquer simplement.</p>
             <div class="tag-wrap">
               <span class="tag blue">10 modules</span>
-              <span class="tag">100 % en ligne</span>
-              <span class="tag orange">En autonomie</span>
+              <span class="tag">100% en ligne</span>
+              <span class="tag orange">Disponible au lancement</span>
             </div>
             <p class="price">29 € <small>la formation</small></p>
-            <p class="muted">Parcours complet A1 aligné CECRL. Accès illimité pendant 3 mois.</p>
-            <button class="btn btn-primary" onclick="showPage('formations')">Voir la fiche A1</button>
+            <p class="muted">Parcours complet aligné CECRL. Accès illimité pendant 3 mois.</p>
+            <button class="btn btn-primary" onclick="showPage('formations')">Voir le programme</button>
           </article>
 
           <article class="formation-card green">
-            <h3>Français Langue Étrangère — Niveau A2</h3>
-            <p>Un parcours complet pour renforcer l'autonomie en français : raconter, expliquer, donner son avis, écrire un message court.</p>
+            <h3>Niveau A2 — Intermédiaire</h3>
+            <p>Renforcer l'autonomie : raconter, expliquer, donner son avis, gérer des situations variées.</p>
             <div class="tag-wrap">
               <span class="tag blue">10 modules</span>
-              <span class="tag">100 % en ligne</span>
-              <span class="tag orange">En autonomie</span>
+              <span class="tag">100% en ligne</span>
+              <span class="tag orange">Disponible au lancement</span>
             </div>
             <p class="price">29 € <small>la formation</small></p>
-            <p class="muted">Parcours complet A2 aligné CECRL. Accès illimité pendant 3 mois.</p>
-            <button class="btn btn-primary" onclick="showPage('formations')">Voir la fiche A2</button>
+            <p class="muted">Parcours complet aligné CECRL. Accès illimité pendant 3 mois.</p>
+            <button class="btn btn-primary" onclick="showPage('formations')">Voir le programme</button>
           </article>
 
-          <article class="formation-card yellow">
-            <h3>Accompagnement individualisé</h3>
-            <p>En complément de votre formation en autonomie, bénéficiez d'un suivi personnalisé avec corrections et feedbacks.</p>
+          <article class="formation-card yellow coming-soon">
+            <h3>Niveaux B1-B2 — Avancé</h3>
+            <p>Consolider son autonomie et communiquer avec aisance dans des contextes professionnels variés.</p>
             <div class="tag-wrap">
-              <span class="tag purple">En option</span>
-              <span class="tag">Suivi personnalisé</span>
+              <span class="tag grey">En préparation</span>
+              <span class="tag grey">À venir</span>
             </div>
-            <p class="muted">Disponible pour les formations A1 et A2.</p>
-            <button class="btn btn-secondary" onclick="showPage('contact')">En savoir plus</button>
+            <p class="muted">Parcours en cours de développement.</p>
+            <button class="btn btn-secondary" onclick="showPage('contact')">Être informé</button>
+          </article>
+
+          <article class="formation-card purple coming-soon">
+            <h3>Niveaux C1-C2 — Expert</h3>
+            <p>Maîtriser la langue dans tous les contextes professionnels et académiques.</p>
+            <div class="tag-wrap">
+              <span class="tag grey">En préparation</span>
+              <span class="tag grey">À venir</span>
+            </div>
+            <p class="muted">Parcours en cours de développement.</p>
+            <button class="btn btn-secondary" onclick="showPage('contact')">Être informé</button>
           </article>
         </div>
       </div>
     </section>
 
+    <!-- Training Domains -->
     <section>
       <div class="container">
+        <h2 class="section-title">Domaines de formation</h2>
+        <p class="section-subtitle">
+          Un catalogue en développement pour répondre aux besoins du marché professionnel
+        </p>
+        <div class="grid domains-grid">
+          <div class="domain-card">
+            <div class="icon">📚</div>
+            <h3>Français professionnel</h3>
+            <p>Parcours FLE du niveau A1 au C2</p>
+            <span class="status available">Disponible au lancement</span>
+          </div>
+          <div class="domain-card">
+            <div class="icon">📊</div>
+            <h3>Gestion de projet</h3>
+            <p>Méthodologies et outils de gestion</p>
+            <span class="status coming">À venir</span>
+          </div>
+          <div class="domain-card">
+            <div class="icon">💻</div>
+            <h3>Compétences numériques</h3>
+            <p>Outils digitaux et bureautique</p>
+            <span class="status coming">À venir</span>
+          </div>
+          <div class="domain-card">
+            <div class="icon">🤖</div>
+            <h3>Intelligence artificielle</h3>
+            <p>Initiation et usages professionnels</p>
+            <span class="status coming">À venir</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Blog Section -->
+    <section style="background: var(--white);">
+      <div class="container">
         <h2 class="section-title">Blog Reconversion et Formation</h2>
-        <div class="content-box">
+        <p class="section-subtitle">
+          Articles rédigés par <strong>Moctar TOURÉ, Directeur pédagogique</strong>, et publiés en <strong>février 2026</strong>
+        </p>
+        <div class="content-box" style="margin-bottom: 40px;">
           <h2>Informations éditoriales</h2>
           <p>
             Les contenus éditoriaux de LOGIX FORMA sont rédigés par
@@ -1182,8 +1449,8 @@
         <div class="grid article-grid">
           <article class="article-card">
             <span class="category">Financement</span>
-            <h3>Comment financer sa reconversion en 2025 : La stratégie d'ingénierie financière</h3>
-            <p>Découvrez la stratégie d'ingénierie financière pour financer votre reconversion tech en 2025. CPF, PTP, OPCO : Moctar TOURÉ vous guide.</p>
+            <h3>Comment financer sa reconversion en 2025</h3>
+            <p>Découvrez la stratégie d'ingénierie financière pour financer votre reconversion. CPF, PTP, OPCO : Moctar TOURÉ vous guide.</p>
             <div class="meta">
               <span>📅 Février 2026</span>
               <span class="read-more" onclick="showArticle('article-1')">Lire →</span>
@@ -1192,7 +1459,7 @@
 
           <article class="article-card">
             <span class="category green">Métiers Tech</span>
-            <h3>5 métiers tech qui recrutent sans diplôme : La fin de la méritocratie papier</h3>
+            <h3>5 métiers tech qui recrutent sans diplôme</h3>
             <p>5 métiers tech qui recrutent sans diplôme en 2025. Moctar TOURÉ explique comment la compétence prime sur le titre.</p>
             <div class="meta">
               <span>📅 Février 2026</span>
@@ -1202,7 +1469,7 @@
 
           <article class="article-card">
             <span class="category blue">Témoignage</span>
-            <h3>Témoignage : De la restauration au code, le voyage intérieur de Karim</h3>
+            <h3>Témoignage : De la restauration au code</h3>
             <p>Témoignage reconversion : de la restauration au code. Moctar TOURÉ raconte l'histoire de Karim.</p>
             <div class="meta">
               <span>📅 Février 2026</span>
@@ -1212,8 +1479,8 @@
 
           <article class="article-card">
             <span class="category">Guide Administratif</span>
-            <h3>CPF, OPCO, FIF : Le guide de navigation administrative pour reconvertis</h3>
-            <p>Guide complet financement formation 2025 : CPF, OPCO, ATPRO, FIF-PL. Moctar TOURÉ décrypte l'administration.</p>
+            <h3>CPF, OPCO, FIF : Le guide administratif</h3>
+            <p>Guide complet financement formation 2025. Moctar TOURÉ décrypte l'administration pour votre reconversion.</p>
             <div class="meta">
               <span>📅 Février 2026</span>
               <span class="read-more" onclick="showArticle('article-4')">Lire →</span>
@@ -1226,12 +1493,12 @@
       </div>
     </section>
 
+    <!-- Final CTA -->
     <section class="cta-section">
       <div class="container">
-        <h2>Besoin d'un renseignement sur A1 ou A2 ?</h2>
+        <h2>Vous souhaitez suivre le lancement de LOGIX FORMA ?</h2>
         <p>
-          Contactez LOGIX FORMA pour recevoir des informations sur le parcours, le format en autonomie,
-          les options d'accompagnement et le tarif solidaire.
+          Restez informé de l'ouverture des premiers parcours et des nouvelles formations à venir.
         </p>
         <button class="btn btn-primary" style="background: var(--white); color: var(--primary-blue);" onclick="showPage('contact')">
           Nous contacter
@@ -1245,21 +1512,35 @@
     <div class="page-header">
       <div class="container">
         <h1>Nos formations</h1>
-        <p>Parcours FLE A1 et A2 — 100 % en ligne en autonomie — tarif solidaire de 29 € la formation</p>
+        <p>Des parcours en ligne pour l'insertion et la reconversion professionnelle</p>
       </div>
     </div>
 
     <section>
       <div class="container">
+        <div class="content-box">
+          <h2>Statut de l'activité</h2>
+          <p>
+            LOGIX FORMA est une association existante dont l'activité de formation est actuellement en cours de préparation.
+          </p>
+          <p>
+            L'ouverture opérationnelle est prévue vers le <strong>15 avril 2026</strong> avec les premiers parcours de français professionnel (niveaux A1 et A2).
+          </p>
+          <p>
+            Les niveaux supérieurs (B1-B2, C1-C2) et les autres domaines de formation (gestion de projet, compétences numériques, intelligence artificielle) seront déployés progressivement après le lancement initial.
+          </p>
+        </div>
+
+        <!-- A1 -->
         <article class="formation-detail">
           <div class="formation-header">
-            <h2>Parcours FLE — Niveau A1</h2>
+            <h2>Français professionnel — Niveau A1</h2>
             <p>Débutant complet → A1 consolidé — Formation en autonomie</p>
           </div>
           <div class="formation-content">
             <div class="formation-section">
               <h3>🎯 Objectif</h3>
-              <p>Permettre à l'apprenant de communiquer dans des situations simples de la vie quotidienne : se présenter, donner ses informations personnelles, parler du temps, de la famille, des achats, du restaurant, du logement et des loisirs.</p>
+              <p>Permettre à l'apprenant de communiquer dans des situations simples de la vie quotidienne et professionnelle : se présenter, donner ses informations personnelles, comprendre des consignes basiques.</p>
             </div>
 
             <div class="formation-section">
@@ -1311,7 +1592,7 @@
                 </div>
                 <div class="info-card">
                   <div class="label">Format</div>
-                  <div class="value">100 % en ligne</div>
+                  <div class="value">100% en ligne</div>
                 </div>
                 <div class="info-card">
                   <div class="label">Rythme</div>
@@ -1330,35 +1611,20 @@
               </div>
             </div>
 
-            <div class="formation-section">
-              <h3>➕ Option : Accompagnement individualisé</h3>
-              <div class="option-box">
-                <h4>🎓 Suivi personnalisé avec formateur</h4>
-                <p>En complément de votre formation en autonomie, ajoutez un accompagnement individualisé pour optimiser votre progression.</p>
-                <p class="option-price">À partir de 49 € <small>forfait accompagnement</small></p>
-                <ul style="margin-top: 12px; margin-left: 18px;">
-                  <li>Corrections personnalisées des exercices écrits</li>
-                  <li>Feedbacks réguliers sur votre progression</li>
-                  <li>Conseils pédagogiques adaptés à votre profil</li>
-                  <li>Réponses à vos questions sous 48h ouvrées</li>
-                  <li>1 visioconférence de bilan (30 min)</li>
-                </ul>
-              </div>
-            </div>
-
             <button class="btn btn-primary" onclick="showPage('contact')">Demander des informations sur A1</button>
           </div>
         </article>
 
+        <!-- A2 -->
         <article class="formation-detail">
           <div class="formation-header alt">
-            <h2>Parcours FLE — Niveau A2</h2>
+            <h2>Français professionnel — Niveau A2</h2>
             <p>A1 validé → A2 consolidé — Formation en autonomie</p>
           </div>
           <div class="formation-content">
             <div class="formation-section">
               <h3>🎯 Objectif</h3>
-              <p>Permettre à l'apprenant d'élargir son autonomie en français dans des situations sociales, personnelles et professionnelles plus variées : raconter, expliquer, conseiller, justifier, écrire un message et interagir avec plus d'aisance.</p>
+              <p>Permettre à l'apprenant d'élargir son autonomie en français dans des situations sociales, personnelles et professionnelles plus variées.</p>
             </div>
 
             <div class="formation-section">
@@ -1410,7 +1676,7 @@
                 </div>
                 <div class="info-card">
                   <div class="label">Format</div>
-                  <div class="value">100 % en ligne</div>
+                  <div class="value">100% en ligne</div>
                 </div>
                 <div class="info-card">
                   <div class="label">Rythme</div>
@@ -1430,30 +1696,48 @@
               </div>
             </div>
 
-            <div class="formation-section">
-              <h3>➕ Option : Accompagnement individualisé</h3>
-              <div class="option-box">
-                <h4>🎓 Suivi personnalisé avec formateur</h4>
-                <p>En complément de votre formation en autonomie, ajoutez un accompagnement individualisé pour optimiser votre progression.</p>
-                <p class="option-price">À partir de 49 € <small>forfait accompagnement</small></p>
-                <ul style="margin-top: 12px; margin-left: 18px;">
-                  <li>Corrections personnalisées des exercices écrits</li>
-                  <li>Feedbacks réguliers sur votre progression</li>
-                  <li>Conseils pédagogiques adaptés à votre profil</li>
-                  <li>Réponses à vos questions sous 48h ouvrées</li>
-                  <li>1 visioconférence de bilan (30 min)</li>
-                </ul>
-              </div>
-            </div>
-
             <button class="btn btn-primary" onclick="showPage('contact')">Demander des informations sur A2</button>
           </div>
         </article>
 
-        <div class="coming-soon-box">
-          <h2 style="color: var(--primary-blue); margin-bottom: 14px;">🖥️ Initiation numérique</h2>
-          <p style="margin-bottom: 16px;">Un parcours complémentaire d'initiation aux usages numériques peut être développé en complément des parcours FLE.</p>
-          <button class="btn btn-secondary" onclick="showPage('contact')">Me tenir informé</button>
+        <!-- B1-B2 Coming Soon -->
+        <article class="formation-detail coming-soon-box" style="background: var(--white); border: 2px dashed #d5d9df; box-shadow: var(--shadow);">
+          <h2 style="color: var(--primary-blue); margin-bottom: 14px;">Français professionnel — Niveaux B1-B2</h2>
+          <p style="margin-bottom: 16px;">
+            Parcours en préparation pour consolider l'autonomie et communiquer avec aisance dans des contextes professionnels variés.
+          </p>
+          <div class="tag-wrap" style="justify-content: center; margin-bottom: 20px;">
+            <span class="tag grey">En préparation</span>
+            <span class="tag grey">À venir</span>
+          </div>
+          <button class="btn btn-secondary" onclick="showPage('contact')">Être informé de la disponibilité</button>
+        </article>
+
+        <!-- C1-C2 Coming Soon -->
+        <article class="formation-detail coming-soon-box" style="background: var(--white); border: 2px dashed #d5d9df; box-shadow: var(--shadow);">
+          <h2 style="color: var(--primary-blue); margin-bottom: 14px;">Français professionnel — Niveaux C1-C2</h2>
+          <p style="margin-bottom: 16px;">
+            Parcours en préparation pour maîtriser la langue dans tous les contextes professionnels et académiques.
+          </p>
+          <div class="tag-wrap" style="justify-content: center; margin-bottom: 20px;">
+            <span class="tag grey">En préparation</span>
+            <span class="tag grey">À venir</span>
+          </div>
+          <button class="btn btn-secondary" onclick="showPage('contact')">Être informé de la disponibilité</button>
+        </article>
+
+        <!-- Other Domains -->
+        <div class="coming-soon-box" style="margin-top: 40px;">
+          <h2 style="color: var(--primary-blue); margin-bottom: 14px;">📂 Autres formations en préparation</h2>
+          <p style="margin-bottom: 20px;">
+            LOGIX FORMA développe progressivement son catalogue pour répondre aux besoins du marché professionnel.
+          </p>
+          <div style="display: flex; gap: 20px; justify-content: center; flex-wrap: wrap; margin-bottom: 20px;">
+            <span style="background: var(--bg-light); padding: 10px 20px; border-radius: 20px;">📊 Gestion de projet</span>
+            <span style="background: var(--bg-light); padding: 10px 20px; border-radius: 20px;">💻 Compétences numériques</span>
+            <span style="background: var(--bg-light); padding: 10px 20px; border-radius: 20px;">🤖 Intelligence artificielle</span>
+          </div>
+          <button class="btn btn-secondary" onclick="showPage('contact')">Me tenir informé des nouvelles formations</button>
         </div>
       </div>
     </section>
@@ -1463,7 +1747,7 @@
   <div id="blog" class="page">
     <div class="page-header">
       <div class="container">
-        <h1>Blog Reconversion Tech 2025</h1>
+        <h1>Blog Reconversion et Formation</h1>
         <p>Articles signés par Moctar TOURÉ, Directeur pédagogique — Publication : février 2026</p>
       </div>
     </div>
@@ -1635,9 +1919,9 @@
           <p>Ne laissez pas un chiffre sur un devis vous empêcher d'accéder à la carrière que vous méritez. La plupart de nos étudiants ont pensé qu'ils ne pourraient pas se le permettre. Ils ont tous trouvé une solution.</p>
 
           <div class="cta-box">
-            <p><strong>👉 Vous souhaitez un audit personnalisé de votre situation financière ?</strong></p>
-            <button class="btn btn-primary" onclick="showPage('contact')" data-cta="article-1">CONTACTEZ-NOUS POUR RÉSERVER VOTRE AUDIT FINANCEMENT STRATÉGIQUE</button>
-            <p style="margin-top: 12px; font-size: 0.9rem; color: var(--text-light);">Je ne vous vendrai pas une formation. Nous allons construire ensemble votre plan de financement sur mesure, en toute transparence.</p>
+            <p><strong>👉 Vous souhaitez suivre l'actualité de LOGIX FORMA ?</strong></p>
+            <button class="btn btn-primary" onclick="showPage('contact')" data-cta="article-1">NOUS CONTACTER POUR RECEVOIR DES INFORMATIONS</button>
+            <p style="margin-top: 12px; font-size: 0.9rem; color: var(--text-light);">Restez informé du lancement de nos formations et des nouvelles opportunités.</p>
           </div>
 
           <div class="author-box">
@@ -1760,8 +2044,8 @@
           <p>C'est cela, la liberté de la reconversion tech.</p>
 
           <div class="cta-box">
-            <p><strong>👉 Vous souhaitez découvrir nos programmes certifiants RNCP ?</strong></p>
-            <button class="btn btn-primary" onclick="showPage('contact')" data-cta="article-2">CONTACTEZ-NOUS POUR DÉCOUVRIR NOS PROGRAMMES CERTIFIANTS RNCP</button>
+            <p><strong>👉 Vous souhaitez suivre le lancement de LOGIX FORMA ?</strong></p>
+            <button class="btn btn-primary" onclick="showPage('contact')" data-cta="article-2">NOUS CONTACTER POUR RECEVOIR DES INFORMATIONS</button>
           </div>
 
           <div class="author-box">
@@ -1839,9 +2123,9 @@
           <p>Karim l'a fait. Des centaines d'autres l'ont fait. Vous le pouvez aussi. Nous sommes là pour vous tendre la main quand vous trébucherez. Parce que vous trébucherez. Et nous serons là pour vous relever.</p>
 
           <div class="cta-box">
-            <p><strong>👉 Vous souhaitez parler à un ancien élève ?</strong></p>
-            <button class="btn btn-primary" onclick="showPage('contact')" data-cta="article-3">CONTACTEZ-NOUS POUR PARLER À UN ANCIEN ÉLÈVE</button>
-            <p style="margin-top: 12px; font-size: 0.9rem; color: var(--text-light);">Parlez avec ceux qui ont marché dans vos pas. La preuve sociale est la meilleure réassurance.</p>
+            <p><strong>👉 Vous souhaitez suivre le lancement de LOGIX FORMA ?</strong></p>
+            <button class="btn btn-primary" onclick="showPage('contact')" data-cta="article-3">NOUS CONTACTER POUR RECEVOIR DES INFORMATIONS</button>
+            <p style="margin-top: 12px; font-size: 0.9rem; color: var(--text-light);">Restez informé des nouvelles formations et opportunités.</p>
           </div>
 
           <div class="author-box">
@@ -1990,9 +2274,9 @@
           <p>Si vous vous sentez dépassé, sachez que notre équipe administrative est là pour agir comme un "compilateur" pour vous. Nous traduisons le jargon administratif en actions simples. Mais venir avec les bases comprises, c'est déjà gagner 50% du temps de traitement.</p>
 
           <div class="cta-box">
-            <p><strong>👉 Vous souhaitez recevoir notre guide complet des financements 2025 ?</strong></p>
-            <button class="btn btn-primary" onclick="showPage('contact')" data-cta="article-4">CONTACTEZ-NOUS POUR RECEVOIR NOTRE GUIDE PDF COMPLET DES FINANCEMENTS 2025</button>
-            <p style="margin-top: 12px; font-size: 0.9rem; color: var(--text-light);">Ou prenez rendez-vous avec notre responsable administrative pour un audit de dossier.</p>
+            <p><strong>👉 Vous souhaitez suivre le lancement de LOGIX FORMA ?</strong></p>
+            <button class="btn btn-primary" onclick="showPage('contact')" data-cta="article-4">NOUS CONTACTER POUR RECEVOIR DES INFORMATIONS</button>
+            <p style="margin-top: 12px; font-size: 0.9rem; color: var(--text-light);">Restez informé des nouvelles formations et opportunités.</p>
           </div>
 
           <div class="author-box">
@@ -2011,17 +2295,21 @@
   <div id="about" class="page">
     <div class="page-header">
       <div class="container">
-        <h1>Qui sommes-nous ?</h1>
-        <p>Une association au service de la formation et de l'insertion</p>
+        <h1>À propos de LOGIX FORMA</h1>
+        <p>Association de formation en ligne pour l'insertion et la reconversion professionnelle</p>
       </div>
     </div>
 
     <section>
       <div class="container">
         <div class="content-box">
-          <h2>Notre histoire</h2>
-          <p><strong>LOGIX FORMA</strong> est une association loi 1901 créée à Montreuil. Notre mission est de permettre aux personnes étrangères en France d'apprendre le français et d'accéder à la formation professionnelle, où qu'elles vivent.</p>
-          <p>Nous pensons qu'une formation en ligne peut être <strong>humaine</strong>, <strong>accompagnée</strong> et <strong>efficace</strong>. Pas de parcours impersonnel : nos formateurs sont en direct, avec les apprenants.</p>
+          <h2>Notre mission</h2>
+          <p>
+            <strong>LOGIX FORMA</strong> est une association loi 1901 dont la mission est d'accompagner les adultes dans leur développement professionnel grâce à des parcours de formation en ligne accessibles et progressifs.
+          </p>
+          <p>
+            Nous croyons que la formation en ligne peut être <strong>humaine</strong>, <strong>autonome</strong> et <strong>efficace</strong>. Nos parcours sont conçus pour l'insertion professionnelle, la reconversion de carrière et la montée en compétences.
+          </p>
         </div>
 
         <div class="content-box">
@@ -2029,27 +2317,23 @@
           <div class="timeline">
             <div class="timeline-item">
               <span class="date">2021</span>
-              <p><strong>Création de l'association</strong><br>Fondation à Montreuil avec l'ambition de démocratiser l'accès aux compétences professionnelles.</p>
+              <p><strong>Création de l'association</strong><br>Fondation avec l'ambition de démocratiser l'accès aux compétences professionnelles.</p>
             </div>
             <div class="timeline-item">
               <span class="date">2021-2025</span>
-              <p><strong>Phase de construction</strong><br>Travail sur la pédagogie, les outils numériques et le réseau de partenaires.</p>
+              <p><strong>Phase de structuration</strong><br>Travail sur la pédagogie, les outils numériques et le réseau de partenaires.</p>
             </div>
             <div class="timeline-item">
               <span class="date">Février 2026</span>
-              <p><strong>Lancement du blog</strong><br>Publication des 4 articles fondateurs par Moctar TOURÉ, Directeur pédagogique.</p>
+              <p><strong>Publication du blog</strong><br>Lancement des 4 articles fondateurs rédigés par Moctar TOURÉ, Directeur pédagogique.</p>
             </div>
             <div class="timeline-item">
-              <span class="date">Avril 2026</span>
-              <p><strong>Lancement opérationnel</strong><br>Ouverture des formations FLE A1 et A2 en ligne avec accompagnement personnalisé.</p>
+              <span class="date">15 avril 2026</span>
+              <p><strong>Ouverture opérationnelle prévisionnelle</strong><br>Lancement des premiers parcours de français professionnel (niveaux A1 et A2).</p>
             </div>
             <div class="timeline-item">
-              <span class="date">Mai 2026</span>
-              <p><strong>Initiation numérique</strong><br>Ateliers gratuits pour lutter contre la fracture numérique.</p>
-            </div>
-            <div class="timeline-item">
-              <span class="date">2027</span>
-              <p><strong>Objectif Qualiopi</strong><br>Poursuite de la structuration qualité du centre de formation.</p>
+              <span class="date">2026-2027</span>
+              <p><strong>Élargissement du catalogue</strong><br>Déploiement progressif des niveaux supérieurs (B1-C2) et des autres domaines de formation.</p>
             </div>
           </div>
         </div>
@@ -2059,15 +2343,15 @@
           <div class="values-grid">
             <div class="value-card">
               <h3>🤝 Accessibilité</h3>
-              <p>Des tarifs solidaires et une offre pensée pour faciliter l'accès à la formation.</p>
+              <p>Des tarifs accessibles et une offre pensée pour faciliter l'accès à la formation.</p>
             </div>
             <div class="value-card">
-              <h3>💻 Innovation pédagogique</h3>
-              <p>100% en ligne, avec une vraie présence humaine et un accompagnement direct.</p>
+              <h3>💻 Autonomie</h3>
+              <p>100% en ligne, avec une vraie flexibilité et un apprentissage à son rythme.</p>
             </div>
             <div class="value-card">
-              <h3>📈 Utilité concrète</h3>
-              <p>Des formations tournées vers la vie quotidienne, l'insertion et l'autonomie.</p>
+              <h3>📈 Utilité professionnelle</h3>
+              <p>Des formations tournées vers l'insertion, la reconversion et l'évolution de carrière.</p>
             </div>
             <div class="value-card">
               <h3>🔍 Transparence</h3>
@@ -2081,7 +2365,7 @@
           <p><strong>Présidente :</strong> Madame FOFANA Missade</p>
           <p><strong>Directeur pédagogique :</strong> Moctar TOURÉ</p>
           <p><strong>Direction pédagogique :</strong> pilotage des programmes, qualité pédagogique et accompagnement des parcours.</p>
-          <p><strong>Formateurs FLE :</strong> professionnels de l'enseignement du français aux adultes.</p>
+          <p><strong>Formateurs :</strong> professionnels de l'enseignement et de la formation pour adultes.</p>
           <p style="margin-top: 20px;"><em>Nous recrutons des intervenants et formateurs vacataires. <a href="#" onclick="showPage('contact'); return false;" style="color: var(--primary-blue);">Contactez-nous</a>.</em></p>
         </div>
 
@@ -2117,16 +2401,18 @@
             <div class="contact-method">
               <div class="icon">🎓</div>
               <h3>Formations concernées</h3>
-              <p>Français Langue Étrangère — Niveau A1</p>
-              <p>Français Langue Étrangère — Niveau A2</p>
-              <p>Accompagnement individualisé (en option)</p>
+              <p>Français professionnel — Niveau A1 (disponible au lancement)</p>
+              <p>Français professionnel — Niveau A2 (disponible au lancement)</p>
+              <p>Français professionnel — Niveaux B1-B2 (à venir)</p>
+              <p>Français professionnel — Niveaux C1-C2 (à venir)</p>
+              <p>Autres domaines de formation (en préparation)</p>
             </div>
 
             <div class="contact-method">
               <div class="icon">💶</div>
               <h3>Tarifs</h3>
               <p><strong>29 € la formation</strong> (A1 ou A2)</p>
-              <p><strong>À partir de 49 €</strong> l'accompagnement individualisé (option)</p>
+              <p>Autres tarifs à venir pour les nouveaux parcours</p>
             </div>
 
             <div class="contact-method">
@@ -2167,11 +2453,13 @@
                 <label for="formation">Formation souhaitée *</label>
                 <select id="formation" name="formation" required>
                   <option value="">Choisir</option>
-                  <option value="FLE A1">FLE A1 — 29 €</option>
-                  <option value="FLE A2">FLE A2 — 29 €</option>
-                  <option value="A1 + A2">A1 + A2 — 58 €</option>
-                  <option value="A1 + Accompagnement">A1 + Accompagnement — À partir de 78 €</option>
-                  <option value="A2 + Accompagnement">A2 + Accompagnement — À partir de 78 €</option>
+                  <option value="Français A1">Français professionnel A1 — 29 €</option>
+                  <option value="Français A2">Français professionnel A2 — 29 €</option>
+                  <option value="Français B1-B2">Français professionnel B1-B2 — à venir</option>
+                  <option value="Français C1-C2">Français professionnel C1-C2 — à venir</option>
+                  <option value="Gestion de projet">Gestion de projet — à venir</option>
+                  <option value="Compétences numériques">Compétences numériques — à venir</option>
+                  <option value="Intelligence artificielle">Intelligence artificielle — à venir</option>
                   <option value="Information générale">Information générale</option>
                 </select>
               </div>
@@ -2184,6 +2472,7 @@
                   <option value="Quelques bases">Quelques bases</option>
                   <option value="A1">A1 validé ou équivalent</option>
                   <option value="A2">A2 validé ou équivalent</option>
+                  <option value="B1 ou plus">B1 ou plus</option>
                   <option value="Ne sais pas">Je ne sais pas</option>
                 </select>
               </div>
@@ -2202,13 +2491,18 @@
           <h2 class="section-title" style="margin-bottom: 26px;">Questions fréquentes</h2>
 
           <div class="faq-item">
+            <h4>Quand ouvre LOGIX FORMA ?</h4>
+            <p>L'ouverture opérationnelle est prévue vers le <strong>15 avril 2026</strong> avec les premiers parcours de français professionnel (niveaux A1 et A2).</p>
+          </div>
+
+          <div class="faq-item">
             <h4>Quel est le prix de la formation A1 ?</h4>
-            <p>Le parcours complet A1 est proposé au tarif solidaire de <strong>29 € la formation</strong>.</p>
+            <p>Le parcours complet A1 est proposé au tarif de <strong>29 € la formation</strong>.</p>
           </div>
 
           <div class="faq-item">
             <h4>Quel est le prix de la formation A2 ?</h4>
-            <p>Le parcours complet A2 est proposé au tarif solidaire de <strong>29 € la formation</strong>.</p>
+            <p>Le parcours complet A2 est proposé au tarif de <strong>29 € la formation</strong>.</p>
           </div>
 
           <div class="faq-item">
@@ -2222,13 +2516,18 @@
           </div>
 
           <div class="faq-item">
-            <h4>En quoi consiste l'accompagnement individualisé ?</h4>
-            <p>C'est une option en complément de la formation : corrections personnalisées, feedbacks réguliers, conseils de progression et 1 visioconférence de bilan. À partir de 49 €.</p>
+            <h4>Les niveaux B1-B2 et C1-C2 sont-ils disponibles ?</h4>
+            <p>Non, ces niveaux sont actuellement en préparation et seront déployés progressivement après le lancement initial.</p>
           </div>
 
           <div class="faq-item">
-            <h4>Le parcours A2 demande-t-il un prérequis ?</h4>
-            <p>Oui. Le niveau A2 s'adresse à des adultes ayant validé le niveau A1 ou ayant un niveau équivalent.</p>
+            <h4>LOGIX FORMA propose-t-il des formations certifiantes ?</h4>
+            <p>À ce jour, LOGIX FORMA ne propose pas de formations certifiantes. Les parcours sont conçus pour le développement de compétences professionnelles.</p>
+          </div>
+
+          <div class="faq-item">
+            <h4>Les formations sont-elles éligibles au CPF ou autres financements ?</h4>
+            <p>À ce jour, les formations de LOGIX FORMA ne sont pas éligibles aux financements publics (CPF, OPCO, etc.). Cette situation pourrait évoluer dans le futur.</p>
           </div>
 
           <div class="faq-item">
@@ -2255,7 +2554,7 @@
 
           <h2>Éditeur du site</h2>
           <p><strong>LOGIX FORMA</strong></p>
-          <p>Association</p>
+          <p>Association loi 1901</p>
           <p>Présidente : Madame FOFANA Missade</p>
           <p>Email : logix.forma@gmail.com</p>
           <p>Directeur de la publication : la présidente de l'association</p>
@@ -2278,16 +2577,18 @@
           </p>
 
           <h2>Cookies</h2>
-          <p>Le présent modèle ne dépose pas de cookies publicitaires. Si des outils de mesure d'audience ou des services tiers sont ajoutés, la politique de confidentialité devra être mise à jour.</p>
+          <p>Le présent site ne dépose pas de cookies publicitaires. Si des outils de mesure d'audience ou des services tiers sont ajoutés, la politique de confidentialité devra être mise à jour.</p>
 
           <h2>Conditions de formation</h2>
-          <p>Les formations sont proposées en autonomie, avec un accès aux contenus pendant 3 mois. L'accompagnement individualisé est une option disponible en complément, soumise à des conditions spécifiques.</p>
+          <p>Les formations sont proposées en autonomie, avec un accès aux contenus pendant 3 mois. L'activité de formation est en cours de préparation avec une ouverture prévisionnelle vers le 15 avril 2026.</p>
 
           <h2>Informations à vérifier avant mise en ligne</h2>
           <p>Avant publication définitive, vérifiez et complétez les éléments juridiques et administratifs exacts : adresse du siège, RNA, SIREN, hébergeur et politique de confidentialité finale.</p>
 
           <p style="margin-top: 30px;">
-            <a href="#" onclick="showPage('home'); return false;" style="color: var(--primary-blue); font-weight: 700;">← Retour à l'accueil</a>
+            <a href="#" onclick="showPage('home'); return false;" style="color: var(--primary-blue); font-weight: 700;">
+              ← Retour à l'accueil
+            </a>
           </p>
         </div>
       </div>
@@ -2300,7 +2601,7 @@
       <div class="footer-content">
         <div class="footer-section">
           <h4>LOGIX FORMA</h4>
-          <p>Association de formation<br />FLE A1 et A2<br />100 % en ligne — En autonomie</p>
+          <p>Association de formation en ligne<br />Insertion, reconversion, compétences professionnelles<br />100% en ligne — En autonomie</p>
         </div>
 
         <div class="footer-section">
@@ -2313,17 +2614,18 @@
         </div>
 
         <div class="footer-section">
-          <h4>Tarifs</h4>
-          <p>FLE A1 : 29 € la formation</p>
-          <p>FLE A2 : 29 € la formation</p>
-          <p>Accompagnement : à partir de 49 €</p>
+          <h4>Formations</h4>
+          <p>Français professionnel A1 : 29 €</p>
+          <p>Français professionnel A2 : 29 €</p>
+          <p>Niveaux B1-C2 : à venir</p>
+          <p>Autres domaines : en préparation</p>
         </div>
 
         <div class="footer-section">
-          <h4>Blog</h4>
-          <p>Rédigé par Moctar TOURÉ</p>
-          <p>Directeur pédagogique</p>
-          <p>Publication : février 2026</p>
+          <h4>Informations</h4>
+          <p>Ouverture prévisionnelle : 15 avril 2026</p>
+          <p>Email : logix.forma@gmail.com</p>
+          <p>Activité en préparation</p>
         </div>
       </div>
 
