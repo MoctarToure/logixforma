@@ -3,8 +3,8 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>LOGIX FORMA — Formations FLE A1 et A2 100 % en ligne</title>
-  <meta name="description" content="LOGIX FORMA propose des formations FLE A1 et A2 100 % en ligne en autonomie. Tarif solidaire : 29 € la formation. Accompagnement individualisé en option." />
+  <title>LOGIX FORMA — Formation FLE A1/A2 et Blog Reconversion 2026</title>
+  <meta name="description" content="LOGIX FORMA : Formation FLE A1 et A2 en autonomie à 29€/mois. Blog expertise par Moctar TOURÉ, Directeur pédagogique. Publications février 2026." />
   <style>
     * {
       margin: 0;
@@ -13,15 +13,14 @@
     }
 
     :root {
-      --blue: #1e3a5f;
-      --blue-dark: #14293f;
-      --green: #7cb342;
-      --green-dark: #689f38;
+      --primary-blue: #1e3a5f;
+      --primary-green: #7cb342;
+      --accent-yellow: #fdd835;
       --orange: #ff6b35;
-      --yellow: #fdd835;
-      --text: #212529;
-      --muted: #6c757d;
-      --bg: #f8f9fa;
+      --purple: #9c27b0;
+      --text-dark: #212529;
+      --text-light: #6c757d;
+      --bg-light: #f8f9fa;
       --white: #ffffff;
       --border: #e6e9ed;
       --shadow: 0 4px 16px rgba(0, 0, 0, 0.08);
@@ -36,8 +35,8 @@
     body {
       font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
       line-height: 1.6;
-      color: var(--text);
-      background: var(--bg);
+      color: var(--text-dark);
+      background: var(--bg-light);
     }
 
     img {
@@ -62,6 +61,7 @@
       display: block;
     }
 
+    /* Header */
     header {
       position: sticky;
       top: 0;
@@ -95,12 +95,12 @@
     .logo-text {
       font-size: 1.4rem;
       font-weight: 800;
-      color: var(--blue);
+      color: var(--primary-blue);
       white-space: nowrap;
     }
 
     .logo-text span {
-      color: var(--green);
+      color: var(--primary-green);
     }
 
     .nav-links {
@@ -113,14 +113,14 @@
     .nav-links a {
       text-decoration: none;
       font-weight: 600;
-      color: var(--text);
+      color: var(--text-dark);
       transition: color 0.2s ease;
       cursor: pointer;
     }
 
     .nav-links a:hover,
     .nav-links a.active {
-      color: var(--blue);
+      color: var(--primary-blue);
     }
 
     .mobile-menu-btn {
@@ -129,11 +129,12 @@
       background: none;
       font-size: 1.6rem;
       cursor: pointer;
-      color: var(--blue);
+      color: var(--primary-blue);
     }
 
+    /* Hero */
     .hero {
-      background: linear-gradient(135deg, var(--blue) 0%, var(--blue-dark) 100%);
+      background: linear-gradient(135deg, var(--primary-blue) 0%, #0d2538 100%);
       color: var(--white);
       padding: 84px 0;
       text-align: center;
@@ -182,7 +183,7 @@
       font-size: 1rem;
       font-weight: 700;
       text-decoration: none;
-      transition: transform 0.2s ease, opacity 0.2s ease, background 0.2s ease;
+      transition: transform 0.2s ease, background 0.2s ease;
     }
 
     .btn:hover {
@@ -200,25 +201,26 @@
 
     .btn-secondary {
       background: var(--white);
-      color: var(--blue);
+      color: var(--primary-blue);
     }
 
     .btn-green {
-      background: var(--green);
+      background: var(--primary-green);
       color: var(--white);
     }
 
     .btn-green:hover {
-      background: var(--green-dark);
+      background: #689f38;
     }
 
+    /* Sections */
     section {
       padding: 64px 0;
     }
 
     .section-title {
       text-align: center;
-      color: var(--blue);
+      color: var(--primary-blue);
       font-size: clamp(1.7rem, 3vw, 2.3rem);
       margin-bottom: 38px;
     }
@@ -240,7 +242,8 @@
     .faq-item,
     .formation-detail,
     .coming-soon-box,
-    .legal-content {
+    .legal-content,
+    .article-card {
       background: var(--white);
       border-radius: var(--radius);
       box-shadow: var(--shadow);
@@ -257,10 +260,11 @@
     }
 
     .feature-card h3 {
-      color: var(--blue);
+      color: var(--primary-blue);
       margin-bottom: 10px;
     }
 
+    /* Formations */
     .formations-grid {
       grid-template-columns: repeat(auto-fit, minmax(290px, 1fr));
     }
@@ -270,22 +274,22 @@
       border-radius: var(--radius);
       box-shadow: var(--shadow);
       padding: 28px;
-      border-top: 5px solid var(--blue);
+      border-top: 5px solid var(--primary-blue);
       display: flex;
       flex-direction: column;
       gap: 12px;
     }
 
     .formation-card.green {
-      border-top-color: var(--green);
+      border-top-color: var(--primary-green);
     }
 
     .formation-card.yellow {
-      border-top-color: var(--yellow);
+      border-top-color: var(--accent-yellow);
     }
 
     .formation-card h3 {
-      color: var(--blue);
+      color: var(--primary-blue);
       font-size: 1.35rem;
     }
 
@@ -302,7 +306,7 @@
       font-size: 0.82rem;
       font-weight: 700;
       color: var(--white);
-      background: var(--green);
+      background: var(--primary-green);
     }
 
     .tag.orange {
@@ -310,36 +314,37 @@
     }
 
     .tag.blue {
-      background: var(--blue);
+      background: var(--primary-blue);
     }
 
     .tag.grey {
-      background: var(--muted);
+      background: var(--text-light);
     }
 
     .tag.purple {
-      background: #9c27b0;
+      background: var(--purple);
     }
 
     .price {
       font-size: 2rem;
       font-weight: 800;
-      color: var(--blue);
+      color: var(--primary-blue);
       margin-top: 4px;
     }
 
     .price small {
       font-size: 1rem;
-      color: var(--muted);
+      color: var(--text-light);
       font-weight: 500;
     }
 
     .muted {
-      color: var(--muted);
+      color: var(--text-light);
     }
 
+    /* CTA Section */
     .cta-section {
-      background: var(--blue);
+      background: var(--primary-blue);
       color: var(--white);
       text-align: center;
     }
@@ -355,8 +360,9 @@
       opacity: 0.95;
     }
 
+    /* Page Header */
     .page-header {
-      background: linear-gradient(135deg, var(--blue) 0%, var(--blue-dark) 100%);
+      background: linear-gradient(135deg, var(--primary-blue) 0%, #0d2538 100%);
       color: var(--white);
       padding: 64px 0;
       text-align: center;
@@ -367,13 +373,14 @@
       margin-bottom: 10px;
     }
 
+    /* Content Boxes */
     .content-box {
       padding: 36px;
       margin-bottom: 26px;
     }
 
     .content-box h2 {
-      color: var(--blue);
+      color: var(--primary-blue);
       margin-bottom: 16px;
       font-size: 1.5rem;
     }
@@ -382,8 +389,9 @@
       margin-top: 12px;
     }
 
+    /* Timeline */
     .timeline {
-      border-left: 3px solid var(--blue);
+      border-left: 3px solid var(--primary-blue);
       padding-left: 28px;
       margin-top: 10px;
     }
@@ -405,34 +413,40 @@
     }
 
     .timeline-item .date {
-      color: var(--blue);
+      color: var(--primary-blue);
       font-weight: 800;
       display: block;
       margin-bottom: 4px;
     }
 
+    /* Values Grid */
     .values-grid,
-    .info-grid {
+    .info-grid,
+    .article-grid {
       display: grid;
       gap: 18px;
       grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
       margin-top: 22px;
     }
 
+    .article-grid {
+      grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+    }
+
     .value-card,
     .info-card {
-      background: var(--bg);
+      background: var(--bg-light);
       border-radius: 10px;
       padding: 20px;
     }
 
     .value-card {
-      border-left: 4px solid var(--green);
+      border-left: 4px solid var(--primary-green);
     }
 
     .value-card h3,
     .info-card .value {
-      color: var(--blue);
+      color: var(--primary-blue);
     }
 
     .info-card {
@@ -440,7 +454,7 @@
     }
 
     .info-card .label {
-      color: var(--muted);
+      color: var(--text-light);
       font-size: 0.85rem;
       text-transform: uppercase;
       letter-spacing: 0.03em;
@@ -452,19 +466,20 @@
       margin-top: 6px;
     }
 
+    /* Formation Detail */
     .formation-detail {
       overflow: hidden;
       margin-bottom: 34px;
     }
 
     .formation-header {
-      background: var(--blue);
+      background: var(--primary-blue);
       color: var(--white);
       padding: 28px;
     }
 
     .formation-header.alt {
-      background: var(--blue-dark);
+      background: #0d2538;
     }
 
     .formation-header h2 {
@@ -481,7 +496,7 @@
     }
 
     .formation-section h3 {
-      color: var(--blue);
+      color: var(--primary-blue);
       font-size: 1.18rem;
       margin-bottom: 14px;
       padding-bottom: 10px;
@@ -497,7 +512,7 @@
     }
 
     .price-box {
-      background: var(--bg);
+      background: var(--bg-light);
       border-left: 4px solid var(--orange);
       border-radius: 10px;
       padding: 20px;
@@ -506,7 +521,7 @@
 
     .option-box {
       background: linear-gradient(135deg, #f3e5f5 0%, #e1bee7 100%);
-      border-left: 4px solid #9c27b0;
+      border-left: 4px solid var(--purple);
       border-radius: 10px;
       padding: 20px;
       margin-top: 16px;
@@ -530,6 +545,7 @@
       text-align: center;
     }
 
+    /* Contact */
     .contact-grid {
       display: grid;
       grid-template-columns: 1fr 1fr;
@@ -543,7 +559,7 @@
 
     .contact-info h2,
     .contact-form h2 {
-      color: var(--blue);
+      color: var(--primary-blue);
       margin-bottom: 18px;
     }
 
@@ -565,7 +581,7 @@
     }
 
     .contact-method h3 {
-      color: var(--blue);
+      color: var(--primary-blue);
       margin-bottom: 8px;
     }
 
@@ -594,10 +610,11 @@
     .form-group select:focus,
     .form-group textarea:focus {
       outline: none;
-      border-color: var(--blue);
+      border-color: var(--primary-blue);
       box-shadow: 0 0 0 3px rgba(30, 58, 95, 0.12);
     }
 
+    /* FAQ */
     .faq {
       margin-top: 44px;
     }
@@ -608,10 +625,11 @@
     }
 
     .faq-item h4 {
-      color: var(--blue);
+      color: var(--primary-blue);
       margin-bottom: 8px;
     }
 
+    /* Legal */
     .legal-content {
       max-width: 880px;
       margin: 40px auto;
@@ -620,7 +638,7 @@
 
     .legal-content h1,
     .legal-content h2 {
-      color: var(--blue);
+      color: var(--primary-blue);
     }
 
     .legal-content h1 {
@@ -633,6 +651,264 @@
       font-size: 1.3rem;
     }
 
+    /* Blog Article Card */
+    .article-card {
+      padding: 28px;
+      transition: transform 0.2s ease, box-shadow 0.2s ease;
+      display: flex;
+      flex-direction: column;
+    }
+
+    .article-card:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 8px 24px rgba(0, 0, 0, 0.12);
+    }
+
+    .article-card .category {
+      display: inline-block;
+      background: var(--orange);
+      color: var(--white);
+      padding: 6px 12px;
+      border-radius: 999px;
+      font-size: 0.82rem;
+      font-weight: 700;
+      margin-bottom: 14px;
+      width: fit-content;
+    }
+
+    .article-card .category.green {
+      background: var(--primary-green);
+    }
+
+    .article-card .category.blue {
+      background: var(--primary-blue);
+    }
+
+    .article-card h3 {
+      color: var(--primary-blue);
+      font-size: 1.35rem;
+      margin-bottom: 12px;
+      line-height: 1.3;
+    }
+
+    .article-card p {
+      color: var(--text-light);
+      margin-bottom: 18px;
+      flex-grow: 1;
+    }
+
+    .article-card .meta {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding-top: 16px;
+      border-top: 1px solid var(--border);
+      font-size: 0.88rem;
+      color: var(--text-light);
+    }
+
+    .article-card .read-more {
+      color: var(--orange);
+      font-weight: 700;
+      cursor: pointer;
+    }
+
+    /* Article Detail */
+    .article-detail {
+      padding: 48px 0;
+    }
+
+    .article-content {
+      background: var(--white);
+      border-radius: var(--radius);
+      box-shadow: var(--shadow);
+      padding: 42px;
+      margin-bottom: 34px;
+    }
+
+    .article-content h1 {
+      color: var(--primary-blue);
+      font-size: clamp(1.8rem, 4vw, 2.3rem);
+      margin-bottom: 16px;
+      line-height: 1.25;
+    }
+
+    .article-meta {
+      display: flex;
+      gap: 24px;
+      flex-wrap: wrap;
+      padding-bottom: 24px;
+      border-bottom: 2px solid var(--border);
+      margin-bottom: 32px;
+      color: var(--text-light);
+      font-size: 0.92rem;
+    }
+
+    .article-meta strong {
+      color: var(--primary-blue);
+    }
+
+    .article-content h2 {
+      color: var(--primary-blue);
+      font-size: 1.5rem;
+      margin: 36px 0 16px;
+      padding-bottom: 10px;
+      border-bottom: 2px solid var(--border);
+    }
+
+    .article-content h3 {
+      color: var(--primary-blue);
+      font-size: 1.25rem;
+      margin: 28px 0 14px;
+    }
+
+    .article-content p {
+      margin-bottom: 18px;
+      font-size: 1.05rem;
+    }
+
+    .article-content ul,
+    .article-content ol {
+      margin: 18px 0 18px 24px;
+    }
+
+    .article-content li {
+      margin-bottom: 10px;
+      font-size: 1.05rem;
+    }
+
+    .article-content strong {
+      color: var(--primary-blue);
+      font-weight: 700;
+    }
+
+    .cta-box {
+      background: linear-gradient(135deg, #fff3e8 0%, #ffe8d8 100%);
+      border-left: 4px solid var(--orange);
+      border-radius: 10px;
+      padding: 24px;
+      margin: 32px 0;
+    }
+
+    .info-box {
+      background: #e8f4e8;
+      border-left: 4px solid var(--primary-green);
+      border-radius: 10px;
+      padding: 20px;
+      margin: 24px 0;
+    }
+
+    .warning-box {
+      background: #fff3cd;
+      border-left: 4px solid #ffc107;
+      border-radius: 10px;
+      padding: 20px;
+      margin: 24px 0;
+    }
+
+    .checklist {
+      background: var(--bg-light);
+      border-radius: 10px;
+      padding: 24px;
+      margin: 24px 0;
+    }
+
+    .checklist li {
+      list-style: none;
+      margin-bottom: 12px;
+      padding-left: 28px;
+      position: relative;
+    }
+
+    .checklist li::before {
+      content: "✓";
+      position: absolute;
+      left: 0;
+      color: var(--primary-green);
+      font-weight: 700;
+    }
+
+    .toc {
+      background: var(--bg-light);
+      border-radius: 10px;
+      padding: 24px;
+      margin: 24px 0;
+    }
+
+    .toc h4 {
+      color: var(--primary-blue);
+      margin-bottom: 14px;
+      font-size: 1.1rem;
+    }
+
+    .toc ul {
+      list-style: none;
+      margin: 0;
+    }
+
+    .toc li {
+      margin-bottom: 8px;
+    }
+
+    .toc a {
+      color: var(--text-dark);
+      font-size: 0.95rem;
+    }
+
+    .toc a:hover {
+      color: var(--orange);
+    }
+
+    .back-link {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      color: var(--text-light);
+      font-weight: 600;
+      margin-bottom: 24px;
+      cursor: pointer;
+    }
+
+    .back-link:hover {
+      color: var(--primary-blue);
+    }
+
+    .author-box {
+      background: var(--bg-light);
+      border-radius: 10px;
+      padding: 24px;
+      margin: 32px 0;
+      display: flex;
+      gap: 20px;
+      align-items: flex-start;
+    }
+
+    .author-avatar {
+      width: 80px;
+      height: 80px;
+      border-radius: 50%;
+      background: var(--primary-blue);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: var(--white);
+      font-size: 2rem;
+      font-weight: 700;
+      flex-shrink: 0;
+    }
+
+    .author-info h4 {
+      color: var(--primary-blue);
+      margin-bottom: 6px;
+    }
+
+    .author-info p {
+      color: var(--text-light);
+      font-size: 0.95rem;
+      margin: 0;
+    }
+
+    /* Footer */
     footer {
       background: #212529;
       color: #b8c0c8;
@@ -655,6 +931,7 @@
       text-decoration: none;
       display: block;
       margin-bottom: 8px;
+      color: #b8c0c8;
       cursor: pointer;
     }
 
@@ -667,6 +944,25 @@
       padding-top: 18px;
       text-align: center;
       font-size: 0.92rem;
+    }
+
+    /* Reading Progress */
+    .reading-progress {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 4px;
+      background: rgba(0, 0, 0, 0.1);
+      z-index: 1001;
+      display: none;
+    }
+
+    .reading-progress-bar {
+      height: 100%;
+      background: var(--orange);
+      width: 0%;
+      transition: width 0.1s ease;
     }
 
     @media (max-width: 860px) {
@@ -720,35 +1016,48 @@
       .contact-form,
       .formation-content,
       .legal-content,
-      .formation-header {
-        padding: 24px;
+      .formation-header,
+      .article-content {
+        padding: 28px 20px;
       }
 
       .hero {
         padding: 70px 0;
       }
+
+      .article-meta {
+        flex-direction: column;
+        gap: 8px;
+      }
+
+      .author-box {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+      }
     }
   </style>
 </head>
 <body>
+  <!-- Reading Progress -->
+  <div class="reading-progress" id="readingProgress">
+    <div class="reading-progress-bar" id="readingProgressBar"></div>
+  </div>
+
   <header>
     <div class="container">
       <nav>
         <a href="#" class="logo" onclick="showPage('home'); return false;">
-          <img
-            src="https://image.qwenlm.ai/public_source/b4393ad8-dd0b-4feb-a520-02b701c56415/1320e08ff-1157-4fff-9891-30e726667c40.png"
-            alt="Logo LOGIX FORMA"
-          />
+          <img src="https://image.qwenlm.ai/public_source/b4393ad8-dd0b-4feb-a520-02b701c56415/1320e08ff-1157-4fff-9891-30e726667c40.png" alt="Logo LOGIX FORMA" />
           <div class="logo-text">LOGIX <span>FORMA</span></div>
         </a>
 
-        <button class="mobile-menu-btn" onclick="toggleMenu()" aria-label="Ouvrir le menu">
-          ☰
-        </button>
+        <button class="mobile-menu-btn" onclick="toggleMenu()" aria-label="Ouvrir le menu" aria-expanded="false">☰</button>
 
         <ul class="nav-links" id="navLinks">
           <li><a onclick="showPage('home')" class="active">Accueil</a></li>
           <li><a onclick="showPage('formations')">Formations</a></li>
+          <li><a onclick="showPage('blog')">Blog</a></li>
           <li><a onclick="showPage('about')">À propos</a></li>
           <li><a onclick="showPage('contact')">Contact</a></li>
         </ul>
@@ -756,24 +1065,21 @@
     </div>
   </header>
 
-  <!-- ACCUEIL -->
+  <!-- HOME PAGE -->
   <div id="home" class="page active">
     <section class="hero">
       <div class="container">
         <span class="badge">🎯 Formations FLE 100 % en ligne</span>
         <h1>Apprenez le français à votre rythme<br />avec LOGIX FORMA</h1>
         <p class="lead">
-          LOGIX FORMA propose des formations FLE niveau A1 et A2 en <strong>autonomie</strong>, 
-          accessibles 24h/24 et 7j/7. Tarif solidaire de <strong>29 € la formation</strong>. 
+          LOGIX FORMA propose des formations FLE niveau A1 et A2 en <strong>autonomie</strong>,
+          accessibles 24h/24 et 7j/7. Tarif solidaire de <strong>29 € la formation</strong>.
           Accompagnement individualisé disponible en option.
         </p>
         <div class="btn-group">
-          <button class="btn btn-primary" onclick="showPage('contact')">
-            📧 Demander une information
-          </button>
-          <button class="btn btn-secondary" onclick="showPage('formations')">
-            🎓 Voir les formations
-          </button>
+          <button class="btn btn-primary" onclick="showPage('contact')">📧 Demander une information</button>
+          <button class="btn btn-secondary" onclick="showPage('formations')">🎓 Voir les formations</button>
+          <button class="btn btn-green" onclick="showPage('blog')">📖 Lire le blog</button>
         </div>
       </div>
     </section>
@@ -793,7 +1099,7 @@
             <p>Apprenez à votre propre rythme sans contrainte d'horaire. Accès illimité aux contenus pendant la durée de la formation.</p>
           </div>
           <div class="feature-card">
-            <div class="icon"></div>
+            <div class="icon">🎓</div>
             <h3>Accompagnement en option</h3>
             <p>Un suivi individualisé est disponible en complément : corrections personnalisées, feedbacks et conseils de progression.</p>
           </div>
@@ -817,10 +1123,7 @@
         <div class="grid formations-grid">
           <article class="formation-card">
             <h3>Français Langue Étrangère — Niveau A1</h3>
-            <p>
-              Un parcours complet pour acquérir les bases : se présenter, parler de soi, comprendre
-              les situations quotidiennes et communiquer simplement.
-            </p>
+            <p>Un parcours complet pour acquérir les bases : se présenter, parler de soi, comprendre les situations quotidiennes et communiquer simplement.</p>
             <div class="tag-wrap">
               <span class="tag blue">10 modules</span>
               <span class="tag">100 % en ligne</span>
@@ -833,10 +1136,7 @@
 
           <article class="formation-card green">
             <h3>Français Langue Étrangère — Niveau A2</h3>
-            <p>
-              Un parcours complet pour renforcer l'autonomie en français : raconter, expliquer, donner
-              son avis, écrire un message court et gérer des situations plus variées.
-            </p>
+            <p>Un parcours complet pour renforcer l'autonomie en français : raconter, expliquer, donner son avis, écrire un message court.</p>
             <div class="tag-wrap">
               <span class="tag blue">10 modules</span>
               <span class="tag">100 % en ligne</span>
@@ -849,10 +1149,7 @@
 
           <article class="formation-card yellow">
             <h3>Accompagnement individualisé</h3>
-            <p>
-              En complément de votre formation en autonomie, bénéficiez d'un suivi personnalisé 
-              avec corrections, feedbacks et conseils de progression.
-            </p>
+            <p>En complément de votre formation en autonomie, bénéficiez d'un suivi personnalisé avec corrections et feedbacks.</p>
             <div class="tag-wrap">
               <span class="tag purple">En option</span>
               <span class="tag">Suivi personnalisé</span>
@@ -864,21 +1161,86 @@
       </div>
     </section>
 
+    <section>
+      <div class="container">
+        <h2 class="section-title">Blog Reconversion et Formation</h2>
+        <div class="content-box">
+          <h2>Informations éditoriales</h2>
+          <p>
+            Les contenus éditoriaux de LOGIX FORMA sont rédigés par
+            <strong>Moctar TOURÉ, Directeur pédagogique</strong>.
+          </p>
+          <p>
+            Les quatre articles fondateurs du blog ont été publiés en
+            <strong>février 2026</strong>.
+          </p>
+          <p>
+            Ils traitent de la reconversion, des financements, de l'employabilité
+            et des parcours de formation pour adultes.
+          </p>
+        </div>
+        <div class="grid article-grid">
+          <article class="article-card">
+            <span class="category">Financement</span>
+            <h3>Comment financer sa reconversion en 2025 : La stratégie d'ingénierie financière</h3>
+            <p>Découvrez la stratégie d'ingénierie financière pour financer votre reconversion tech en 2025. CPF, PTP, OPCO : Moctar TOURÉ vous guide.</p>
+            <div class="meta">
+              <span>📅 Février 2026</span>
+              <span class="read-more" onclick="showArticle('article-1')">Lire →</span>
+            </div>
+          </article>
+
+          <article class="article-card">
+            <span class="category green">Métiers Tech</span>
+            <h3>5 métiers tech qui recrutent sans diplôme : La fin de la méritocratie papier</h3>
+            <p>5 métiers tech qui recrutent sans diplôme en 2025. Moctar TOURÉ explique comment la compétence prime sur le titre.</p>
+            <div class="meta">
+              <span>📅 Février 2026</span>
+              <span class="read-more" onclick="showArticle('article-2')">Lire →</span>
+            </div>
+          </article>
+
+          <article class="article-card">
+            <span class="category blue">Témoignage</span>
+            <h3>Témoignage : De la restauration au code, le voyage intérieur de Karim</h3>
+            <p>Témoignage reconversion : de la restauration au code. Moctar TOURÉ raconte l'histoire de Karim.</p>
+            <div class="meta">
+              <span>📅 Février 2026</span>
+              <span class="read-more" onclick="showArticle('article-3')">Lire →</span>
+            </div>
+          </article>
+
+          <article class="article-card">
+            <span class="category">Guide Administratif</span>
+            <h3>CPF, OPCO, FIF : Le guide de navigation administrative pour reconvertis</h3>
+            <p>Guide complet financement formation 2025 : CPF, OPCO, ATPRO, FIF-PL. Moctar TOURÉ décrypte l'administration.</p>
+            <div class="meta">
+              <span>📅 Février 2026</span>
+              <span class="read-more" onclick="showArticle('article-4')">Lire →</span>
+            </div>
+          </article>
+        </div>
+        <div style="text-align: center; margin-top: 30px;">
+          <button class="btn btn-primary" onclick="showPage('blog')">Voir tous les articles</button>
+        </div>
+      </div>
+    </section>
+
     <section class="cta-section">
       <div class="container">
         <h2>Besoin d'un renseignement sur A1 ou A2 ?</h2>
         <p>
-          Contactez LOGIX FORMA pour recevoir des informations sur le parcours, le format en autonomie, 
+          Contactez LOGIX FORMA pour recevoir des informations sur le parcours, le format en autonomie,
           les options d'accompagnement et le tarif solidaire.
         </p>
-        <button class="btn btn-primary" style="background: var(--white); color: var(--blue);" onclick="showPage('contact')">
+        <button class="btn btn-primary" style="background: var(--white); color: var(--primary-blue);" onclick="showPage('contact')">
           Nous contacter
         </button>
       </div>
     </section>
   </div>
 
-  <!-- FORMATIONS -->
+  <!-- FORMATIONS PAGE -->
   <div id="formations" class="page">
     <div class="page-header">
       <div class="container">
@@ -897,11 +1259,7 @@
           <div class="formation-content">
             <div class="formation-section">
               <h3>🎯 Objectif</h3>
-              <p>
-                Permettre à l'apprenant de communiquer dans des situations simples de la vie quotidienne :
-                se présenter, donner ses informations personnelles, parler du temps, de la famille, des achats,
-                du restaurant, du logement et des loisirs.
-              </p>
+              <p>Permettre à l'apprenant de communiquer dans des situations simples de la vie quotidienne : se présenter, donner ses informations personnelles, parler du temps, de la famille, des achats, du restaurant, du logement et des loisirs.</p>
             </div>
 
             <div class="formation-section">
@@ -968,7 +1326,7 @@
               <div class="price-box">
                 <p class="price">29 € <small>la formation</small></p>
                 <p>Tarif solidaire unique pour le parcours complet A1.</p>
-                <p style="margin-top: 8px; font-size: 0.9rem; color: var(--muted);">Accès illimité aux contenus pendant 3 mois. Aucun frais caché.</p>
+                <p style="margin-top: 8px; font-size: 0.9rem; color: var(--text-light);">Accès illimité aux contenus pendant 3 mois. Aucun frais caché.</p>
               </div>
             </div>
 
@@ -1000,11 +1358,7 @@
           <div class="formation-content">
             <div class="formation-section">
               <h3>🎯 Objectif</h3>
-              <p>
-                Permettre à l'apprenant d'élargir son autonomie en français dans des situations sociales,
-                personnelles et professionnelles plus variées : raconter, expliquer, conseiller, justifier,
-                écrire un message et interagir avec plus d'aisance.
-              </p>
+              <p>Permettre à l'apprenant d'élargir son autonomie en français dans des situations sociales, personnelles et professionnelles plus variées : raconter, expliquer, conseiller, justifier, écrire un message et interagir avec plus d'aisance.</p>
             </div>
 
             <div class="formation-section">
@@ -1072,7 +1426,7 @@
               <div class="price-box">
                 <p class="price">29 € <small>la formation</small></p>
                 <p>Tarif solidaire unique pour le parcours complet A2.</p>
-                <p style="margin-top: 8px; font-size: 0.9rem; color: var(--muted);">Accès illimité aux contenus pendant 3 mois. Aucun frais caché.</p>
+                <p style="margin-top: 8px; font-size: 0.9rem; color: var(--text-light);">Accès illimité aux contenus pendant 3 mois. Aucun frais caché.</p>
               </div>
             </div>
 
@@ -1097,80 +1451,605 @@
         </article>
 
         <div class="coming-soon-box">
-          <h2 style="color: var(--blue); margin-bottom: 14px;">🖥️ Initiation numérique</h2>
-          <p style="margin-bottom: 16px;">
-            Un parcours complémentaire d'initiation aux usages numériques peut être développé en complément des parcours FLE.
-          </p>
+          <h2 style="color: var(--primary-blue); margin-bottom: 14px;">🖥️ Initiation numérique</h2>
+          <p style="margin-bottom: 16px;">Un parcours complémentaire d'initiation aux usages numériques peut être développé en complément des parcours FLE.</p>
           <button class="btn btn-secondary" onclick="showPage('contact')">Me tenir informé</button>
         </div>
       </div>
     </section>
   </div>
 
-  <!-- A PROPOS -->
-  <div id="about" class="page">
+  <!-- BLOG PAGE -->
+  <div id="blog" class="page">
     <div class="page-header">
       <div class="container">
-        <h1>À propos de LOGIX FORMA</h1>
-        <p>Association de formation engagée pour l'accès aux compétences</p>
+        <h1>Blog Reconversion Tech 2025</h1>
+        <p>Articles signés par Moctar TOURÉ, Directeur pédagogique — Publication : février 2026</p>
       </div>
     </div>
 
     <section>
       <div class="container">
         <div class="content-box">
-          <h2>Notre mission</h2>
+          <h2>Blog Reconversion et Formation</h2>
           <p>
-            LOGIX FORMA développe des parcours de formation accessibles, structurés et compatibles avec des usages
-            numériques actuels, avec une attention particulière portée à l'apprentissage du français langue étrangère
-            et à l'accompagnement des adultes.
+            Les articles publiés ci-dessous sont rédigés par
+            <strong>Moctar TOURÉ, Directeur pédagogique</strong>,
+            et datés de <strong>février 2026</strong>.
           </p>
           <p>
-            Notre ambition est de proposer des contenus clairs, progressifs, utiles et directement exploitables
-            dans un environnement d'apprentissage en ligne, en autonomie.
-          </p>
-        </div>
-
-        <div class="content-box">
-          <h2>Notre positionnement</h2>
-          <p>
-            LOGIX FORMA s'appuie sur une logique de formation en autonomie : des modules homogènes,
-            accessibles 24h/24 et 7j/7, alignés sur des objectifs précis et compatibles avec un apprentissage à son propre rythme.
-          </p>
-          <p>
-            Les parcours A1 et A2 ont été conçus pour assurer cohérence, simplicité d'usage et qualité pédagogique,
-            avec une option d'accompagnement individualisé pour ceux qui souhaitent un suivi personnalisé.
+            Ils traitent de la reconversion, des financements, de l'employabilité
+            et des parcours de formation pour adultes.
           </p>
         </div>
 
+        <div class="grid article-grid">
+          <article class="article-card">
+            <span class="category">Financement</span>
+            <h3>Comment financer sa reconversion en 2025 : La stratégie d'ingénierie financière</h3>
+            <p>Découvrez la stratégie d'ingénierie financière pour financer votre reconversion tech en 2025. CPF, PTP, OPCO : Moctar TOURÉ vous guide.</p>
+            <div class="meta">
+              <span>📅 Février 2026</span>
+              <span class="read-more" onclick="showArticle('article-1')">Lire l'article →</span>
+            </div>
+          </article>
+
+          <article class="article-card">
+            <span class="category green">Métiers Tech</span>
+            <h3>5 métiers tech qui recrutent sans diplôme : La fin de la méritocratie papier</h3>
+            <p>5 métiers tech qui recrutent sans diplôme en 2025. Moctar TOURÉ explique comment la compétence prime sur le titre.</p>
+            <div class="meta">
+              <span>📅 Février 2026</span>
+              <span class="read-more" onclick="showArticle('article-2')">Lire l'article →</span>
+            </div>
+          </article>
+
+          <article class="article-card">
+            <span class="category blue">Témoignage</span>
+            <h3>Témoignage : De la restauration au code, le voyage intérieur de Karim</h3>
+            <p>Témoignage reconversion : de la restauration au code. Moctar TOURÉ raconte l'histoire de Karim.</p>
+            <div class="meta">
+              <span>📅 Février 2026</span>
+              <span class="read-more" onclick="showArticle('article-3')">Lire l'article →</span>
+            </div>
+          </article>
+
+          <article class="article-card">
+            <span class="category">Guide Administratif</span>
+            <h3>CPF, OPCO, FIF : Le guide de navigation administrative pour reconvertis</h3>
+            <p>Guide complet financement formation 2025 : CPF, OPCO, ATPRO, FIF-PL. Moctar TOURÉ décrypte l'administration.</p>
+            <div class="meta">
+              <span>📅 Février 2026</span>
+              <span class="read-more" onclick="showArticle('article-4')">Lire l'article →</span>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+  </div>
+
+  <!-- ARTICLE 1 -->
+  <div id="article-1" class="page">
+    <div class="page-header">
+      <div class="container">
+        <h1>Comment financer sa reconversion en 2025</h1>
+        <p>La stratégie d'ingénierie financière par Moctar TOURÉ</p>
+      </div>
+    </div>
+
+    <section class="article-detail">
+      <div class="container">
+        <div class="article-content">
+          <span class="back-link" onclick="showPage('blog')">← Retour aux articles</span>
+
+          <h1>Comment financer sa reconversion en 2025 : La stratégie d'ingénierie financière</h1>
+
+          <div class="article-meta">
+            <span><strong>Auteur :</strong> Moctar TOURÉ, Directeur pédagogique</span>
+            <span><strong>Date de publication :</strong> février 2026</span>
+            <span><strong>Objectif :</strong> Lead gen — Public : Tous</span>
+          </div>
+
+          <div class="toc">
+            <h4>📋 Sommaire</h4>
+            <ul>
+              <li><a href="#intro">Introduction : Le mythe du "Je n'ai pas le budget"</a></li>
+              <li><a href="#section1">1. Le Concept Pédagogique : Le ROI de l'Apprentissage</a></li>
+              <li><a href="#section2">2. L'Ingénierie Financière : La méthode des "Paliers"</a></li>
+              <li><a href="#section3">3. Étude de Cas : Le dossier de Sophie</a></li>
+              <li><a href="#section4">4. Les Pièges à éviter en 2025</a></li>
+              <li><a href="#conclusion">Conclusion : Votre avenir a un prix, mais il est négociable</a></li>
+            </ul>
+          </div>
+
+          <h2 id="intro">Introduction : Le mythe du "Je n'ai pas le budget"</h2>
+          <p>Bonjour, je suis <strong>Moctar TOURÉ</strong>. En tant que Directeur Pédagogique, j'ai entendu cette phrase des milliers de fois : <em>"Moctar, votre formation est parfaite, mais je n'ai pas les moyens."</em></p>
+          <p>Je comprends cette appréhension. L'argent est le nerf de la guerre, et investir sur soi-même fait peur. C'est un risque tangible. Pourtant, en 2025, dire "je n'ai pas le budget" est souvent une erreur de diagnostic. Ce n'est pas un problème de ressources, c'est un problème de <strong>montage</strong>.</p>
+          <p>La plupart des gens abordent le financement comme un consommateur qui achète un produit : ils regardent le prix tagué et sortent leur carte bancaire. C'est une erreur fondamentale. Une formation professionnelle, surtout dans la tech, ne s'achète pas, elle se <strong>finance</strong>. Elle s'inscrit dans un écosystème complexe où l'État, les régions et les entreprises ont intérêt à ce que vous réussissiez.</p>
+          <p>Dans cet article, je ne vais pas vous donner une liste sèche d'aides. Je vais vous apprendre à penser comme un ingénieur financier de votre propre carrière. Nous allons déconstruire la peur du coût pour la remplacer par une stratégie d'investissement.</p>
+
+          <h2 id="section1">1. Le Concept Pédagogique : Le ROI de l'Apprentissage</h2>
+          <p>Avant de parler d'argent, parlons de valeur. En pédagogie, nous parlons souvent de "Zone Prochaine de Développement". En finance, parlons de <strong>ROI (Retour sur Investissement)</strong>.</p>
+          <p>Une formation à 6 000 € semble chère si vous la comparez à un loisir. Mais si cette formation vous permet de passer d'un salaire de 1 800 € à 3 500 € dans les 12 mois, le calcul change radicalement.</p>
+          <ul>
+            <li><strong>Coût :</strong> 6 000 €</li>
+            <li><strong>Gain annuel brut supplémentaire :</strong> +20 000 €</li>
+            <li><strong>Temps de retour sur investissement :</strong> Moins de 4 mois de travail</li>
+          </ul>
+          <p>La première révélation que je veux vous offrir est celle-ci : <strong>Le vrai coût, ce n'est pas le prix de la formation. Le vrai coût, c'est le salaire que vous ne gagnerez pas en restant dans votre situation actuelle.</strong></p>
+
+          <h2 id="section2">2. L'Ingénierie Financière : La méthode des "Paliers"</h2>
+          <p>Pour financer votre projet en 2025, <strong>ne cherchez pas</strong> une solution unique. Cherchez un <strong>assemblage</strong>. Voici la méthode que nous utilisons avec mes étudiants pour construire un dossier blindé.</p>
+
+          <h3>Palier 1 : Le Socle (CPF)</h3>
+          <p>Votre Compte Personnel de Formation est la base. En 2025, les droits sont consolidés. Mais attention, le CPF ne doit pas être vu comme un "cadeau" à dépenser, mais comme un apport initial. Il couvre souvent entre 30% et 50% du projet. Notez qu'un reste à charge forfaitaire (environ 100 €) peut s'appliquer selon les cas, sauf pour les demandeurs d'emploi.</p>
+          <div class="info-box">
+            <strong>Conseil d'expert :</strong> Vérifiez que la formation vise un titre <strong>RNCP de Niveau 6 ou 7</strong>. C'est la clé qui débloque les autres financements. Sans cette certification d'État, le CPF est inutilisable pour ce type de projet.
+          </div>
+
+          <h3>Palier 2 : Le Levier Employeur (OPCO / Plan de Compétences)</h3>
+          <p>C'est ici que se joue la négociation. Beaucoup hésitent à en parler à leur employeur par peur d'être jugés "infidèles". C'est une vision à court terme. En 2025, les entreprises souffrent d'une pénurie de talents tech. Si vous proposez à votre employeur de vous former pour apporter une compétence interne, vous devenez un actif plus valuable.</p>
+          <p><strong>La stratégie :</strong> Ne demandez pas une formation pour "partir". Demandez une formation pour "contribuer davantage". L'OPCO finance ici le <strong>Plan de Développement des Compétences</strong>.</p>
+
+          <h3>Palier 3 : Le Changement de Vie (Transitions Pro)</h3>
+          <p>Si votre objectif est de quitter votre métier actuel pour un nouveau secteur, ce n'est plus l'OPCO qui est interlocuteur principal, mais l'<strong>Association Transitions Pro (ATPRO)</strong> de votre région.</p>
+          <ul>
+            <li><strong>Le dispositif :</strong> Le Projet de Transition Professionnelle (PTP)</li>
+            <li><strong>L'avantage :</strong> Il peut financer la formation ET maintenir tout ou partie de votre salaire pendant la période de formation</li>
+            <li><strong>Le secret :</strong> Les dossiers sont étudiés par des commissions régionales. La pertinence du projet par rapport au bassin d'emploi est cruciale</li>
+          </ul>
+
+          <h3>Palier 4 : Le Complément (Régions & France Travail)</h3>
+          <p>Il reste souvent un "reste à charge". C'est là qu'interviennent les aides contextuelles. La Région Île-de-France, par exemple, dispose de dispositifs spécifiques pour la reconversion numérique. France Travail (ex-Pôle Emploi) peut abonder via l'AIF (Aide Individuelle à la Formation) si le projet est validé par un conseiller.</p>
+          <p><strong>Le secret :</strong> Ces aides sont soumises à des quotas. Il faut déposer les dossiers dès janvier ou septembre. La temporalité est cruciale.</p>
+
+          <h2 id="section3">3. Étude de Cas : Le dossier de Sophie</h2>
+          <p>Sophie, 34 ans, assistante commerciale, voulait devenir Développeuse Web.</p>
+          <ul>
+            <li><strong>Prix de la formation :</strong> 7 200 €</li>
+            <li><strong>Son CPF :</strong> 2 500 €</li>
+            <li><strong>Son reste à charge initial :</strong> 4 700 € (Bloquant pour elle)</li>
+          </ul>
+          <p>Nous avons travaillé ensemble sur un montage hybride :</p>
+          <ol>
+            <li>Activation du CPF : <strong>2 500 €</strong></li>
+            <li>Demande de PTP via son <strong>Association Transitions Pro</strong> régionale : <strong>3 500 €</strong> (validé car son projet correspondait aux besoins numériques locaux)</li>
+            <li>Reste à charge final : <strong>1 200 €</strong></li>
+            <li>Solution pour les 1 200 € : Échelonnement sans frais sur 10 mois via notre partenaire financier</li>
+          </ol>
+          <p><strong>Résultat :</strong> Sophie n'a rien déboursé upfront. Elle a payé moins de 120 € par mois, soit moins qu'un abonnement streaming, pour changer de vie.</p>
+
+          <h2 id="section4">4. Les Pièges à éviter en 2025</h2>
+          <div class="warning-box">
+            <p>En tant que Directeur Pédagogique, je dois vous mettre en garde. Le marché de la formation est régulé, mais il reste des zones d'ombre.</p>
+          </div>
+          <ul>
+            <li><strong>Les organismes non certifiés Qualiopi :</strong> En 2025, la certification Qualiopi est obligatoire pour accéder aux fonds publics. Si un organisme ne l'a pas, fuyez. C'est le signe d'un manque de sérieux pédagogique.</li>
+            <li><strong>Les promesses de "Financement Automatique" :</strong> Personne ne peut vous garantir un financement à 100% sans étudier votre dossier. Méfiez-vous des commerciaux trop pressants.</li>
+            <li><strong>L'oubli du "Reste à Vivre" :</strong> Ne financez pas seulement la formation. Pensez à votre trésorerie pendant les mois de formation. Si vous ne travaillez pas, comment payerez-vous votre loyer ? Intégrez cette variable dans votre calcul de risque.</li>
+          </ul>
+
+          <h2 id="conclusion">Conclusion : Votre avenir a un prix, mais il est négociable</h2>
+          <p>Financer sa reconversion n'est pas une question de richesse personnelle, c'est une question de <strong>débrouillardise administrative</strong> et de <strong>vision stratégique</strong>.</p>
+          <p>Vous avez le droit à la formation. C'est un droit acquis. Mais ce droit ne s'active pas tout seul. Il se conquiert par un dossier solide, une argumentation béton et un accompagnement expert.</p>
+          <p>Ne laissez pas un chiffre sur un devis vous empêcher d'accéder à la carrière que vous méritez. La plupart de nos étudiants ont pensé qu'ils ne pourraient pas se le permettre. Ils ont tous trouvé une solution.</p>
+
+          <div class="cta-box">
+            <p><strong>👉 Vous souhaitez un audit personnalisé de votre situation financière ?</strong></p>
+            <button class="btn btn-primary" onclick="showPage('contact')" data-cta="article-1">CONTACTEZ-NOUS POUR RÉSERVER VOTRE AUDIT FINANCEMENT STRATÉGIQUE</button>
+            <p style="margin-top: 12px; font-size: 0.9rem; color: var(--text-light);">Je ne vous vendrai pas une formation. Nous allons construire ensemble votre plan de financement sur mesure, en toute transparence.</p>
+          </div>
+
+          <div class="author-box">
+            <div class="author-avatar">MT</div>
+            <div class="author-info">
+              <h4>Moctar TOURÉ</h4>
+              <p>Directeur Pédagogique — LOGIX FORMA</p>
+              <p style="margin-top: 8px;">Expert en ingénierie de formation et financement de la reconversion professionnelle.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </div>
+
+  <!-- ARTICLE 2 -->
+  <div id="article-2" class="page">
+    <div class="page-header">
+      <div class="container">
+        <h1>5 métiers tech qui recrutent sans diplôme</h1>
+        <p>La fin de la méritocratie papier par Moctar TOURÉ</p>
+      </div>
+    </div>
+
+    <section class="article-detail">
+      <div class="container">
+        <div class="article-content">
+          <span class="back-link" onclick="showPage('blog')">← Retour aux articles</span>
+
+          <h1>5 métiers tech qui recrutent sans diplôme : La fin de la méritocratie papier</h1>
+
+          <div class="article-meta">
+            <span><strong>Auteur :</strong> Moctar TOURÉ, Directeur pédagogique</span>
+            <span><strong>Date de publication :</strong> février 2026</span>
+            <span><strong>Objectif :</strong> SEO — Public : Reconversion</span>
+          </div>
+
+          <h2>Introduction : Le diplôme est un rear-view mirror</h2>
+          <p>Il y a une vérité inconfortable que peu de Directeurs Pédagogiques osent dire : le diplôme universitaire est conçu pour le monde d'hier, pas pour celui de 2025.</p>
+          <p>Pendant des décennies, le diplôme a servi de filtre de sécurité pour les recruteurs. "Bac+5 = Capacité d'abstraction". C'était vrai quand la tech évoluait lentement. Aujourd'hui, les technologies changent tous les 6 mois. Un diplôme obtenu il y a 5 ans est souvent obsolète sur les frameworks actuels.</p>
+          <p>En tant que Directeur Pédagogique, je ne recrute pas sur la capacité à mémoriser un cours magistral. Je recrute sur la <strong>capacité à résoudre un problème inédit</strong>. C'est pour cela que la tech est l'un des derniers secteurs où la méritocratie du "savoir-faire" prime encore sur la noblesse du "savoir-titre".</p>
+          <p>Dans cet article, nous allons analyser 5 métiers où votre portfolio pèse plus lourd que votre CV. Mais attention, "sans diplôme" ne veut pas dire "sans effort". Cela veut dire "sans barrière à l'entrée administrative".</p>
+
+          <h2>1. Le Concept Pédagogique : La Compétence T-Shaped</h2>
+          <p>Pour comprendre pourquoi ces métiers recrutent sans diplôme, il faut comprendre le profil recherché. Nous cherchons des profils en <strong>T</strong>.</p>
+          <ul>
+            <li><strong>La barre horizontale :</strong> Une culture générale tech large (comprendre le web, les bases de données, le cloud, la sécurité)</li>
+            <li><strong>La barre verticale :</strong> Une expertise pointue dans un domaine spécifique</li>
+          </ul>
+          <p>Un diplôme généraliste donne souvent une barre horizontale large mais une verticale faible. Une formation intensive (bootcamp) ou un parcours autodidacte bien structuré permet de construire une verticale très forte très rapidement. C'est ce que les entreprises achètent : une opérationnalité immédiate.</p>
+
+          <h2>2. Les 5 Métiers d'Opportunité (Analyse Détaillée)</h2>
+          <p>Voici les 5 domaines où la pénurie de talents est telle que les RH ont abaissé les filtres diplomatiques.</p>
+
+          <h3>A. Développeur Fullstack JavaScript (React/Node)</h3>
+          <ul>
+            <li><strong>La réalité du métier :</strong> Vous êtes l'architecte et le maçon. Vous construisez l'interface utilisateur et la logique serveur.</li>
+            <li><strong>Pourquoi pas de diplôme ?</strong> Le code est binaire. Soit ça marche, soit ça ne marche pas. Lors de l'entretien technique, on vous donne un problème à résoudre. Si votre code est propre et fonctionnel, personne ne vous demandera où vous avez appris.</li>
+            <li><strong>Ce qu'il faut prouver :</strong> Un GitHub actif avec 2 ou 3 projets complets (pas des tutoriels copiés-collés). Une application déployée en ligne que le recruteur peut tester.</li>
+          </ul>
+          <div class="info-box">
+            <strong>Mon conseil :</strong> Spécialisez-vous sur l'écosystème JavaScript. C'est le langage omniprésent. Maîtriser React et Node.js vous ouvre 80% du marché web.
+          </div>
+
+          <h3>B. Analyste Cybersécurité (SOC Analyst Junior)</h3>
+          <ul>
+            <li><strong>La réalité du métier :</strong> Vous êtes le vigile numérique. Vous surveillez les alertes, analysez les incidents et appliquez les protocoles de défense.</li>
+            <li><strong>Pourquoi pas de diplôme ?</strong> La cybersécurité souffre d'une pénurie mondiale de 3 millions de professionnels. Les entreprises ne peuvent pas se permettre d'être élitistes. Elles ont besoin de yeux et de mains.</li>
+            <li><strong>Ce qu'il faut prouver :</strong> Des certifications pratiques (type SecNum, ou des badges Linux/AWS). Une compréhension des réseaux (TCP/IP) est plus importante qu'un Master en crypto.</li>
+          </ul>
+          <div class="info-box">
+            <strong>Mon conseil :</strong> Montrez votre curiosité. Avez-vous participé à des CTF (Capture The Flag) ? Avez-vous un labo chez vous ? La passion est la meilleure preuve de compétence ici.
+          </div>
+
+          <h3>C. Data Analyst (Business Intelligence)</h3>
+          <ul>
+            <li><strong>La réalité du métier :</strong> Vous êtes le traducteur. Vous transformez des données brutes en insights compréhensibles pour les décideurs.</li>
+            <li><strong>Pourquoi pas de diplôme ?</strong> Les outils (PowerBI, Tableau, SQL) s'apprennent par la pratique. Une personne venant du marketing ou de la finance aura souvent plus de bon sens métier qu'un mathématicien pur pour interpréter les données.</li>
+            <li><strong>Ce qu'il faut prouver :</strong> Un portfolio de dashboards. Montrez que vous savez raconter une histoire avec des chiffres (Data Storytelling).</li>
+          </ul>
+          <div class="info-box">
+            <strong>Mon conseil :</strong> Ne vous noyez pas dans le Machine Learning complexe. Commencez par maîtriser SQL et la visualisation. C'est là que sont les besoins immédiats des PME.
+          </div>
+
+          <h3>D. Administrateur Cloud (AWS / Azure)</h3>
+          <ul>
+            <li><strong>La réalité du métier :</strong> Vous gérez l'infrastructure invisible. Vous assurez que le site ne tombe pas quand il y a 10 000 visiteurs.</li>
+            <li><strong>Pourquoi pas de diplôme ?</strong> Le Cloud se certifie. Amazon (AWS) ou Microsoft (Azure) délivrent leurs propres certifications qui sont souvent plus respectées par les techs qu'un diplôme universitaire généraliste.</li>
+            <li><strong>Ce qu'il faut prouver :</strong> Les certifications officielles Cloud. La capacité à scripter l'infrastructure (Terraform, Ansible).</li>
+          </ul>
+          <div class="info-box">
+            <strong>Mon conseil :</strong> C'est un métier de responsabilité. La rigueur et la gestion du stress sont vos atouts majeurs, plus que vos notes en algèbre.
+          </div>
+
+          <h3>E. Intégrateur Web Accessible (Front-End Specialist)</h3>
+          <ul>
+            <li><strong>La réalité du métier :</strong> Vous assurez que le site est beau, rapide et utilisable par tous (y compris les personnes en situation de handicap).</li>
+            <li><strong>Pourquoi pas de diplôme ?</strong> L'accessibilité numérique est devenue une obligation légale (RGAA). Les entreprises cherchent désespérément des experts capables de rendre leurs sites conformes. C'est une niche technique très demandée.</li>
+            <li><strong>Ce qu'il faut prouver :</strong> Des audits d'accessibilité que vous avez réalisés. Une maîtrise parfaite du HTML sémantique et du CSS.</li>
+          </ul>
+          <div class="info-box">
+            <strong>Mon conseil :</strong> Positionnez-vous comme l'expert de la qualité du code front-end. C'est un angle d'attaque puissant pour se différencier.
+          </div>
+
+          <h2>3. La Révélation : Le Portfolio est votre nouveau Diplôme</h2>
+          <p>Si vous n'avez pas de diplôme, vous devez construire une <strong>preuve de compétence</strong>. Dans mon équipe pédagogique, nous insistons sur la notion de "Projet Fil Rouge". Pendant la formation, vous ne faites pas des exercices abstraits. Vous construisez un produit réel.</p>
+          <p>Quand vous arrivez en entretien avec un lien vers une application que vous avez codée, qui fonctionne, et dont vous pouvez expliquer chaque ligne, le diplôme devient accessoire. Vous avez déplacé le terrain de la discussion : on ne parle plus de votre passé scolaire, on parle de votre futur potentiel.</p>
+
+          <h2>4. Plan d'Action pour les 30 prochains jours</h2>
+          <p>Vous voulez entrer dans la tech sans diplôme ? Voici votre feuille de route :</p>
+          <ol>
+            <li><strong>Choisissez votre niche :</strong> Ne dites pas "je veux faire de l'informatique". Dites "je veux faire du React" ou "je veux faire de la Data".</li>
+            <li><strong>Formez-vous intensivement :</strong> 3 mois à temps plein valent 2 ans de cours du soir théoriques.</li>
+            <li><strong>Codez en public :</strong> Documentez votre apprentissage sur LinkedIn ou un blog. Montrez vos échecs et vos réussites. Cela crée une preuve sociale.</li>
+            <li><strong>Réseautez intelligemment :</strong> N'envoyez pas de CV. Envoyez des projets. Contactez des CTO (Directeurs Techniques) et demandez leur avis sur votre code, pas un emploi.</li>
+          </ol>
+
+          <h2>Conclusion : La tech est une méritocratie imparfaite, mais réelle</h2>
+          <p>Je ne vais pas vous mentir : ce sera dur. Vous devrez travailler deux fois plus pour prouver la moitié de ce qu'un diplôme prouve automatiquement. Mais une fois la porte franchie, plus personne ne vous demandera d'où vous venez. Ils vous demanderont seulement ce que vous savez faire.</p>
+          <p>C'est cela, la liberté de la reconversion tech.</p>
+
+          <div class="cta-box">
+            <p><strong>👉 Vous souhaitez découvrir nos programmes certifiants RNCP ?</strong></p>
+            <button class="btn btn-primary" onclick="showPage('contact')" data-cta="article-2">CONTACTEZ-NOUS POUR DÉCOUVRIR NOS PROGRAMMES CERTIFIANTS RNCP</button>
+          </div>
+
+          <div class="author-box">
+            <div class="author-avatar">MT</div>
+            <div class="author-info">
+              <h4>Moctar TOURÉ</h4>
+              <p>Directeur Pédagogique — LOGIX FORMA</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </div>
+
+  <!-- ARTICLE 3 -->
+  <div id="article-3" class="page">
+    <div class="page-header">
+      <div class="container">
+        <h1>Témoignage : De la restauration au code</h1>
+        <p>Le voyage intérieur de Karim par Moctar TOURÉ</p>
+      </div>
+    </div>
+
+    <section class="article-detail">
+      <div class="container">
+        <div class="article-content">
+          <span class="back-link" onclick="showPage('blog')">← Retour aux articles</span>
+
+          <h1>Témoignage : De la restauration au code, le voyage intérieur de Karim</h1>
+
+          <div class="article-meta">
+            <span><strong>Auteur :</strong> Moctar TOURÉ, Directeur pédagogique</span>
+            <span><strong>Date de publication :</strong> février 2026</span>
+            <span><strong>Objectif :</strong> Preuve sociale — Public : Hésitants</span>
+          </div>
+
+          <h2>Introduction : Au-delà du code, la reconstruction de soi</h2>
+          <p>Je suis <strong>Moctar TOURÉ</strong>. Dans mon métier de Directeur Pédagogique, je vois passer des CV, des notes, des projets. Mais ce que je vois surtout, ce sont des humains. Des humains qui ont peur, qui espèrent, qui doutent.</p>
+          <p>L'histoire que je vais vous raconter aujourd'hui n'est pas une success story marketing lissée. C'est l'histoire vraie de Karim. C'est l'histoire de la "Vallée du Désespoir", ce moment pédagogique crucial où l'apprenant réalise que c'est plus dur que prévu, et où tout peut basculer.</p>
+          <p>Si vous hésitez à vous lancer parce que vous vous sentez "trop vieux", "pas assez intelligent" ou "hors du système", lisez ceci. Karim était tout cela. Et aujourd'hui, il est Développeur.</p>
+
+          <h2>1. Le Point de Rupture : "Je ne suis pas fait pour ça"</h2>
+          <p>Karim avait 32 ans. Il était Chef de Rang dans un grand restaurant parisien.</p>
+          <p><em>"Moctar, je suis crevé"</em>, m'a-t-il dit lors de notre premier entretien. <em>"Je sors à 2h du matin, je rentre à 10h. Je n'ai pas de vie. Je veux coder, j'ai entendu que ça payait bien et que je pouvais télétravailler. Mais j'ai arrêté l'école à 18 ans. Les maths, c'était l'enfer."</em></p>
+          <p>Karim souffrait de ce que nous appelons en pédagogie la <strong>Fixité Mentale</strong>. Il croyait que l'intelligence était innée, figée. "Je suis nul en maths donc je serai nul en code".</p>
+          <p>Nous l'avons accepté en formation. Les premières semaines furent euphoriques. La découverte, la nouveauté. Puis est arrivée la Semaine 4. Le mur. Les concepts s'emboîtaient. La complexité augmentait. Karim a commencé à décrocher. Il restait silencieux en classe. Ses rendus étaient en retard.</p>
+          <p>Un mardi soir, il est venu me voir dans mon bureau. Il avait les larmes aux yeux. <em>"Je vous avais prévenu. Je ne suis pas assez intelligent. Je vais arrêter. Je vais retourner en salle, c'est ce que je sais faire."</em></p>
+
+          <h2>2. L'Intervention Pédagogique : Changer de Narratif</h2>
+          <p>C'est à ce moment précis que se joue la réussite d'une reconversion. En tant que Directeur Pédagogique, mon rôle n'est pas de faire le cours. Mon rôle est de débloquer l'apprenant.</p>
+          <p>Je n'ai pas consolé Karim. Je lui ai montré ses erreurs. <em>"Karim, regarde ton code. Tu as résolu ce bug complexe hier. Tu as aidé Sophie sur sa base de données ce matin. Tu n'es pas nul. Tu es juste en train d'apprendre. La douleur que tu ressens, c'est celle de la croissance neuronale. C'est bon signe."</em></p>
+          <p>Nous avons appliqué un concept clé : <strong>Le Scaffolding (Étayage)</strong>. Nous avons réduit la charge cognitive. Au lieu de lui demander de construire une application entière, nous lui avons demandé de construire une seule fonctionnalité, parfaitement. Nous avons célébré les micro-victoires.</p>
+          <p>Je lui ai aussi fait prendre conscience de ses <strong>Compétences Transférables</strong>. <em>"En restaurant, tu gères le stress de 50 clients en même temps. Tu priorises les commandes. Tu gères les conflits. Un développeur junior sortant d'école d'ingénieur n'a pas cette résistance au stress. C'est ton avantage concurrentiel, pas ton handicap."</em></p>
+          <p>Cette phrase a été un déclic. Karim a compris qu'il n'était pas un "ancien serveur qui apprend à coder". Il était un "professionnel de la gestion de flux qui apprend un nouvel outil".</p>
+
+          <h2>3. La Traversée du Désert et la Lumière</h2>
+          <p>Les semaines 5 à 8 ont été dures. Karim travaillait le soir, le weekend. Il a connu l'imposteur syndrome. Mais il n'était plus seul. Il avait compris que demander de l'aide n'était pas un signe de faiblesse, mais une compétence professionnelle (savoir chercher l'information).</p>
+          <p>Le jour de la soutenance de projet final, Karim a présenté une application de gestion de stock pour les restaurants. Il avait utilisé sa connaissance métier pour créer un outil que les "vrais" développeurs n'auraient pas pensé à faire ainsi. Il avait transformé son passé en atout.</p>
+          <p>Il a obtenu son titre avec mention.</p>
+
+          <h2>4. Aujourd'hui : La Réalité du Terrain</h2>
+          <p>Karim est en poste depuis 8 mois. Je l'ai eu au téléphone la semaine dernière. <em>"Moctar, hier j'ai bloqué 3 heures sur un bug. Avant, j'aurais paniqué. J'aurais pensé que je suis nul. Là, j'ai pris une pause, j'ai respiré, j'ai découpé le problème. Je l'ai résolu. Je me sens légitime."</em></p>
+          <p>Il ne gagne pas des millions. Il commence. Mais il a retrouvé sa dignité professionnelle. Il dort la nuit. Il a du temps pour ses enfants.</p>
+
+          <h2>5. Ce que vous devez retenir de l'histoire de Karim</h2>
+          <p>Si vous vous reconnaissez dans le Karim du début :</p>
+          <ol>
+            <li><strong>Le doute est normal :</strong> Il fait partie du processus d'apprentissage. Si vous ne doutez pas, c'est que vous n'apprenez rien.</li>
+            <li><strong>Votre passé est une ressource :</strong> Ne cherchez pas à effacer qui vous étiez. Intégrez-le dans qui vous devenez.</li>
+            <li><strong>La pédagogie humaine est cruciale :</strong> Une formation tech ne doit pas être une usine. Elle doit être un accompagnement. Si votre formateur ne vous regarde pas dans les yeux, changez de formation.</li>
+          </ol>
+
+          <h2>Conclusion : Vous êtes capable de plus que vous ne le pensez</h2>
+          <p>La reconversion n'est pas seulement un changement de métier. C'est un changement d'identité. C'est accepter de redevenir un enfant qui apprend à marcher, avec la conscience d'un adulte. C'est violent, parfois. Mais c'est la seule façon de grandir.</p>
+          <p>Karim l'a fait. Des centaines d'autres l'ont fait. Vous le pouvez aussi. Nous sommes là pour vous tendre la main quand vous trébucherez. Parce que vous trébucherez. Et nous serons là pour vous relever.</p>
+
+          <div class="cta-box">
+            <p><strong>👉 Vous souhaitez parler à un ancien élève ?</strong></p>
+            <button class="btn btn-primary" onclick="showPage('contact')" data-cta="article-3">CONTACTEZ-NOUS POUR PARLER À UN ANCIEN ÉLÈVE</button>
+            <p style="margin-top: 12px; font-size: 0.9rem; color: var(--text-light);">Parlez avec ceux qui ont marché dans vos pas. La preuve sociale est la meilleure réassurance.</p>
+          </div>
+
+          <div class="author-box">
+            <div class="author-avatar">MT</div>
+            <div class="author-info">
+              <h4>Moctar TOURÉ</h4>
+              <p>Directeur Pédagogique — LOGIX FORMA</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </div>
+
+  <!-- ARTICLE 4 -->
+  <div id="article-4" class="page">
+    <div class="page-header">
+      <div class="container">
+        <h1>CPF, OPCO, FIF : Le guide administratif</h1>
+        <p>Navigation administrative pour reconvertis par Moctar TOURÉ</p>
+      </div>
+    </div>
+
+    <section class="article-detail">
+      <div class="container">
+        <div class="article-content">
+          <span class="back-link" onclick="showPage('blog')">← Retour aux articles</span>
+
+          <h1>CPF, OPCO, FIF : Le guide de navigation administrative pour reconvertis</h1>
+
+          <div class="article-meta">
+            <span><strong>Auteur :</strong> Moctar TOURÉ, Directeur pédagogique</span>
+            <span><strong>Date de publication :</strong> février 2026</span>
+            <span><strong>Objectif :</strong> SEO — Public : Recherche info</span>
+          </div>
+
+          <div class="toc">
+            <h4>📋 Sommaire</h4>
+            <ul>
+              <li><a href="#intro">Introduction : L'administration comme compétence technique</a></li>
+              <li><a href="#section1">1. Comprendre la Logique du Système</a></li>
+              <li><a href="#section2">2. Décryptage Détaillé des Dispositifs</a></li>
+              <li><a href="#section3">3. La Checklist de Validation</a></li>
+              <li><a href="#section4">4. Gestion des Incidents (Troubleshooting)</a></li>
+              <li><a href="#conclusion">5. Le Mot de la Fin : La Littératie Administrative</a></li>
+            </ul>
+          </div>
+
+          <h2 id="intro">Introduction : L'administration comme compétence technique</h2>
+          <p>Soyons francs. Ouvrir un dossier de financement de formation en France, c'est un peu comme essayer d'assembler un meuble IKEA sans la notice, mais avec des pièces qui changent de nom tous les ans.</p>
+          <p>CPF. OPCO. ATPRO. FIF-PL. AIF. PTP. RNCP. RS. Qualiopi.</p>
+          <p>En tant que Directeur Pédagogique, je vois des étudiants brillants, capables de coder des algorithmes complexes, se faire battre par un formulaire administratif mal rempli. C'est dommage. C'est même injuste.</p>
+          <p>L'objectif de cet article est de transformer cette complexité en <strong>processus logique</strong>. Nous allons traiter l'administration non pas comme une barrière, mais comme une compétence technique à acquérir. Si vous savez suivre une logique "If This Then That" en code, vous pouvez comprendre le système de financement.</p>
+          <p>Ce guide est conçu pour être votre document de référence en 2025.</p>
+
+          <h2 id="section1">1. Comprendre la Logique du Système (Le "Pourquoi")</h2>
+          <p>Pour ne pas se perdre, il faut comprendre l'architecture du système. L'État français a créé un système d'assurance-formation. Vous cotisez toute votre vie (via vos impôts et charges sociales) pour avoir droit à la formation plus tard.</p>
+          <ul>
+            <li><strong>Le CPF</strong> est votre compte épargne individuel</li>
+            <li><strong>L'OPCO</strong> est la caisse collective de votre branche professionnelle (pour le plan de compétences)</li>
+            <li><strong>L'ATPRO</strong> gère les projets de changement de métier (PTP)</li>
+            <li><strong>Le FIF-PL</strong> est la caisse collective des professions libérales et indépendants</li>
+          </ul>
+          <p>Le but du jeu est de savoir quelle caisse solliciter en fonction de votre statut actuel.</p>
+
+          <h2 id="section2">2. Décryptage Détaillé des Dispositifs</h2>
+
+          <h3>A. Le CPF (Compte Personnel de Formation)</h3>
+          <ul>
+            <li><strong>Cible :</strong> Universelle (Salariés, Indépendants, Demandeurs d'emploi)</li>
+            <li><strong>Mécanique :</strong> Vous accumulez 500 € par an (plafond 5 000 €). Un reste à charge forfaitaire (environ 100 €) peut s'appliquer selon les cas</li>
+            <li><strong>La contrainte technique :</strong> La formation DOIT être éligible. Cela signifie qu'elle doit être enregistrée sur la plateforme officielle et viser une certification d'État (RNCP ou RS)</li>
+            <li><strong>Le piège 2025 :</strong> La sécurisation. Depuis les arnaques massives, l'application Mon Compte Formation impose une validation d'identité forte et bloque certains types de formations à distance sans justificatif</li>
+          </ul>
+          <div class="info-box">
+            <strong>Action :</strong> Créez votre compte sur <em>moncompteformation.gouv.fr</em> (le site officiel .gouv.fr, pas les sites privés). Vérifiez votre solde.
+          </div>
+
+          <h3>B. L'OPCO (Opérateur de Compétences)</h3>
+          <ul>
+            <li><strong>Cible :</strong> Salariés du privé (via l'employeur)</li>
+            <li><strong>Mécanique :</strong> L'employeur demande le financement à l'OPCO de sa branche (ex: OPCO EP pour l'éducation, OPCO 2i pour l'industrie)</li>
+            <li><strong>Usage principal :</strong> <strong>Plan de développement des compétences.</strong> L'employeur veut vous former pour votre poste actuel. C'est le plus simple. Formation souvent pendant le temps de travail</li>
+          </ul>
+          <div class="warning-box">
+            <strong>Note importante :</strong> L'OPCO ne gère pas directement les projets de reconversion totale (PTP), c'est une confusion fréquente.
+          </div>
+
+          <h3>C. L'Association Transitions Pro (ATPRO)</h3>
+          <ul>
+            <li><strong>Cible :</strong> Salariés souhaitant changer de métier ou de profession</li>
+            <li><strong>Mécanique :</strong> Vous déposez un dossier de <strong>Projet de Transition Professionnelle (PTP)</strong> auprès de l'ATPRO de votre région</li>
+            <li><strong>L'avantage :</strong> Peut couvrir les frais pédagogiques ET maintenir une partie de votre salaire pendant la formation</li>
+            <li><strong>Le délai :</strong> Comptez 2 à 3 mois pour une réponse de la commission paritaire. Anticipez</li>
+          </ul>
+          <div class="info-box">
+            <strong>Action :</strong> Rendez-vous sur le site <em>mon-cep.org</em> pour identifier votre ATPRO régionale.
+          </div>
+
+          <h3>D. Le FIF-PL (Fonds Interprofessionnel de Formation des Professions Libérales)</h3>
+          <ul>
+            <li><strong>Cible :</strong> Travailleurs Non Salariés (TNS), Chefs d'entreprise, Professions libérales (dont beaucoup de freelances tech)</li>
+            <li><strong>Mécanique :</strong> Vous cotisez annuellement (via l'URSSAF ou la SSI). Vous pouvez demander un remboursement de frais pédagogiques</li>
+            <li><strong>La particularité :</strong> Pour les professions libérales, c'est souvent le <strong>FIF-PL</strong> qui est compétent. Pour les commerçants et artisans, c'est l'<strong>AGEFICE</strong>. Les taux de remboursement varient énormément selon les commissions paritaires</li>
+          </ul>
+          <div class="info-box">
+            <strong>Action :</strong> Contactez votre caisse de retraite ou la SSI pour obtenir le formulaire de demande de prise en charge avant de commencer la formation.
+          </div>
+
+          <h2 id="section3">3. La Checklist de Validation (Avant de signer)</h2>
+          <p>En pédagogie, on parle de "Checklist de pré-vol". Avant de vous engager financièrement, passez ce dossier au crible.</p>
+          <div class="checklist">
+            <ul>
+              <li><strong>Certification :</strong> La formation délivre-t-elle un titre RNCP ou RS enregistré au RNCP ? (Vérifiable sur <em>France Compétences</em>)</li>
+              <li><strong>Qualiopi :</strong> L'organisme est-il certifié Qualiopi ? (Obligatoire pour les fonds publics)</li>
+              <li><strong>Devis détaillé :</strong> Le devis distingue-t-il les frais pédagogiques, les frais annexes et le reste à charge ?</li>
+              <li><strong>Convention de formation :</strong> Avez-vous reçu une convention signée précisant les objectifs, la durée et le programme ?</li>
+              <li><strong>Droit de rétractation :</strong> Avez-vous bien noté que vous avez 10 jours pour vous rétracter après signature (pour le CPF) ?</li>
+            </ul>
+          </div>
+
+          <h2 id="section4">4. Gestion des Incidents (Troubleshooting)</h2>
+          <p>Que faire si ça bloque ?</p>
+
+          <h3>Cas 1 : "Mon CPF est refusé"</h3>
+          <ul>
+            <li><strong>Diagnostic :</strong> Souvent un problème de lien entre la certification et le compte</li>
+            <li><strong>Solution :</strong> Contactez le support de l'application CPF avec le code de la formation. Parfois, il faut que l'organisme réactive le lien</li>
+          </ul>
+
+          <h3>Cas 2 : "Mon ATPRO refuse le PTP"</h3>
+          <ul>
+            <li><strong>Diagnostic :</strong> Dossier mal argumenté ou budget de l'ATPRO épuisé</li>
+            <li><strong>Solution :</strong> Réécrivez la lettre de motivation. Liez explicitement votre projet aux besoins du marché du travail. Montrez que c'est un projet viable, pas un rêve</li>
+          </ul>
+
+          <h3>Cas 3 : "Je suis demandeur d'emploi, France Travail ne valide pas"</h3>
+          <ul>
+            <li><strong>Diagnostic :</strong> Le conseiller juge le projet irréaliste</li>
+            <li><strong>Solution :</strong> Apportez des preuves de débouchés (offres d'emploi, témoignages d'anciens). Demandez un entretien avec un conseiller spécialisé "évolution professionnelle"</li>
+          </ul>
+
+          <h2 id="conclusion">5. Le Mot de la Fin : La Littératie Administrative</h2>
+          <p>Savoir naviguer dans ces dispositifs est une compétence en soi. Cela prouve votre capacité à gérer des projets complexes, à suivre des procédures et à être persévérant.</p>
+          <p>Ne vous laissez pas intimider par le jargon. Derrière chaque sigle, il y a une enveloppe budgétaire qui vous attend. Votre travail est d'aller la chercher.</p>
+          <p>Si vous vous sentez dépassé, sachez que notre équipe administrative est là pour agir comme un "compilateur" pour vous. Nous traduisons le jargon administratif en actions simples. Mais venir avec les bases comprises, c'est déjà gagner 50% du temps de traitement.</p>
+
+          <div class="cta-box">
+            <p><strong>👉 Vous souhaitez recevoir notre guide complet des financements 2025 ?</strong></p>
+            <button class="btn btn-primary" onclick="showPage('contact')" data-cta="article-4">CONTACTEZ-NOUS POUR RECEVOIR NOTRE GUIDE PDF COMPLET DES FINANCEMENTS 2025</button>
+            <p style="margin-top: 12px; font-size: 0.9rem; color: var(--text-light);">Ou prenez rendez-vous avec notre responsable administrative pour un audit de dossier.</p>
+          </div>
+
+          <div class="author-box">
+            <div class="author-avatar">MT</div>
+            <div class="author-info">
+              <h4>Moctar TOURÉ</h4>
+              <p>Directeur Pédagogique — LOGIX FORMA</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </div>
+
+  <!-- ABOUT PAGE -->
+  <div id="about" class="page">
+    <div class="page-header">
+      <div class="container">
+        <h1>Qui sommes-nous ?</h1>
+        <p>Une association au service de la formation et de l'insertion</p>
+      </div>
+    </div>
+
+    <section>
+      <div class="container">
         <div class="content-box">
-          <h2>Notre organisation</h2>
-          <p><strong>Présidente :</strong> Madame FOFANA Missade</p>
-          <p><strong>Directeur pédagogique :</strong> Moctar</p>
-          <p>
-            L'association porte un projet de formation à distance centré sur l'accessibilité, la progression
-            pédagogique et la clarté des parcours, avec un tarif solidaire de 29 € la formation.
-          </p>
+          <h2>Notre histoire</h2>
+          <p><strong>LOGIX FORMA</strong> est une association loi 1901 créée à Montreuil. Notre mission est de permettre aux personnes étrangères en France d'apprendre le français et d'accéder à la formation professionnelle, où qu'elles vivent.</p>
+          <p>Nous pensons qu'une formation en ligne peut être <strong>humaine</strong>, <strong>accompagnée</strong> et <strong>efficace</strong>. Pas de parcours impersonnel : nos formateurs sont en direct, avec les apprenants.</p>
         </div>
 
         <div class="content-box">
-          <h2>Nos repères</h2>
+          <h2>Notre parcours</h2>
           <div class="timeline">
             <div class="timeline-item">
-              <span class="date">Création de l'association</span>
-              <p>Structuration du projet LOGIX FORMA autour de la pédagogie, du digital et de l'accompagnement.</p>
+              <span class="date">2021</span>
+              <p><strong>Création de l'association</strong><br>Fondation à Montreuil avec l'ambition de démocratiser l'accès aux compétences professionnelles.</p>
             </div>
             <div class="timeline-item">
-              <span class="date">Développement des parcours A1</span>
-              <p>Conception d'un parcours complet FLE A1 en autonomie, accessible 24h/24 et 7j/7.</p>
+              <span class="date">2021-2025</span>
+              <p><strong>Phase de construction</strong><br>Travail sur la pédagogie, les outils numériques et le réseau de partenaires.</p>
             </div>
             <div class="timeline-item">
-              <span class="date">Développement des parcours A2</span>
-              <p>Conception du niveau suivant avec le même standard de qualité et le même format d'apprentissage.</p>
+              <span class="date">Février 2026</span>
+              <p><strong>Lancement du blog</strong><br>Publication des 4 articles fondateurs par Moctar TOURÉ, Directeur pédagogique.</p>
             </div>
             <div class="timeline-item">
-              <span class="date">Option accompagnement</span>
-              <p>Mise en place d'un suivi individualisé en complément des formations en autonomie.</p>
+              <span class="date">Avril 2026</span>
+              <p><strong>Lancement opérationnel</strong><br>Ouverture des formations FLE A1 et A2 en ligne avec accompagnement personnalisé.</p>
+            </div>
+            <div class="timeline-item">
+              <span class="date">Mai 2026</span>
+              <p><strong>Initiation numérique</strong><br>Ateliers gratuits pour lutter contre la fracture numérique.</p>
+            </div>
+            <div class="timeline-item">
+              <span class="date">2027</span>
+              <p><strong>Objectif Qualiopi</strong><br>Poursuite de la structuration qualité du centre de formation.</p>
             </div>
           </div>
         </div>
@@ -1179,37 +2058,46 @@
           <h2>Nos valeurs</h2>
           <div class="values-grid">
             <div class="value-card">
-              <h3>Accessibilité</h3>
-              <p>Un tarif solidaire clair : 29 € la formation. Accès 24h/24 et 7j/7.</p>
+              <h3>🤝 Accessibilité</h3>
+              <p>Des tarifs solidaires et une offre pensée pour faciliter l'accès à la formation.</p>
             </div>
             <div class="value-card">
-              <h3>Flexibilité</h3>
-              <p>Apprenez à votre rythme, sans contrainte d'horaire, en autonomie.</p>
+              <h3>💻 Innovation pédagogique</h3>
+              <p>100% en ligne, avec une vraie présence humaine et un accompagnement direct.</p>
             </div>
             <div class="value-card">
-              <h3>Qualité pédagogique</h3>
-              <p>Des modules structurés, progressifs et alignés sur le CECRL.</p>
+              <h3>📈 Utilité concrète</h3>
+              <p>Des formations tournées vers la vie quotidienne, l'insertion et l'autonomie.</p>
             </div>
             <div class="value-card">
-              <h3>Accompagnement</h3>
-              <p>Une option de suivi individualisé disponible pour optimiser votre progression.</p>
+              <h3>🔍 Transparence</h3>
+              <p>Une communication claire sur l'offre, les tarifs et les conditions d'accès.</p>
             </div>
           </div>
         </div>
 
-        <div style="text-align: center;">
-          <button class="btn btn-primary" onclick="showPage('contact')">Contacter LOGIX FORMA</button>
+        <div class="content-box">
+          <h2>Notre équipe</h2>
+          <p><strong>Présidente :</strong> Madame FOFANA Missade</p>
+          <p><strong>Directeur pédagogique :</strong> Moctar TOURÉ</p>
+          <p><strong>Direction pédagogique :</strong> pilotage des programmes, qualité pédagogique et accompagnement des parcours.</p>
+          <p><strong>Formateurs FLE :</strong> professionnels de l'enseignement du français aux adultes.</p>
+          <p style="margin-top: 20px;"><em>Nous recrutons des intervenants et formateurs vacataires. <a href="#" onclick="showPage('contact'); return false;" style="color: var(--primary-blue);">Contactez-nous</a>.</em></p>
+        </div>
+
+        <div style="text-align: center; margin-top: 40px;">
+          <button class="btn btn-primary" onclick="showPage('contact')">Nous contacter</button>
         </div>
       </div>
     </section>
   </div>
 
-  <!-- CONTACT -->
+  <!-- CONTACT PAGE -->
   <div id="contact" class="page">
     <div class="page-header">
       <div class="container">
         <h1>Contact</h1>
-        <p>Demandez des informations sur les formations A1 et A2</p>
+        <p>LOGIX FORMA est à votre écoute pour étudier votre situation</p>
       </div>
     </div>
 
@@ -1252,9 +2140,7 @@
 
           <div class="contact-form">
             <h2>Demande d'information</h2>
-            <p class="muted" style="margin-bottom: 18px;">
-              Remplissez ce formulaire. Votre messagerie s'ouvrira avec les informations préparées.
-            </p>
+            <p class="muted" style="margin-bottom: 18px;">Remplissez ce formulaire. Votre messagerie s'ouvrira avec les informations préparées.</p>
 
             <form id="contactForm" onsubmit="handleSubmit(event)">
               <div class="form-group">
@@ -1354,7 +2240,7 @@
     </section>
   </div>
 
-  <!-- MENTIONS LEGALES -->
+  <!-- LEGAL PAGE -->
   <div id="legal" class="page">
     <div class="page-header">
       <div class="container">
@@ -1375,71 +2261,53 @@
           <p>Directeur de la publication : la présidente de l'association</p>
 
           <h2>Hébergement</h2>
-          <p>
-            À compléter avant publication avec les informations réelles de l'hébergeur :
-            nom, adresse et coordonnées.
-          </p>
+          <p>À compléter avant publication avec les informations réelles de l'hébergeur : nom, adresse et coordonnées.</p>
 
           <h2>Propriété intellectuelle</h2>
-          <p>
-            Les contenus présents sur ce site relèvent de LOGIX FORMA sauf mention contraire.
-            Toute reproduction ou réutilisation non autorisée est interdite.
-          </p>
+          <p>Les contenus présents sur ce site relèvent de LOGIX FORMA sauf mention contraire. Toute reproduction ou réutilisation non autorisée est interdite.</p>
 
           <h2>Données personnelles</h2>
+          <p>Les données transmises via le formulaire de contact sont utilisées uniquement pour répondre aux demandes d'information liées aux formations.</p>
+          <p>Pour toute demande relative à vos données, vous pouvez écrire à : <strong>logix.forma@gmail.com</strong></p>
+
+          <h2>Blog et contenus éditoriaux</h2>
           <p>
-            Les données transmises via le formulaire de contact sont utilisées uniquement pour répondre
-            aux demandes d'information liées aux formations.
-          </p>
-          <p>
-            Pour toute demande relative à vos données, vous pouvez écrire à :
-            <strong>logix.forma@gmail.com</strong>
+            Les articles du blog sont rédigés par
+            <strong>Moctar TOURÉ, Directeur pédagogique</strong>,
+            et publiés à partir de <strong>février 2026</strong>.
           </p>
 
           <h2>Cookies</h2>
-          <p>
-            Le présent modèle ne dépose pas de cookies publicitaires. Si des outils de mesure d'audience
-            ou des services tiers sont ajoutés, la politique de confidentialité devra être mise à jour.
-          </p>
+          <p>Le présent modèle ne dépose pas de cookies publicitaires. Si des outils de mesure d'audience ou des services tiers sont ajoutés, la politique de confidentialité devra être mise à jour.</p>
 
           <h2>Conditions de formation</h2>
-          <p>
-            Les formations sont proposées en autonomie, avec un accès aux contenus pendant 3 mois.
-            L'accompagnement individualisé est une option disponible en complément, soumise à des conditions spécifiques.
-          </p>
+          <p>Les formations sont proposées en autonomie, avec un accès aux contenus pendant 3 mois. L'accompagnement individualisé est une option disponible en complément, soumise à des conditions spécifiques.</p>
 
           <h2>Informations à vérifier avant mise en ligne</h2>
-          <p>
-            Avant publication définitive, vérifiez et complétez les éléments juridiques et administratifs
-            exacts : adresse du siège, RNA, SIREN, hébergeur et politique de confidentialité finale.
-          </p>
+          <p>Avant publication définitive, vérifiez et complétez les éléments juridiques et administratifs exacts : adresse du siège, RNA, SIREN, hébergeur et politique de confidentialité finale.</p>
 
           <p style="margin-top: 30px;">
-            <a href="#" onclick="showPage('home'); return false;" style="color: var(--blue); font-weight: 700;">
-              ← Retour à l'accueil
-            </a>
+            <a href="#" onclick="showPage('home'); return false;" style="color: var(--primary-blue); font-weight: 700;">← Retour à l'accueil</a>
           </p>
         </div>
       </div>
     </section>
   </div>
 
+  <!-- FOOTER -->
   <footer>
     <div class="container">
       <div class="footer-content">
         <div class="footer-section">
           <h4>LOGIX FORMA</h4>
-          <p>
-            Association de formation<br />
-            FLE A1 et A2<br />
-            100 % en ligne — En autonomie
-          </p>
+          <p>Association de formation<br />FLE A1 et A2<br />100 % en ligne — En autonomie</p>
         </div>
 
         <div class="footer-section">
           <h4>Navigation</h4>
           <a onclick="showPage('home')">Accueil</a>
           <a onclick="showPage('formations')">Formations</a>
+          <a onclick="showPage('blog')">Blog</a>
           <a onclick="showPage('about')">À propos</a>
           <a onclick="showPage('contact')">Contact</a>
         </div>
@@ -1452,22 +2320,21 @@
         </div>
 
         <div class="footer-section">
-          <h4>Contact</h4>
-          <p>Présidente : Madame FOFANA Missade</p>
-          <p>Email : logix.forma@gmail.com</p>
+          <h4>Blog</h4>
+          <p>Rédigé par Moctar TOURÉ</p>
+          <p>Directeur pédagogique</p>
+          <p>Publication : février 2026</p>
         </div>
       </div>
 
       <div class="footer-bottom">
-        <p>
-          &copy; 2026 LOGIX FORMA — Tous droits réservés —
-          <a href="#" onclick="showPage('legal'); return false;">Mentions légales</a>
-        </p>
+        <p>&copy; 2026 LOGIX FORMA — Tous droits réservés — <a href="#" onclick="showPage('legal'); return false;">Mentions légales</a></p>
       </div>
     </div>
   </footer>
 
   <script>
+    // Page Navigation
     function showPage(pageId) {
       document.querySelectorAll(".page").forEach((page) => {
         page.classList.remove("active");
@@ -1485,8 +2352,9 @@
       const navMap = {
         home: 0,
         formations: 1,
-        about: 2,
-        contact: 3
+        blog: 2,
+        about: 3,
+        contact: 4
       };
 
       if (navMap[pageId] !== undefined) {
@@ -1501,16 +2369,53 @@
         menu.classList.remove("active");
       }
 
+      // Show/hide reading progress
+      const progress = document.getElementById("readingProgress");
+      if (pageId.startsWith("article-")) {
+        progress.style.display = "block";
+      } else {
+        progress.style.display = "none";
+      }
+
       window.scrollTo({ top: 0, behavior: "smooth" });
     }
 
+    function showArticle(articleId) {
+      showPage(articleId);
+    }
+
+    // Mobile Menu Toggle
     function toggleMenu() {
       const menu = document.getElementById("navLinks");
+      const btn = document.querySelector(".mobile-menu-btn");
       if (menu) {
-        menu.classList.toggle("active");
+        const isActive = menu.classList.toggle("active");
+        if (btn) {
+          btn.setAttribute("aria-expanded", isActive ? "true" : "false");
+        }
       }
     }
 
+    // Reading Progress
+    window.addEventListener("scroll", function () {
+      const progress = document.getElementById("readingProgress");
+      if (progress.style.display === "none") return;
+
+      const articleContent = document.querySelector(".article-content");
+      if (!articleContent) return;
+
+      const articleTop = articleContent.offsetTop;
+      const articleHeight = articleContent.offsetHeight;
+      const windowHeight = window.innerHeight;
+      const scrollTop = window.scrollY;
+
+      const read = scrollTop - articleTop + windowHeight / 2;
+      const percentage = Math.min(100, Math.max(0, (read / articleHeight) * 100));
+
+      document.getElementById("readingProgressBar").style.width = percentage + "%";
+    });
+
+    // Form Handler
     function handleSubmit(event) {
       event.preventDefault();
 
@@ -1536,6 +2441,17 @@
       window.location.href = "mailto:logix.forma@gmail.com?subject=" + subject + "&body=" + body;
     }
 
+    // CTA Tracking (Google Analytics / Pixel ready)
+    document.addEventListener("click", function (e) {
+      if (e.target.matches("[data-cta]")) {
+        const articleId = e.target.getAttribute("data-cta");
+        // Google Analytics event example:
+        // gtag('event', 'click_cta_blog', { 'article': articleId });
+        console.log("CTA clicked:", articleId);
+      }
+    });
+
+    // Initialize
     document.addEventListener("DOMContentLoaded", function () {
       showPage("home");
     });
