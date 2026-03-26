@@ -1,91 +1,1545 @@
 <!DOCTYPE html>
 <html lang="fr">
-
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>LOGIX FORMA — Formations FLE A1 et A2 100 % en ligne</title>
+  <meta name="description" content="LOGIX FORMA propose des formations FLE A1 et A2 100 % en ligne en autonomie. Tarif solidaire : 29 € la formation. Accompagnement individualisé en option." />
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
 
-<title>LOGIX FORMA - Formation et développement des compétences</title>
+    :root {
+      --blue: #1e3a5f;
+      --blue-dark: #14293f;
+      --green: #7cb342;
+      --green-dark: #689f38;
+      --orange: #ff6b35;
+      --yellow: #fdd835;
+      --text: #212529;
+      --muted: #6c757d;
+      --bg: #f8f9fa;
+      --white: #ffffff;
+      --border: #e6e9ed;
+      --shadow: 0 4px 16px rgba(0, 0, 0, 0.08);
+      --radius: 14px;
+      --max: 1200px;
+    }
 
-<link rel="stylesheet" href="styles.css">
+    html {
+      scroll-behavior: smooth;
+    }
 
+    body {
+      font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+      line-height: 1.6;
+      color: var(--text);
+      background: var(--bg);
+    }
+
+    img {
+      max-width: 100%;
+      display: block;
+    }
+
+    a {
+      color: inherit;
+    }
+
+    .container {
+      width: min(100% - 32px, var(--max));
+      margin: 0 auto;
+    }
+
+    .page {
+      display: none;
+    }
+
+    .page.active {
+      display: block;
+    }
+
+    header {
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+      background: var(--white);
+      box-shadow: 0 2px 10px rgba(0, 0, 0, 0.08);
+    }
+
+    nav {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 14px 0;
+      gap: 16px;
+    }
+
+    .logo {
+      display: flex;
+      align-items: center;
+      gap: 14px;
+      text-decoration: none;
+      min-width: 0;
+    }
+
+    .logo img {
+      height: 48px;
+      width: auto;
+      object-fit: contain;
+    }
+
+    .logo-text {
+      font-size: 1.4rem;
+      font-weight: 800;
+      color: var(--blue);
+      white-space: nowrap;
+    }
+
+    .logo-text span {
+      color: var(--green);
+    }
+
+    .nav-links {
+      list-style: none;
+      display: flex;
+      align-items: center;
+      gap: 26px;
+    }
+
+    .nav-links a {
+      text-decoration: none;
+      font-weight: 600;
+      color: var(--text);
+      transition: color 0.2s ease;
+      cursor: pointer;
+    }
+
+    .nav-links a:hover,
+    .nav-links a.active {
+      color: var(--blue);
+    }
+
+    .mobile-menu-btn {
+      display: none;
+      border: none;
+      background: none;
+      font-size: 1.6rem;
+      cursor: pointer;
+      color: var(--blue);
+    }
+
+    .hero {
+      background: linear-gradient(135deg, var(--blue) 0%, var(--blue-dark) 100%);
+      color: var(--white);
+      padding: 84px 0;
+      text-align: center;
+    }
+
+    .badge {
+      display: inline-block;
+      background: var(--orange);
+      color: var(--white);
+      padding: 8px 16px;
+      border-radius: 999px;
+      font-size: 0.9rem;
+      font-weight: 700;
+      margin-bottom: 18px;
+    }
+
+    .hero h1 {
+      font-size: clamp(2rem, 5vw, 3rem);
+      line-height: 1.15;
+      margin-bottom: 18px;
+    }
+
+    .hero p.lead {
+      max-width: 760px;
+      margin: 0 auto 28px;
+      font-size: 1.12rem;
+      opacity: 0.96;
+    }
+
+    .btn-group {
+      display: flex;
+      justify-content: center;
+      gap: 14px;
+      flex-wrap: wrap;
+    }
+
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+      padding: 14px 24px;
+      border-radius: 10px;
+      border: none;
+      cursor: pointer;
+      font-size: 1rem;
+      font-weight: 700;
+      text-decoration: none;
+      transition: transform 0.2s ease, opacity 0.2s ease, background 0.2s ease;
+    }
+
+    .btn:hover {
+      transform: translateY(-2px);
+    }
+
+    .btn-primary {
+      background: var(--orange);
+      color: var(--white);
+    }
+
+    .btn-primary:hover {
+      background: #e45b28;
+    }
+
+    .btn-secondary {
+      background: var(--white);
+      color: var(--blue);
+    }
+
+    .btn-green {
+      background: var(--green);
+      color: var(--white);
+    }
+
+    .btn-green:hover {
+      background: var(--green-dark);
+    }
+
+    section {
+      padding: 64px 0;
+    }
+
+    .section-title {
+      text-align: center;
+      color: var(--blue);
+      font-size: clamp(1.7rem, 3vw, 2.3rem);
+      margin-bottom: 38px;
+    }
+
+    .grid {
+      display: grid;
+      gap: 28px;
+    }
+
+    .features-grid {
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    }
+
+    .feature-card,
+    .card,
+    .content-box,
+    .contact-info,
+    .contact-form,
+    .faq-item,
+    .formation-detail,
+    .coming-soon-box,
+    .legal-content {
+      background: var(--white);
+      border-radius: var(--radius);
+      box-shadow: var(--shadow);
+    }
+
+    .feature-card {
+      padding: 28px;
+      text-align: center;
+    }
+
+    .feature-card .icon {
+      font-size: 2.3rem;
+      margin-bottom: 14px;
+    }
+
+    .feature-card h3 {
+      color: var(--blue);
+      margin-bottom: 10px;
+    }
+
+    .formations-grid {
+      grid-template-columns: repeat(auto-fit, minmax(290px, 1fr));
+    }
+
+    .formation-card {
+      background: var(--white);
+      border-radius: var(--radius);
+      box-shadow: var(--shadow);
+      padding: 28px;
+      border-top: 5px solid var(--blue);
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+    }
+
+    .formation-card.green {
+      border-top-color: var(--green);
+    }
+
+    .formation-card.yellow {
+      border-top-color: var(--yellow);
+    }
+
+    .formation-card h3 {
+      color: var(--blue);
+      font-size: 1.35rem;
+    }
+
+    .tag-wrap {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+    }
+
+    .tag {
+      display: inline-block;
+      padding: 6px 12px;
+      border-radius: 999px;
+      font-size: 0.82rem;
+      font-weight: 700;
+      color: var(--white);
+      background: var(--green);
+    }
+
+    .tag.orange {
+      background: var(--orange);
+    }
+
+    .tag.blue {
+      background: var(--blue);
+    }
+
+    .tag.grey {
+      background: var(--muted);
+    }
+
+    .tag.purple {
+      background: #9c27b0;
+    }
+
+    .price {
+      font-size: 2rem;
+      font-weight: 800;
+      color: var(--blue);
+      margin-top: 4px;
+    }
+
+    .price small {
+      font-size: 1rem;
+      color: var(--muted);
+      font-weight: 500;
+    }
+
+    .muted {
+      color: var(--muted);
+    }
+
+    .cta-section {
+      background: var(--blue);
+      color: var(--white);
+      text-align: center;
+    }
+
+    .cta-section h2 {
+      font-size: clamp(1.7rem, 4vw, 2.3rem);
+      margin-bottom: 14px;
+    }
+
+    .cta-section p {
+      max-width: 760px;
+      margin: 0 auto 24px;
+      opacity: 0.95;
+    }
+
+    .page-header {
+      background: linear-gradient(135deg, var(--blue) 0%, var(--blue-dark) 100%);
+      color: var(--white);
+      padding: 64px 0;
+      text-align: center;
+    }
+
+    .page-header h1 {
+      font-size: clamp(2rem, 5vw, 2.8rem);
+      margin-bottom: 10px;
+    }
+
+    .content-box {
+      padding: 36px;
+      margin-bottom: 26px;
+    }
+
+    .content-box h2 {
+      color: var(--blue);
+      margin-bottom: 16px;
+      font-size: 1.5rem;
+    }
+
+    .content-box p + p {
+      margin-top: 12px;
+    }
+
+    .timeline {
+      border-left: 3px solid var(--blue);
+      padding-left: 28px;
+      margin-top: 10px;
+    }
+
+    .timeline-item {
+      position: relative;
+      margin-bottom: 24px;
+    }
+
+    .timeline-item::before {
+      content: "";
+      width: 12px;
+      height: 12px;
+      border-radius: 50%;
+      background: var(--orange);
+      position: absolute;
+      left: -35px;
+      top: 5px;
+    }
+
+    .timeline-item .date {
+      color: var(--blue);
+      font-weight: 800;
+      display: block;
+      margin-bottom: 4px;
+    }
+
+    .values-grid,
+    .info-grid {
+      display: grid;
+      gap: 18px;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      margin-top: 22px;
+    }
+
+    .value-card,
+    .info-card {
+      background: var(--bg);
+      border-radius: 10px;
+      padding: 20px;
+    }
+
+    .value-card {
+      border-left: 4px solid var(--green);
+    }
+
+    .value-card h3,
+    .info-card .value {
+      color: var(--blue);
+    }
+
+    .info-card {
+      text-align: center;
+    }
+
+    .info-card .label {
+      color: var(--muted);
+      font-size: 0.85rem;
+      text-transform: uppercase;
+      letter-spacing: 0.03em;
+    }
+
+    .info-card .value {
+      font-weight: 800;
+      font-size: 1.2rem;
+      margin-top: 6px;
+    }
+
+    .formation-detail {
+      overflow: hidden;
+      margin-bottom: 34px;
+    }
+
+    .formation-header {
+      background: var(--blue);
+      color: var(--white);
+      padding: 28px;
+    }
+
+    .formation-header.alt {
+      background: var(--blue-dark);
+    }
+
+    .formation-header h2 {
+      font-size: 1.8rem;
+      margin-bottom: 8px;
+    }
+
+    .formation-content {
+      padding: 28px;
+    }
+
+    .formation-section {
+      margin-bottom: 30px;
+    }
+
+    .formation-section h3 {
+      color: var(--blue);
+      font-size: 1.18rem;
+      margin-bottom: 14px;
+      padding-bottom: 10px;
+      border-bottom: 2px solid var(--border);
+    }
+
+    .formation-section ul {
+      margin-left: 18px;
+    }
+
+    .formation-section li + li {
+      margin-top: 8px;
+    }
+
+    .price-box {
+      background: var(--bg);
+      border-left: 4px solid var(--orange);
+      border-radius: 10px;
+      padding: 20px;
+      margin-top: 16px;
+    }
+
+    .option-box {
+      background: linear-gradient(135deg, #f3e5f5 0%, #e1bee7 100%);
+      border-left: 4px solid #9c27b0;
+      border-radius: 10px;
+      padding: 20px;
+      margin-top: 16px;
+    }
+
+    .option-box h4 {
+      color: #7b1fa2;
+      margin-bottom: 10px;
+      font-size: 1.1rem;
+    }
+
+    .option-box .option-price {
+      font-size: 1.5rem;
+      font-weight: 800;
+      color: #7b1fa2;
+    }
+
+    .coming-soon-box {
+      border: 2px dashed #d5d9df;
+      padding: 34px;
+      text-align: center;
+    }
+
+    .contact-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 28px;
+    }
+
+    .contact-info,
+    .contact-form {
+      padding: 32px;
+    }
+
+    .contact-info h2,
+    .contact-form h2 {
+      color: var(--blue);
+      margin-bottom: 18px;
+    }
+
+    .contact-method {
+      padding: 0 0 20px;
+      margin-bottom: 20px;
+      border-bottom: 1px solid var(--border);
+    }
+
+    .contact-method:last-child {
+      margin-bottom: 0;
+      padding-bottom: 0;
+      border-bottom: none;
+    }
+
+    .contact-method .icon {
+      font-size: 2rem;
+      margin-bottom: 8px;
+    }
+
+    .contact-method h3 {
+      color: var(--blue);
+      margin-bottom: 8px;
+    }
+
+    .form-group {
+      margin-bottom: 18px;
+    }
+
+    .form-group label {
+      display: block;
+      margin-bottom: 8px;
+      font-weight: 600;
+    }
+
+    .form-group input,
+    .form-group select,
+    .form-group textarea {
+      width: 100%;
+      border: 1px solid #d7dce2;
+      border-radius: 10px;
+      padding: 12px 14px;
+      font: inherit;
+      background: var(--white);
+    }
+
+    .form-group input:focus,
+    .form-group select:focus,
+    .form-group textarea:focus {
+      outline: none;
+      border-color: var(--blue);
+      box-shadow: 0 0 0 3px rgba(30, 58, 95, 0.12);
+    }
+
+    .faq {
+      margin-top: 44px;
+    }
+
+    .faq-item {
+      padding: 20px;
+      margin-bottom: 14px;
+    }
+
+    .faq-item h4 {
+      color: var(--blue);
+      margin-bottom: 8px;
+    }
+
+    .legal-content {
+      max-width: 880px;
+      margin: 40px auto;
+      padding: 42px 34px;
+    }
+
+    .legal-content h1,
+    .legal-content h2 {
+      color: var(--blue);
+    }
+
+    .legal-content h1 {
+      margin-bottom: 20px;
+    }
+
+    .legal-content h2 {
+      margin-top: 28px;
+      margin-bottom: 12px;
+      font-size: 1.3rem;
+    }
+
+    footer {
+      background: #212529;
+      color: #b8c0c8;
+      padding: 44px 0 20px;
+    }
+
+    .footer-content {
+      display: grid;
+      gap: 28px;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      margin-bottom: 28px;
+    }
+
+    .footer-section h4 {
+      color: var(--white);
+      margin-bottom: 12px;
+    }
+
+    .footer-section a {
+      text-decoration: none;
+      display: block;
+      margin-bottom: 8px;
+      cursor: pointer;
+    }
+
+    .footer-section a:hover {
+      color: var(--white);
+    }
+
+    .footer-bottom {
+      border-top: 1px solid #495057;
+      padding-top: 18px;
+      text-align: center;
+      font-size: 0.92rem;
+    }
+
+    @media (max-width: 860px) {
+      .contact-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    @media (max-width: 768px) {
+      .mobile-menu-btn {
+        display: block;
+      }
+
+      .nav-links {
+        display: none;
+        position: absolute;
+        top: calc(100% + 1px);
+        left: 0;
+        right: 0;
+        background: var(--white);
+        box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+        padding: 18px 20px;
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 16px;
+      }
+
+      .nav-links.active {
+        display: flex;
+      }
+
+      .btn-group {
+        flex-direction: column;
+        align-items: center;
+      }
+
+      .btn {
+        width: min(100%, 320px);
+      }
+
+      .logo-text {
+        font-size: 1.15rem;
+      }
+
+      .logo img {
+        height: 42px;
+      }
+
+      .content-box,
+      .contact-info,
+      .contact-form,
+      .formation-content,
+      .legal-content,
+      .formation-header {
+        padding: 24px;
+      }
+
+      .hero {
+        padding: 70px 0;
+      }
+    }
+  </style>
 </head>
-
 <body>
+  <header>
+    <div class="container">
+      <nav>
+        <a href="#" class="logo" onclick="showPage('home'); return false;">
+          <img
+            src="https://image.qwenlm.ai/public_source/b4393ad8-dd0b-4feb-a520-02b701c56415/1320e08ff-1157-4fff-9891-30e726667c40.png"
+            alt="Logo LOGIX FORMA"
+          />
+          <div class="logo-text">LOGIX <span>FORMA</span></div>
+        </a>
 
-<header class="header">
+        <button class="mobile-menu-btn" onclick="toggleMenu()" aria-label="Ouvrir le menu">
+          ☰
+        </button>
 
-<div class="container">
+        <ul class="nav-links" id="navLinks">
+          <li><a onclick="showPage('home')" class="active">Accueil</a></li>
+          <li><a onclick="showPage('formations')">Formations</a></li>
+          <li><a onclick="showPage('about')">À propos</a></li>
+          <li><a onclick="showPage('contact')">Contact</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
 
-<h1 class="logo">LOGIX FORMA</h1>
+  <!-- ACCUEIL -->
+  <div id="home" class="page active">
+    <section class="hero">
+      <div class="container">
+        <span class="badge">🎯 Formations FLE 100 % en ligne</span>
+        <h1>Apprenez le français à votre rythme<br />avec LOGIX FORMA</h1>
+        <p class="lead">
+          LOGIX FORMA propose des formations FLE niveau A1 et A2 en <strong>autonomie</strong>, 
+          accessibles 24h/24 et 7j/7. Tarif solidaire de <strong>29 € la formation</strong>. 
+          Accompagnement individualisé disponible en option.
+        </p>
+        <div class="btn-group">
+          <button class="btn btn-primary" onclick="showPage('contact')">
+            📧 Demander une information
+          </button>
+          <button class="btn btn-secondary" onclick="showPage('formations')">
+            🎓 Voir les formations
+          </button>
+        </div>
+      </div>
+    </section>
 
-<nav class="nav">
+    <section>
+      <div class="container">
+        <h2 class="section-title">Pourquoi choisir LOGIX FORMA ?</h2>
+        <div class="grid features-grid">
+          <div class="feature-card">
+            <div class="icon">💻</div>
+            <h3>100 % en ligne</h3>
+            <p>Accédez à vos cours depuis chez vous, à votre rythme, 24h/24 et 7j/7. Compatible ordinateur, tablette et mobile.</p>
+          </div>
+          <div class="feature-card">
+            <div class="icon">⏱️</div>
+            <h3>Formation en autonomie</h3>
+            <p>Apprenez à votre propre rythme sans contrainte d'horaire. Accès illimité aux contenus pendant la durée de la formation.</p>
+          </div>
+          <div class="feature-card">
+            <div class="icon"></div>
+            <h3>Accompagnement en option</h3>
+            <p>Un suivi individualisé est disponible en complément : corrections personnalisées, feedbacks et conseils de progression.</p>
+          </div>
+          <div class="feature-card">
+            <div class="icon">💶</div>
+            <h3>Tarif solidaire</h3>
+            <p>Un tarif unique et accessible : <strong>29 € la formation</strong>, pour les niveaux A1 et A2.</p>
+          </div>
+          <div class="feature-card">
+            <div class="icon">📘</div>
+            <h3>Parcours certifiants</h3>
+            <p>Des parcours structurés alignés sur le CECRL (Cadre Européen Commun de Référence pour les Langues).</p>
+          </div>
+        </div>
+      </div>
+    </section>
 
-<a href="index.html">Accueil</a>
-<a href="pages/formations.html">Formations</a>
-<a href="pages/ressources.html">Ressources</a>
-<a href="pages/qui-sommes-nous.html">Qui sommes-nous</a>
-<a href="pages/partenariats.html">Partenariats</a>
-<a href="pages/contact.html">Contact</a>
+    <section style="background: var(--white);">
+      <div class="container">
+        <h2 class="section-title">Nos formations</h2>
+        <div class="grid formations-grid">
+          <article class="formation-card">
+            <h3>Français Langue Étrangère — Niveau A1</h3>
+            <p>
+              Un parcours complet pour acquérir les bases : se présenter, parler de soi, comprendre
+              les situations quotidiennes et communiquer simplement.
+            </p>
+            <div class="tag-wrap">
+              <span class="tag blue">10 modules</span>
+              <span class="tag">100 % en ligne</span>
+              <span class="tag orange">En autonomie</span>
+            </div>
+            <p class="price">29 € <small>la formation</small></p>
+            <p class="muted">Parcours complet A1 aligné CECRL. Accès illimité pendant 3 mois.</p>
+            <button class="btn btn-primary" onclick="showPage('formations')">Voir la fiche A1</button>
+          </article>
 
-</nav>
+          <article class="formation-card green">
+            <h3>Français Langue Étrangère — Niveau A2</h3>
+            <p>
+              Un parcours complet pour renforcer l'autonomie en français : raconter, expliquer, donner
+              son avis, écrire un message court et gérer des situations plus variées.
+            </p>
+            <div class="tag-wrap">
+              <span class="tag blue">10 modules</span>
+              <span class="tag">100 % en ligne</span>
+              <span class="tag orange">En autonomie</span>
+            </div>
+            <p class="price">29 € <small>la formation</small></p>
+            <p class="muted">Parcours complet A2 aligné CECRL. Accès illimité pendant 3 mois.</p>
+            <button class="btn btn-primary" onclick="showPage('formations')">Voir la fiche A2</button>
+          </article>
 
-</div>
+          <article class="formation-card yellow">
+            <h3>Accompagnement individualisé</h3>
+            <p>
+              En complément de votre formation en autonomie, bénéficiez d'un suivi personnalisé 
+              avec corrections, feedbacks et conseils de progression.
+            </p>
+            <div class="tag-wrap">
+              <span class="tag purple">En option</span>
+              <span class="tag">Suivi personnalisé</span>
+            </div>
+            <p class="muted">Disponible pour les formations A1 et A2.</p>
+            <button class="btn btn-secondary" onclick="showPage('contact')">En savoir plus</button>
+          </article>
+        </div>
+      </div>
+    </section>
 
-</header>
+    <section class="cta-section">
+      <div class="container">
+        <h2>Besoin d'un renseignement sur A1 ou A2 ?</h2>
+        <p>
+          Contactez LOGIX FORMA pour recevoir des informations sur le parcours, le format en autonomie, 
+          les options d'accompagnement et le tarif solidaire.
+        </p>
+        <button class="btn btn-primary" style="background: var(--white); color: var(--blue);" onclick="showPage('contact')">
+          Nous contacter
+        </button>
+      </div>
+    </section>
+  </div>
 
-<section class="hero">
+  <!-- FORMATIONS -->
+  <div id="formations" class="page">
+    <div class="page-header">
+      <div class="container">
+        <h1>Nos formations</h1>
+        <p>Parcours FLE A1 et A2 — 100 % en ligne en autonomie — tarif solidaire de 29 € la formation</p>
+      </div>
+    </div>
 
-<div class="container">
+    <section>
+      <div class="container">
+        <article class="formation-detail">
+          <div class="formation-header">
+            <h2>Parcours FLE — Niveau A1</h2>
+            <p>Débutant complet → A1 consolidé — Formation en autonomie</p>
+          </div>
+          <div class="formation-content">
+            <div class="formation-section">
+              <h3>🎯 Objectif</h3>
+              <p>
+                Permettre à l'apprenant de communiquer dans des situations simples de la vie quotidienne :
+                se présenter, donner ses informations personnelles, parler du temps, de la famille, des achats,
+                du restaurant, du logement et des loisirs.
+              </p>
+            </div>
 
-<h2>Développer les compétences pour les métiers d'aujourd'hui et de demain</h2>
+            <div class="formation-section">
+              <h3>📚 Contenu</h3>
+              <ul>
+                <li>10 modules progressifs</li>
+                <li>2 vidéos pédagogiques par module</li>
+                <li>4 exercices interactifs par module</li>
+                <li>1 évaluation par module</li>
+                <li>1 ressource complémentaire par module</li>
+                <li>1 bilan final de niveau A1</li>
+              </ul>
+            </div>
 
-<p>
-LOGIX FORMA est un organisme de formation en cours de lancement dédié
-au développement des compétences professionnelles et à l'accès
-à des connaissances utiles dans le monde du travail.
-</p>
+            <div class="formation-section">
+              <h3>🧩 Modules du parcours</h3>
+              <ul>
+                <li>Module 1 — Se présenter</li>
+                <li>Module 2 — Informations personnelles</li>
+                <li>Module 3 — Nombres, dates et temps</li>
+                <li>Module 4 — Famille et entourage</li>
+                <li>Module 5 — Se déplacer dans la ville</li>
+                <li>Module 6 — Faire des achats</li>
+                <li>Module 7 — Se nourrir / Au restaurant</li>
+                <li>Module 8 — La maison et le logement</li>
+                <li>Module 9 — Loisirs et préférences</li>
+                <li>Module 10 — Bilan final A1</li>
+              </ul>
+            </div>
 
-<a class="button" href="pages/formations.html">Découvrir les formations</a>
+            <div class="formation-section">
+              <h3>⚙️ Format et modalités</h3>
+              <div class="info-grid">
+                <div class="info-card">
+                  <div class="label">Niveau</div>
+                  <div class="value">A1</div>
+                </div>
+                <div class="info-card">
+                  <div class="label">Modules</div>
+                  <div class="value">10</div>
+                </div>
+                <div class="info-card">
+                  <div class="label">Durée estimée</div>
+                  <div class="value">8h à 12h</div>
+                </div>
+                <div class="info-card">
+                  <div class="label">Accès</div>
+                  <div class="value">3 mois</div>
+                </div>
+                <div class="info-card">
+                  <div class="label">Format</div>
+                  <div class="value">100 % en ligne</div>
+                </div>
+                <div class="info-card">
+                  <div class="label">Rythme</div>
+                  <div class="value">En autonomie</div>
+                </div>
+              </div>
+              <p style="margin-top: 16px;"><strong>Modalités :</strong> Formation asynchrone en autonomie. Accès à la plateforme de formation 24h/24 et 7j/7. Pas de contrainte d'horaire.</p>
+            </div>
 
-</div>
+            <div class="formation-section">
+              <h3>💶 Tarif</h3>
+              <div class="price-box">
+                <p class="price">29 € <small>la formation</small></p>
+                <p>Tarif solidaire unique pour le parcours complet A1.</p>
+                <p style="margin-top: 8px; font-size: 0.9rem; color: var(--muted);">Accès illimité aux contenus pendant 3 mois. Aucun frais caché.</p>
+              </div>
+            </div>
 
-</section>
+            <div class="formation-section">
+              <h3>➕ Option : Accompagnement individualisé</h3>
+              <div class="option-box">
+                <h4>🎓 Suivi personnalisé avec formateur</h4>
+                <p>En complément de votre formation en autonomie, ajoutez un accompagnement individualisé pour optimiser votre progression.</p>
+                <p class="option-price">À partir de 49 € <small>forfait accompagnement</small></p>
+                <ul style="margin-top: 12px; margin-left: 18px;">
+                  <li>Corrections personnalisées des exercices écrits</li>
+                  <li>Feedbacks réguliers sur votre progression</li>
+                  <li>Conseils pédagogiques adaptés à votre profil</li>
+                  <li>Réponses à vos questions sous 48h ouvrées</li>
+                  <li>1 visioconférence de bilan (30 min)</li>
+                </ul>
+              </div>
+            </div>
 
-<section class="intro">
+            <button class="btn btn-primary" onclick="showPage('contact')">Demander des informations sur A1</button>
+          </div>
+        </article>
 
-<div class="container">
+        <article class="formation-detail">
+          <div class="formation-header alt">
+            <h2>Parcours FLE — Niveau A2</h2>
+            <p>A1 validé → A2 consolidé — Formation en autonomie</p>
+          </div>
+          <div class="formation-content">
+            <div class="formation-section">
+              <h3>🎯 Objectif</h3>
+              <p>
+                Permettre à l'apprenant d'élargir son autonomie en français dans des situations sociales,
+                personnelles et professionnelles plus variées : raconter, expliquer, conseiller, justifier,
+                écrire un message et interagir avec plus d'aisance.
+              </p>
+            </div>
 
-<h2>Notre mission</h2>
+            <div class="formation-section">
+              <h3>📚 Contenu</h3>
+              <ul>
+                <li>10 modules progressifs</li>
+                <li>2 vidéos pédagogiques par module</li>
+                <li>4 exercices interactifs par module</li>
+                <li>1 évaluation par module</li>
+                <li>1 ressource complémentaire par module</li>
+                <li>1 bilan final de niveau A2</li>
+              </ul>
+            </div>
 
-<p>
-LOGIX FORMA souhaite proposer des formations accessibles,
-pratiques et adaptées aux besoins du monde professionnel.
-Les premières formations gratuites permettront de découvrir
-notre approche pédagogique.
-</p>
+            <div class="formation-section">
+              <h3>🧩 Modules du parcours</h3>
+              <ul>
+                <li>Module 1 — Raconter un événement passé</li>
+                <li>Module 2 — Exprimer un projet futur</li>
+                <li>Module 3 — Décrire une personne en détail</li>
+                <li>Module 4 — Donner et comprendre des conseils</li>
+                <li>Module 5 — Gérer une situation imprévue</li>
+                <li>Module 6 — Exprimer une opinion simple</li>
+                <li>Module 7 — Comprendre et produire un message court</li>
+                <li>Module 8 — Interagir dans des situations sociales élargies</li>
+                <li>Module 9 — Décrire une expérience personnelle</li>
+                <li>Module 10 — Bilan final A2</li>
+              </ul>
+            </div>
 
-</div>
+            <div class="formation-section">
+              <h3>⚙️ Format et modalités</h3>
+              <div class="info-grid">
+                <div class="info-card">
+                  <div class="label">Niveau</div>
+                  <div class="value">A2</div>
+                </div>
+                <div class="info-card">
+                  <div class="label">Modules</div>
+                  <div class="value">10</div>
+                </div>
+                <div class="info-card">
+                  <div class="label">Durée estimée</div>
+                  <div class="value">12h à 18h</div>
+                </div>
+                <div class="info-card">
+                  <div class="label">Accès</div>
+                  <div class="value">3 mois</div>
+                </div>
+                <div class="info-card">
+                  <div class="label">Format</div>
+                  <div class="value">100 % en ligne</div>
+                </div>
+                <div class="info-card">
+                  <div class="label">Rythme</div>
+                  <div class="value">En autonomie</div>
+                </div>
+              </div>
+              <p style="margin-top: 16px;"><strong>Modalités :</strong> Formation asynchrone en autonomie. Accès à la plateforme de formation 24h/24 et 7j/7. Pas de contrainte d'horaire.</p>
+              <p style="margin-top: 8px;"><strong>Prérequis :</strong> Niveau A1 validé ou équivalent recommandé.</p>
+            </div>
 
-</section>
+            <div class="formation-section">
+              <h3>💶 Tarif</h3>
+              <div class="price-box">
+                <p class="price">29 € <small>la formation</small></p>
+                <p>Tarif solidaire unique pour le parcours complet A2.</p>
+                <p style="margin-top: 8px; font-size: 0.9rem; color: var(--muted);">Accès illimité aux contenus pendant 3 mois. Aucun frais caché.</p>
+              </div>
+            </div>
 
-<footer class="footer">
+            <div class="formation-section">
+              <h3>➕ Option : Accompagnement individualisé</h3>
+              <div class="option-box">
+                <h4>🎓 Suivi personnalisé avec formateur</h4>
+                <p>En complément de votre formation en autonomie, ajoutez un accompagnement individualisé pour optimiser votre progression.</p>
+                <p class="option-price">À partir de 49 € <small>forfait accompagnement</small></p>
+                <ul style="margin-top: 12px; margin-left: 18px;">
+                  <li>Corrections personnalisées des exercices écrits</li>
+                  <li>Feedbacks réguliers sur votre progression</li>
+                  <li>Conseils pédagogiques adaptés à votre profil</li>
+                  <li>Réponses à vos questions sous 48h ouvrées</li>
+                  <li>1 visioconférence de bilan (30 min)</li>
+                </ul>
+              </div>
+            </div>
 
-<div class="container">
+            <button class="btn btn-primary" onclick="showPage('contact')">Demander des informations sur A2</button>
+          </div>
+        </article>
 
-<p>© 2026 LOGIX FORMA</p>
+        <div class="coming-soon-box">
+          <h2 style="color: var(--blue); margin-bottom: 14px;">🖥️ Initiation numérique</h2>
+          <p style="margin-bottom: 16px;">
+            Un parcours complémentaire d'initiation aux usages numériques peut être développé en complément des parcours FLE.
+          </p>
+          <button class="btn btn-secondary" onclick="showPage('contact')">Me tenir informé</button>
+        </div>
+      </div>
+    </section>
+  </div>
 
-<p>
-<a href="#">Mentions légales</a> |
-<a href="#">Politique de confidentialité</a>
-</p>
+  <!-- A PROPOS -->
+  <div id="about" class="page">
+    <div class="page-header">
+      <div class="container">
+        <h1>À propos de LOGIX FORMA</h1>
+        <p>Association de formation engagée pour l'accès aux compétences</p>
+      </div>
+    </div>
 
-</div>
+    <section>
+      <div class="container">
+        <div class="content-box">
+          <h2>Notre mission</h2>
+          <p>
+            LOGIX FORMA développe des parcours de formation accessibles, structurés et compatibles avec des usages
+            numériques actuels, avec une attention particulière portée à l'apprentissage du français langue étrangère
+            et à l'accompagnement des adultes.
+          </p>
+          <p>
+            Notre ambition est de proposer des contenus clairs, progressifs, utiles et directement exploitables
+            dans un environnement d'apprentissage en ligne, en autonomie.
+          </p>
+        </div>
 
-</footer>
+        <div class="content-box">
+          <h2>Notre positionnement</h2>
+          <p>
+            LOGIX FORMA s'appuie sur une logique de formation en autonomie : des modules homogènes,
+            accessibles 24h/24 et 7j/7, alignés sur des objectifs précis et compatibles avec un apprentissage à son propre rythme.
+          </p>
+          <p>
+            Les parcours A1 et A2 ont été conçus pour assurer cohérence, simplicité d'usage et qualité pédagogique,
+            avec une option d'accompagnement individualisé pour ceux qui souhaitent un suivi personnalisé.
+          </p>
+        </div>
 
-<script src="script.js"></script>
+        <div class="content-box">
+          <h2>Notre organisation</h2>
+          <p><strong>Présidente :</strong> Madame FOFANA Missade</p>
+          <p><strong>Directeur pédagogique :</strong> Moctar</p>
+          <p>
+            L'association porte un projet de formation à distance centré sur l'accessibilité, la progression
+            pédagogique et la clarté des parcours, avec un tarif solidaire de 29 € la formation.
+          </p>
+        </div>
 
+        <div class="content-box">
+          <h2>Nos repères</h2>
+          <div class="timeline">
+            <div class="timeline-item">
+              <span class="date">Création de l'association</span>
+              <p>Structuration du projet LOGIX FORMA autour de la pédagogie, du digital et de l'accompagnement.</p>
+            </div>
+            <div class="timeline-item">
+              <span class="date">Développement des parcours A1</span>
+              <p>Conception d'un parcours complet FLE A1 en autonomie, accessible 24h/24 et 7j/7.</p>
+            </div>
+            <div class="timeline-item">
+              <span class="date">Développement des parcours A2</span>
+              <p>Conception du niveau suivant avec le même standard de qualité et le même format d'apprentissage.</p>
+            </div>
+            <div class="timeline-item">
+              <span class="date">Option accompagnement</span>
+              <p>Mise en place d'un suivi individualisé en complément des formations en autonomie.</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="content-box">
+          <h2>Nos valeurs</h2>
+          <div class="values-grid">
+            <div class="value-card">
+              <h3>Accessibilité</h3>
+              <p>Un tarif solidaire clair : 29 € la formation. Accès 24h/24 et 7j/7.</p>
+            </div>
+            <div class="value-card">
+              <h3>Flexibilité</h3>
+              <p>Apprenez à votre rythme, sans contrainte d'horaire, en autonomie.</p>
+            </div>
+            <div class="value-card">
+              <h3>Qualité pédagogique</h3>
+              <p>Des modules structurés, progressifs et alignés sur le CECRL.</p>
+            </div>
+            <div class="value-card">
+              <h3>Accompagnement</h3>
+              <p>Une option de suivi individualisé disponible pour optimiser votre progression.</p>
+            </div>
+          </div>
+        </div>
+
+        <div style="text-align: center;">
+          <button class="btn btn-primary" onclick="showPage('contact')">Contacter LOGIX FORMA</button>
+        </div>
+      </div>
+    </section>
+  </div>
+
+  <!-- CONTACT -->
+  <div id="contact" class="page">
+    <div class="page-header">
+      <div class="container">
+        <h1>Contact</h1>
+        <p>Demandez des informations sur les formations A1 et A2</p>
+      </div>
+    </div>
+
+    <section>
+      <div class="container">
+        <div class="contact-grid">
+          <div class="contact-info">
+            <h2>Nous joindre</h2>
+
+            <div class="contact-method">
+              <div class="icon">📧</div>
+              <h3>Email</h3>
+              <p><strong>logix.forma@gmail.com</strong></p>
+              <p>Réponse sous 24h à 48h ouvrées selon la demande.</p>
+            </div>
+
+            <div class="contact-method">
+              <div class="icon">🎓</div>
+              <h3>Formations concernées</h3>
+              <p>Français Langue Étrangère — Niveau A1</p>
+              <p>Français Langue Étrangère — Niveau A2</p>
+              <p>Accompagnement individualisé (en option)</p>
+            </div>
+
+            <div class="contact-method">
+              <div class="icon">💶</div>
+              <h3>Tarifs</h3>
+              <p><strong>29 € la formation</strong> (A1 ou A2)</p>
+              <p><strong>À partir de 49 €</strong> l'accompagnement individualisé (option)</p>
+            </div>
+
+            <div class="contact-method">
+              <div class="icon">⚙️</div>
+              <h3>Format</h3>
+              <p>100 % en ligne</p>
+              <p>En autonomie — Accès 24h/24 et 7j/7</p>
+              <p>Accès aux contenus pendant 3 mois</p>
+            </div>
+          </div>
+
+          <div class="contact-form">
+            <h2>Demande d'information</h2>
+            <p class="muted" style="margin-bottom: 18px;">
+              Remplissez ce formulaire. Votre messagerie s'ouvrira avec les informations préparées.
+            </p>
+
+            <form id="contactForm" onsubmit="handleSubmit(event)">
+              <div class="form-group">
+                <label for="prenom">Prénom *</label>
+                <input type="text" id="prenom" name="prenom" required />
+              </div>
+
+              <div class="form-group">
+                <label for="nom">Nom *</label>
+                <input type="text" id="nom" name="nom" required />
+              </div>
+
+              <div class="form-group">
+                <label for="email">Email *</label>
+                <input type="email" id="email" name="email" required />
+              </div>
+
+              <div class="form-group">
+                <label for="telephone">Téléphone</label>
+                <input type="tel" id="telephone" name="telephone" />
+              </div>
+
+              <div class="form-group">
+                <label for="formation">Formation souhaitée *</label>
+                <select id="formation" name="formation" required>
+                  <option value="">Choisir</option>
+                  <option value="FLE A1">FLE A1 — 29 €</option>
+                  <option value="FLE A2">FLE A2 — 29 €</option>
+                  <option value="A1 + A2">A1 + A2 — 58 €</option>
+                  <option value="A1 + Accompagnement">A1 + Accompagnement — À partir de 78 €</option>
+                  <option value="A2 + Accompagnement">A2 + Accompagnement — À partir de 78 €</option>
+                  <option value="Information générale">Information générale</option>
+                </select>
+              </div>
+
+              <div class="form-group">
+                <label for="niveau">Votre niveau actuel en français</label>
+                <select id="niveau" name="niveau">
+                  <option value="">Choisir</option>
+                  <option value="Débutant complet">Débutant complet</option>
+                  <option value="Quelques bases">Quelques bases</option>
+                  <option value="A1">A1 validé ou équivalent</option>
+                  <option value="A2">A2 validé ou équivalent</option>
+                  <option value="Ne sais pas">Je ne sais pas</option>
+                </select>
+              </div>
+
+              <div class="form-group">
+                <label for="message">Message</label>
+                <textarea id="message" name="message" rows="5" placeholder="Votre demande, votre situation, vos objectifs..."></textarea>
+              </div>
+
+              <button type="submit" class="btn btn-primary">Envoyer ma demande</button>
+            </form>
+          </div>
+        </div>
+
+        <div class="faq">
+          <h2 class="section-title" style="margin-bottom: 26px;">Questions fréquentes</h2>
+
+          <div class="faq-item">
+            <h4>Quel est le prix de la formation A1 ?</h4>
+            <p>Le parcours complet A1 est proposé au tarif solidaire de <strong>29 € la formation</strong>.</p>
+          </div>
+
+          <div class="faq-item">
+            <h4>Quel est le prix de la formation A2 ?</h4>
+            <p>Le parcours complet A2 est proposé au tarif solidaire de <strong>29 € la formation</strong>.</p>
+          </div>
+
+          <div class="faq-item">
+            <h4>Les formations sont-elles en ligne ?</h4>
+            <p>Oui. Les parcours sont 100 % en ligne, en autonomie, avec un accès 24h/24 et 7j/7 à la plateforme de formation.</p>
+          </div>
+
+          <div class="faq-item">
+            <h4>Qu'est-ce que l'apprentissage en autonomie ?</h4>
+            <p>Vous apprenez à votre propre rythme, sans contrainte d'horaire. Vous accédez aux contenus quand vous le souhaitez, pendant 3 mois.</p>
+          </div>
+
+          <div class="faq-item">
+            <h4>En quoi consiste l'accompagnement individualisé ?</h4>
+            <p>C'est une option en complément de la formation : corrections personnalisées, feedbacks réguliers, conseils de progression et 1 visioconférence de bilan. À partir de 49 €.</p>
+          </div>
+
+          <div class="faq-item">
+            <h4>Le parcours A2 demande-t-il un prérequis ?</h4>
+            <p>Oui. Le niveau A2 s'adresse à des adultes ayant validé le niveau A1 ou ayant un niveau équivalent.</p>
+          </div>
+
+          <div class="faq-item">
+            <h4>Combien de temps ai-je accès aux contenus ?</h4>
+            <p>Vous avez accès aux contenus de votre formation pendant 3 mois à compter de votre inscription.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+  </div>
+
+  <!-- MENTIONS LEGALES -->
+  <div id="legal" class="page">
+    <div class="page-header">
+      <div class="container">
+        <h1>Mentions légales</h1>
+      </div>
+    </div>
+
+    <section>
+      <div class="container">
+        <div class="legal-content">
+          <h1>Mentions légales</h1>
+
+          <h2>Éditeur du site</h2>
+          <p><strong>LOGIX FORMA</strong></p>
+          <p>Association</p>
+          <p>Présidente : Madame FOFANA Missade</p>
+          <p>Email : logix.forma@gmail.com</p>
+          <p>Directeur de la publication : la présidente de l'association</p>
+
+          <h2>Hébergement</h2>
+          <p>
+            À compléter avant publication avec les informations réelles de l'hébergeur :
+            nom, adresse et coordonnées.
+          </p>
+
+          <h2>Propriété intellectuelle</h2>
+          <p>
+            Les contenus présents sur ce site relèvent de LOGIX FORMA sauf mention contraire.
+            Toute reproduction ou réutilisation non autorisée est interdite.
+          </p>
+
+          <h2>Données personnelles</h2>
+          <p>
+            Les données transmises via le formulaire de contact sont utilisées uniquement pour répondre
+            aux demandes d'information liées aux formations.
+          </p>
+          <p>
+            Pour toute demande relative à vos données, vous pouvez écrire à :
+            <strong>logix.forma@gmail.com</strong>
+          </p>
+
+          <h2>Cookies</h2>
+          <p>
+            Le présent modèle ne dépose pas de cookies publicitaires. Si des outils de mesure d'audience
+            ou des services tiers sont ajoutés, la politique de confidentialité devra être mise à jour.
+          </p>
+
+          <h2>Conditions de formation</h2>
+          <p>
+            Les formations sont proposées en autonomie, avec un accès aux contenus pendant 3 mois.
+            L'accompagnement individualisé est une option disponible en complément, soumise à des conditions spécifiques.
+          </p>
+
+          <h2>Informations à vérifier avant mise en ligne</h2>
+          <p>
+            Avant publication définitive, vérifiez et complétez les éléments juridiques et administratifs
+            exacts : adresse du siège, RNA, SIREN, hébergeur et politique de confidentialité finale.
+          </p>
+
+          <p style="margin-top: 30px;">
+            <a href="#" onclick="showPage('home'); return false;" style="color: var(--blue); font-weight: 700;">
+              ← Retour à l'accueil
+            </a>
+          </p>
+        </div>
+      </div>
+    </section>
+  </div>
+
+  <footer>
+    <div class="container">
+      <div class="footer-content">
+        <div class="footer-section">
+          <h4>LOGIX FORMA</h4>
+          <p>
+            Association de formation<br />
+            FLE A1 et A2<br />
+            100 % en ligne — En autonomie
+          </p>
+        </div>
+
+        <div class="footer-section">
+          <h4>Navigation</h4>
+          <a onclick="showPage('home')">Accueil</a>
+          <a onclick="showPage('formations')">Formations</a>
+          <a onclick="showPage('about')">À propos</a>
+          <a onclick="showPage('contact')">Contact</a>
+        </div>
+
+        <div class="footer-section">
+          <h4>Tarifs</h4>
+          <p>FLE A1 : 29 € la formation</p>
+          <p>FLE A2 : 29 € la formation</p>
+          <p>Accompagnement : à partir de 49 €</p>
+        </div>
+
+        <div class="footer-section">
+          <h4>Contact</h4>
+          <p>Présidente : Madame FOFANA Missade</p>
+          <p>Email : logix.forma@gmail.com</p>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <p>
+          &copy; 2026 LOGIX FORMA — Tous droits réservés —
+          <a href="#" onclick="showPage('legal'); return false;">Mentions légales</a>
+        </p>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    function showPage(pageId) {
+      document.querySelectorAll(".page").forEach((page) => {
+        page.classList.remove("active");
+      });
+
+      const selected = document.getElementById(pageId);
+      if (selected) {
+        selected.classList.add("active");
+      }
+
+      document.querySelectorAll(".nav-links a").forEach((link) => {
+        link.classList.remove("active");
+      });
+
+      const navMap = {
+        home: 0,
+        formations: 1,
+        about: 2,
+        contact: 3
+      };
+
+      if (navMap[pageId] !== undefined) {
+        const navLinks = document.querySelectorAll(".nav-links a");
+        if (navLinks[navMap[pageId]]) {
+          navLinks[navMap[pageId]].classList.add("active");
+        }
+      }
+
+      const menu = document.getElementById("navLinks");
+      if (menu) {
+        menu.classList.remove("active");
+      }
+
+      window.scrollTo({ top: 0, behavior: "smooth" });
+    }
+
+    function toggleMenu() {
+      const menu = document.getElementById("navLinks");
+      if (menu) {
+        menu.classList.toggle("active");
+      }
+    }
+
+    function handleSubmit(event) {
+      event.preventDefault();
+
+      const prenom = document.getElementById("prenom").value.trim();
+      const nom = document.getElementById("nom").value.trim();
+      const email = document.getElementById("email").value.trim();
+      const telephone = document.getElementById("telephone").value.trim();
+      const formation = document.getElementById("formation").value.trim();
+      const niveau = document.getElementById("niveau").value.trim();
+      const message = document.getElementById("message").value.trim();
+
+      const subject = encodeURIComponent("Demande d'information — LOGIX FORMA");
+      const body = encodeURIComponent(
+        "Prénom : " + prenom + "\n" +
+        "Nom : " + nom + "\n" +
+        "Email : " + email + "\n" +
+        "Téléphone : " + telephone + "\n" +
+        "Formation souhaitée : " + formation + "\n" +
+        "Niveau actuel : " + niveau + "\n\n" +
+        "Message :\n" + message
+      );
+
+      window.location.href = "mailto:logix.forma@gmail.com?subject=" + subject + "&body=" + body;
+    }
+
+    document.addEventListener("DOMContentLoaded", function () {
+      showPage("home");
+    });
+  </script>
 </body>
-
 </html>
+
