@@ -1,60 +1,377 @@
 <!DOCTYPE html>
 <html lang="fr">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Merci — LOGIX FORMA</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Merci — LOGIX FORMA</title>
+  <meta name="description" content="Votre demande a bien été envoyée à LOGIX FORMA.">
 
-<style>
-body{
-font-family:Arial,sans-serif;
-background:#f5f7fb;
-text-align:center;
-padding:50px 20px;
-color:#1a1a2e;
-}
-.box{
-max-width:700px;
-margin:auto;
-background:white;
-padding:40px;
-border-radius:12px;
-box-shadow:0 8px 24px rgba(0,0,0,0.08);
-border:1px solid #e2e8f0;
-}
-.logo{
-margin-bottom:20px;
-}
-.logo img{
-height:72px;
-width:auto;
-}
-.btn{
-display:inline-block;
-margin-top:20px;
-background:#ff6b35;
-color:white;
-padding:12px 20px;
-border-radius:8px;
-text-decoration:none;
-font-weight:bold;
-}
-</style>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+  <style>
+    *{
+      margin:0;
+      padding:0;
+      box-sizing:border-box;
+    }
+
+    :root{
+      --logo-blue:#1F365D;
+      --logo-blue-dark:#0C1A34;
+      --logo-green:#81A042;
+      --logo-green-dark:#6E8E32;
+      --logo-yellow:#E7CC49;
+      --logo-yellow-dark:#D6B92E;
+      --bg-light:#F7F8FB;
+      --bg-white:#FFFFFF;
+      --text-dark:#1F2340;
+      --text-medium:#4D5373;
+      --text-light:#727995;
+      --border-light:#E5E8F2;
+      --shadow-sm:0 6px 18px rgba(31,54,93,0.08);
+      --shadow-md:0 10px 28px rgba(31,54,93,0.12);
+      --shadow-lg:0 18px 42px rgba(31,54,93,0.18);
+      --radius-sm:10px;
+      --radius-md:14px;
+      --radius-lg:20px;
+      --radius-xl:28px;
+      --transition:all 0.25s ease;
+    }
+
+    body{
+      font-family:'Inter', Arial, sans-serif;
+      background:linear-gradient(135deg, var(--bg-light) 0%, #eef2fb 100%);
+      color:var(--text-dark);
+      min-height:100vh;
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      padding:24px;
+      line-height:1.7;
+      -webkit-font-smoothing:antialiased;
+      -moz-osx-font-smoothing:grayscale;
+    }
+
+    .wrap{
+      width:100%;
+      max-width:880px;
+    }
+
+    .card{
+      background:var(--bg-white);
+      border:1px solid var(--border-light);
+      border-radius:var(--radius-xl);
+      overflow:hidden;
+      box-shadow:var(--shadow-lg);
+    }
+
+    .hero{
+      background:
+        radial-gradient(circle at top right, rgba(255,255,255,0.10), transparent 30%),
+        linear-gradient(135deg, var(--logo-blue) 0%, var(--logo-blue-dark) 100%);
+      color:white;
+      padding:42px 28px 36px;
+      text-align:center;
+    }
+
+    .logo{
+      display:flex;
+      justify-content:center;
+      margin-bottom:18px;
+    }
+
+    .logo img{
+      height:84px;
+      width:auto;
+      background:white;
+      border-radius:12px;
+      padding:6px;
+      box-shadow:0 10px 26px rgba(0,0,0,0.16);
+    }
+
+    .badge{
+      display:inline-flex;
+      align-items:center;
+      gap:8px;
+      padding:10px 16px;
+      border-radius:999px;
+      background:rgba(255,255,255,0.12);
+      border:1px solid rgba(255,255,255,0.18);
+      font-size:0.9rem;
+      font-weight:600;
+      margin-bottom:18px;
+    }
+
+    .hero h1{
+      font-size:clamp(2rem, 4vw, 3rem);
+      line-height:1.15;
+      margin-bottom:12px;
+      letter-spacing:-0.02em;
+    }
+
+    .hero p{
+      max-width:680px;
+      margin:0 auto;
+      opacity:0.95;
+      font-size:1.03rem;
+    }
+
+    .content{
+      padding:34px 28px 36px;
+    }
+
+    .section{
+      margin-bottom:28px;
+    }
+
+    .section h2{
+      font-size:1.35rem;
+      margin-bottom:12px;
+      color:var(--text-dark);
+    }
+
+    .section p{
+      color:var(--text-medium);
+      margin-bottom:12px;
+    }
+
+    .info-box{
+      padding:18px;
+      border-radius:var(--radius-md);
+      margin:16px 0;
+      border-left:4px solid transparent;
+    }
+
+    .info-box.green{
+      background:#f0f8ea;
+      border-left-color:var(--logo-green);
+    }
+
+    .info-box.yellow{
+      background:#fff9dd;
+      border-left-color:var(--logo-yellow-dark);
+    }
+
+    .info-box p{
+      margin:0;
+      color:var(--text-dark);
+    }
+
+    .benefits{
+      list-style:none;
+      margin-top:12px;
+    }
+
+    .benefits li{
+      position:relative;
+      padding-left:28px;
+      margin-bottom:10px;
+      color:var(--text-medium);
+    }
+
+    .benefits li::before{
+      content:"✓";
+      position:absolute;
+      left:0;
+      top:0;
+      color:var(--logo-green);
+      font-weight:800;
+    }
+
+    .steps{
+      display:grid;
+      grid-template-columns:repeat(auto-fit, minmax(220px, 1fr));
+      gap:16px;
+      margin-top:14px;
+    }
+
+    .step{
+      background:var(--bg-light);
+      border:1px solid var(--border-light);
+      border-radius:var(--radius-md);
+      padding:18px;
+      box-shadow:var(--shadow-sm);
+    }
+
+    .step-number{
+      width:36px;
+      height:36px;
+      border-radius:50%;
+      background:linear-gradient(135deg, var(--logo-green), var(--logo-blue));
+      color:white;
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      font-weight:700;
+      margin-bottom:10px;
+    }
+
+    .step h3{
+      font-size:1rem;
+      margin-bottom:8px;
+      color:var(--text-dark);
+    }
+
+    .step p{
+      margin:0;
+      font-size:0.95rem;
+      color:var(--text-light);
+    }
+
+    .cta{
+      margin-top:30px;
+      text-align:center;
+    }
+
+    .btn{
+      display:inline-flex;
+      align-items:center;
+      justify-content:center;
+      padding:14px 24px;
+      border-radius:14px;
+      font-weight:700;
+      text-decoration:none;
+      transition:var(--transition);
+      margin:8px;
+    }
+
+    .btn:hover{
+      transform:translateY(-2px);
+    }
+
+    .btn-primary{
+      background:linear-gradient(135deg, var(--logo-yellow), var(--logo-yellow-dark));
+      color:var(--logo-blue-dark);
+      box-shadow:0 12px 26px rgba(231,204,73,0.28);
+    }
+
+    .btn-secondary{
+      background:white;
+      color:var(--logo-blue);
+      border:1px solid var(--border-light);
+    }
+
+    .footer-note{
+      margin-top:22px;
+      text-align:center;
+      color:var(--text-light);
+      font-size:0.94rem;
+    }
+
+    @media (max-width:640px){
+      body{
+        padding:12px;
+      }
+
+      .hero{
+        padding:30px 18px 26px;
+      }
+
+      .content{
+        padding:24px 18px 28px;
+      }
+
+      .logo img{
+        height:72px;
+      }
+
+      .btn{
+        width:100%;
+        margin:8px 0;
+      }
+    }
+  </style>
 </head>
-
 <body>
 
-<div class="box">
-  <div class="logo">
-    <img src="https://i.postimg.cc/xdj77pwZ/logo-logix-forma.jpg" alt="Logo LOGIX FORMA">
+  <div class="wrap">
+    <div class="card">
+
+      <div class="hero">
+        <div class="logo">
+          <img src="https://i.postimg.cc/xdj77pwZ/logo-logix-forma.jpg" alt="Logo LOGIX FORMA">
+        </div>
+
+        <div class="badge">✅ Demande envoyée</div>
+
+        <h1>Merci, votre demande a bien été prise en compte</h1>
+
+        <p>
+          Votre message a été transmis à LOGIX FORMA. Vous faites désormais partie des personnes que nous pourrons recontacter selon la nature de votre demande.
+        </p>
+      </div>
+
+      <div class="content">
+
+        <div class="section">
+          <h2>Votre demande a bien été enregistrée</h2>
+          <p>
+            Nous avons bien reçu votre formulaire. Selon votre besoin, il pourra s’agir d’une demande d’accès prioritaire, d’une demande d’information ou d’un message de contact.
+          </p>
+
+          <div class="info-box green">
+            <p><strong>Bonne nouvelle :</strong> votre demande est désormais enregistrée dans notre suivi.</p>
+          </div>
+
+          <div class="info-box yellow">
+            <p><strong>Conseil :</strong> pensez à vérifier votre dossier spam ou courrier indésirable si vous attendez une réponse par email.</p>
+          </div>
+        </div>
+
+        <div class="section">
+          <h2>Ce que cela signifie pour vous</h2>
+          <ul class="benefits">
+            <li>Votre intérêt pour LOGIX FORMA est bien enregistré</li>
+            <li>Vous pourrez être recontacté selon votre profil et votre demande</li>
+            <li>Vous pourrez être informé des ouvertures progressives de parcours</li>
+            <li>Votre prise de contact est maintenant intégrée à notre suivi</li>
+          </ul>
+        </div>
+
+        <div class="section">
+          <h2>Les prochaines étapes</h2>
+
+          <div class="steps">
+            <div class="step">
+              <div class="step-number">1</div>
+              <h3>Lecture de votre demande</h3>
+              <p>Votre message est pris en compte pour être examiné selon son objet.</p>
+            </div>
+
+            <div class="step">
+              <div class="step-number">2</div>
+              <h3>Orientation</h3>
+              <p>Votre demande est reliée au bon besoin : information, contact ou accès prioritaire.</p>
+            </div>
+
+            <div class="step">
+              <div class="step-number">3</div>
+              <h3>Recontact</h3>
+              <p>Vous pourrez être recontacté dès qu’une réponse utile ou une disponibilité pertinente sera possible.</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="section">
+          <h2>En attendant</h2>
+          <p>
+            Vous pouvez retourner à l’accueil pour consulter les formations mises en avant, découvrir le fonctionnement de LOGIX FORMA ou lire les articles du blog.
+          </p>
+        </div>
+
+        <div class="cta">
+          <a href="index.html" class="btn btn-primary">Retour à l’accueil</a>
+          <a href="blog.html" class="btn btn-secondary">Voir le blog</a>
+        </div>
+
+        <div class="footer-note">
+          LOGIX FORMA — Formation en ligne pour l’insertion, la reconversion et le développement des compétences
+        </div>
+      </div>
+    </div>
   </div>
-
-  <h1>Merci</h1>
-  <p>Votre demande a bien été envoyée.</p>
-  <p>Nous reviendrons vers vous dès que possible.</p>
-
-  <a href="index.html" class="btn">Retour à l’accueil</a>
-</div>
 
 </body>
 </html>
