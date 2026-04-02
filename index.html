@@ -158,7 +158,7 @@
     }
 
     .hero-inner{
-      max-width:900px;
+      max-width:920px;
       margin:0 auto;
       text-align:center;
       position:relative;
@@ -179,7 +179,7 @@
     }
 
     .hero h1{
-      font-size:clamp(2.2rem, 5vw, 3.7rem);
+      font-size:clamp(2.2rem, 5vw, 3.8rem);
       line-height:1.08;
       margin-bottom:18px;
       font-weight:800;
@@ -399,7 +399,7 @@
 
     .tag.navy{background:var(--logo-blue);}
     .tag.green{background:var(--logo-green);}
-    .tag.yellow{background:var(--logo-yellow-dark);}
+    .tag.yellow{background:var(--logo-yellow-dark); color:var(--logo-blue-dark);}
     .tag.success{background:var(--success);}
 
     .price{
@@ -428,6 +428,43 @@
     .highlight-box h2{
       font-size:clamp(1.8rem,4vw,2.4rem);
       margin-bottom:12px;
+    }
+
+    .blog-preview-grid{
+      display:grid;
+      grid-template-columns:repeat(auto-fit,minmax(240px,1fr));
+      gap:22px;
+    }
+
+    .blog-card{
+      background:white;
+      border:1px solid var(--border-light);
+      border-radius:20px;
+      padding:24px;
+      box-shadow:var(--shadow-sm);
+      transition:var(--transition);
+    }
+
+    .blog-card:hover{
+      transform:translateY(-4px);
+      box-shadow:var(--shadow-md);
+    }
+
+    .blog-card h3{
+      margin-bottom:10px;
+      font-size:1.12rem;
+      line-height:1.4;
+    }
+
+    .blog-card p{
+      color:var(--text-light);
+      margin-bottom:14px;
+      font-size:0.96rem;
+    }
+
+    .blog-link{
+      font-weight:700;
+      color:var(--logo-blue);
     }
 
     .split{
@@ -813,6 +850,41 @@
         <p>
           LOGIX FORMA préfère mettre ses formations en ligne au fur et à mesure de leur finalisation plutôt que d’annoncer une date artificielle. Cette approche garantit une meilleure qualité pédagogique dès la mise à disposition.
         </p>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <div class="container">
+      <h2 class="section-title">Le blog LOGIX FORMA</h2>
+      <p class="section-subtitle">
+        Des articles écrits par <strong>Moctar TOURÉ — Directeur pédagogique</strong> pour accompagner la reconversion, la progression professionnelle et l’apprentissage du français.
+      </p>
+
+      <div class="blog-preview-grid">
+        <a href="blog.html#article-1" class="blog-card">
+          <h3>Comment financer sa reconversion professionnelle</h3>
+          <p>Clarifier son projet, comprendre les possibilités et avancer avec une logique réaliste.</p>
+          <span class="blog-link">Lire l’article</span>
+        </a>
+
+        <a href="blog.html#article-2" class="blog-card">
+          <h3>Pourquoi la montée en compétences reste un levier d’employabilité</h3>
+          <p>Renforcer sa place sur le marché du travail grâce à des compétences plus utiles et plus visibles.</p>
+          <span class="blog-link">Lire l’article</span>
+        </a>
+
+        <a href="blog.html#article-3" class="blog-card">
+          <h3>Apprendre le français pour gagner en autonomie dans la vie professionnelle</h3>
+          <p>Comprendre, répondre, interagir et progresser dans des situations concrètes du quotidien et du travail.</p>
+          <span class="blog-link">Lire l’article</span>
+        </a>
+
+        <a href="blog.html#article-4" class="blog-card">
+          <h3>Changer de trajectoire : comment avancer sans tout bouleverser d’un coup</h3>
+          <p>Construire une transition progressive, cohérente et réaliste sans rupture brutale.</p>
+          <span class="blog-link">Lire l’article</span>
+        </a>
       </div>
     </div>
   </section>
