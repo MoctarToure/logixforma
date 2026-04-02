@@ -508,7 +508,8 @@
       box-shadow:var(--shadow-lg);
     }
 
-    .dark-box p{
+    .dark-box p,
+    .dark-box li{
       color:rgba(255,255,255,0.92);
     }
 
@@ -536,6 +537,20 @@
     .dark-box select,
     .dark-box textarea{
       border:none;
+    }
+
+    .checkbox-row{
+      display:flex;
+      align-items:flex-start;
+      gap:10px;
+      margin:14px 0 18px;
+      font-size:0.92rem;
+    }
+
+    .checkbox-row input{
+      width:auto;
+      margin-top:4px;
+      flex-shrink:0;
     }
 
     .contact-grid{
@@ -916,6 +931,8 @@
           <form action="https://formspree.io/f/mjgpekwe" method="POST">
             <input type="hidden" name="_subject" value="Nouvelle demande d'accès prioritaire LOGIX FORMA">
             <input type="hidden" name="_next" value="merci.html">
+            <input type="hidden" name="source" value="site_logix_forma">
+            <input type="hidden" name="type_demande" value="acces_prioritaire">
 
             <div class="form-group">
               <label for="ap-prenom">Prénom *</label>
@@ -933,6 +950,11 @@
             </div>
 
             <div class="form-group">
+              <label for="ap-telephone">Téléphone</label>
+              <input type="tel" id="ap-telephone" name="telephone">
+            </div>
+
+            <div class="form-group">
               <label for="ap-formation">Formation souhaitée *</label>
               <select id="ap-formation" name="formation" required>
                 <option value="">Choisir</option>
@@ -943,9 +965,25 @@
             </div>
 
             <div class="form-group">
+              <label for="ap-niveau">Votre niveau actuel</label>
+              <select id="ap-niveau" name="niveau">
+                <option value="">Choisir</option>
+                <option value="Débutant">Débutant</option>
+                <option value="A1">A1</option>
+                <option value="A2">A2</option>
+                <option value="B1 ou +">B1 ou +</option>
+              </select>
+            </div>
+
+            <div class="form-group">
               <label for="ap-message">Message</label>
               <textarea id="ap-message" name="message" rows="5" placeholder="Votre situation, vos besoins, vos objectifs..."></textarea>
             </div>
+
+            <label class="checkbox-row">
+              <input type="checkbox" required>
+              <span>J’accepte d’être recontacté par LOGIX FORMA au sujet de ma demande.</span>
+            </label>
 
             <button type="submit" class="btn btn-primary" style="width:100%;">Je demande un accès prioritaire</button>
           </form>
@@ -994,25 +1032,42 @@
           <form action="https://formspree.io/f/mjgpekwe" method="POST">
             <input type="hidden" name="_subject" value="Nouveau message de contact LOGIX FORMA">
             <input type="hidden" name="_next" value="merci.html">
+            <input type="hidden" name="source" value="site_logix_forma">
+            <input type="hidden" name="type_demande" value="contact">
 
             <div class="form-group">
               <label for="ct-prenom">Prénom *</label>
-              <input type="text" id="ct-prenom" name="contact_prenom" required>
+              <input type="text" id="ct-prenom" name="prenom" required>
             </div>
 
             <div class="form-group">
               <label for="ct-nom">Nom *</label>
-              <input type="text" id="ct-nom" name="contact_nom" required>
+              <input type="text" id="ct-nom" name="nom" required>
             </div>
 
             <div class="form-group">
               <label for="ct-email">Email *</label>
-              <input type="email" id="ct-email" name="contact_email" required>
+              <input type="email" id="ct-email" name="email" required>
+            </div>
+
+            <div class="form-group">
+              <label for="ct-telephone">Téléphone</label>
+              <input type="tel" id="ct-telephone" name="telephone">
+            </div>
+
+            <div class="form-group">
+              <label for="ct-formation">Formation concernée</label>
+              <select id="ct-formation" name="formation">
+                <option value="">Choisir</option>
+                <option value="Français A1">Français professionnel A1</option>
+                <option value="Français A2">Français professionnel A2</option>
+                <option value="Information générale">Information générale</option>
+              </select>
             </div>
 
             <div class="form-group">
               <label for="ct-sujet">Sujet *</label>
-              <select id="ct-sujet" name="contact_sujet" required>
+              <select id="ct-sujet" name="sujet" required>
                 <option value="">Choisir</option>
                 <option value="Information générale">Information générale</option>
                 <option value="Partenariat">Partenariat</option>
@@ -1023,8 +1078,13 @@
 
             <div class="form-group">
               <label for="ct-message">Message *</label>
-              <textarea id="ct-message" name="contact_message" rows="6" placeholder="Expliquez votre demande..." required></textarea>
+              <textarea id="ct-message" name="message" rows="6" placeholder="Expliquez votre demande..." required></textarea>
             </div>
+
+            <label class="checkbox-row">
+              <input type="checkbox" required>
+              <span>J’accepte d’être recontacté par LOGIX FORMA au sujet de ma demande.</span>
+            </label>
 
             <button type="submit" class="btn btn-primary" style="width:100%;">Envoyer mon message</button>
           </form>
