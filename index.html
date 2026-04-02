@@ -1398,50 +1398,48 @@
   </footer>
 
   <script>
-    const ZAPIER_WEBHOOK_URL = "https://hooks.zapier.com/hooks/catch/27068153/unx32gn/";
+  const ZAPIER_WEBHOOK_URL = "https://hooks.zapier.com/hooks/catch/27068153/unx32gn/";
 
-    async function handleZapierSubmit(formId, statusId) {
-      const form = document.getElementById(formId);
-      const statusBox = document.getElementById(statusId);
+  function handleZapierSubmit(formId, statusId) {
+    const form = document.getElementById(formId);
+    const statusBox = document.getElementById(statusId);
 
-      if (!form || !statusBox) return;
+    if (!form || !statusBox) return;
 
-      form.addEventListener("submit", async function(event) {
-        event.preventDefault();
+    form.addEventListener("submit", async function(event) {
+      event.preventDefault();
 
-        statusBox.className = "form-status";
-        statusBox.textContent = "";
+      statusBox.className = "form-status";
+      statusBox.textContent = "";
 
-        const formData = new FormData(form);
-        const data = {};
-        formData.forEach((value, key) => {
-          data[key] = value;
+      const formData = new FormData(form);
+      const params = new URLSearchParams();
+
+      for (const [key, value] of formData.entries()) {
+        params.append(key, value);
+      }
+
+      try {
+        await fetch(ZAPIER_WEBHOOK_URL, {
+          method: "POST",
+          mode: "no-cors",
+          headers: {
+            "Content-Type": "application/x-www-form-urlencoded;charset=UTF-8"
+          },
+          body: params.toString()
         });
 
-        try {
-          const response = await fetch(ZAPIER_WEBHOOK_URL, {
-            method: "POST",
-            headers: {
-              "Content-Type": "application/json"
-            },
-            body: JSON.stringify(data)
-          });
+        form.reset();
+        window.location.href = "merci.html";
+      } catch (error) {
+        statusBox.className = "form-status error";
+        statusBox.textContent = "Une erreur est survenue. Merci de réessayer.";
+      }
+    });
+  }
 
-          if (!response.ok) {
-            throw new Error("Erreur d'envoi");
-          }
-
-          form.reset();
-          window.location.href = "merci.html";
-        } catch (error) {
-          statusBox.className = "form-status error";
-          statusBox.textContent = "Une erreur est survenue. Merci de réessayer.";
-        }
-      });
-    }
-
-    handleZapierSubmit("priority-form", "priority-status");
-    handleZapierSubmit("contact-form", "contact-status");
+  handleZapierSubmit("priority-form", "priority-status");
+  handleZapierSubmit("contact-form", "contact-status");
   </script>
 
 </body>
