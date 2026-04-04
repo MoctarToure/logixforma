@@ -37,6 +37,7 @@
       --text-dark:#1F2340;
       --text-medium:#4D5373;
       --text-light:#727995;
+      --text-white:#FFFFFF;
       --border-light:#E5E8F2;
       --success:#2E7D32;
       --danger:#B3261E;
@@ -142,7 +143,7 @@
 
     .menu .nav-cta{
       background:linear-gradient(135deg,var(--logo-green),var(--logo-green-dark));
-      color:white;
+      color:var(--text-white);
       padding:10px 16px;
       border-radius:12px;
       box-shadow:var(--shadow-sm);
@@ -152,7 +153,7 @@
       background:
         radial-gradient(circle at top right, rgba(255,255,255,0.10), transparent 30%),
         linear-gradient(135deg,var(--logo-blue) 0%, var(--logo-blue-dark) 100%);
-      color:white;
+      color:var(--text-white);
       padding:88px 0 96px;
       position:relative;
       overflow:hidden;
@@ -177,9 +178,11 @@
       font-size:0.9rem;
       font-weight:600;
       margin-bottom:22px;
+      color:var(--text-white);
     }
 
     .hero h1{
+      color:var(--text-white);
       font-size:clamp(2.2rem, 5vw, 3.8rem);
       line-height:1.08;
       margin-bottom:18px;
@@ -188,10 +191,10 @@
     }
 
     .hero p{
+      color:rgba(255,255,255,0.96);
       max-width:760px;
       margin:0 auto 30px;
       font-size:1.08rem;
-      opacity:0.96;
     }
 
     .btn-group{
@@ -226,13 +229,13 @@
     }
 
     .btn-secondary{
-      background:white;
+      background:var(--bg-white);
       color:var(--logo-blue);
     }
 
     .btn-green{
       background:linear-gradient(135deg,var(--logo-green),var(--logo-green-dark));
-      color:white;
+      color:var(--text-white);
       box-shadow:var(--shadow-sm);
     }
 
@@ -243,7 +246,7 @@
       line-height:1.5;
       word-break:break-word;
       text-wrap:balance;
-      opacity:0.9;
+      color:rgba(255,255,255,0.90);
     }
 
     .status-bar{
@@ -272,7 +275,7 @@
       display:flex;
       align-items:center;
       justify-content:center;
-      color:white;
+      color:var(--text-white);
       background:linear-gradient(135deg,var(--logo-green),var(--logo-blue));
       box-shadow:var(--shadow-sm);
       font-size:1.05rem;
@@ -310,6 +313,18 @@
       font-size:1.05rem;
     }
 
+    .section-dark{
+      background:linear-gradient(135deg,var(--logo-blue) 0%, var(--logo-blue-dark) 100%);
+    }
+
+    .section-dark .section-title{
+      color:var(--text-white);
+    }
+
+    .section-dark .section-subtitle{
+      color:rgba(255,255,255,0.92);
+    }
+
     .grid{
       display:grid;
       gap:22px;
@@ -320,7 +335,7 @@
     }
 
     .card{
-      background:white;
+      background:var(--bg-white);
       border:1px solid var(--border-light);
       border-radius:18px;
       padding:28px;
@@ -346,11 +361,11 @@
     }
 
     .card p{
-      color:var(--text-light);
+      color:var(--text-medium);
     }
 
     .soft-section{
-      background:white;
+      background:var(--bg-white);
     }
 
     .formation-grid{
@@ -360,7 +375,7 @@
     }
 
     .formation-card{
-      background:white;
+      background:var(--bg-white);
       border:1px solid var(--border-light);
       border-radius:20px;
       padding:28px;
@@ -425,7 +440,7 @@
       border-radius:999px;
       font-size:0.82rem;
       font-weight:700;
-      color:white;
+      color:var(--text-white);
     }
 
     .tag.navy{background:var(--logo-blue);}
@@ -449,7 +464,7 @@
     .highlight-box{
       margin-top:28px;
       background:linear-gradient(135deg,var(--logo-green),var(--logo-blue));
-      color:white;
+      color:var(--text-white);
       border-radius:22px;
       padding:34px;
       text-align:center;
@@ -459,6 +474,11 @@
     .highlight-box h2{
       font-size:clamp(1.8rem,4vw,2.4rem);
       margin-bottom:12px;
+      color:var(--text-white);
+    }
+
+    .highlight-box p{
+      color:rgba(255,255,255,0.96);
     }
 
     .blog-preview-grid{
@@ -468,7 +488,7 @@
     }
 
     .blog-card{
-      background:white;
+      background:var(--bg-white);
       border:1px solid var(--border-light);
       border-radius:20px;
       padding:24px;
@@ -490,7 +510,7 @@
     }
 
     .blog-card p{
-      color:var(--text-light);
+      color:var(--text-medium);
       margin-bottom:14px;
       font-size:0.96rem;
     }
@@ -508,7 +528,7 @@
     }
 
     .box{
-      background:white;
+      background:var(--bg-white);
       border:1px solid var(--border-light);
       border-radius:20px;
       padding:28px;
@@ -538,13 +558,13 @@
 
     .dark-box{
       background:linear-gradient(135deg,var(--logo-blue),var(--logo-blue-dark));
-      color:white;
+      color:var(--text-white);
       border:none;
       box-shadow:var(--shadow-lg);
     }
 
     .dark-box h3{
-      color:#fff;
+      color:var(--text-white);
     }
 
     .dark-box p,
@@ -570,7 +590,7 @@
       border-radius:12px;
       border:1px solid #d5dbea;
       font:inherit;
-      background:white;
+      background:var(--bg-white);
       color:var(--text-dark);
     }
 
@@ -583,6 +603,8 @@
     .dark-box select,
     .dark-box textarea{
       border:none;
+      background:#ffffff;
+      color:var(--text-dark);
     }
 
     .checkbox-row{
@@ -606,7 +628,7 @@
     }
 
     .contact-info{
-      background:white;
+      background:var(--bg-white);
       border:1px solid var(--border-light);
       border-radius:18px;
       padding:22px;
@@ -659,7 +681,7 @@
     }
 
     .seo-block{
-      background:white;
+      background:var(--bg-white);
       border:1px solid var(--border-light);
       border-radius:20px;
       padding:32px;
@@ -678,29 +700,6 @@
       margin-bottom:14px;
     }
 
-    .form-status{
-      display:none;
-      margin-top:14px;
-      padding:12px 14px;
-      border-radius:12px;
-      font-size:0.95rem;
-      font-weight:600;
-    }
-
-    .form-status.success{
-      display:block;
-      background:#E8F5E9;
-      color:#1B5E20;
-      border:1px solid #C8E6C9;
-    }
-
-    .form-status.error{
-      display:block;
-      background:#FDECEA;
-      color:var(--danger);
-      border:1px solid #F5C2BE;
-    }
-
     footer{
       background:var(--logo-blue-dark);
       color:#cbd5e1;
@@ -717,7 +716,7 @@
     }
 
     footer h4{
-      color:white;
+      color:var(--text-white);
       margin-bottom:12px;
     }
 
@@ -729,7 +728,7 @@
     }
 
     footer a:hover{
-      color:white;
+      color:var(--text-white);
     }
 
     .footer-bottom{
@@ -948,7 +947,7 @@
     </div>
   </div>
 
-  <section>
+  <section class="section-dark">
     <div class="container">
       <h2 class="section-title">Pourquoi choisir LOGIX FORMA ?</h2>
       <p class="section-subtitle">
@@ -1038,7 +1037,7 @@
         <article class="formation-card yellow">
           <h3>Autres formations en préparation</h3>
           <p>
-            LOGIX FORMA développera progressivement d’autres parcours : gestion de projet, compétences numériques, intelligence artificielle et français de niveau supérieur.
+            LOGIX FORMA développe progressivement d’autres parcours : gestion de projet, compétences numériques, intelligence artificielle et français de niveau supérieur.
           </p>
 
           <div class="tag-wrap">
@@ -1166,7 +1165,9 @@
           <h3>Formulaire d’accès prioritaire</h3>
           <p>Remplissez ce formulaire pour être informé en priorité dès l’ouverture progressive des formations LOGIX FORMA.</p>
 
-          <form id="priority-form">
+          <form id="priority-form" action="https://formspree.io/f/mjgpekwe" method="POST">
+            <input type="hidden" name="_subject" value="Nouvelle demande d'accès prioritaire LOGIX FORMA">
+            <input type="hidden" name="_next" value="https://logixforma.com/merci.html">
             <input type="hidden" name="source" value="site_logix_forma">
             <input type="hidden" name="type_demande" value="acces_prioritaire">
 
@@ -1210,7 +1211,6 @@
             </label>
 
             <button type="submit" class="btn btn-primary" style="width:100%;">Je demande un accès prioritaire</button>
-            <div id="priority-status" class="form-status"></div>
           </form>
         </div>
       </div>
@@ -1254,7 +1254,9 @@
           <h3>Formulaire de contact</h3>
           <p>Utilisez ce formulaire pour toute question générale, partenariat ou demande spécifique.</p>
 
-          <form id="contact-form">
+          <form id="contact-form" action="https://formspree.io/f/mjgpekwe" method="POST">
+            <input type="hidden" name="_subject" value="Nouveau message de contact LOGIX FORMA">
+            <input type="hidden" name="_next" value="https://logixforma.com/merci.html">
             <input type="hidden" name="source" value="site_logix_forma">
             <input type="hidden" name="type_demande" value="contact">
 
@@ -1308,7 +1310,6 @@
             </label>
 
             <button type="submit" class="btn btn-green" style="width:100%;">Envoyer mon message</button>
-            <div id="contact-status" class="form-status"></div>
           </form>
         </div>
       </div>
@@ -1367,53 +1368,6 @@
       © 2026 LOGIX FORMA — Tous droits réservés
     </div>
   </footer>
-
-  <script>
-    const ZAPIER_WEBHOOK_URL = "https://hooks.zapier.com/hooks/catch/27068153/unx32gn/";
-
-    async function handleZapierSubmit(formId, statusId) {
-      const form = document.getElementById(formId);
-      const statusBox = document.getElementById(statusId);
-
-      if (!form) return;
-
-      form.addEventListener("submit", async function(event) {
-        event.preventDefault();
-
-        statusBox.className = "form-status";
-        statusBox.textContent = "";
-
-        const formData = new FormData(form);
-        const data = {};
-        formData.forEach((value, key) => {
-          data[key] = value;
-        });
-
-        try {
-          const response = await fetch(ZAPIER_WEBHOOK_URL, {
-            method: "POST",
-            headers: {
-              "Content-Type": "application/json"
-            },
-            body: JSON.stringify(data)
-          });
-
-          if (!response.ok) {
-            throw new Error("Erreur d'envoi");
-          }
-
-          form.reset();
-          window.location.href = "merci.html";
-        } catch (error) {
-          statusBox.className = "form-status error";
-          statusBox.textContent = "Une erreur est survenue. Merci de réessayer.";
-        }
-      });
-    }
-
-    handleZapierSubmit("priority-form", "priority-status");
-    handleZapierSubmit("contact-form", "contact-status");
-  </script>
 
 </body>
 </html>
