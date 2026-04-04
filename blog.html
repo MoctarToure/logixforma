@@ -3,8 +3,8 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>LOGIX FORMA — Formation en ligne premium</title>
-  <meta name="description" content="Plateforme de formation en ligne premium pour adultes. Français, insertion professionnelle et reconversion.">
+  <title>Blog — LOGIX FORMA</title>
+  <meta name="description" content="Conseils et astuces pour apprendre le français professionnel. Articles par Moctar TOURÉ, Directeur Pédagogique.">
   
   <!-- Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -13,12 +13,10 @@
 
   <style>
     :root {
-      /* LOGO COLORS EXACT MATCH */
       --logo-blue: #163059;
       --logo-green: #7DA63F;
       --logo-yellow: #F0C936;
       
-      /* UI COLORS (Udemy Style) */
       --text-main: #2d2f31;
       --text-secondary: #6a6f73;
       --text-light: #929497;
@@ -26,17 +24,13 @@
       --bg-white: #ffffff;
       --border-color: #d1d7dc;
       --border-light: #e5e8f2;
-      --success: #00a56e;
-      --rating-star: #b4690e;
       
-      /* Spacing & Layout */
       --header-height: 72px;
       --container-width: 1340px;
       --radius-sm: 4px;
       --radius-md: 8px;
       --radius-lg: 16px;
       
-      /* Shadows */
       --shadow-sm: 0 2px 4px rgba(0,0,0,0.08);
       --shadow-md: 0 4px 12px rgba(0,0,0,0.1);
       --shadow-lg: 0 10px 24px rgba(0,0,0,0.12);
@@ -48,7 +42,7 @@
       font-family: 'Inter', sans-serif;
       background-color: var(--bg-body);
       color: var(--text-main);
-      line-height: 1.5;
+      line-height: 1.6;
       -webkit-font-smoothing: antialiased;
       display: flex;
       flex-direction: column;
@@ -135,205 +129,313 @@
       color: white;
     }
     .btn-primary:hover { opacity: 0.9; }
-    
-    .btn-blue {
-      background: var(--logo-blue);
+
+    /* --- Blog Hero --- */
+    .blog-hero {
+      background: linear-gradient(135deg, var(--logo-blue) 0%, var(--logo-green) 100%);
       color: white;
+      padding: 80px 0;
+      text-align: center;
     }
-    .btn-blue:hover { opacity: 0.9; }
 
-    /* --- Main Content Area --- */
-    main { flex: 1; padding-bottom: 60px; }
-    .page-section { display: none; animation: fadeIn 0.4s ease; }
-    .page-section.active { display: block; }
-    
-    @keyframes fadeIn { from { opacity: 0; transform: translateY(10px); } to { opacity: 1; transform: translateY(0); } }
-
-    /* --- Hero Section --- */
-    .hero {
-      background: var(--bg-white);
-      padding: 60px 0 80px;
-      position: relative;
-      overflow: hidden;
-    }
-    .hero-content { max-width: 800px; position: relative; z-index: 2; }
-    .hero h1 {
-      font-size: clamp(2.5rem, 5vw, 4rem);
+    .blog-hero h1 {
+      font-size: clamp(2.5rem, 5vw, 3.5rem);
       font-weight: 800;
-      line-height: 1.1;
-      color: var(--text-main);
-      margin-bottom: 24px;
+      margin-bottom: 16px;
       letter-spacing: -0.03em;
     }
-    .hero p {
-      font-size: 1.25rem;
-      color: var(--text-secondary);
-      margin-bottom: 32px;
+
+    .blog-hero p {
+      font-size: 1.2rem;
+      opacity: 0.95;
       max-width: 600px;
-    }
-    .hero-image-wrapper {
-      position: absolute;
-      right: 0;
-      top: 0;
-      width: 50%;
-      height: 100%;
-      background: #eee;
-      z-index: 1;
-      clip-path: polygon(20% 0, 100% 0, 100% 100%, 0% 100%);
-    }
-    .hero-image-wrapper img {
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
+      margin: 0 auto;
     }
 
-    /* --- Course Grid --- */
-    .section { padding: 60px 0; }
-    .section-header { margin-bottom: 32px; }
-    .section-title { font-size: 2rem; font-weight: 700; color: var(--text-main); margin-bottom: 8px; }
-    .section-subtitle { color: var(--text-secondary); font-size: 1.1rem; }
-
-    .course-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
-      gap: 24px;
+    .author-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 12px;
+      background: rgba(255,255,255,0.15);
+      padding: 12px 24px;
+      border-radius: 50px;
+      margin-top: 24px;
+      backdrop-filter: blur(10px);
     }
 
-    .course-card {
-      background: var(--bg-card);
-      border-radius: var(--radius-md);
-      overflow: hidden;
-      transition: transform 0.2s, box-shadow 0.2s;
-      cursor: pointer;
-      display: flex;
-      flex-direction: column;
-      height: 100%;
-      border: 1px solid transparent;
-    }
-    .course-card:hover {
-      transform: translateY(-4px);
-      box-shadow: var(--shadow-md);
-      border-color: var(--border-light);
-    }
-
-    .course-image {
-      width: 100%;
-      aspect-ratio: 16/9;
-      object-fit: cover;
-      background: #eee;
-    }
-
-    .course-content { padding: 16px; flex-grow: 1; display: flex; flex-direction: column; }
-    .course-title {
-      font-size: 1rem;
-      font-weight: 700;
-      color: var(--text-main);
-      margin-bottom: 8px;
-      line-height: 1.3;
-      display: -webkit-box;
-      -webkit-line-clamp: 2;
-      -webkit-box-orient: vertical;
-      overflow: hidden;
-    }
-    .course-instructor { font-size: 0.85rem; color: var(--text-secondary); margin-bottom: 8px; }
-    .course-meta {
+    .author-avatar {
+      width: 48px;
+      height: 48px;
+      border-radius: 50%;
+      background: var(--logo-yellow);
       display: flex;
       align-items: center;
-      gap: 8px;
-      margin-bottom: 12px;
-      font-size: 0.85rem;
+      justify-content: center;
+      font-weight: 700;
+      color: var(--logo-blue);
+      font-size: 1.2rem;
     }
-    
-    .coming-soon-badge {
-      background: var(--logo-blue);
+
+    .author-info {
+      text-align: left;
+    }
+
+    .author-name {
+      font-weight: 700;
+      font-size: 1rem;
+    }
+
+    .author-role {
+      font-size: 0.85rem;
+      opacity: 0.9;
+    }
+
+    /* --- Blog Grid --- */
+    .blog-section {
+      padding: 60px 0;
+    }
+
+    .blog-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(340px, 1fr));
+      gap: 32px;
+    }
+
+    .blog-card {
+      background: var(--bg-white);
+      border-radius: var(--radius-lg);
+      overflow: hidden;
+      box-shadow: var(--shadow-sm);
+      transition: transform 0.2s, box-shadow 0.2s;
+      cursor: pointer;
+    }
+
+    .blog-card:hover {
+      transform: translateY(-4px);
+      box-shadow: var(--shadow-lg);
+    }
+
+    .blog-card-image {
+      width: 100%;
+      aspect-ratio: 16/10;
+      object-fit: cover;
+      background: #eee;
+    }
+
+    .blog-card-content {
+      padding: 24px;
+    }
+
+    .blog-card-category {
+      display: inline-block;
+      background: var(--logo-yellow);
+      color: var(--logo-blue);
+      font-size: 0.75rem;
+      font-weight: 700;
+      padding: 4px 10px;
+      border-radius: var(--radius-sm);
+      text-transform: uppercase;
+      margin-bottom: 12px;
+    }
+
+    .blog-card-title {
+      font-size: 1.25rem;
+      font-weight: 700;
+      color: var(--text-main);
+      margin-bottom: 12px;
+      line-height: 1.3;
+    }
+
+    .blog-card-excerpt {
+      color: var(--text-secondary);
+      font-size: 0.95rem;
+      margin-bottom: 16px;
+      line-height: 1.6;
+    }
+
+    .blog-card-meta {
+      display: flex;
+      align-items: center;
+      gap: 16px;
+      padding-top: 16px;
+      border-top: 1px solid var(--border-light);
+      font-size: 0.85rem;
+      color: var(--text-light);
+    }
+
+    .read-time {
+      display: flex;
+      align-items: center;
+      gap: 6px;
+    }
+
+    .read-more {
+      color: var(--logo-blue);
+      font-weight: 700;
+      font-size: 0.9rem;
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+    }
+
+    .read-more:hover {
+      text-decoration: underline;
+    }
+
+    /* --- Article Detail --- */
+    .article-detail {
+      max-width: 800px;
+      margin: 60px auto;
+      background: var(--bg-white);
+      padding: 40px;
+      border-radius: var(--radius-lg);
+      box-shadow: var(--shadow-md);
+    }
+
+    .article-header {
+      margin-bottom: 32px;
+      padding-bottom: 24px;
+      border-bottom: 1px solid var(--border-light);
+    }
+
+    .article-category {
+      display: inline-block;
+      background: var(--logo-green);
       color: white;
       font-size: 0.75rem;
       font-weight: 700;
-      padding: 4px 8px;
+      padding: 4px 12px;
       border-radius: var(--radius-sm);
       text-transform: uppercase;
-      display: inline-block;
-    }
-    
-    .course-price-row { margin-top: auto; display: flex; align-items: center; gap: 8px; }
-    .price { font-size: 1.25rem; font-weight: 700; color: var(--text-main); }
-    .old-price { font-size: 0.9rem; color: var(--text-secondary); text-decoration: line-through; }
-
-    /* --- Features --- */
-    .features-section {
-      background: var(--bg-white);
-      border-top: 1px solid var(--border-light);
-      border-bottom: 1px solid var(--border-light);
-    }
-    .features-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-      gap: 40px;
-      text-align: center;
-    }
-    .feature-item h3 { font-size: 1.1rem; margin: 16px 0 8px; color: var(--text-main); }
-    .feature-item p { font-size: 0.95rem; color: var(--text-secondary); }
-    .feature-icon { font-size: 2.5rem; }
-
-    /* --- Forms & Pages --- */
-    .form-container {
-      background: var(--bg-white);
-      padding: 40px;
-      border-radius: var(--radius-lg);
-      box-shadow: var(--shadow-md);
-      max-width: 600px;
-      margin: 0 auto;
-    }
-    .form-group { margin-bottom: 20px; }
-    .form-group label { display: block; margin-bottom: 8px; font-weight: 600; font-size: 0.9rem; color: var(--text-main); }
-    .form-control {
-      width: 100%;
-      padding: 12px 16px;
-      border: 1px solid var(--border-color);
-      border-radius: var(--radius-sm);
-      font-family: inherit;
-      font-size: 1rem;
-    }
-    .form-control:focus { outline: none; border-color: var(--logo-blue); box-shadow: 0 0 0 3px rgba(22, 48, 89, 0.1); }
-    textarea.form-control { min-height: 120px; resize: vertical; }
-    .checkbox-group { display: flex; align-items: flex-start; gap: 12px; font-size: 0.9rem; color: var(--text-secondary); margin-bottom: 24px; }
-    .checkbox-group input { margin-top: 4px; }
-
-    .legal-content {
-      background: var(--bg-white);
-      padding: 40px;
-      border-radius: var(--radius-lg);
-      box-shadow: var(--shadow-sm);
-      max-width: 900px;
-      margin: 0 auto;
-      line-height: 1.8;
-    }
-    .legal-content h2 { color: var(--logo-blue); margin-bottom: 16px; font-size: 1.8rem; }
-    .legal-content h3 { color: var(--text-main); margin: 24px 0 12px; font-size: 1.4rem; }
-    .legal-content p { margin-bottom: 16px; color: var(--text-secondary); }
-    .legal-content ul { list-style: disc; margin-left: 20px; margin-bottom: 16px; color: var(--text-secondary); }
-
-    /* --- Priority Access Banner --- */
-    .priority-banner {
-      background: linear-gradient(135deg, var(--logo-blue) 0%, var(--logo-green) 100%);
-      color: white;
-      padding: 40px;
-      border-radius: var(--radius-lg);
-      text-align: center;
-      margin: 40px 0;
-    }
-    .priority-banner h2 {
-      color: white;
-      font-size: 2rem;
       margin-bottom: 16px;
     }
-    .priority-banner p {
-      color: rgba(255,255,255,0.9);
+
+    .article-title {
+      font-size: 2.5rem;
+      font-weight: 800;
+      color: var(--text-main);
+      margin-bottom: 16px;
+      line-height: 1.2;
+    }
+
+    .article-meta {
+      display: flex;
+      align-items: center;
+      gap: 16px;
+      color: var(--text-secondary);
+      font-size: 0.9rem;
+    }
+
+    .article-author {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+
+    .article-author-avatar {
+      width: 40px;
+      height: 40px;
+      border-radius: 50%;
+      background: var(--logo-yellow);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-weight: 700;
+      color: var(--logo-blue);
+    }
+
+    .article-content {
       font-size: 1.1rem;
+      line-height: 1.8;
+      color: var(--text-secondary);
+    }
+
+    .article-content h2 {
+      font-size: 1.8rem;
+      color: var(--logo-blue);
+      margin: 40px 0 20px;
+      font-weight: 700;
+    }
+
+    .article-content h3 {
+      font-size: 1.4rem;
+      color: var(--text-main);
+      margin: 32px 0 16px;
+      font-weight: 600;
+    }
+
+    .article-content p {
+      margin-bottom: 20px;
+    }
+
+    .article-content ul, .article-content ol {
+      margin: 20px 0 20px 24px;
+      list-style: disc;
+    }
+
+    .article-content li {
+      margin-bottom: 12px;
+    }
+
+    .article-content blockquote {
+      background: var(--bg-body);
+      border-left: 4px solid var(--logo-green);
+      padding: 20px 24px;
+      margin: 32px 0;
+      font-style: italic;
+      color: var(--text-main);
+      border-radius: 0 var(--radius-sm) var(--radius-sm) 0;
+    }
+
+    .article-content .highlight-box {
+      background: linear-gradient(135deg, rgba(22, 48, 89, 0.05) 0%, rgba(125, 166, 63, 0.05) 100%);
+      border: 1px solid var(--border-light);
+      border-radius: var(--radius-md);
+      padding: 24px;
+      margin: 32px 0;
+    }
+
+    .article-content .highlight-box h4 {
+      color: var(--logo-blue);
+      margin-bottom: 12px;
+      font-weight: 700;
+    }
+
+    .article-image {
+      width: 100%;
+      border-radius: var(--radius-md);
+      margin: 32px 0;
+    }
+
+    .article-tags {
+      display: flex;
+      gap: 12px;
+      flex-wrap: wrap;
+      margin-top: 40px;
+      padding-top: 24px;
+      border-top: 1px solid var(--border-light);
+    }
+
+    .tag {
+      background: var(--bg-body);
+      color: var(--text-secondary);
+      padding: 6px 14px;
+      border-radius: 50px;
+      font-size: 0.85rem;
+      font-weight: 500;
+    }
+
+    .back-link {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      color: var(--logo-blue);
+      font-weight: 600;
       margin-bottom: 24px;
-      max-width: 600px;
-      margin-left: auto;
-      margin-right: auto;
+    }
+
+    .back-link:hover {
+      text-decoration: underline;
     }
 
     /* --- Footer --- */
@@ -343,16 +445,35 @@
       padding: 60px 0 30px;
       margin-top: auto;
     }
+
     .footer-grid {
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
       gap: 40px;
       margin-bottom: 40px;
     }
-    .footer-col h4 { font-size: 1rem; font-weight: 700; margin-bottom: 20px; color: var(--text-main); }
-    .footer-col ul li { margin-bottom: 12px; }
-    .footer-col a { color: var(--text-secondary); font-size: 0.9rem; }
-    .footer-col a:hover { text-decoration: underline; color: var(--logo-blue); }
+
+    .footer-col h4 {
+      font-size: 1rem;
+      font-weight: 700;
+      margin-bottom: 20px;
+      color: var(--text-main);
+    }
+
+    .footer-col ul li {
+      margin-bottom: 12px;
+    }
+
+    .footer-col a {
+      color: var(--text-secondary);
+      font-size: 0.9rem;
+    }
+
+    .footer-col a:hover {
+      text-decoration: underline;
+      color: var(--logo-blue);
+    }
+
     .footer-bottom {
       border-top: 1px solid var(--border-light);
       padding-top: 30px;
@@ -361,11 +482,16 @@
       font-size: 0.85rem;
     }
 
-    /* Responsive */
+    /* --- Responsive --- */
     @media (max-width: 960px) {
-      .hero-image-wrapper { display: none; }
-      .hero-content { max-width: 100%; }
       .nav-links { display: none; }
+      .article-title { font-size: 2rem; }
+      .article-detail { padding: 24px; }
+    }
+
+    @media (max-width: 640px) {
+      .blog-grid { grid-template-columns: 1fr; }
+      .article-title { font-size: 1.6rem; }
     }
   </style>
 </head>
@@ -374,8 +500,7 @@
   <!-- Header -->
   <header>
     <div class="container nav-container">
-      <a href="#" class="logo" onclick="navigate('index')">
-        <!-- SVG Logo based on description -->
+      <a href="index.html" class="logo">
         <svg viewBox="0 0 200 60" fill="none" xmlns="http://www.w3.org/2000/svg">
           <path d="M10 10H35V50H10V10Z" fill="#163059"/>
           <path d="M35 10L55 30L35 50" stroke="#7DA63F" stroke-width="12" stroke-linecap="round" stroke-linejoin="round"/>
@@ -386,10 +511,10 @@
       </a>
 
       <nav class="nav-links">
-        <a href="#" onclick="navigate('index')" class="active">Accueil</a>
-        <a href="#formations" onclick="navigate('index'); setTimeout(() => document.getElementById('formations').scrollIntoView(), 100)">Formations</a>
-        <a href="blog.html">Blog</a>
-        <a href="#" onclick="navigate('contact')">Contact</a>
+        <a href="index.html">Accueil</a>
+        <a href="index.html#formations">Formations</a>
+        <a href="blog.html" class="active">Blog</a>
+        <a href="index.html#contact">Contact</a>
       </nav>
 
       <div class="nav-actions">
@@ -399,306 +524,463 @@
     </div>
   </header>
 
-  <main id="app">
-    
-    <!-- PAGE: INDEX -->
-    <section id="index" class="page-section active">
-      <div class="hero">
-        <div class="container">
-          <div class="hero-content">
-            <h1>Apprenez le français professionnel en ligne</h1>
-            <p>Des formations accessibles pour adultes : niveaux A1, A2, insertion professionnelle et reconversion. Apprenez à votre rythme avec LOGIX FORMA.</p>
-            <div style="display: flex; gap: 16px;">
-              <a href="#formations" class="btn btn-primary" style="padding: 14px 32px; font-size: 1.1rem;">Voir les formations</a>
-              <a href="#" class="btn btn-ghost" style="padding: 14px 32px; font-size: 1.1rem;" onclick="navigate('contact')">Nous contacter</a>
-            </div>
-          </div>
-        </div>
-        <div class="hero-image-wrapper">
-          <img src="https://image.qwenlm.ai/public_source/9d725cac-fcec-4e03-889d-6271b736b2a9/19c9bf0d1-e769-42d3-87a9-b90a9e7b463b.png" alt="Étudiants en ligne">
+  <!-- Blog Hero -->
+  <section class="blog-hero">
+    <div class="container">
+      <h1>Le Blog LOGIX FORMA</h1>
+      <p>Conseils, astuces et ressources pour apprendre le français professionnel et réussir votre insertion.</p>
+      
+      <div class="author-badge">
+        <div class="author-avatar">MT</div>
+        <div class="author-info">
+          <div class="author-name">Moctar TOURÉ</div>
+          <div class="author-role">Directeur Pédagogique</div>
         </div>
       </div>
+    </div>
+  </section>
 
-      <div class="section" id="formations">
-        <div class="container">
-          <div class="section-header">
-            <h2 class="section-title">Nos formations à venir</h2>
-            <p class="section-subtitle">Inscrivez-vous pour être informé en priorité de l'ouverture des parcours.</p>
+  <!-- Blog Grid -->
+  <section class="blog-section">
+    <div class="container">
+      <div class="blog-grid">
+        
+        <!-- Article 1 -->
+        <article class="blog-card" onclick="openArticle('article-1')">
+          <img src="https://image.qwenlm.ai/public_source/9d725cac-fcec-4e03-889d-6271b736b2a9/166b98cd3-68a7-478d-9ac5-335e14593d40.png" alt="Apprendre le français" class="blog-card-image">
+          <div class="blog-card-content">
+            <span class="blog-card-category">Apprentissage</span>
+            <h2 class="blog-card-title">Comment apprendre le français efficacement en tant qu'adulte ?</h2>
+            <p class="blog-card-excerpt">Découvrez les méthodes éprouvées pour progresser rapidement en français, même avec un emploi du temps chargé.</p>
+            <div class="blog-card-meta">
+              <span class="read-time">⏱️ 8 min de lecture</span>
+              <span>📅 15 Janvier 2026</span>
+            </div>
+            <span class="read-more">Lire l'article →</span>
           </div>
+        </article>
 
-          <div class="course-grid">
-            <!-- Card 1 -->
-            <article class="course-card">
-              <img src="https://image.qwenlm.ai/public_source/9d725cac-fcec-4e03-889d-6271b736b2a9/166b98cd3-68a7-478d-9ac5-335e14593d40.png" alt="Français A1" class="course-image">
-              <div class="course-content">
-                <h3 class="course-title">Français professionnel — Niveau A1 : Les bases essentielles</h3>
-                <div class="course-instructor">LOGIX FORMA</div>
-                <div class="course-meta">
-                  <span class="coming-soon-badge">À venir</span>
-                </div>
-                <div class="course-price-row">
-                  <span class="price">Bientôt disponible</span>
-                </div>
-              </div>
-            </article>
-
-            <!-- Card 2 -->
-            <article class="course-card">
-              <img src="https://image.qwenlm.ai/public_source/9d725cac-fcec-4e03-889d-6271b736b2a9/17b8d227d-7390-43a3-bee9-5426e4c90762.png" alt="Français A2" class="course-image">
-              <div class="course-content">
-                <h3 class="course-title">Français professionnel — Niveau A2 : Communication avancée</h3>
-                <div class="course-instructor">LOGIX FORMA</div>
-                <div class="course-meta">
-                  <span class="coming-soon-badge">À venir</span>
-                </div>
-                <div class="course-price-row">
-                  <span class="price">Bientôt disponible</span>
-                </div>
-              </div>
-            </article>
-
-            <!-- Card 3 -->
-            <article class="course-card">
-              <img src="https://image.qwenlm.ai/public_source/9d725cac-fcec-4e03-889d-6271b736b2a9/1ce7edf3a-3184-4ca6-8b67-d9a78a4a58ca.png" alt="Numérique" class="course-image">
-              <div class="course-content">
-                <h3 class="course-title">Compétences Numériques & IA pour l'emploi</h3>
-                <div class="course-instructor">LOGIX FORMA</div>
-                <div class="course-meta">
-                  <span class="coming-soon-badge">À venir</span>
-                </div>
-                <div class="course-price-row">
-                  <span class="price">Bientôt disponible</span>
-                </div>
-              </div>
-            </article>
-
-            <!-- Card 4 -->
-            <article class="course-card">
-              <div style="width:100%; aspect-ratio:16/9; background:#e5e8f2; display:flex; align-items:center; justify-content:center; color:#929497;">
-                <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                  <circle cx="12" cy="12" r="10"/>
-                  <path d="M12 6v6l4 2"/>
-                </svg>
-              </div>
-              <div class="course-content">
-                <h3 class="course-title">Gestion de projet agile</h3>
-                <div class="course-instructor">LOGIX FORMA</div>
-                <div class="course-meta">
-                  <span class="coming-soon-badge">En préparation</span>
-                </div>
-                <div class="course-price-row">
-                  <span class="price">Bientôt disponible</span>
-                </div>
-              </div>
-            </article>
+        <!-- Article 2 -->
+        <article class="blog-card" onclick="openArticle('article-2')">
+          <img src="https://image.qwenlm.ai/public_source/9d725cac-fcec-4e03-889d-6271b736b2a9/17b8d227d-7390-43a3-bee9-5426e4c90762.png" alt="Prononciation française" class="blog-card-image">
+          <div class="blog-card-content">
+            <span class="blog-card-category">Prononciation</span>
+            <h2 class="blog-card-title">5 astuces pour améliorer votre prononciation française</h2>
+            <p class="blog-card-excerpt">La prononciation est souvent un défi. Voici des techniques simples pour parler français avec plus d'assurance.</p>
+            <div class="blog-card-meta">
+              <span class="read-time">⏱️ 6 min de lecture</span>
+              <span>📅 22 Janvier 2026</span>
+            </div>
+            <span class="read-more">Lire l'article →</span>
           </div>
+        </article>
 
-          <!-- Priority Banner -->
-          <div class="priority-banner">
-            <h2>📩 Accès prioritaire</h2>
-            <p>Soyez les premiers informés de l'ouverture des formations. Inscrivez-vous gratuitement pour recevoir une notification avant tout le monde.</p>
-            <a href="#acces-prioritaire" class="btn btn-ghost" style="background: white; color: var(--logo-blue);">Demander l'accès prioritaire</a>
+        <!-- Article 3 -->
+        <article class="blog-card" onclick="openArticle('article-3')">
+          <img src="https://image.qwenlm.ai/public_source/9d725cac-fcec-4e03-889d-6271b736b2a9/1ce7edf3a-3184-4ca6-8b67-d9a78a4a58ca.png" alt="Français professionnel" class="blog-card-image">
+          <div class="blog-card-content">
+            <span class="blog-card-category">Professionnel</span>
+            <h2 class="blog-card-title">Le vocabulaire essentiel pour réussir en entreprise</h2>
+            <p class="blog-card-excerpt">Maîtrisez les expressions et le vocabulaire clé pour communiquer efficacement dans un environnement professionnel français.</p>
+            <div class="blog-card-meta">
+              <span class="read-time">⏱️ 10 min de lecture</span>
+              <span>📅 5 Février 2026</span>
+            </div>
+            <span class="read-more">Lire l'article →</span>
           </div>
-        </div>
+        </article>
+
+        <!-- Article 4 -->
+        <article class="blog-card" onclick="openArticle('article-4')">
+          <img src="https://image.qwenlm.ai/public_source/9d725cac-fcec-4e03-889d-6271b736b2a9/19c9bf0d1-e769-42d3-87a9-b90a9e7b463b.png" alt="Motivation apprentissage" class="blog-card-image">
+          <div class="blog-card-content">
+            <span class="blog-card-category">Motivation</span>
+            <h2 class="blog-card-title">Rester motivé dans son apprentissage du français</h2>
+            <p class="blog-card-excerpt">La motivation est la clé de la réussite. Découvrez comment maintenir votre élan sur la durée.</p>
+            <div class="blog-card-meta">
+              <span class="read-time">⏱️ 7 min de lecture</span>
+              <span>📅 12 Février 2026</span>
+            </div>
+            <span class="read-more">Lire l'article →</span>
+          </div>
+        </article>
+
       </div>
+    </div>
+  </section>
 
-      <div class="section features-section">
-        <div class="container">
-          <div class="features-grid">
-            <div class="feature-item">
-              <div class="feature-icon">💻</div>
-              <h3>100% En ligne</h3>
-              <p>Accédez aux cours depuis chez vous, 24h/24 et 7j/7.</p>
+  <!-- Article Detail Sections (Hidden by default) -->
+  
+  <!-- Article 1 Detail -->
+  <section id="article-1" class="page-section" style="display: none;">
+    <div class="container">
+      <a href="blog.html" class="back-link">← Retour au blog</a>
+      
+      <article class="article-detail">
+        <div class="article-header">
+          <span class="article-category">Apprentissage</span>
+          <h1 class="article-title">Comment apprendre le français efficacement en tant qu'adulte ?</h1>
+          <div class="article-meta">
+            <div class="article-author">
+              <div class="article-author-avatar">MT</div>
+              <div>
+                <strong>Moctar TOURÉ</strong><br>
+                <span>Directeur Pédagogique</span>
+              </div>
             </div>
-            <div class="feature-item">
-              <div class="feature-icon">⏱️</div>
-              <h3>À votre rythme</h3>
-              <p>Progressez sans contrainte d'horaire avec un parcours structuré.</p>
-            </div>
-            <div class="feature-item">
-              <div class="feature-icon">🎯</div>
-              <h3>Orientation Pro</h3>
-              <p>Des contenus pensés pour l'insertion et l'évolution de carrière.</p>
-            </div>
-            <div class="feature-item">
-              <div class="feature-icon">📜</div>
-              <h3>Association</h3>
-              <p>Structure juridique déclarée (SIREN 902 349 943).</p>
-            </div>
+            <span>📅 15 Janvier 2026</span>
+            <span>⏱️ 8 min de lecture</span>
           </div>
         </div>
-      </div>
-    </section>
 
-    <!-- PAGE: CONTACT -->
-    <section id="contact" class="page-section">
-      <div class="container" style="padding-top: 60px;">
-        <div class="section-header" style="text-align: center;">
-          <h2 class="section-title">Nous contacter</h2>
-          <p class="section-subtitle">Une question ? Utilisez le formulaire ci-dessous.</p>
-        </div>
-        <div class="form-container">
-          <form onsubmit="event.preventDefault(); navigate('merci');">
-            <div class="form-group">
-              <label>Prénom</label>
-              <input type="text" class="form-control" required>
-            </div>
-            <div class="form-group">
-              <label>Nom</label>
-              <input type="text" class="form-control" required>
-            </div>
-            <div class="form-group">
-              <label>Email</label>
-              <input type="email" class="form-control" required>
-            </div>
-            <div class="form-group">
-              <label>Message</label>
-              <textarea class="form-control" required></textarea>
-            </div>
-            <div class="checkbox-group">
-              <input type="checkbox" required>
-              <label>J'accepte d'être recontacté.</label>
-            </div>
-            <button type="submit" class="btn btn-primary" style="width: 100%;">Envoyer</button>
-          </form>
-        </div>
-      </div>
-    </section>
+        <div class="article-content">
+          <p>Apprendre une nouvelle langue à l'âge adulte peut sembler intimidant, mais c'est tout à fait possible avec la bonne approche. En tant que Directeur Pédagogique chez LOGIX FORMA, j'accompagne quotidiennement des adultes dans leur apprentissage du français, et j'ai constaté que certaines méthodes fonctionnent mieux que d'autres.</p>
 
-    <!-- PAGE: MERCI -->
-    <section id="merci" class="page-section">
-      <div class="container" style="padding-top: 100px; text-align: center;">
-        <div style="font-size: 4rem; margin-bottom: 20px;">✅</div>
-        <h2 class="section-title">Message envoyé !</h2>
-        <p class="section-subtitle" style="margin-bottom: 30px;">Merci de nous avoir contactés. Nous vous répondrons sous 24h.</p>
-        <a href="#" onclick="navigate('index')" class="btn btn-ghost">Retour à l'accueil</a>
-      </div>
-    </section>
+          <img src="https://image.qwenlm.ai/public_source/9d725cac-fcec-4e03-889d-6271b736b2a9/166b98cd3-68a7-478d-9ac5-335e14593d40.png" alt="Étudiant en ligne" class="article-image">
 
-    <!-- PAGE: MENTIONS LEGALES -->
-    <section id="mentions-legales" class="page-section">
-      <div class="container" style="padding-top: 60px;">
-        <div class="legal-content">
-          <h2>Mentions Légales</h2>
-          <p>Conformément aux dispositions de la loi n° 2004-575 du 21 juin 2004 pour la confiance en l'économie numérique, il est précisé aux utilisateurs du site LOGIX FORMA l'identité des différents intervenants dans le cadre de sa réalisation et de son suivi.</p>
+          <h2>1. Définissez vos objectifs clairement</h2>
+          <p>Avant de commencer, demandez-vous : pourquoi voulez-vous apprendre le français ? Est-ce pour votre travail ? Pour vos démarches administratives ? Pour communiquer avec vos collègues ? Des objectifs clairs vous aideront à rester motivé et à choisir les bonnes ressources.</p>
+
+          <div class="highlight-box">
+            <h4>💡 Conseil pratique</h4>
+            <p>Écrivez vos objectifs sur un papier et placez-les quelque part de visible. Relisez-les chaque semaine pour rester focalisé.</p>
+          </div>
+
+          <h2>2. Créez une routine d'apprentissage</h2>
+          <p>La régularité est plus importante que la durée. Mieux vaut étudier 20 minutes par jour que 3 heures une fois par semaine. Voici une routine efficace :</p>
           
-          <h3>1. Édition du site</h3>
-          <p>Le présent site est édité par l'association LOGIX FORMA.</p>
           <ul>
-            <li>SIREN : 902 349 943</li>
-            <li>RNA : W931025228</li>
-            <li>Siège social : France</li>
-            <li>Email : logix.forma@gmail.com</li>
+            <li><strong>Matin (10 min) :</strong> Révision de vocabulaire avec des flashcards</li>
+            <li><strong>Midi (10 min) :</strong> Écouter un podcast ou une vidéo en français</li>
+            <li><strong>Soir (15 min) :</strong> Exercices de grammaire ou lecture</li>
           </ul>
 
-          <h3>2. Hébergement</h3>
-          <p>Le site est hébergé par [Nom de l'hébergeur], situé à [Adresse de l'hébergeur].</p>
+          <h2>3. Immergez-vous dans la langue</h2>
+          <p>L'immersion ne signifie pas nécessairement vivre en France. Vous pouvez créer un environnement francophone chez vous :</p>
 
-          <h3>3. Propriété intellectuelle</h3>
-          <p>L'ensemble de ce site relève de la législation française et internationale sur le droit d'auteur et la propriété intellectuelle. Tous les droits de reproduction sont réservés.</p>
+          <ol>
+            <li>Changez la langue de votre téléphone en français</li>
+            <li>Écoutez la radio française pendant vos trajets</li>
+            <li>Regardez des films et séries en français avec sous-titres</li>
+            <li>Lisez des articles sur des sujets qui vous intéressent</li>
+          </ol>
+
+          <blockquote>
+            "La clé n'est pas d'étudier plus, mais d'étudier mieux. La régularité bat toujours l'intensité."
+          </blockquote>
+
+          <h2>4. N'ayez pas peur de faire des erreurs</h2>
+          <p>Les erreurs font partie intégrante de l'apprentissage. Chaque erreur est une opportunité d'apprendre. Ne laissez pas la peur de mal parler vous empêcher de communiquer.</p>
+
+          <h2>5. Utilisez des ressources adaptées à votre niveau</h2>
+          <p>Choisissez des contenus ni trop faciles (vous ne progresserez pas) ni trop difficiles (vous serez frustré). Les formations LOGIX FORMA sont conçues pour être progressives et adaptées aux niveaux A1 et A2.</p>
+
+          <div class="highlight-box">
+            <h4>🎯 En résumé</h4>
+            <p>Pour apprendre le français efficacement : définissez vos objectifs, créez une routine, immergez-vous, acceptez les erreurs et choisissez les bonnes ressources. Avec de la persévérance, vous progresserez rapidement.</p>
+          </div>
+
+          <div class="article-tags">
+            <span class="tag">#FrançaisFacile</span>
+            <span class="tag">#ApprentissageAdulte</span>
+            <span class="tag">#LOGIXFORMA</span>
+            <span class="tag">#FormationEnLigne</span>
+          </div>
         </div>
-      </div>
-    </section>
+      </article>
+    </div>
+  </section>
 
-    <!-- PAGE: CGU -->
-    <section id="cgu" class="page-section">
-      <div class="container" style="padding-top: 60px;">
-        <div class="legal-content">
-          <h2>Conditions Générales d'Utilisation (CGU)</h2>
-          <p>L'utilisation du site LOGIX FORMA implique l'acceptation pleine et entière des conditions générales d'utilisation ci-après décrites.</p>
-
-          <h3>1. Objet</h3>
-          <p>Les présentes CGU ont pour objet de définir les modalités de mise à disposition des services du site et les conditions d'utilisation par l'Utilisateur.</p>
-
-          <h3>2. Accès au site</h3>
-          <p>Le site est accessible par tout endroit, 7j/7, 24h/24 sauf cas de force majeure, interruption programmée ou non et pouvant découlant d'une nécessité de maintenance.</p>
-
-          <h3>3. Propriété intellectuelle</h3>
-          <p>Les marques, logos, signes ainsi que tous les contenus du site (textes, images, son…) font l'objet d'une protection par le Code de la propriété intellectuelle et plus particulièrement par le droit d'auteur.</p>
+  <!-- Article 2 Detail -->
+  <section id="article-2" class="page-section" style="display: none;">
+    <div class="container">
+      <a href="blog.html" class="back-link">← Retour au blog</a>
+      
+      <article class="article-detail">
+        <div class="article-header">
+          <span class="article-category">Prononciation</span>
+          <h1 class="article-title">5 astuces pour améliorer votre prononciation française</h1>
+          <div class="article-meta">
+            <div class="article-author">
+              <div class="article-author-avatar">MT</div>
+              <div>
+                <strong>Moctar TOURÉ</strong><br>
+                <span>Directeur Pédagogique</span>
+              </div>
+            </div>
+            <span>📅 22 Janvier 2026</span>
+            <span>⏱️ 6 min de lecture</span>
+          </div>
         </div>
-      </div>
-    </section>
 
-    <!-- PAGE: POLITIQUE DE CONFIDENTIALITE -->
-    <section id="politique-confidentialite" class="page-section">
-      <div class="container" style="padding-top: 60px;">
-        <div class="legal-content">
-          <h2>Politique de Confidentialité</h2>
-          <p>LOGIX FORMA attache une grande importance à la protection des données personnelles de ses utilisateurs.</p>
+        <div class="article-content">
+          <p>La prononciation française est souvent considérée comme l'un des aspects les plus difficiles de la langue. Les nasales, le "R", les liaisons... autant de défis à relever. Mais avec les bonnes techniques, vous pouvez considérablement améliorer votre accent.</p>
 
-          <h3>1. Collecte des données</h3>
-          <p>Les données collectées sont principalement : Nom, Prénom, Adresse email, Téléphone. Ces données sont nécessaires pour la gestion des inscriptions et le suivi pédagogique.</p>
+          <img src="https://image.qwenlm.ai/public_source/9d725cac-fcec-4e03-889d-6271b736b2a9/17b8d227d-7390-43a3-bee9-5426e4c90762.png" alt="Prononciation française" class="article-image">
 
-          <h3>2. Utilisation des données</h3>
-          <p>Les données sont utilisées pour :<br>
-          - La gestion administrative des formations.<br>
-          - L'envoi de newsletters (avec accord explicite).<br>
-          - L'amélioration de nos services.</p>
-
-          <h3>3. Vos droits</h3>
-          <p>Conformément au RGPD, vous disposez d'un droit d'accès, de rectification et de suppression de vos données. Pour l'exercer, contactez-nous à logix.forma@gmail.com.</p>
-        </div>
-      </div>
-    </section>
-
-    <!-- PAGE: COOKIES -->
-    <section id="cookies" class="page-section">
-      <div class="container" style="padding-top: 60px;">
-        <div class="legal-content">
-          <h2>Politique relative aux Cookies</h2>
-          <p>Un cookie est un fichier texte susceptible d'être enregistré dans un espace dédié du disque dur de votre terminal (ordinateur, tablette, mobile...) lors de la visite d'un site ou de la consultation d'une publicité.</p>
-
-          <h3>1. Types de cookies utilisés</h3>
+          <h2>Astuce 1 : Écoutez activement</h2>
+          <p>L'écoute active est fondamentale. Ne vous contentez pas d'entendre le français, écoutez attentivement comment les sons sont produits. Portez une attention particulière :</p>
           <ul>
-            <li><strong>Cookies de fonctionnement :</strong> Indispensables au bon fonctionnement du site.</li>
-            <li><strong>Cookies d'analyse :</strong> Nous permettent de mesurer l'audience du site.</li>
+            <li>À la position de la bouche</li>
+            <li>À l'intonation des phrases</li>
+            <li>Aux liaisons entre les mots</li>
           </ul>
 
-          <h3>2. Gestion des cookies</h3>
-          <p>Vous pouvez configurer votre navigateur pour accepter ou refuser les cookies. Cependant, le refus peut limiter certaines fonctionnalités du site.</p>
-        </div>
-      </div>
-    </section>
+          <h2>Astuce 2 : La technique du shadowing</h2>
+          <p>Le shadowing consiste à répéter immédiatement après un locuteur natif, comme une ombre. Cette technique est extrêmement efficace pour améliorer votre prononciation et votre rythme.</p>
 
-    <!-- PAGE: ACCESSIBILITE -->
-    <section id="accessibilite" class="page-section">
-      <div class="container" style="padding-top: 60px;">
-        <div class="legal-content">
-          <h2>Déclaration d'Accessibilité</h2>
-          <p>LOGIX FORMA s'engage à rendre son site accessible, conformément à l'article 47 de la loi n° 2005-102 du 11 février 2005.</p>
+          <div class="highlight-box">
+            <h4>🎯 Comment pratiquer le shadowing</h4>
+            <ol>
+              <li>Choisissez un audio court (1-2 minutes) avec transcription</li>
+              <li>Écoutez une première fois sans parler</li>
+              <li>Écoutez et répétez phrase par phrase</li>
+              <li>Enregistrez-vous et comparez avec l'original</li>
+            </ol>
+          </div>
 
-          <h3>1. État de conformité</h3>
-          <p>Le site LOGIX FORMA est partiellement conforme au RGAA 4.1 en raison des non-conformités et des dérogations énumérées ci-dessous.</p>
-
-          <h3>2. Contenu non accessible</h3>
+          <h2>Astuce 3 : Maîtrisez les sons difficiles</h2>
+          <p>Certains sons français sont particulièrement difficiles pour les apprenants :</p>
           <ul>
-            <li>Certains contenus multimédias ne disposent pas encore de transcriptions textuelles complètes.</li>
-            <li>Quelques contrastes de couleurs sur les anciens éléments graphiques sont en cours de correction.</li>
+            <li><strong>Le "R" français :</strong> Il se produit dans la gorge, pas avec la langue</li>
+            <li><strong>Les voyelles nasales (an, on, in) :</strong> L'air passe par le nez et la bouche</li>
+            <li><strong>Le "U" vs "OU" :</strong> La position des lèvres est différente</li>
           </ul>
 
-          <h3>3. Signaler un dysfonctionnement</h3>
-          <p>Si vous rencontrez un défaut d'accessibilité, vous pouvez nous le signaler à logix.forma@gmail.com.</p>
+          <h2>Astuce 4 : Parlez dès le premier jour</h2>
+          <p>N'attendez pas d'être "prêt" pour parler. Plus vous pratiquez tôt, plus vite vous progresserez. N'hésitez pas à parler seul si vous n'avez pas de partenaire de conversation.</p>
+
+          <h2>Astuce 5 : Utilisez des applications de reconnaissance vocale</h2>
+          <p>Les technologies modernes peuvent vous aider. Utilisez des applications qui analysent votre prononciation et vous donnent un feedback immédiat.</p>
+
+          <blockquote>
+            "Une bonne prononciation ne signifie pas avoir un accent parfait, mais être compris facilement."
+          </blockquote>
+
+          <div class="highlight-box">
+            <h4>📚 Ressources recommandées</h4>
+            <p>Podcasts : InnerFrench, Français Authentique<br>
+            YouTube : Français avec Pierre, Easy French<br>
+            Applications : Speechling, ELSA Speak</p>
+          </div>
+
+          <div class="article-tags">
+            <span class="tag">#Prononciation</span>
+            <span class="tag">#FrançaisOral</span>
+            <span class="tag">#ConseilsPratiques</span>
+            <span class="tag">#LOGIXFORMA</span>
+          </div>
         </div>
-      </div>
-    </section>
+      </article>
+    </div>
+  </section>
 
-    <!-- PAGE: SECURITE -->
-    <section id="securite" class="page-section">
-      <div class="container" style="padding-top: 60px;">
-        <div class="legal-content">
-          <h2>Sécurité des Données</h2>
-          <p>La sécurité de vos données est une priorité absolue pour LOGIX FORMA.</p>
-
-          <h3>1. Mesures techniques</h3>
-          <p>Nous utilisons le protocole HTTPS pour chiffrer les échanges de données entre votre navigateur et notre serveur. Nos bases de données sont sécurisées et accessibles uniquement au personnel autorisé.</p>
-
-          <h3>2. Vigilance</h3>
-          <p>Nous surveillons activement nos systèmes pour prévenir toute tentative d'intrusion ou de fraude. En cas de faille de sécurité avérée, nous nous engageons à informer les utilisateurs concernés dans les délais légaux.</p>
+  <!-- Article 3 Detail -->
+  <section id="article-3" class="page-section" style="display: none;">
+    <div class="container">
+      <a href="blog.html" class="back-link">← Retour au blog</a>
+      
+      <article class="article-detail">
+        <div class="article-header">
+          <span class="article-category">Professionnel</span>
+          <h1 class="article-title">Le vocabulaire essentiel pour réussir en entreprise</h1>
+          <div class="article-meta">
+            <div class="article-author">
+              <div class="article-author-avatar">MT</div>
+              <div>
+                <strong>Moctar TOURÉ</strong><br>
+                <span>Directeur Pédagogique</span>
+              </div>
+            </div>
+            <span>📅 5 Février 2026</span>
+            <span>⏱️ 10 min de lecture</span>
+          </div>
         </div>
-      </div>
-    </section>
 
-  </main>
+        <div class="article-content">
+          <p>Travailler dans un environnement francophone nécessite la maîtrise d'un vocabulaire spécifique. Que ce soit pour les réunions, les emails ou les présentations, voici les expressions essentielles à connaître.</p>
+
+          <img src="https://image.qwenlm.ai/public_source/9d725cac-fcec-4e03-889d-6271b736b2a9/1ce7edf3a-3184-4ca6-8b67-d9a78a4a58ca.png" alt="Environnement professionnel" class="article-image">
+
+          <h2>Les salutations professionnelles</h2>
+          <p>Dans le monde professionnel français, la politesse est primordiale :</p>
+          <ul>
+            <li><strong>"Bonjour Monsieur/Madame"</strong> - Toujours utiliser le titre</li>
+            <li><strong>"Je vous prie d'agréer..."</strong> - Formule de fin d'email formelle</li>
+            <li><strong>"Je reste à votre disposition"</strong> - Pour conclure une communication</li>
+          </ul>
+
+          <h2>Le vocabulaire des réunions</h2>
+          <p>Les réunions ont leur propre langage :</p>
+          
+          <div class="highlight-box">
+            <h4>📋 Expressions utiles en réunion</h4>
+            <ul>
+              <li><strong>"Je prends la parole"</strong> - Pour intervenir</li>
+              <li><strong>"Je rebondis sur ce point"</strong> - Pour ajouter une idée</li>
+              <li><strong>"Quel est l'ordre du jour ?"</strong> - Pour connaître le programme</li>
+              <li><strong>"Je note ce point"</strong> - Pour indiquer qu'on va traiter le sujet</li>
+              <li><strong>"Nous revenons vers vous"</strong> - Pour promettre un suivi</li>
+            </ul>
+          </div>
+
+          <h2>Les emails professionnels</h2>
+          <p>La communication écrite demande une attention particulière :</p>
+
+          <h3>Objets d'email efficaces</h3>
+          <ul>
+            <li>"Demande d'information concernant..."</li>
+            <li>"Compte-rendu de réunion du [date]"</li>
+            <li>"Point de situation sur le projet..."</li>
+          </ul>
+
+          <h3>Formules de politesse</h3>
+          <ul>
+            <li><strong>Début :</strong> "Madame, Monsieur," / "Cher Monsieur,"</li>
+            <li><strong>Fin :</strong> "Cordialement," / "Bien cordialement," / "Respectueusement,"</li>
+          </ul>
+
+          <h2>Le langage des projets</h2>
+          <p>Quelques termes incontournables :</p>
+          <ul>
+            <li><strong>Échéance / Deadline</strong> - Date limite</li>
+            <li><strong>Livrable</strong> - Résultat attendu d'une tâche</li>
+            <li><strong>Parties prenantes</strong> - Personnes concernées par le projet</li>
+            <li><strong>Point d'étape</strong> - Réunion de suivi</li>
+            <li><strong>Bilan</strong> - Évaluation des résultats</li>
+          </ul>
+
+          <blockquote>
+            "Dans le monde professionnel, la clarté et la politesse sont aussi importantes que la compétence technique."
+          </blockquote>
+
+          <h2>Conseils pour progresser</h2>
+          <ol>
+            <li>Créez un glossaire personnel avec les termes que vous rencontrez</li>
+            <li>Écoutez attentivement comment vos collègues s'expriment</li>
+            <li>N'hésitez pas à demander des clarifications</li>
+            <li>Pratiquez à l'écrit avant les réunions importantes</li>
+          </ol>
+
+          <div class="highlight-box">
+            <h4>🎯 Formation recommandée</h4>
+            <p>Notre formation <strong>"Français Professionnel A2"</strong> inclut un module complet sur la communication en entreprise. Inscrivez-vous pour accéder prioritairement au contenu.</p>
+          </div>
+
+          <div class="article-tags">
+            <span class="tag">#FrançaisPro</span>
+            <span class="tag">#Vocabulaire</span>
+            <span class="tag">#Entreprise</span>
+            <span class="tag">#Carrière</span>
+          </div>
+        </div>
+      </article>
+    </div>
+  </section>
+
+  <!-- Article 4 Detail -->
+  <section id="article-4" class="page-section" style="display: none;">
+    <div class="container">
+      <a href="blog.html" class="back-link">← Retour au blog</a>
+      
+      <article class="article-detail">
+        <div class="article-header">
+          <span class="article-category">Motivation</span>
+          <h1 class="article-title">Rester motivé dans son apprentissage du français</h1>
+          <div class="article-meta">
+            <div class="article-author">
+              <div class="article-author-avatar">MT</div>
+              <div>
+                <strong>Moctar TOURÉ</strong><br>
+                <span>Directeur Pédagogique</span>
+              </div>
+            </div>
+            <span>📅 12 Février 2026</span>
+            <span>⏱️ 7 min de lecture</span>
+          </div>
+        </div>
+
+        <div class="article-content">
+          <p>La motivation est le moteur de tout apprentissage. Mais comment la maintenir sur la durée, surtout quand les progrès semblent lents ? Voici mes conseils basés sur des années d'accompagnement pédagogique.</p>
+
+          <img src="https://image.qwenlm.ai/public_source/9d725cac-fcec-4e03-889d-6271b736b2a9/19c9bf0d1-e769-42d3-87a9-b90a9e7b463b.png" alt="Motivation apprentissage" class="article-image">
+
+          <h2>Comprendre les cycles de motivation</h2>
+          <p>La motivation n'est pas constante. Elle fonctionne par cycles :</p>
+          <ul>
+            <li><strong>Phase d'enthousiasme :</strong> Début plein d'énergie</li>
+            <li><strong>Phase de doute :</strong> Les difficultés apparaissent</li>
+            <li><strong>Phase de stabilisation :</strong> La routine s'installe</li>
+            <li><strong>Phase de progression :</strong> Les résultats deviennent visibles</li>
+          </ul>
+
+          <div class="highlight-box">
+            <h4>💡 Bonne nouvelle</h4>
+            <p>La phase de doute est normale et temporaire. Tous les apprenants la traversent. La clé est de ne pas abandonner pendant cette période.</p>
+          </div>
+
+          <h2>5 stratégies pour maintenir votre motivation</h2>
+
+          <h3>1. Célébrez les petites victoires</h3>
+          <p>Ne attendez pas d'être bilingue pour vous féliciter. Chaque nouveau mot appris, chaque conversation réussie est une victoire à célébrer.</p>
+
+          <h3>2. Trouvez votre "pourquoi"</h3>
+          <p>Quand la motivation baisse, reconnectez-vous avec votre raison profonde d'apprendre le français :</p>
+          <ul>
+            <li>Obtenir un meilleur emploi</li>
+            <li>Communiquer avec vos enfants</li>
+            <li>Voyager en toute autonomie</li>
+            <li>Rejoindre la société française</li>
+          </ul>
+
+          <h3>3. Variez les activités</h3>
+          <p>La monotonie tue la motivation. Alternez entre :</p>
+          <ul>
+            <li>Cours structurés</li>
+            <li>Vidéos et podcasts</li>
+            <li>Conversations avec des natifs</li>
+            <li>Jeux et applications ludiques</li>
+            <li>Lecture de contenus qui vous passionnent</li>
+          </ul>
+
+          <h3>4. Créez un système de récompenses</h3>
+          <p>Associez votre apprentissage à des plaisirs :</p>
+          <blockquote>
+            "Après 30 minutes de français, je peux regarder mon émission préférée"
+          </blockquote>
+
+          <h3>5. Entourez-vous</h3>
+          <p>Rejoignez des groupes d'apprenants, trouvez un partenaire de conversation, partagez vos progrès. La dimension sociale renforce la motivation.</p>
+
+          <h2>Quand la motivation baisse vraiment</h2>
+          <p>Il arrive que la motivation chute considérablement. Voici comment rebondir :</p>
+
+          <ol>
+            <li><strong>Acceptez la situation</strong> - C'est normal, ne vous culpabilisez pas</li>
+            <li><strong>Réduisez la charge</strong> - 5 minutes par jour valent mieux que rien</li>
+            <li><strong>Revenez aux bases</strong> - Revoyez ce que vous savez déjà faire</li>
+            <li><strong>Prenez une pause</strong> - Parfois, un break de quelques jours aide</li>
+          </ol>
+
+          <div class="highlight-box">
+            <h4>🎯 Le mot de la fin</h4>
+            <p>Apprendre une langue est un marathon, pas un sprint. Soyez patient avec vous-même. Chaque jour compte, même les jours où vous avez l'impression de ne pas progresser.</p>
+          </div>
+
+          <blockquote>
+            "La motivation vous fait commencer. L'habitude vous fait continuer." — Jim Ryun
+          </blockquote>
+
+          <div class="article-tags">
+            <span class="tag">#Motivation</span>
+            <span class="tag">#Apprentissage</span>
+            <span class="tag">#Conseils</span>
+            <span class="tag">#Réussite</span>
+          </div>
+        </div>
+      </article>
+    </div>
+  </section>
 
   <!-- Footer -->
   <footer>
@@ -707,27 +989,24 @@
         <div class="footer-col">
           <h4>LOGIX FORMA</h4>
           <ul>
-            <li><a href="#" onclick="navigate('index')">À propos</a></li>
-            <li><a href="#" onclick="navigate('contact')">Contact</a></li>
+            <li><a href="index.html">À propos</a></li>
+            <li><a href="index.html#contact">Contact</a></li>
           </ul>
         </div>
         <div class="footer-col">
           <h4>Formations</h4>
           <ul>
-            <li><a href="#formations" onclick="navigate('index'); setTimeout(() => document.getElementById('formations').scrollIntoView(), 100)">Français A1</a></li>
-            <li><a href="#formations" onclick="navigate('index'); setTimeout(() => document.getElementById('formations').scrollIntoView(), 100)">Français A2</a></li>
+            <li><a href="index.html#formations">Français A1</a></li>
+            <li><a href="index.html#formations">Français A2</a></li>
             <li><a href="blog.html">Blog</a></li>
           </ul>
         </div>
         <div class="footer-col">
           <h4>Légal</h4>
           <ul>
-            <li><a href="#" onclick="navigate('cgu')">Conditions d'utilisation</a></li>
-            <li><a href="#" onclick="navigate('politique-confidentialite')">Politique de confidentialité</a></li>
-            <li><a href="#" onclick="navigate('mentions-legales')">Mentions légales</a></li>
-            <li><a href="#" onclick="navigate('cookies')">Cookies</a></li>
-            <li><a href="#" onclick="navigate('accessibilite')">Accessibilité</a></li>
-            <li><a href="#" onclick="navigate('securite')">Sécurité</a></li>
+            <li><a href="index.html#cgu">Conditions d'utilisation</a></li>
+            <li><a href="index.html#politique-confidentialite">Politique de confidentialité</a></li>
+            <li><a href="index.html#mentions-legales">Mentions légales</a></li>
           </ul>
         </div>
       </div>
@@ -738,29 +1017,26 @@
   </footer>
 
   <script>
-    // Simple Single Page Application Router
-    function navigate(pageId) {
-      // Hide all sections
-      document.querySelectorAll('.page-section').forEach(section => {
-        section.classList.remove('active');
-      });
+    function openArticle(articleId) {
+      // Hide blog grid
+      document.querySelector('.blog-section').style.display = 'none';
+      document.querySelector('.blog-hero').style.display = 'none';
       
-      // Show target section
-      const target = document.getElementById(pageId);
-      if (target) {
-        target.classList.add('active');
+      // Show article
+      const article = document.getElementById(articleId);
+      if (article) {
+        article.style.display = 'block';
         window.scrollTo(0, 0);
       }
-
-      // Update Nav Active State
-      document.querySelectorAll('.nav-links a').forEach(link => {
-        link.classList.remove('active');
-        if(link.getAttribute('onclick') && link.getAttribute('onclick').includes(pageId)) {
-          link.classList.add('active');
-        }
-      });
     }
+
+    // Check if we need to show an article directly (for direct links)
+    window.addEventListener('DOMContentLoaded', () => {
+      const hash = window.location.hash;
+      if (hash && hash.startsWith('#article-')) {
+        openArticle(hash.substring(1));
+      }
+    });
   </script>
 </body>
 </html>
-
