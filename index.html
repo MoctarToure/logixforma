@@ -19,7 +19,6 @@
       --logo-yellow: #F0C936;
       
       /* UI COLORS (Udemy Style) */
-      --udemy-purple: #5624d0; /* Keeping for some accents or secondary actions if needed, but prioritizing logo colors */
       --text-main: #2d2f31;
       --text-secondary: #6a6f73;
       --text-light: #929497;
@@ -132,7 +131,7 @@
     .btn-ghost:hover { background: var(--text-main); color: white; }
 
     .btn-primary {
-      background: var(--logo-green); /* Using Logo Green for Primary CTA */
+      background: var(--logo-green);
       color: white;
     }
     .btn-primary:hover { opacity: 0.9; }
@@ -244,17 +243,18 @@
       margin-bottom: 12px;
       font-size: 0.85rem;
     }
-    .rating { color: var(--rating-star); font-weight: 700; display: flex; align-items: center; gap: 4px; }
-    .rating-count { color: var(--text-secondary); }
-    .bestseller-badge {
-      background: var(--logo-yellow);
-      color: #3d3c0a;
+    
+    .coming-soon-badge {
+      background: var(--logo-blue);
+      color: white;
       font-size: 0.75rem;
       font-weight: 700;
-      padding: 2px 6px;
-      border-radius: 2px;
+      padding: 4px 8px;
+      border-radius: var(--radius-sm);
       text-transform: uppercase;
+      display: inline-block;
     }
+    
     .course-price-row { margin-top: auto; display: flex; align-items: center; gap: 8px; }
     .price { font-size: 1.25rem; font-weight: 700; color: var(--text-main); }
     .old-price { font-size: 0.9rem; color: var(--text-secondary); text-decoration: line-through; }
@@ -313,6 +313,29 @@
     .legal-content p { margin-bottom: 16px; color: var(--text-secondary); }
     .legal-content ul { list-style: disc; margin-left: 20px; margin-bottom: 16px; color: var(--text-secondary); }
 
+    /* --- Priority Access Banner --- */
+    .priority-banner {
+      background: linear-gradient(135deg, var(--logo-blue) 0%, var(--logo-green) 100%);
+      color: white;
+      padding: 40px;
+      border-radius: var(--radius-lg);
+      text-align: center;
+      margin: 40px 0;
+    }
+    .priority-banner h2 {
+      color: white;
+      font-size: 2rem;
+      margin-bottom: 16px;
+    }
+    .priority-banner p {
+      color: rgba(255,255,255,0.9);
+      font-size: 1.1rem;
+      margin-bottom: 24px;
+      max-width: 600px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+
     /* --- Footer --- */
     footer {
       background: var(--bg-white);
@@ -342,7 +365,7 @@
     @media (max-width: 960px) {
       .hero-image-wrapper { display: none; }
       .hero-content { max-width: 100%; }
-      .nav-links { display: none; } /* Simplified mobile nav */
+      .nav-links { display: none; }
     }
   </style>
 </head>
@@ -365,7 +388,7 @@
       <nav class="nav-links">
         <a href="#" onclick="navigate('index')" class="active">Accueil</a>
         <a href="#formations" onclick="navigate('index'); setTimeout(() => document.getElementById('formations').scrollIntoView(), 100)">Formations</a>
-        <a href="#" onclick="navigate('blog')">Blog</a>
+        <a href="blog.html">Blog</a>
         <a href="#" onclick="navigate('contact')">Contact</a>
       </nav>
 
@@ -399,8 +422,8 @@
       <div class="section" id="formations">
         <div class="container">
           <div class="section-header">
-            <h2 class="section-title">Une sélection de nos formations</h2>
-            <p class="section-subtitle">Développez vos compétences linguistiques et professionnelles.</p>
+            <h2 class="section-title">Nos formations à venir</h2>
+            <p class="section-subtitle">Inscrivez-vous pour être informé en priorité de l'ouverture des parcours.</p>
           </div>
 
           <div class="course-grid">
@@ -411,13 +434,10 @@
                 <h3 class="course-title">Français professionnel — Niveau A1 : Les bases essentielles</h3>
                 <div class="course-instructor">LOGIX FORMA</div>
                 <div class="course-meta">
-                  <span class="rating">★ 4.8</span>
-                  <span class="rating-count">(124)</span>
-                  <span class="bestseller-badge">Bestseller</span>
+                  <span class="coming-soon-badge">À venir</span>
                 </div>
                 <div class="course-price-row">
-                  <span class="price">29,99 €</span>
-                  <span class="old-price">49,99 €</span>
+                  <span class="price">Bientôt disponible</span>
                 </div>
               </div>
             </article>
@@ -429,12 +449,10 @@
                 <h3 class="course-title">Français professionnel — Niveau A2 : Communication avancée</h3>
                 <div class="course-instructor">LOGIX FORMA</div>
                 <div class="course-meta">
-                  <span class="rating">★ 4.9</span>
-                  <span class="rating-count">(89)</span>
+                  <span class="coming-soon-badge">À venir</span>
                 </div>
                 <div class="course-price-row">
-                  <span class="price">29,99 €</span>
-                  <span class="old-price">49,99 €</span>
+                  <span class="price">Bientôt disponible</span>
                 </div>
               </div>
             </article>
@@ -446,16 +464,40 @@
                 <h3 class="course-title">Compétences Numériques & IA pour l'emploi</h3>
                 <div class="course-instructor">LOGIX FORMA</div>
                 <div class="course-meta">
-                  <span class="rating">★ 4.7</span>
-                  <span class="rating-count">(45)</span>
-                  <span class="bestseller-badge">Nouveau</span>
+                  <span class="coming-soon-badge">À venir</span>
                 </div>
                 <div class="course-price-row">
-                  <span class="price">34,99 €</span>
-                  <span class="old-price">59,99 €</span>
+                  <span class="price">Bientôt disponible</span>
                 </div>
               </div>
             </article>
+
+            <!-- Card 4 -->
+            <article class="course-card">
+              <div style="width:100%; aspect-ratio:16/9; background:#e5e8f2; display:flex; align-items:center; justify-content:center; color:#929497;">
+                <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <circle cx="12" cy="12" r="10"/>
+                  <path d="M12 6v6l4 2"/>
+                </svg>
+              </div>
+              <div class="course-content">
+                <h3 class="course-title">Gestion de projet agile</h3>
+                <div class="course-instructor">LOGIX FORMA</div>
+                <div class="course-meta">
+                  <span class="coming-soon-badge">En préparation</span>
+                </div>
+                <div class="course-price-row">
+                  <span class="price">Bientôt disponible</span>
+                </div>
+              </div>
+            </article>
+          </div>
+
+          <!-- Priority Banner -->
+          <div class="priority-banner">
+            <h2>📩 Accès prioritaire</h2>
+            <p>Soyez les premiers informés de l'ouverture des formations. Inscrivez-vous gratuitement pour recevoir une notification avant tout le monde.</p>
+            <a href="#acces-prioritaire" class="btn btn-ghost" style="background: white; color: var(--logo-blue);">Demander l'accès prioritaire</a>
           </div>
         </div>
       </div>
@@ -484,33 +526,6 @@
               <p>Structure juridique déclarée (SIREN 902 349 943).</p>
             </div>
           </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- PAGE: BLOG -->
-    <section id="blog" class="page-section">
-      <div class="container" style="padding-top: 60px;">
-        <div class="section-header">
-          <h2 class="section-title">Le Blog LOGIX FORMA</h2>
-          <p class="section-subtitle">Conseils, actualités et pédagogie par Moctar TOURÉ.</p>
-        </div>
-        <div class="course-grid">
-          <article class="course-card" style="padding: 24px;">
-            <h3 class="course-title" style="font-size: 1.2rem; margin-bottom: 16px;">Comment financer sa reconversion professionnelle</h3>
-            <p style="color: var(--text-secondary); margin-bottom: 16px;">Clarifier son projet, comprendre les possibilités et avancer avec une logique réaliste.</p>
-            <a href="#" style="color: var(--logo-blue); font-weight: 700;">Lire la suite →</a>
-          </article>
-          <article class="course-card" style="padding: 24px;">
-            <h3 class="course-title" style="font-size: 1.2rem; margin-bottom: 16px;">Pourquoi la montée en compétences reste un levier d'employabilité</h3>
-            <p style="color: var(--text-secondary); margin-bottom: 16px;">Renforcer sa place sur le marché du travail grâce à des compétences plus utiles et plus visibles.</p>
-            <a href="#" style="color: var(--logo-blue); font-weight: 700;">Lire la suite →</a>
-          </article>
-          <article class="course-card" style="padding: 24px;">
-            <h3 class="course-title" style="font-size: 1.2rem; margin-bottom: 16px;">Apprendre le français pour gagner en autonomie</h3>
-            <p style="color: var(--text-secondary); margin-bottom: 16px;">Comprendre, répondre, interagir et progresser dans des situations concrètes du quotidien et du travail.</p>
-            <a href="#" style="color: var(--logo-blue); font-weight: 700;">Lire la suite →</a>
-          </article>
         </div>
       </div>
     </section>
@@ -693,24 +708,15 @@
           <h4>LOGIX FORMA</h4>
           <ul>
             <li><a href="#" onclick="navigate('index')">À propos</a></li>
-            <li><a href="#" onclick="navigate('contact')">Carrières</a></li>
-            <li><a href="#" onclick="navigate('contact')">Presse</a></li>
+            <li><a href="#" onclick="navigate('contact')">Contact</a></li>
           </ul>
         </div>
         <div class="footer-col">
-          <h4>Découvrir</h4>
+          <h4>Formations</h4>
           <ul>
-            <li><a href="#formations" onclick="navigate('index'); setTimeout(() => document.getElementById('formations').scrollIntoView(), 100)">Devenir instructeur</a></li>
-            <li><a href="#" onclick="navigate('contact')">LOGIX pour les entreprises</a></li>
-            <li><a href="#" onclick="navigate('contact')">Obtenir le catalogue</a></li>
-          </ul>
-        </div>
-        <div class="footer-col">
-          <h4>Support</h4>
-          <ul>
-            <li><a href="#" onclick="navigate('contact')">Nous contacter</a></li>
-            <li><a href="#">FAQ</a></li>
-            <li><a href="#">Aide et support</a></li>
+            <li><a href="#formations" onclick="navigate('index'); setTimeout(() => document.getElementById('formations').scrollIntoView(), 100)">Français A1</a></li>
+            <li><a href="#formations" onclick="navigate('index'); setTimeout(() => document.getElementById('formations').scrollIntoView(), 100)">Français A2</a></li>
+            <li><a href="blog.html">Blog</a></li>
           </ul>
         </div>
         <div class="footer-col">
@@ -718,9 +724,9 @@
           <ul>
             <li><a href="#" onclick="navigate('cgu')">Conditions d'utilisation</a></li>
             <li><a href="#" onclick="navigate('politique-confidentialite')">Politique de confidentialité</a></li>
-            <li><a href="#" onclick="navigate('accessibilite')">Accessibilité</a></li>
             <li><a href="#" onclick="navigate('mentions-legales')">Mentions légales</a></li>
             <li><a href="#" onclick="navigate('cookies')">Cookies</a></li>
+            <li><a href="#" onclick="navigate('accessibilite')">Accessibilité</a></li>
             <li><a href="#" onclick="navigate('securite')">Sécurité</a></li>
           </ul>
         </div>
