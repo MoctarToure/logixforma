@@ -3,837 +3,875 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>LOGIX FORMA — Formation en ligne premium</title>
-  <meta name="description" content="Plateforme de formation en ligne premium pour adultes. Français, insertion professionnelle et reconversion.">
-  
-  <!-- Fonts -->
+  <title>LOGIX FORMA — Formation français A1 A2 en ligne</title>
+  <meta name="description" content="LOGIX FORMA propose des formations en ligne pour adultes : français A1, français A2, insertion professionnelle, reconversion et montée en compétences.">
+  <meta name="keywords" content="formation français en ligne, français A1, français A2, formation adulte, insertion professionnelle, reconversion">
+  <meta name="robots" content="index, follow">
+  <link rel="canonical" href="https://logixforma.com/">
+  <meta property="og:title" content="LOGIX FORMA — Formation en ligne">
+  <meta property="og:description" content="Formations en ligne pour adultes : français, progression professionnelle et accès prioritaire.">
+  <meta property="og:image" content="https://i.postimg.cc/xdj77pwZ/logo-logix-forma.jpg">
+  <meta property="og:type" content="website">
+
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Outfit:wght@400;500;600;700;800&display=swap" rel="stylesheet">
 
   <style>
+    *, *::before, *::after { margin:0; padding:0; box-sizing:border-box; }
+    html { scroll-behavior:smooth; }
+
     :root {
-      /* LOGO COLORS EXACT MATCH */
-      --logo-blue: #163059;
-      --logo-green: #7DA63F;
-      --logo-yellow: #F0C936;
-      
-      /* UI COLORS (Udemy Style) */
-      --text-main: #2d2f31;
-      --text-secondary: #6a6f73;
-      --text-light: #929497;
-      --bg-body: #f7f9fa;
-      --bg-white: #ffffff;
-      --border-color: #d1d7dc;
-      --border-light: #e5e8f2;
-      --success: #00a56e;
-      --rating-star: #b4690e;
-      
-      /* Spacing & Layout */
-      --header-height: 72px;
-      --container-width: 1340px;
-      --radius-sm: 4px;
-      --radius-md: 8px;
-      --radius-lg: 16px;
-      
-      /* Shadows */
-      --shadow-sm: 0 2px 4px rgba(0,0,0,0.08);
-      --shadow-md: 0 4px 12px rgba(0,0,0,0.1);
-      --shadow-lg: 0 10px 24px rgba(0,0,0,0.12);
+      --navy:#1F365D;
+      --navy-dark:#0C1A34;
+      --navy-mid:#2a4a7f;
+      --green:#6BA32A;
+      --green-dark:#4e7a1e;
+      --green-light:#82b83a;
+      --yellow:#D4A017;
+      --yellow-bright:#E8B820;
+      --bg:#F7F8FB;
+      --bg-white:#FFFFFF;
+      --surface:#EEF0F6;
+      --text:#111827;
+      --text-2:#2D3748;
+      --text-3:#6B7280;
+      --text-4:#9CA3AF;
+      --border:#DDE1EC;
+      --shadow-xs:0 1px 4px rgba(31,54,93,0.07);
+      --shadow-sm:0 4px 14px rgba(31,54,93,0.09);
+      --shadow-md:0 8px 26px rgba(31,54,93,0.12);
+      --shadow-lg:0 16px 42px rgba(31,54,93,0.16);
+      --shadow-xl:0 28px 64px rgba(31,54,93,0.20);
+      --radius:8px; --radius-md:12px; --radius-lg:16px;
+      --max:1200px; --t:all 0.22s ease;
     }
 
-    * { margin: 0; padding: 0; box-sizing: border-box; }
-    html { scroll-behavior: smooth; }
     body {
-      font-family: 'Inter', sans-serif;
-      background-color: var(--bg-body);
-      color: var(--text-main);
-      line-height: 1.5;
-      -webkit-font-smoothing: antialiased;
-      display: flex;
-      flex-direction: column;
-      min-height: 100vh;
+      font-family:'Plus Jakarta Sans', sans-serif;
+      background:var(--bg); color:var(--text);
+      line-height:1.65; -webkit-font-smoothing:antialiased;
+      overflow-x:hidden; display:flex; flex-direction:column; min-height:100vh;
     }
 
-    a { text-decoration: none; color: inherit; transition: color 0.2s; }
-    ul { list-style: none; }
-    img { max-width: 100%; display: block; }
-    button { cursor: pointer; border: none; font-family: inherit; }
+    a { color:inherit; text-decoration:none; }
+    img { max-width:100%; display:block; }
+    .container { width:min(100% - 32px, var(--max)); margin:0 auto; }
 
-    .container {
-      max-width: var(--container-width);
-      margin: 0 auto;
-      padding: 0 24px;
-    }
+    /* PAGE SECTIONS */
+    .page-section { display:none; }
+    .page-section.active { display:block; animation:fadeIn 0.35s ease; }
+    @keyframes fadeIn { from{opacity:0;transform:translateY(8px)} to{opacity:1;transform:translateY(0)} }
 
-    /* --- Header --- */
-    header {
-      background: var(--bg-white);
-      border-bottom: 1px solid var(--border-color);
-      height: var(--header-height);
-      position: sticky;
-      top: 0;
-      z-index: 1000;
-      display: flex;
-      align-items: center;
-    }
-
-    .nav-container {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      width: 100%;
-    }
-
-    .logo {
-      display: flex;
-      align-items: center;
-      gap: 10px;
-      font-weight: 800;
-      font-size: 1.5rem;
-      color: var(--logo-blue);
-      letter-spacing: -0.02em;
-    }
-    
-    .logo svg { height: 40px; width: auto; }
-
-    .nav-links {
-      display: flex;
-      gap: 24px;
-      align-items: center;
-    }
-
-    .nav-links a {
-      font-size: 0.95rem;
-      font-weight: 500;
-      color: var(--text-main);
-    }
-    .nav-links a:hover, .nav-links a.active { color: var(--logo-blue); }
-
-    .nav-actions { display: flex; gap: 12px; align-items: center; }
-
+    /* BUTTONS */
     .btn {
-      display: inline-flex;
-      align-items: center;
-      justify-content: center;
-      padding: 10px 24px;
-      border-radius: var(--radius-sm);
-      font-weight: 700;
-      font-size: 0.95rem;
-      transition: all 0.2s;
+      display:inline-flex; align-items:center; justify-content:center; gap:8px;
+      padding:13px 22px; border-radius:var(--radius);
+      font:inherit; font-size:0.95rem; font-weight:700;
+      cursor:pointer; border:none; transition:var(--t); text-align:center;
     }
+    .btn:hover { transform:translateY(-2px); }
+    .btn-navy { background:var(--navy); color:#fff; box-shadow:0 8px 20px rgba(31,54,93,0.28); }
+    .btn-navy:hover { background:var(--navy-dark); }
+    .btn-green { background:var(--green); color:#fff; box-shadow:0 8px 20px rgba(107,163,42,0.32); }
+    .btn-green:hover { background:var(--green-dark); }
+    .btn-yellow { background:var(--yellow-bright); color:var(--navy-dark); font-weight:800; box-shadow:0 8px 20px rgba(212,160,23,0.32); }
+    .btn-yellow:hover { background:var(--yellow); }
+    .btn-white { background:#fff; color:var(--navy); box-shadow:var(--shadow-sm); }
+    .btn-white:hover { background:var(--surface); }
+    .btn-ghost-navy { background:transparent; border:2px solid var(--navy); color:var(--navy); }
+    .btn-ghost-navy:hover { background:var(--navy); color:#fff; }
 
-    .btn-ghost {
-      background: transparent;
-      color: var(--text-main);
-      border: 1px solid var(--text-main);
+    /* HEADER */
+    header {
+      position:sticky; top:0; z-index:999;
+      background:#fff; border-bottom:1px solid var(--border);
+      box-shadow:var(--shadow-xs);
     }
-    .btn-ghost:hover { background: var(--text-main); color: white; }
+    .nav { display:flex; align-items:center; gap:16px; height:70px; }
+    .logo { display:flex; align-items:center; gap:10px; flex-shrink:0; cursor:pointer; }
+    .logo img { height:46px; width:auto; border-radius:6px; }
+    .logo-text { font-family:'Outfit',sans-serif; font-size:1.4rem; font-weight:800; letter-spacing:-0.03em; white-space:nowrap; color:var(--navy); }
+    .logo-text span { color:var(--green); }
 
-    .btn-primary {
-      background: var(--logo-green);
-      color: white;
+    .nav-search { flex:1; max-width:440px; position:relative; }
+    .nav-search input {
+      width:100%; padding:10px 16px 10px 42px;
+      border:2px solid var(--border); border-radius:999px;
+      font:inherit; font-size:0.9rem; background:var(--surface); color:var(--text); transition:var(--t);
     }
-    .btn-primary:hover { opacity: 0.9; }
-    
-    .btn-blue {
-      background: var(--logo-blue);
-      color: white;
+    .nav-search input:focus { outline:none; border-color:var(--navy); background:#fff; }
+    .nav-search svg { position:absolute; left:14px; top:50%; transform:translateY(-50%); color:var(--text-3); }
+
+    .nav-links { display:flex; align-items:center; gap:4px; margin-left:auto; }
+    .nav-links a {
+      padding:8px 14px; border-radius:6px;
+      font-size:0.88rem; font-weight:600; color:var(--text-2); transition:var(--t); white-space:nowrap; cursor:pointer;
     }
-    .btn-blue:hover { opacity: 0.9; }
+    .nav-links a:hover, .nav-links a.active { background:var(--surface); color:var(--navy); }
+    .nav-links .btn-outline { border:2px solid var(--green); color:var(--green); border-radius:var(--radius); }
+    .nav-links .btn-outline:hover { background:var(--green); color:#fff; }
+    .nav-links .btn-fill { background:var(--navy); color:#fff; border-radius:var(--radius); }
+    .nav-links .btn-fill:hover { background:var(--navy-dark); }
 
-    /* --- Main Content Area --- */
-    main { flex: 1; padding-bottom: 60px; }
-    .page-section { display: none; animation: fadeIn 0.4s ease; }
-    .page-section.active { display: block; }
-    
-    @keyframes fadeIn { from { opacity: 0; transform: translateY(10px); } to { opacity: 1; transform: translateY(0); } }
-
-    /* --- Hero Section --- */
+    /* HERO */
     .hero {
-      background: var(--bg-white);
-      padding: 60px 0 80px;
-      position: relative;
-      overflow: hidden;
+      background:linear-gradient(135deg, var(--navy-dark) 0%, var(--navy) 55%, #1a3a2a 100%);
+      color:#fff; padding:76px 0 84px; position:relative; overflow:hidden;
     }
-    .hero-content { max-width: 800px; position: relative; z-index: 2; }
+    .hero::before {
+      content:''; position:absolute; inset:0;
+      background:
+        radial-gradient(ellipse 700px 500px at 85% 40%, rgba(107,163,42,0.18), transparent),
+        radial-gradient(ellipse 400px 300px at 5% 90%, rgba(212,160,23,0.12), transparent);
+      pointer-events:none;
+    }
+    .hero-grid { display:grid; grid-template-columns:1fr 360px; gap:52px; align-items:center; position:relative; z-index:1; }
+
+    .hero-badge {
+      display:inline-flex; align-items:center; gap:8px; padding:7px 16px; border-radius:999px;
+      background:rgba(107,163,42,0.20); border:1px solid rgba(107,163,42,0.45);
+      font-size:0.82rem; font-weight:700; color:#a8d46e;
+      letter-spacing:0.04em; text-transform:uppercase; margin-bottom:20px;
+    }
     .hero h1 {
-      font-size: clamp(2.5rem, 5vw, 4rem);
-      font-weight: 800;
-      line-height: 1.1;
-      color: var(--text-main);
-      margin-bottom: 24px;
-      letter-spacing: -0.03em;
+      font-family:'Outfit',sans-serif; font-size:clamp(2.2rem,4vw,3.5rem);
+      font-weight:800; line-height:1.08; letter-spacing:-0.03em; margin-bottom:18px; color:#fff;
     }
-    .hero p {
-      font-size: 1.25rem;
-      color: var(--text-secondary);
-      margin-bottom: 32px;
-      max-width: 600px;
+    .hero h1 em {
+      font-style:normal;
+      background:linear-gradient(90deg, var(--yellow-bright), var(--green-light));
+      -webkit-background-clip:text; -webkit-text-fill-color:transparent;
     }
-    .hero-image-wrapper {
-      position: absolute;
-      right: 0;
-      top: 0;
-      width: 50%;
-      height: 100%;
-      background: #eee;
-      z-index: 1;
-      clip-path: polygon(20% 0, 100% 0, 100% 100%, 0% 100%);
-    }
-    .hero-image-wrapper img {
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-    }
+    .hero-desc { font-size:1.06rem; color:rgba(255,255,255,0.82); margin-bottom:28px; max-width:560px; line-height:1.72; }
+    .hero-stats { display:flex; gap:26px; margin-bottom:32px; flex-wrap:wrap; }
+    .hero-stat { display:flex; align-items:center; gap:9px; font-size:0.9rem; color:rgba(255,255,255,0.72); }
+    .hero-stat strong { color:#fff; font-weight:700; }
+    .hero-stat .dot { width:6px; height:6px; border-radius:50%; background:var(--yellow-bright); flex-shrink:0; }
+    .hero-btns { display:flex; gap:12px; flex-wrap:wrap; }
 
-    /* --- Course Grid --- */
-    .section { padding: 60px 0; }
-    .section-header { margin-bottom: 32px; }
-    .section-title { font-size: 2rem; font-weight: 700; color: var(--text-main); margin-bottom: 8px; }
-    .section-subtitle { color: var(--text-secondary); font-size: 1.1rem; }
+    /* Hero card */
+    .hero-card { background:#fff; border-radius:var(--radius-lg); overflow:hidden; box-shadow:var(--shadow-xl); }
+    .hero-card-top {
+      background:linear-gradient(135deg, var(--navy), var(--navy-mid));
+      padding:26px 22px; color:#fff; text-align:center;
+    }
+    .hero-card-top .price-old { font-size:0.9rem; opacity:0.6; text-decoration:line-through; margin-bottom:4px; }
+    .hero-card-top .price-tag { font-family:'Outfit',sans-serif; font-size:2.8rem; font-weight:800; line-height:1; color:var(--yellow-bright); }
+    .hero-card-top .price-label { font-size:0.83rem; opacity:0.75; margin-top:6px; }
+    .hero-card-body { padding:22px; }
+    .hero-card-body .cta-btn { width:100%; margin-bottom:10px; }
+    .guarantee { text-align:center; font-size:0.8rem; color:var(--text-3); margin-bottom:18px; }
+    .card-features { list-style:none; display:flex; flex-direction:column; gap:10px; }
+    .card-features li { display:flex; align-items:center; gap:10px; font-size:0.87rem; color:var(--text-2); }
+    .card-features li .chk { color:var(--green); font-weight:800; flex-shrink:0; }
 
-    .course-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
-      gap: 24px;
+    /* TRUST BAR */
+    .trust-bar { background:#fff; border-bottom:1px solid var(--border); padding:20px 0; }
+    .trust-items { display:flex; align-items:center; justify-content:space-between; gap:16px; flex-wrap:wrap; }
+    .trust-item { display:flex; align-items:center; gap:12px; }
+    .trust-icon {
+      width:40px; height:40px; border-radius:10px; flex-shrink:0;
+      display:flex; align-items:center; justify-content:center; font-size:1.1rem;
+      background:linear-gradient(135deg, rgba(31,54,93,0.08), rgba(107,163,42,0.08));
     }
+    .trust-item strong { display:block; font-size:0.88rem; font-weight:700; color:var(--text); }
+    .trust-item span { display:block; font-size:0.78rem; color:var(--text-3); }
 
-    .course-card {
-      background: var(--bg-card);
-      border-radius: var(--radius-md);
-      overflow: hidden;
-      transition: transform 0.2s, box-shadow 0.2s;
-      cursor: pointer;
-      display: flex;
-      flex-direction: column;
-      height: 100%;
-      border: 1px solid transparent;
-    }
-    .course-card:hover {
-      transform: translateY(-4px);
-      box-shadow: var(--shadow-md);
-      border-color: var(--border-light);
-    }
+    /* SECTION BASE */
+    .section { padding:76px 0; }
+    .section-header { margin-bottom:42px; }
+    .section-label { display:inline-block; font-size:0.78rem; font-weight:700; letter-spacing:0.08em; text-transform:uppercase; color:var(--green); margin-bottom:10px; }
+    .section-title { font-family:'Outfit',sans-serif; font-size:clamp(1.8rem,3.5vw,2.5rem); font-weight:800; letter-spacing:-0.025em; color:var(--text); line-height:1.15; margin-bottom:12px; }
+    .section-sub { font-size:1rem; color:var(--text-3); max-width:620px; line-height:1.72; }
 
-    .course-image {
-      width: 100%;
-      aspect-ratio: 16/9;
-      object-fit: cover;
-      background: #eee;
+    /* COURSE CARDS */
+    .courses-grid { display:grid; grid-template-columns:repeat(auto-fill,minmax(280px,1fr)); gap:22px; }
+    .course-card { background:#fff; border:1px solid var(--border); border-radius:var(--radius-lg); overflow:hidden; transition:var(--t); position:relative; }
+    .course-card:hover { transform:translateY(-5px); box-shadow:var(--shadow-lg); border-color:transparent; }
+    .course-thumb-inner {
+      width:100%; aspect-ratio:16/9;
+      display:flex; align-items:center; justify-content:center; font-size:3.2rem;
+      position:relative; overflow:hidden;
     }
+    .course-thumb-inner::after { content:''; position:absolute; inset:0; background:linear-gradient(to bottom, transparent 40%, rgba(0,0,0,0.55)); }
+    .thumb-a1 { background:linear-gradient(135deg, var(--navy-dark), var(--navy), #0d2e1a); }
+    .thumb-a2 { background:linear-gradient(135deg, #1a3a0a, var(--green-dark), #0d2a10); }
+    .thumb-num { background:linear-gradient(135deg, #2a1a00, #5a3800, var(--navy-dark)); }
+    .thumb-proj { background:linear-gradient(135deg, var(--navy-dark), #1a2a4a, #0a1a0a); }
 
-    .course-content { padding: 16px; flex-grow: 1; display: flex; flex-direction: column; }
-    .course-title {
-      font-size: 1rem;
-      font-weight: 700;
-      color: var(--text-main);
-      margin-bottom: 8px;
-      line-height: 1.3;
-      display: -webkit-box;
-      -webkit-line-clamp: 2;
-      -webkit-box-orient: vertical;
-      overflow: hidden;
-    }
-    .course-instructor { font-size: 0.85rem; color: var(--text-secondary); margin-bottom: 8px; }
-    .course-meta {
-      display: flex;
-      align-items: center;
-      gap: 8px;
-      margin-bottom: 12px;
-      font-size: 0.85rem;
-    }
-    
-    .coming-soon-badge {
-      background: var(--logo-blue);
-      color: white;
-      font-size: 0.75rem;
-      font-weight: 700;
-      padding: 4px 8px;
-      border-radius: var(--radius-sm);
-      text-transform: uppercase;
-      display: inline-block;
-    }
-    
-    .course-price-row { margin-top: auto; display: flex; align-items: center; gap: 8px; }
-    .price { font-size: 1.25rem; font-weight: 700; color: var(--text-main); }
-    .old-price { font-size: 0.9rem; color: var(--text-secondary); text-decoration: line-through; }
+    .course-badge { position:absolute; top:12px; left:12px; z-index:2; padding:4px 11px; border-radius:999px; font-size:0.75rem; font-weight:700; }
+    .badge-priority { background:var(--yellow-bright); color:var(--navy-dark); }
+    .badge-new { background:var(--green); color:#fff; }
+    .badge-soon { background:var(--navy); color:#fff; }
+    .badge-prep { background:var(--text-3); color:#fff; }
 
-    /* --- Features --- */
-    .features-section {
-      background: var(--bg-white);
-      border-top: 1px solid var(--border-light);
-      border-bottom: 1px solid var(--border-light);
-    }
-    .features-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-      gap: 40px;
-      text-align: center;
-    }
-    .feature-item h3 { font-size: 1.1rem; margin: 16px 0 8px; color: var(--text-main); }
-    .feature-item p { font-size: 0.95rem; color: var(--text-secondary); }
-    .feature-icon { font-size: 2.5rem; }
+    .course-body { padding:18px 20px 20px; }
+    .course-category { font-size:0.75rem; font-weight:700; text-transform:uppercase; letter-spacing:0.06em; color:var(--green); margin-bottom:8px; }
+    .course-title { font-size:1.02rem; font-weight:700; color:var(--text); line-height:1.4; margin-bottom:8px; }
+    .course-desc { font-size:0.85rem; color:var(--text-3); line-height:1.55; margin-bottom:14px; display:-webkit-box; -webkit-line-clamp:2; -webkit-box-orient:vertical; overflow:hidden; }
+    .course-instructor { font-size:0.8rem; color:var(--text-3); margin-bottom:12px; }
+    .course-instructor strong { color:var(--text-2); }
+    .stars { display:flex; align-items:center; gap:4px; margin-bottom:12px; }
+    .stars .star { color:var(--yellow-bright); font-size:0.85rem; }
+    .stars .rating { font-size:0.82rem; font-weight:700; color:#7a5000; }
+    .stars .count { font-size:0.78rem; color:var(--text-3); }
+    .course-tags { display:flex; gap:6px; flex-wrap:wrap; margin-bottom:14px; }
+    .course-tag { padding:3px 10px; border-radius:999px; font-size:0.75rem; font-weight:600; background:var(--surface); color:var(--text-2); border:1px solid var(--border); }
+    .course-footer { display:flex; align-items:center; justify-content:space-between; padding-top:14px; border-top:1px solid var(--border); }
+    .course-price { font-family:'Outfit',sans-serif; font-size:1.45rem; font-weight:800; color:var(--navy); }
+    .btn-enroll { padding:8px 16px; background:var(--navy); color:#fff; border-radius:var(--radius); font-size:0.82rem; font-weight:700; border:none; cursor:pointer; transition:var(--t); }
+    .btn-enroll:hover { background:var(--green); transform:translateY(-1px); }
 
-    /* --- Forms & Pages --- */
-    .form-container {
-      background: var(--bg-white);
-      padding: 40px;
-      border-radius: var(--radius-lg);
-      box-shadow: var(--shadow-md);
-      max-width: 600px;
-      margin: 0 auto;
-    }
-    .form-group { margin-bottom: 20px; }
-    .form-group label { display: block; margin-bottom: 8px; font-weight: 600; font-size: 0.9rem; color: var(--text-main); }
-    .form-control {
-      width: 100%;
-      padding: 12px 16px;
-      border: 1px solid var(--border-color);
-      border-radius: var(--radius-sm);
-      font-family: inherit;
-      font-size: 1rem;
-    }
-    .form-control:focus { outline: none; border-color: var(--logo-blue); box-shadow: 0 0 0 3px rgba(22, 48, 89, 0.1); }
-    textarea.form-control { min-height: 120px; resize: vertical; }
-    .checkbox-group { display: flex; align-items: flex-start; gap: 12px; font-size: 0.9rem; color: var(--text-secondary); margin-bottom: 24px; }
-    .checkbox-group input { margin-top: 4px; }
+    /* STATS BAND */
+    .stats-band { background:linear-gradient(135deg, var(--navy-dark), var(--navy)); padding:58px 0; color:#fff; position:relative; overflow:hidden; }
+    .stats-band::before { content:''; position:absolute; inset:0; background:radial-gradient(ellipse 600px 300px at 50% 50%, rgba(107,163,42,0.12), transparent); }
+    .stats-grid { display:grid; grid-template-columns:repeat(4,1fr); gap:24px; text-align:center; position:relative; }
+    .stat-num { font-family:'Outfit',sans-serif; font-size:2.8rem; font-weight:800; line-height:1; margin-bottom:8px; color:var(--yellow-bright); }
+    .stat-label { font-size:0.88rem; color:rgba(255,255,255,0.68); font-weight:500; }
+    .stat-divider { width:40px; height:3px; background:var(--green); border-radius:2px; margin:10px auto 0; }
 
-    .legal-content {
-      background: var(--bg-white);
-      padding: 40px;
-      border-radius: var(--radius-lg);
-      box-shadow: var(--shadow-sm);
-      max-width: 900px;
-      margin: 0 auto;
-      line-height: 1.8;
-    }
-    .legal-content h2 { color: var(--logo-blue); margin-bottom: 16px; font-size: 1.8rem; }
-    .legal-content h3 { color: var(--text-main); margin: 24px 0 12px; font-size: 1.4rem; }
-    .legal-content p { margin-bottom: 16px; color: var(--text-secondary); }
-    .legal-content ul { list-style: disc; margin-left: 20px; margin-bottom: 16px; color: var(--text-secondary); }
+    /* FEATURES */
+    .bg-white { background:#fff; }
+    .features-grid { display:grid; grid-template-columns:repeat(auto-fill,minmax(260px,1fr)); gap:20px; }
+    .feature-card { padding:26px; border-radius:var(--radius-lg); border:1px solid var(--border); background:#fff; transition:var(--t); position:relative; overflow:hidden; }
+    .feature-card::before { content:''; position:absolute; top:0; left:0; right:0; height:3px; background:linear-gradient(90deg, var(--navy), var(--green)); transform:scaleX(0); transform-origin:left; transition:var(--t); }
+    .feature-card:hover { border-color:var(--green); box-shadow:var(--shadow-md); }
+    .feature-card:hover::before { transform:scaleX(1); }
+    .feature-icon { width:50px; height:50px; border-radius:12px; display:flex; align-items:center; justify-content:center; font-size:1.4rem; margin-bottom:16px; background:linear-gradient(135deg, rgba(31,54,93,0.08), rgba(107,163,42,0.08)); }
+    .feature-card h3 { font-size:1rem; font-weight:700; margin-bottom:8px; color:var(--text); }
+    .feature-card p { font-size:0.88rem; color:var(--text-3); line-height:1.65; }
 
-    /* --- Priority Access Banner --- */
-    .priority-banner {
-      background: linear-gradient(135deg, var(--logo-blue) 0%, var(--logo-green) 100%);
-      color: white;
-      padding: 40px;
-      border-radius: var(--radius-lg);
-      text-align: center;
-      margin: 40px 0;
-    }
-    .priority-banner h2 {
-      color: white;
-      font-size: 2rem;
-      margin-bottom: 16px;
-    }
-    .priority-banner p {
-      color: rgba(255,255,255,0.9);
-      font-size: 1.1rem;
-      margin-bottom: 24px;
-      max-width: 600px;
-      margin-left: auto;
-      margin-right: auto;
-    }
+    /* ABOUT */
+    .about-split { display:grid; grid-template-columns:1fr 400px; gap:48px; align-items:start; }
+    .about-text p { color:var(--text-2); margin-bottom:16px; line-height:1.78; }
+    .team-grid { display:flex; flex-direction:column; gap:14px; margin-top:28px; }
+    .team-card { display:flex; align-items:center; gap:14px; padding:16px 18px; background:#fff; border:1px solid var(--border); border-radius:var(--radius-md); box-shadow:var(--shadow-xs); transition:var(--t); }
+    .team-card:hover { border-color:var(--green); box-shadow:var(--shadow-sm); transform:translateX(4px); }
+    .team-avatar { width:48px; height:48px; border-radius:50%; background:linear-gradient(135deg, var(--navy), var(--green)); display:flex; align-items:center; justify-content:center; color:#fff; font-weight:800; font-size:1rem; flex-shrink:0; }
+    .team-info h4 { font-size:0.95rem; font-weight:700; color:var(--text); margin-bottom:3px; }
+    .team-info p { font-size:0.82rem; color:var(--text-3); }
+    .about-side { display:flex; flex-direction:column; gap:16px; }
+    .info-card { background:#fff; border:1px solid var(--border); border-radius:var(--radius-lg); padding:22px; box-shadow:var(--shadow-sm); border-left:4px solid var(--green); }
+    .info-card h4 { font-size:0.95rem; font-weight:700; color:var(--navy); margin-bottom:10px; }
+    .info-card p { font-size:0.88rem; color:var(--text-3); line-height:1.65; margin-bottom:6px; }
+    .info-card ul { list-style:none; display:flex; flex-direction:column; gap:8px; margin-top:4px; }
+    .info-card li { display:flex; align-items:center; gap:10px; font-size:0.88rem; color:var(--text-3); }
+    .info-card li::before { content:'✓'; color:var(--green); font-weight:800; flex-shrink:0; }
 
-    /* --- Footer --- */
-    footer {
-      background: var(--bg-white);
-      border-top: 1px solid var(--border-color);
-      padding: 60px 0 30px;
-      margin-top: auto;
-    }
-    .footer-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-      gap: 40px;
-      margin-bottom: 40px;
-    }
-    .footer-col h4 { font-size: 1rem; font-weight: 700; margin-bottom: 20px; color: var(--text-main); }
-    .footer-col ul li { margin-bottom: 12px; }
-    .footer-col a { color: var(--text-secondary); font-size: 0.9rem; }
-    .footer-col a:hover { text-decoration: underline; color: var(--logo-blue); }
-    .footer-bottom {
-      border-top: 1px solid var(--border-light);
-      padding-top: 30px;
-      text-align: center;
-      color: var(--text-light);
-      font-size: 0.85rem;
-    }
+    /* BLOG */
+    .blog-grid { display:grid; grid-template-columns:repeat(auto-fill,minmax(260px,1fr)); gap:20px; }
+    .blog-card { background:#fff; border:1px solid var(--border); border-radius:var(--radius-lg); overflow:hidden; transition:var(--t); display:flex; flex-direction:column; cursor:pointer; }
+    .blog-card:hover { transform:translateY(-4px); box-shadow:var(--shadow-lg); border-color:transparent; }
+    .blog-thumb { aspect-ratio:16/9; display:flex; align-items:center; justify-content:center; font-size:2.5rem; }
+    .bt1{background:linear-gradient(135deg,var(--navy-dark),var(--navy))} .bt2{background:linear-gradient(135deg,#1a3a0a,var(--green-dark))} .bt3{background:linear-gradient(135deg,#2a1a00,#8a5800)} .bt4{background:linear-gradient(135deg,var(--navy),#1a3a0a)}
+    .blog-body { padding:18px; flex:1; display:flex; flex-direction:column; }
+    .blog-cat { font-size:0.75rem; font-weight:700; text-transform:uppercase; letter-spacing:0.06em; color:var(--green); margin-bottom:8px; }
+    .blog-title { font-size:0.95rem; font-weight:700; color:var(--text); line-height:1.4; margin-bottom:8px; }
+    .blog-excerpt { font-size:0.83rem; color:var(--text-3); line-height:1.55; flex:1; margin-bottom:14px; }
+    .blog-link { font-size:0.82rem; font-weight:700; color:var(--navy); transition:var(--t); }
+    .blog-link:hover { color:var(--green); }
 
-    /* Responsive */
-    @media (max-width: 960px) {
-      .hero-image-wrapper { display: none; }
-      .hero-content { max-width: 100%; }
-      .nav-links { display: none; }
+    /* FORMS DARK SECTION */
+    .form-section-bg { background:linear-gradient(135deg, var(--navy-dark) 0%, var(--navy) 60%, #0d2a10 100%); padding:82px 0; position:relative; overflow:hidden; }
+    .form-section-bg::before { content:''; position:absolute; inset:0; background:radial-gradient(ellipse 500px 400px at 80% 50%, rgba(107,163,42,0.14), transparent); }
+    .form-grid { display:grid; grid-template-columns:1fr 1fr; gap:36px; align-items:start; position:relative; z-index:1; }
+    .form-info h2 { font-family:'Outfit',sans-serif; font-size:clamp(1.8rem,3vw,2.4rem); font-weight:800; color:#fff; letter-spacing:-0.025em; margin-bottom:16px; line-height:1.2; }
+    .form-info p { color:rgba(255,255,255,0.72); line-height:1.72; margin-bottom:26px; }
+    .perk-list { list-style:none; display:flex; flex-direction:column; gap:14px; }
+    .perk-list li { display:flex; align-items:center; gap:12px; font-size:0.92rem; color:rgba(255,255,255,0.88); }
+    .perk-check { width:26px; height:26px; border-radius:7px; flex-shrink:0; background:rgba(107,163,42,0.25); border:1px solid rgba(107,163,42,0.5); display:flex; align-items:center; justify-content:center; color:#a8d46e; font-size:0.82rem; font-weight:700; }
+
+    /* FORM BOX */
+    .form-box { background:#fff; border-radius:var(--radius-lg); padding:34px; box-shadow:var(--shadow-xl); }
+    .form-box h3 { font-size:1.25rem; font-weight:800; color:var(--navy); margin-bottom:6px; }
+    .form-box .form-sub { font-size:0.88rem; color:var(--text-3); margin-bottom:24px; }
+    .form-row { display:grid; grid-template-columns:1fr 1fr; gap:12px; }
+    .form-group { margin-bottom:14px; }
+    .form-group label { display:block; font-size:0.82rem; font-weight:600; color:var(--text-2); margin-bottom:6px; }
+    .form-group input, .form-group select, .form-group textarea { width:100%; padding:11px 14px; border:1.5px solid var(--border); border-radius:var(--radius); font:inherit; font-size:0.9rem; color:var(--text); background:#fff; transition:var(--t); }
+    .form-group input:focus, .form-group select:focus, .form-group textarea:focus { outline:none; border-color:var(--navy); box-shadow:0 0 0 3px rgba(31,54,93,0.1); }
+    .form-group textarea { min-height:110px; resize:vertical; }
+    .checkbox-row { display:flex; align-items:flex-start; gap:10px; font-size:0.83rem; color:var(--text-3); margin:14px 0 18px; line-height:1.55; }
+    .checkbox-row input[type="checkbox"] { width:auto; margin-top:2px; flex-shrink:0; accent-color:var(--green); }
+
+    /* CONTACT */
+    .contact-layout { display:grid; grid-template-columns:320px 1fr; gap:32px; align-items:start; }
+    .contact-side { display:flex; flex-direction:column; gap:14px; }
+    .contact-card { background:#fff; border:1px solid var(--border); border-radius:var(--radius-md); padding:20px; box-shadow:var(--shadow-xs); transition:var(--t); border-left:3px solid var(--navy); }
+    .contact-card:hover { border-color:var(--green); box-shadow:var(--shadow-sm); }
+    .contact-card h4 { font-size:0.9rem; font-weight:700; color:var(--navy); margin-bottom:7px; }
+    .contact-card p { font-size:0.85rem; color:var(--text-3); line-height:1.55; }
+    .contact-card strong { color:var(--text-2); }
+
+    /* SEO */
+    .seo-block { background:#fff; border:1px solid var(--border); border-radius:var(--radius-lg); padding:36px; box-shadow:var(--shadow-sm); }
+    .seo-block h2 { font-family:'Outfit',sans-serif; font-size:1.55rem; font-weight:800; text-align:center; margin-bottom:20px; color:var(--navy); }
+    .seo-block p { color:var(--text-3); margin-bottom:14px; line-height:1.75; }
+
+    /* CTA BAND */
+    .cta-band { background:linear-gradient(135deg, var(--green-dark), var(--green)); padding:64px 0; text-align:center; color:#fff; position:relative; overflow:hidden; }
+    .cta-band::before { content:''; position:absolute; inset:0; background:radial-gradient(ellipse 600px 300px at 50% 50%, rgba(255,255,255,0.08), transparent); }
+    .cta-band h2 { font-family:'Outfit',sans-serif; font-size:clamp(1.8rem,3.5vw,2.6rem); font-weight:800; letter-spacing:-0.025em; margin-bottom:14px; position:relative; }
+    .cta-band p { font-size:1rem; color:rgba(255,255,255,0.85); max-width:560px; margin:0 auto 30px; position:relative; }
+    .cta-btns { display:flex; justify-content:center; gap:12px; flex-wrap:wrap; position:relative; }
+
+    /* LEGAL PAGES */
+    .legal-page { padding:60px 0; }
+    .legal-box { background:#fff; border:1px solid var(--border); border-radius:var(--radius-lg); padding:44px; box-shadow:var(--shadow-sm); max-width:900px; margin:0 auto; line-height:1.8; }
+    .legal-box h2 { font-family:'Outfit',sans-serif; font-size:2rem; font-weight:800; color:var(--navy); margin-bottom:20px; padding-bottom:16px; border-bottom:2px solid var(--border); }
+    .legal-box h3 { font-size:1.15rem; font-weight:700; color:var(--navy); margin:28px 0 10px; }
+    .legal-box p { color:var(--text-3); margin-bottom:14px; }
+    .legal-box ul { list-style:disc; margin-left:22px; margin-bottom:14px; color:var(--text-3); }
+    .legal-box li { margin-bottom:6px; }
+
+    /* MERCI PAGE */
+    .merci-page { padding:100px 0; text-align:center; }
+    .merci-icon { font-size:5rem; margin-bottom:24px; }
+
+    /* FOOTER */
+    footer { background:var(--navy-dark); color:#94A3B8; padding:52px 0 24px; margin-top:auto; }
+    .footer-top { display:grid; grid-template-columns:280px 1fr 1fr 1fr; gap:32px; margin-bottom:42px; }
+    .footer-logo-text { font-family:'Outfit',sans-serif; font-size:1.3rem; font-weight:800; color:#fff; margin-bottom:14px; display:block; }
+    .footer-logo-text span { color:var(--green-light); }
+    .footer-brand p { font-size:0.85rem; line-height:1.65; color:#94A3B8; margin-bottom:6px; }
+    .footer-col h4 { color:#fff; font-size:0.85rem; font-weight:700; text-transform:uppercase; letter-spacing:0.07em; margin-bottom:16px; }
+    .footer-col a { display:block; color:#94A3B8; font-size:0.85rem; margin-bottom:10px; transition:var(--t); cursor:pointer; }
+    .footer-col a:hover { color:#fff; }
+    .footer-accent { display:inline-block; width:28px; height:3px; background:var(--green); border-radius:2px; margin-bottom:16px; }
+    .footer-bottom { border-top:1px solid rgba(255,255,255,0.08); padding-top:20px; display:flex; align-items:center; justify-content:space-between; flex-wrap:wrap; gap:12px; font-size:0.82rem; color:#64748B; }
+    .footer-bottom a { color:#64748B; transition:var(--t); cursor:pointer; }
+    .footer-bottom a:hover { color:#94A3B8; }
+
+    /* RESPONSIVE */
+    @media (max-width:1024px) {
+      .hero-grid { grid-template-columns:1fr; } .hero-card { display:none; }
+      .about-split { grid-template-columns:1fr; }
+      .footer-top { grid-template-columns:1fr 1fr; }
+      .stats-grid { grid-template-columns:repeat(2,1fr); }
+    }
+    @media (max-width:768px) {
+      .nav-search { display:none; }
+      .nav-links a:not(.btn-fill):not(.btn-outline) { display:none; }
+      .form-grid { grid-template-columns:1fr; }
+      .contact-layout { grid-template-columns:1fr; }
+      .footer-top { grid-template-columns:1fr; }
+      .form-row { grid-template-columns:1fr; }
+      .hero-btns { flex-direction:column; }
+      .hero-btns .btn { width:100%; }
+      .trust-items { justify-content:flex-start; }
+      .cta-btns { flex-direction:column; align-items:center; }
+      .legal-box { padding:24px 18px; }
+    }
+    @media (max-width:480px) {
+      .stats-grid { grid-template-columns:1fr 1fr; }
+      .form-box { padding:24px 18px; }
+      .section { padding:56px 0; }
     }
   </style>
 </head>
 <body>
 
-  <!-- Header -->
-  <header>
-    <div class="container nav-container">
-      <a href="#" class="logo" onclick="navigate('index')">
-        <!-- SVG Logo based on description -->
-        <svg viewBox="0 0 200 60" fill="none" xmlns="http://www.w3.org/2000/svg">
-          <path d="M10 10H35V50H10V10Z" fill="#163059"/>
-          <path d="M35 10L55 30L35 50" stroke="#7DA63F" stroke-width="12" stroke-linecap="round" stroke-linejoin="round"/>
-          <path d="M55 30L75 50" stroke="#F0C936" stroke-width="12" stroke-linecap="round" stroke-linejoin="round"/>
-          <text x="90" y="42" font-family="Inter, sans-serif" font-weight="800" font-size="32" fill="#163059">LOGIX</text>
-          <text x="90" y="72" font-family="Inter, sans-serif" font-weight="800" font-size="32" fill="#7DA63F">FORMA</text>
-        </svg>
-      </a>
-
-      <nav class="nav-links">
-        <a href="#" onclick="navigate('index')" class="active">Accueil</a>
-        <a href="#formations" onclick="navigate('index'); setTimeout(() => document.getElementById('formations').scrollIntoView(), 100)">Formations</a>
+<!-- ═══════════ HEADER ═══════════ -->
+<header>
+  <div class="container">
+    <nav class="nav">
+      <div class="logo" onclick="navigate('home')">
+        <img src="https://i.postimg.cc/xdj77pwZ/logo-logix-forma.jpg" alt="Logo LOGIX FORMA">
+        <span class="logo-text">LOGIX <span>FORMA</span></span>
+      </div>
+      <div class="nav-search">
+        <svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.35-4.35"/></svg>
+        <input type="text" placeholder="Rechercher une formation…">
+      </div>
+      <div class="nav-links">
+        <a onclick="navigate('home')" id="nav-home" class="active">Accueil</a>
+        <a onclick="navigate('home'); setTimeout(()=>document.getElementById('formations').scrollIntoView({behavior:'smooth'}),100)">Formations</a>
         <a href="blog.html">Blog</a>
-        <a href="#" onclick="navigate('contact')">Contact</a>
-      </nav>
+        <a onclick="navigate('home'); setTimeout(()=>document.getElementById('acces-prioritaire').scrollIntoView({behavior:'smooth'}),100)" class="btn-outline">Accès prioritaire</a>
+        <a onclick="navigate('contact')" id="nav-contact" class="btn-fill">Contact</a>
+      </div>
+    </nav>
+  </div>
+</header>
+
+<main style="flex:1">
+
+<!-- ═══════════ PAGE : HOME ═══════════ -->
+<div id="page-home" class="page-section active">
+
+  <!-- HERO -->
+  <section class="hero">
+    <div class="container">
+      <div class="hero-grid">
+        <div>
+          <div class="hero-badge">🚀 Ouverture progressive · Accès prioritaire disponible</div>
+          <h1>Apprenez le <em>français professionnel</em> en ligne, à votre rythme</h1>
+          <p class="hero-desc">Formations A1 et A2 conçues pour les adultes en insertion, reconversion ou montée en compétences. Progressez avec méthode, depuis chez vous.</p>
+          <div class="hero-stats">
+            <div class="hero-stat"><span class="dot"></span><strong>2 formations</strong>&nbsp;au lancement</div>
+            <div class="hero-stat"><span class="dot"></span><strong>29 €</strong>&nbsp;par formation</div>
+            <div class="hero-stat"><span class="dot"></span><strong>100 %</strong>&nbsp;en ligne</div>
+          </div>
+          <div class="hero-btns">
+            <a onclick="document.getElementById('formations').scrollIntoView({behavior:'smooth'})" class="btn btn-yellow" style="cursor:pointer">Voir les formations</a>
+            <a onclick="document.getElementById('acces-prioritaire').scrollIntoView({behavior:'smooth'})" class="btn btn-white" style="cursor:pointer">Accès prioritaire gratuit</a>
+          </div>
+        </div>
+        <div class="hero-card">
+          <div class="hero-card-top">
+            <div class="price-old">Tarif de lancement</div>
+            <div class="price-tag">29 <span style="font-size:1.2rem">€</span></div>
+            <div class="price-label">par formation · accès 3 mois</div>
+          </div>
+          <div class="hero-card-body">
+            <a onclick="document.getElementById('acces-prioritaire').scrollIntoView({behavior:'smooth'})" class="btn btn-yellow cta-btn" style="cursor:pointer">Je m'inscris en priorité</a>
+            <p class="guarantee">✅ Pré-inscription gratuite et sans engagement</p>
+            <ul class="card-features">
+              <li><span class="chk">✓</span> 10 modules structurés</li>
+              <li><span class="chk">✓</span> Accès 3 mois après ouverture</li>
+              <li><span class="chk">✓</span> 100 % en ligne, à votre rythme</li>
+              <li><span class="chk">✓</span> Orienté insertion professionnelle</li>
+              <li><span class="chk">✓</span> Association déclarée · SIREN 902 349 943</li>
+            </ul>
+          </div>
+        </div>
+      </div>
     </div>
-  </header>
+  </section>
 
-  <main id="app">
-    
-    <!-- PAGE: INDEX -->
-    <section id="index" class="page-section active">
-      <div class="hero">
-        <div class="container">
-          <div class="hero-content">
-            <h1>Apprenez le français professionnel en ligne</h1>
-            <p>Des formations accessibles pour adultes : niveaux A1, A2, insertion professionnelle et reconversion. Apprenez à votre rythme avec LOGIX FORMA.</p>
-            <div style="display: flex; gap: 16px;">
-              <a href="#formations" class="btn btn-primary" style="padding: 14px 32px; font-size: 1.1rem;">Voir les formations</a>
-              <a href="#" class="btn btn-ghost" style="padding: 14px 32px; font-size: 1.1rem;" onclick="navigate('contact')">Nous contacter</a>
+  <!-- TRUST BAR -->
+  <div class="trust-bar">
+    <div class="container">
+      <div class="trust-items">
+        <div class="trust-item"><div class="trust-icon">🏛️</div><div><strong>Association déclarée</strong><span>SIREN 902 349 943</span></div></div>
+        <div class="trust-item"><div class="trust-icon">⚙️</div><div><strong>Ouverture progressive</strong><span>Contenus finalisés étape par étape</span></div></div>
+        <div class="trust-item"><div class="trust-icon">📩</div><div><strong>Accès prioritaire</strong><span>Pré-inscription gratuite</span></div></div>
+        <div class="trust-item"><div class="trust-icon">💻</div><div><strong>100 % en ligne</strong><span>Accessible depuis chez vous</span></div></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- FORMATIONS -->
+  <section class="section" id="formations">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-label">Nos formations</span>
+        <h2 class="section-title">Choisissez votre parcours</h2>
+        <p class="section-sub">Les premiers parcours sont finalisés progressivement. Les personnes pré-inscrites sont informées en priorité dès l'ouverture.</p>
+      </div>
+      <div class="courses-grid">
+        <article class="course-card">
+          <div class="course-thumb-inner thumb-a1"><span style="position:relative;z-index:1">🇫🇷</span><span class="course-badge badge-priority">⭐ Accès prioritaire</span></div>
+          <div class="course-body">
+            <div class="course-category">Français professionnel</div>
+            <h3 class="course-title">Français A1 — Niveau débutant</h3>
+            <p class="course-desc">Démarrez le français avec une progression claire, utile dans la vie quotidienne et dans les premières situations professionnelles.</p>
+            <div class="course-instructor">Par <strong>Moctar TOURÉ</strong> · Directeur pédagogique</div>
+            <div class="stars"><span class="star">★</span><span class="star">★</span><span class="star">★</span><span class="star">★</span><span class="star">★</span><span class="rating">5.0</span><span class="count">(ouverture à venir)</span></div>
+            <div class="course-tags"><span class="course-tag">10 modules</span><span class="course-tag">3 mois d'accès</span><span class="course-tag">En ligne</span></div>
+            <div class="course-footer">
+              <div class="course-price">29 <span style="font-size:1rem;font-weight:600">€</span></div>
+              <a onclick="document.getElementById('acces-prioritaire').scrollIntoView({behavior:'smooth'})" class="btn-enroll" style="cursor:pointer">S'inscrire en priorité</a>
             </div>
           </div>
+        </article>
+        <article class="course-card">
+          <div class="course-thumb-inner thumb-a2"><span style="position:relative;z-index:1">📈</span><span class="course-badge badge-new">Nouveau</span></div>
+          <div class="course-body">
+            <div class="course-category">Français professionnel</div>
+            <h3 class="course-title">Français A2 — Niveau élémentaire</h3>
+            <p class="course-desc">Renforcez votre autonomie, communiquez dans des situations plus variées et progressez avec plus d'assurance au travail.</p>
+            <div class="course-instructor">Par <strong>Moctar TOURÉ</strong> · Directeur pédagogique</div>
+            <div class="stars"><span class="star">★</span><span class="star">★</span><span class="star">★</span><span class="star">★</span><span class="star">★</span><span class="rating">5.0</span><span class="count">(ouverture à venir)</span></div>
+            <div class="course-tags"><span class="course-tag">10 modules</span><span class="course-tag">3 mois d'accès</span><span class="course-tag">En ligne</span></div>
+            <div class="course-footer">
+              <div class="course-price">29 <span style="font-size:1rem;font-weight:600">€</span></div>
+              <a onclick="document.getElementById('acces-prioritaire').scrollIntoView({behavior:'smooth'})" class="btn-enroll" style="cursor:pointer">S'inscrire en priorité</a>
+            </div>
+          </div>
+        </article>
+        <article class="course-card">
+          <div class="course-thumb-inner thumb-num"><span style="position:relative;z-index:1">💻</span><span class="course-badge badge-soon">En préparation</span></div>
+          <div class="course-body">
+            <div class="course-category">Compétences numériques</div>
+            <h3 class="course-title">Compétences Numériques & IA pour l'emploi</h3>
+            <p class="course-desc">Maîtrisez les outils numériques essentiels et découvrez l'intelligence artificielle pour booster votre employabilité.</p>
+            <div class="course-instructor">Par <strong>l'équipe LOGIX FORMA</strong></div>
+            <div class="course-tags"><span class="course-tag">À venir</span><span class="course-tag">Numérique</span><span class="course-tag">IA</span></div>
+            <div class="course-footer"><div style="font-size:0.88rem;color:var(--text-3);">Tarif à annoncer</div><a onclick="document.getElementById('acces-prioritaire').scrollIntoView({behavior:'smooth'})" class="btn-enroll" style="background:var(--green);cursor:pointer">Me tenir informé</a></div>
+          </div>
+        </article>
+        <article class="course-card">
+          <div class="course-thumb-inner thumb-proj"><span style="position:relative;z-index:1">🛠️</span><span class="course-badge badge-prep">En préparation</span></div>
+          <div class="course-body">
+            <div class="course-category">Gestion & Management</div>
+            <h3 class="course-title">Gestion de projet agile</h3>
+            <p class="course-desc">Apprenez les méthodes agiles pour piloter des projets efficacement et progresser vers des rôles à responsabilité.</p>
+            <div class="course-instructor">Par <strong>l'équipe LOGIX FORMA</strong></div>
+            <div class="course-tags"><span class="course-tag">À venir</span><span class="course-tag">Gestion</span><span class="course-tag">Management</span></div>
+            <div class="course-footer"><div style="font-size:0.88rem;color:var(--text-3);">Tarif à annoncer</div><a onclick="document.getElementById('acces-prioritaire').scrollIntoView({behavior:'smooth'})" class="btn-enroll" style="background:var(--green);cursor:pointer">Me tenir informé</a></div>
+          </div>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- STATS -->
+  <div class="stats-band">
+    <div class="container">
+      <div class="stats-grid">
+        <div><div class="stat-num">2</div><div class="stat-label">Formations au lancement</div><div class="stat-divider"></div></div>
+        <div><div class="stat-num">10</div><div class="stat-label">Modules par parcours</div><div class="stat-divider"></div></div>
+        <div><div class="stat-num">29€</div><div class="stat-label">Par formation</div><div class="stat-divider"></div></div>
+        <div><div class="stat-num">100%</div><div class="stat-label">En ligne, à votre rythme</div><div class="stat-divider"></div></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- FEATURES -->
+  <section class="section bg-white">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-label">Nos engagements</span>
+        <h2 class="section-title">Pourquoi choisir LOGIX FORMA ?</h2>
+        <p class="section-sub">Une pédagogie pensée pour l'autonomie, la progression et la vie professionnelle réelle.</p>
+      </div>
+      <div class="features-grid">
+        <div class="feature-card"><div class="feature-icon">💻</div><h3>100 % en ligne</h3><p>Accédez à vos contenus depuis chez vous, 24h/24 et 7j/7, depuis n'importe quel appareil.</p></div>
+        <div class="feature-card"><div class="feature-icon">⏱️</div><h3>Apprentissage autonome</h3><p>Progressez sans contrainte d'horaire avec un parcours clair et structuré.</p></div>
+        <div class="feature-card"><div class="feature-icon">🎯</div><h3>Orienté emploi</h3><p>Des contenus pensés pour l'insertion, la reconversion et l'évolution professionnelle.</p></div>
+        <div class="feature-card"><div class="feature-icon">💶</div><h3>Tarif accessible</h3><p>29 € par formation, sans abonnement caché. Un prix unique, simple et transparent.</p></div>
+        <div class="feature-card"><div class="feature-icon">📚</div><h3>Parcours progressifs</h3><p>Des modules organisés étape par étape pour avancer avec méthode et confiance.</p></div>
+        <div class="feature-card"><div class="feature-icon">🔍</div><h3>Transparence totale</h3><p>Communication claire sur les formations, l'état d'avancement et les modalités.</p></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ABOUT -->
+  <section class="section" id="about">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-label">Qui sommes-nous</span>
+        <h2 class="section-title">À propos de LOGIX FORMA</h2>
+      </div>
+      <div class="about-split">
+        <div class="about-text">
+          <p><strong>LOGIX FORMA</strong> est une association loi 1901 dédiée à la formation en ligne pour adultes. Sa mission est d'accompagner les apprenants dans le développement de leurs compétences, l'autonomie linguistique, l'insertion professionnelle, la reconversion et la progression durable.</p>
+          <p>L'association développe des parcours à distance, accessibles, progressifs et structurés, avec une priorité donnée à l'utilité professionnelle, à la clarté pédagogique et à l'accessibilité financière.</p>
+          <p>LOGIX FORMA préfère mettre ses formations en ligne au fur et à mesure de leur finalisation plutôt que d'annoncer une date artificielle. Cette approche garantit une meilleure qualité pédagogique dès la mise à disposition.</p>
+          <div class="team-grid">
+            <div class="team-card"><div class="team-avatar">MF</div><div class="team-info"><h4>Missade FOFANA</h4><p>Présidente de l'association</p></div></div>
+            <div class="team-card"><div class="team-avatar">AT</div><div class="team-info"><h4>Aboubacar-Dao TOURÉ</h4><p>Trésorier</p></div></div>
+            <div class="team-card"><div class="team-avatar">MT</div><div class="team-info"><h4>Moctar TOURÉ</h4><p>Directeur pédagogique</p></div></div>
+          </div>
         </div>
-        <div class="hero-image-wrapper">
-          <img src="https://image.qwenlm.ai/public_source/9d725cac-fcec-4e03-889d-6271b736b2a9/19c9bf0d1-e769-42d3-87a9-b90a9e7b463b.png" alt="Étudiants en ligne">
+        <div class="about-side">
+          <div class="info-card"><h4>🏛️ Informations légales</h4><p><strong>SIREN :</strong> 902 349 943</p><p><strong>RNA :</strong> W931025228</p><p style="margin-top:8px">Association de formation en ligne pour adultes, orientée vers l'employabilité et la montée en compétences.</p></div>
+          <div class="info-card"><h4>✅ Ce que vous obtenez</h4><ul><li>Accès prioritaire avant le public général</li><li>Informations sur la formation visée</li><li>Suivi de l'ouverture progressive</li><li>Recontact selon votre profil et vos objectifs</li></ul></div>
+          <div class="info-card"><h4>💶 Tarifs annoncés</h4><p><strong>Français A1 :</strong> 29 € la formation</p><p><strong>Français A2 :</strong> 29 € la formation</p><p style="margin-top:8px;font-size:0.82rem;color:var(--text-4)">Les modalités peuvent évoluer au fur et à mesure de la structuration de l'offre.</p></div>
         </div>
       </div>
+    </div>
+  </section>
 
-      <div class="section" id="formations">
-        <div class="container">
-          <div class="section-header">
-            <h2 class="section-title">Nos formations à venir</h2>
-            <p class="section-subtitle">Inscrivez-vous pour être informé en priorité de l'ouverture des parcours.</p>
-          </div>
-
-          <div class="course-grid">
-            <!-- Card 1 -->
-            <article class="course-card">
-              <img src="https://image.qwenlm.ai/public_source/9d725cac-fcec-4e03-889d-6271b736b2a9/166b98cd3-68a7-478d-9ac5-335e14593d40.png" alt="Français A1" class="course-image">
-              <div class="course-content">
-                <h3 class="course-title">Français professionnel — Niveau A1 : Les bases essentielles</h3>
-                <div class="course-instructor">LOGIX FORMA</div>
-                <div class="course-meta">
-                  <span class="coming-soon-badge">À venir</span>
-                </div>
-                <div class="course-price-row">
-                  <span class="price">Bientôt disponible</span>
-                </div>
-              </div>
-            </article>
-
-            <!-- Card 2 -->
-            <article class="course-card">
-              <img src="https://image.qwenlm.ai/public_source/9d725cac-fcec-4e03-889d-6271b736b2a9/17b8d227d-7390-43a3-bee9-5426e4c90762.png" alt="Français A2" class="course-image">
-              <div class="course-content">
-                <h3 class="course-title">Français professionnel — Niveau A2 : Communication avancée</h3>
-                <div class="course-instructor">LOGIX FORMA</div>
-                <div class="course-meta">
-                  <span class="coming-soon-badge">À venir</span>
-                </div>
-                <div class="course-price-row">
-                  <span class="price">Bientôt disponible</span>
-                </div>
-              </div>
-            </article>
-
-            <!-- Card 3 -->
-            <article class="course-card">
-              <img src="https://image.qwenlm.ai/public_source/9d725cac-fcec-4e03-889d-6271b736b2a9/1ce7edf3a-3184-4ca6-8b67-d9a78a4a58ca.png" alt="Numérique" class="course-image">
-              <div class="course-content">
-                <h3 class="course-title">Compétences Numériques & IA pour l'emploi</h3>
-                <div class="course-instructor">LOGIX FORMA</div>
-                <div class="course-meta">
-                  <span class="coming-soon-badge">À venir</span>
-                </div>
-                <div class="course-price-row">
-                  <span class="price">Bientôt disponible</span>
-                </div>
-              </div>
-            </article>
-
-            <!-- Card 4 -->
-            <article class="course-card">
-              <div style="width:100%; aspect-ratio:16/9; background:#e5e8f2; display:flex; align-items:center; justify-content:center; color:#929497;">
-                <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                  <circle cx="12" cy="12" r="10"/>
-                  <path d="M12 6v6l4 2"/>
-                </svg>
-              </div>
-              <div class="course-content">
-                <h3 class="course-title">Gestion de projet agile</h3>
-                <div class="course-instructor">LOGIX FORMA</div>
-                <div class="course-meta">
-                  <span class="coming-soon-badge">En préparation</span>
-                </div>
-                <div class="course-price-row">
-                  <span class="price">Bientôt disponible</span>
-                </div>
-              </div>
-            </article>
-          </div>
-
-          <!-- Priority Banner -->
-          <div class="priority-banner">
-            <h2>📩 Accès prioritaire</h2>
-            <p>Soyez les premiers informés de l'ouverture des formations. Inscrivez-vous gratuitement pour recevoir une notification avant tout le monde.</p>
-            <a href="#acces-prioritaire" class="btn btn-ghost" style="background: white; color: var(--logo-blue);">Demander l'accès prioritaire</a>
-          </div>
-        </div>
+  <!-- BLOG -->
+  <section class="section bg-white">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-label">Ressources</span>
+        <h2 class="section-title">Le blog LOGIX FORMA</h2>
+        <p class="section-sub">Des articles écrits par <strong>Moctar TOURÉ — Directeur pédagogique</strong> pour accompagner la reconversion et l'apprentissage du français.</p>
       </div>
-
-      <!-- Priority Access Form Section -->
-      <div class="section" id="acces-prioritaire">
-        <div class="container">
-          <div class="section-header" style="text-align: center;">
-            <h2 class="section-title">Demandez un accès prioritaire</h2>
-            <p class="section-subtitle">Soyez informé en premier lorsque les nouveaux parcours seront disponibles.</p>
-          </div>
-          <div class="form-container">
-            <form action="https://formspree.io/f/mjgpekwe" method="POST">
-              <input type="hidden" name="_subject" value="Nouvelle demande d'accès prioritaire LOGIX FORMA">
-              <input type="hidden" name="type_demande" value="acces_prioritaire">
-
-              <div class="form-group">
-                <label for="ap-prenom">Prénom *</label>
-                <input type="text" id="ap-prenom" name="prenom" class="form-control" required>
-              </div>
-
-              <div class="form-group">
-                <label for="ap-nom">Nom *</label>
-                <input type="text" id="ap-nom" name="nom" class="form-control" required>
-              </div>
-
-              <div class="form-group">
-                <label for="ap-email">Email *</label>
-                <input type="email" id="ap-email" name="email" class="form-control" required>
-              </div>
-
-              <div class="form-group">
-                <label for="ap-telephone">Téléphone</label>
-                <input type="tel" id="ap-telephone" name="telephone" class="form-control">
-              </div>
-
-              <div class="form-group">
-                <label for="ap-formation">Formation souhaitée</label>
-                <select id="ap-formation" name="formation" class="form-control">
-                  <option value="Français A1">Français A1</option>
-                  <option value="Français A2">Français A2</option>
-                  <option value="Information générale">Information générale</option>
-                </select>
-              </div>
-
-              <div class="form-group">
-                <label for="ap-message">Message</label>
-                <textarea id="ap-message" name="message" class="form-control" placeholder="Votre situation, vos besoins, vos objectifs..."></textarea>
-              </div>
-
-              <div class="checkbox-group">
-                <input type="checkbox" id="ap-consent" name="consent" required>
-                <label for="ap-consent">J'accepte d'être recontacté par LOGIX FORMA au sujet de ma demande.</label>
-              </div>
-
-              <button type="submit" class="btn btn-primary" style="width: 100%;">Demander l'accès prioritaire</button>
-            </form>
-          </div>
-        </div>
+      <div class="blog-grid">
+        <a href="blog.html#article-1" class="blog-card"><div class="blog-thumb bt1">💼</div><div class="blog-body"><div class="blog-cat">Reconversion</div><h3 class="blog-title">Comment financer sa reconversion professionnelle</h3><p class="blog-excerpt">Clarifier son projet, comprendre les possibilités et avancer avec une logique réaliste.</p><span class="blog-link">Lire l'article →</span></div></a>
+        <a href="blog.html#article-2" class="blog-card"><div class="blog-thumb bt2">📊</div><div class="blog-body"><div class="blog-cat">Employabilité</div><h3 class="blog-title">Pourquoi la montée en compétences reste un levier d'employabilité</h3><p class="blog-excerpt">Renforcer sa place sur le marché du travail grâce à des compétences plus utiles.</p><span class="blog-link">Lire l'article →</span></div></a>
+        <a href="blog.html#article-3" class="blog-card"><div class="blog-thumb bt3">🗣️</div><div class="blog-body"><div class="blog-cat">Apprentissage</div><h3 class="blog-title">Apprendre le français pour gagner en autonomie professionnelle</h3><p class="blog-excerpt">Comprendre, répondre, interagir et progresser dans des situations concrètes.</p><span class="blog-link">Lire l'article →</span></div></a>
+        <a href="blog.html#article-4" class="blog-card"><div class="blog-thumb bt4">🚀</div><div class="blog-body"><div class="blog-cat">Transition</div><h3 class="blog-title">Changer de trajectoire sans tout bouleverser d'un coup</h3><p class="blog-excerpt">Construire une transition progressive, cohérente et réaliste sans rupture brutale.</p><span class="blog-link">Lire l'article →</span></div></a>
       </div>
+    </div>
+  </section>
 
-      <div class="section features-section">
-        <div class="container">
-          <div class="features-grid">
-            <div class="feature-item">
-              <div class="feature-icon">💻</div>
-              <h3>100% En ligne</h3>
-              <p>Accédez aux cours depuis chez vous, 24h/24 et 7j/7.</p>
-            </div>
-            <div class="feature-item">
-              <div class="feature-icon">⏱️</div>
-              <h3>À votre rythme</h3>
-              <p>Progressez sans contrainte d'horaire avec un parcours structuré.</p>
-            </div>
-            <div class="feature-item">
-              <div class="feature-icon">🎯</div>
-              <h3>Orientation Pro</h3>
-              <p>Des contenus pensés pour l'insertion et l'évolution de carrière.</p>
-            </div>
-            <div class="feature-item">
-              <div class="feature-icon">📜</div>
-              <h3>Association</h3>
-              <p>Structure juridique déclarée (SIREN 902 349 943).</p>
-            </div>
-          </div>
+  <!-- ACCÈS PRIORITAIRE -->
+  <div class="form-section-bg" id="acces-prioritaire">
+    <div class="container">
+      <div class="form-grid">
+        <div class="form-info">
+          <h2>Rejoignez les premiers inscrits</h2>
+          <p>Soyez informé avant l'ouverture au public général. Remplissez le formulaire pour être placé parmi les personnes contactées en priorité.</p>
+          <ul class="perk-list">
+            <li><span class="perk-check">✓</span>Être informé avant le public général</li>
+            <li><span class="perk-check">✓</span>Recevoir les informations sur la formation visée</li>
+            <li><span class="perk-check">✓</span>Suivre l'ouverture progressive des parcours</li>
+            <li><span class="perk-check">✓</span>Être recontacté selon votre profil et votre objectif</li>
+          </ul>
         </div>
-      </div>
-    </section>
-
-    <!-- PAGE: CONTACT -->
-    <section id="contact" class="page-section">
-      <div class="container" style="padding-top: 60px;">
-        <div class="section-header" style="text-align: center;">
-          <h2 class="section-title">Nous contacter</h2>
-          <p class="section-subtitle">Une question ? Utilisez le formulaire ci-dessous.</p>
-        </div>
-        <div class="form-container">
+        <div class="form-box">
+          <h3>Formulaire d'accès prioritaire</h3>
+          <p class="form-sub">Pré-inscription gratuite et sans engagement.</p>
           <form action="https://formspree.io/f/mjgpekwe" method="POST">
-            <input type="hidden" name="_subject" value="Nouveau message de contact LOGIX FORMA">
-            <input type="hidden" name="type_demande" value="contact">
-
-            <div class="form-group">
-              <label for="ct-prenom">Prénom *</label>
-              <input type="text" id="ct-prenom" name="prenom" class="form-control" required>
+            <input type="hidden" name="source" value="site_logix_forma">
+            <input type="hidden" name="type_demande" value="acces_prioritaire">
+            <input type="hidden" name="_next" value="https://logixforma.com/merci.html">
+            <input type="hidden" name="_subject" value="Nouvelle demande d'accès prioritaire — LOGIX FORMA">
+            <div class="form-row">
+              <div class="form-group"><label for="ap-prenom">Prénom *</label><input type="text" id="ap-prenom" name="prenom" required placeholder="Marie"></div>
+              <div class="form-group"><label for="ap-nom">Nom *</label><input type="text" id="ap-nom" name="nom" required placeholder="Dupont"></div>
             </div>
-
-            <div class="form-group">
-              <label for="ct-nom">Nom *</label>
-              <input type="text" id="ct-nom" name="nom" class="form-control" required>
-            </div>
-
-            <div class="form-group">
-              <label for="ct-email">Email *</label>
-              <input type="email" id="ct-email" name="email" class="form-control" required>
-            </div>
-
-            <div class="form-group">
-              <label for="ct-telephone">Téléphone</label>
-              <input type="tel" id="ct-telephone" name="telephone" class="form-control">
-            </div>
-
-            <div class="form-group">
-              <label for="ct-sujet">Sujet *</label>
-              <select id="ct-sujet" name="sujet" class="form-control" required>
-                <option value="Information générale">Information générale</option>
-                <option value="Partenariat">Partenariat</option>
-                <option value="Demande pédagogique">Demande pédagogique</option>
-                <option value="Autre">Autre</option>
-              </select>
-            </div>
-
-            <div class="form-group">
-              <label for="ct-message">Message *</label>
-              <textarea id="ct-message" name="message" class="form-control" placeholder="Expliquez votre demande..." required></textarea>
-            </div>
-
-            <div class="checkbox-group">
-              <input type="checkbox" id="ct-consent" name="consent" required>
-              <label for="ct-consent">J'accepte d'être recontacté par LOGIX FORMA au sujet de ma demande.</label>
-            </div>
-
-            <button type="submit" class="btn btn-primary" style="width: 100%;">Envoyer le message</button>
+            <div class="form-group"><label for="ap-email">Email *</label><input type="email" id="ap-email" name="email" required placeholder="marie@exemple.fr"></div>
+            <div class="form-group"><label for="ap-tel">Téléphone</label><input type="tel" id="ap-tel" name="telephone" placeholder="06 XX XX XX XX"></div>
+            <div class="form-group"><label for="ap-formation">Formation souhaitée</label><select id="ap-formation" name="formation"><option value="Français A1">Français A1</option><option value="Français A2">Français A2</option><option value="Information générale">Information générale</option></select></div>
+            <div class="form-group"><label for="ap-message">Message</label><textarea id="ap-message" name="message" placeholder="Votre situation, vos besoins, vos objectifs…"></textarea></div>
+            <label class="checkbox-row"><input type="checkbox" required><span>J'accepte d'être recontacté par LOGIX FORMA au sujet de ma demande.</span></label>
+            <button type="submit" class="btn btn-navy" style="width:100%;font-size:1rem;padding:14px">Je demande un accès prioritaire →</button>
           </form>
         </div>
       </div>
-    </section>
+    </div>
+  </div>
 
-    <!-- PAGE: MERCI -->
-    <section id="merci" class="page-section">
-      <div class="container" style="padding-top: 100px; text-align: center;">
-        <div style="font-size: 4rem; margin-bottom: 20px;">✅</div>
-        <h2 class="section-title">Message envoyé !</h2>
-        <p class="section-subtitle" style="margin-bottom: 30px;">Merci de nous avoir contactés. Nous vous répondrons sous 24h.</p>
-        <a href="#" onclick="navigate('index')" class="btn btn-ghost">Retour à l'accueil</a>
-      </div>
-    </section>
-
-    <!-- PAGE: MENTIONS LEGALES -->
-    <section id="mentions-legales" class="page-section">
-      <div class="container" style="padding-top: 60px;">
-        <div class="legal-content">
-          <h2>Mentions Légales</h2>
-          <p>Conformément aux dispositions de la loi n° 2004-575 du 21 juin 2004 pour la confiance en l'économie numérique, il est précisé aux utilisateurs du site LOGIX FORMA l'identité des différents intervenants dans le cadre de sa réalisation et de son suivi.</p>
-          
-          <h3>1. Édition du site</h3>
-          <p>Le présent site est édité par l'association LOGIX FORMA.</p>
-          <ul>
-            <li>SIREN : 902 349 943</li>
-            <li>RNA : W931025228</li>
-            <li>Siège social : France</li>
-            <li>Email : logix.forma@gmail.com</li>
-          </ul>
-
-          <h3>2. Hébergement</h3>
-          <p>Le site est hébergé par [Nom de l'hébergeur], situé à [Adresse de l'hébergeur].</p>
-
-          <h3>3. Propriété intellectuelle</h3>
-          <p>L'ensemble de ce site relève de la législation française et internationale sur le droit d'auteur et la propriété intellectuelle. Tous les droits de reproduction sont réservés.</p>
-        </div>
-      </div>
-    </section>
-
-    <!-- PAGE: CGU -->
-    <section id="cgu" class="page-section">
-      <div class="container" style="padding-top: 60px;">
-        <div class="legal-content">
-          <h2>Conditions Générales d'Utilisation (CGU)</h2>
-          <p>L'utilisation du site LOGIX FORMA implique l'acceptation pleine et entière des conditions générales d'utilisation ci-après décrites.</p>
-
-          <h3>1. Objet</h3>
-          <p>Les présentes CGU ont pour objet de définir les modalités de mise à disposition des services du site et les conditions d'utilisation par l'Utilisateur.</p>
-
-          <h3>2. Accès au site</h3>
-          <p>Le site est accessible par tout endroit, 7j/7, 24h/24 sauf cas de force majeure, interruption programmée ou non et pouvant découlant d'une nécessité de maintenance.</p>
-
-          <h3>3. Propriété intellectuelle</h3>
-          <p>Les marques, logos, signes ainsi que tous les contenus du site (textes, images, son…) font l'objet d'une protection par le Code de la propriété intellectuelle et plus particulièrement par le droit d'auteur.</p>
-        </div>
-      </div>
-    </section>
-
-    <!-- PAGE: POLITIQUE DE CONFIDENTIALITE -->
-    <section id="politique-confidentialite" class="page-section">
-      <div class="container" style="padding-top: 60px;">
-        <div class="legal-content">
-          <h2>Politique de Confidentialité</h2>
-          <p>LOGIX FORMA attache une grande importance à la protection des données personnelles de ses utilisateurs.</p>
-
-          <h3>1. Collecte des données</h3>
-          <p>Les données collectées sont principalement : Nom, Prénom, Adresse email, Téléphone. Ces données sont nécessaires pour la gestion des inscriptions et le suivi pédagogique.</p>
-
-          <h3>2. Utilisation des données</h3>
-          <p>Les données sont utilisées pour :<br>
-          - La gestion administrative des formations.<br>
-          - L'envoi de newsletters (avec accord explicite).<br>
-          - L'amélioration de nos services.</p>
-
-          <h3>3. Vos droits</h3>
-          <p>Conformément au RGPD, vous disposez d'un droit d'accès, de rectification et de suppression de vos données. Pour l'exercer, contactez-nous à logix.forma@gmail.com.</p>
-        </div>
-      </div>
-    </section>
-
-    <!-- PAGE: COOKIES -->
-    <section id="cookies" class="page-section">
-      <div class="container" style="padding-top: 60px;">
-        <div class="legal-content">
-          <h2>Politique relative aux Cookies</h2>
-          <p>Un cookie est un fichier texte susceptible d'être enregistré dans un espace dédié du disque dur de votre terminal (ordinateur, tablette, mobile...) lors de la visite d'un site ou de la consultation d'une publicité.</p>
-
-          <h3>1. Types de cookies utilisés</h3>
-          <ul>
-            <li><strong>Cookies de fonctionnement :</strong> Indispensables au bon fonctionnement du site.</li>
-            <li><strong>Cookies d'analyse :</strong> Nous permettent de mesurer l'audience du site.</li>
-          </ul>
-
-          <h3>2. Gestion des cookies</h3>
-          <p>Vous pouvez configurer votre navigateur pour accepter ou refuser les cookies. Cependant, le refus peut limiter certaines fonctionnalités du site.</p>
-        </div>
-      </div>
-    </section>
-
-    <!-- PAGE: ACCESSIBILITE -->
-    <section id="accessibilite" class="page-section">
-      <div class="container" style="padding-top: 60px;">
-        <div class="legal-content">
-          <h2>Déclaration d'Accessibilité</h2>
-          <p>LOGIX FORMA s'engage à rendre son site accessible, conformément à l'article 47 de la loi n° 2005-102 du 11 février 2005.</p>
-
-          <h3>1. État de conformité</h3>
-          <p>Le site LOGIX FORMA est partiellement conforme au RGAA 4.1 en raison des non-conformités et des dérogations énumérées ci-dessous.</p>
-
-          <h3>2. Contenu non accessible</h3>
-          <ul>
-            <li>Certains contenus multimédias ne disposent pas encore de transcriptions textuelles complètes.</li>
-            <li>Quelques contrastes de couleurs sur les anciens éléments graphiques sont en cours de correction.</li>
-          </ul>
-
-          <h3>3. Signaler un dysfonctionnement</h3>
-          <p>Si vous rencontrez un défaut d'accessibilité, vous pouvez nous le signaler à logix.forma@gmail.com.</p>
-        </div>
-      </div>
-    </section>
-
-    <!-- PAGE: SECURITE -->
-    <section id="securite" class="page-section">
-      <div class="container" style="padding-top: 60px;">
-        <div class="legal-content">
-          <h2>Sécurité des Données</h2>
-          <p>La sécurité de vos données est une priorité absolue pour LOGIX FORMA.</p>
-
-          <h3>1. Mesures techniques</h3>
-          <p>Nous utilisons le protocole HTTPS pour chiffrer les échanges de données entre votre navigateur et notre serveur. Nos bases de données sont sécurisées et accessibles uniquement au personnel autorisé.</p>
-
-          <h3>2. Vigilance</h3>
-          <p>Nous surveillons activement nos systèmes pour prévenir toute tentative d'intrusion ou de fraude. En cas de faille de sécurité avérée, nous nous engageons à informer les utilisateurs concernés dans les délais légaux.</p>
-        </div>
-      </div>
-    </section>
-
-  </main>
-
-  <!-- Footer -->
-  <footer>
+  <!-- SEO -->
+  <section style="padding:48px 0">
     <div class="container">
-      <div class="footer-grid">
-        <div class="footer-col">
-          <h4>LOGIX FORMA</h4>
-          <ul>
-            <li><a href="#" onclick="navigate('index')">À propos</a></li>
-            <li><a href="#" onclick="navigate('contact')">Contact</a></li>
-          </ul>
-        </div>
-        <div class="footer-col">
-          <h4>Découvrir</h4>
-          <ul>
-            <li><a href="#formations" onclick="navigate('index'); setTimeout(() => document.getElementById('formations').scrollIntoView(), 100)">Nos formations</a></li>
-            <li><a href="blog.html">Blog</a></li>
-          </ul>
-        </div>
-        <div class="footer-col">
-          <h4>Légal</h4>
-          <ul>
-            <li><a href="#" onclick="navigate('cgu')">Conditions d'utilisation</a></li>
-            <li><a href="#" onclick="navigate('politique-confidentialite')">Politique de confidentialité</a></li>
-            <li><a href="#" onclick="navigate('accessibilite')">Accessibilité</a></li>
-            <li><a href="#" onclick="navigate('mentions-legales')">Mentions légales</a></li>
-            <li><a href="#" onclick="navigate('cookies')">Cookies</a></li>
-            <li><a href="#" onclick="navigate('securite')">Sécurité</a></li>
-          </ul>
-        </div>
-      </div>
-      <div class="footer-bottom">
-        © 2026 LOGIX FORMA — Tous droits réservés
+      <div class="seo-block">
+        <h2>Pourquoi suivre une formation en français en ligne ?</h2>
+        <p>Une formation en français en ligne permet d'apprendre à son rythme, sans contrainte d'horaire. Elle s'adapte aux besoins des adultes souhaitant progresser dans leur vie professionnelle.</p>
+        <p>Les niveaux A1 et A2 correspondent aux bases essentielles pour comprendre, communiquer et évoluer dans des situations concrètes du quotidien et du travail.</p>
+        <p>LOGIX FORMA propose des parcours structurés, accessibles et orientés vers l'insertion professionnelle.</p>
       </div>
     </div>
-  </footer>
+  </section>
 
-  <script>
-    // Simple Single Page Application Router
-    function navigate(pageId) {
-      // Hide all sections
-      document.querySelectorAll('.page-section').forEach(section => {
-        section.classList.remove('active');
-      });
-      
-      // Show target section
-      const target = document.getElementById(pageId);
-      if (target) {
-        target.classList.add('active');
-        window.scrollTo(0, 0);
-      }
+  <!-- CTA BAND -->
+  <div class="cta-band">
+    <div class="container">
+      <h2>Prêt à commencer votre apprentissage ?</h2>
+      <p>Rejoignez les premières personnes informées et démarrez votre progression dès l'ouverture des parcours LOGIX FORMA.</p>
+      <div class="cta-btns">
+        <a onclick="document.getElementById('formations').scrollIntoView({behavior:'smooth'})" class="btn btn-yellow" style="cursor:pointer">Voir les formations</a>
+        <a onclick="document.getElementById('acces-prioritaire').scrollIntoView({behavior:'smooth'})" class="btn btn-white" style="cursor:pointer">Accès prioritaire gratuit</a>
+      </div>
+    </div>
+  </div>
 
-      // Update Nav Active State
-      document.querySelectorAll('.nav-links a').forEach(link => {
-        link.classList.remove('active');
-        if(link.getAttribute('onclick') && link.getAttribute('onclick').includes(pageId)) {
-          link.classList.add('active');
-        }
-      });
-    }
-  </script>
+</div><!-- /page-home -->
+
+<!-- ═══════════ PAGE : CONTACT ═══════════ -->
+<div id="page-contact" class="page-section">
+  <section class="section">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-label">Nous contacter</span>
+        <h2 class="section-title">Une question ? Écrivez-nous</h2>
+        <p class="section-sub">Pour toute demande générale, partenariat ou information spécifique sur nos formations.</p>
+      </div>
+      <div class="contact-layout">
+        <div class="contact-side">
+          <div class="contact-card"><h4>📧 Email</h4><p><strong>logix.forma@gmail.com</strong></p><p>Réponse selon la nature de la demande.</p></div>
+          <div class="contact-card"><h4>🎓 Formations concernées</h4><p>Français professionnel A1 et A2</p><p>Autres parcours en préparation</p></div>
+          <div class="contact-card"><h4>💶 Tarifs annoncés</h4><p><strong>29 €</strong> la formation A1</p><p><strong>29 €</strong> la formation A2</p></div>
+          <div class="contact-card"><h4>⚠️ Information importante</h4><p>Site en ouverture progressive. Les modalités peuvent évoluer au fur et à mesure de la structuration de l'offre.</p></div>
+        </div>
+        <div class="form-box" style="box-shadow:var(--shadow-md)">
+          <h3>Formulaire de contact</h3>
+          <p class="form-sub">Toute demande générale, partenariat ou demande spécifique.</p>
+          <form action="https://formspree.io/f/mjgpekwe" method="POST">
+            <input type="hidden" name="source" value="site_logix_forma">
+            <input type="hidden" name="type_demande" value="contact">
+            <input type="hidden" name="_next" value="https://logixforma.com/merci.html">
+            <input type="hidden" name="_subject" value="Nouveau message de contact — LOGIX FORMA">
+            <div class="form-row">
+              <div class="form-group"><label for="ct-prenom">Prénom *</label><input type="text" id="ct-prenom" name="prenom" required></div>
+              <div class="form-group"><label for="ct-nom">Nom *</label><input type="text" id="ct-nom" name="nom" required></div>
+            </div>
+            <div class="form-group"><label for="ct-email">Email *</label><input type="email" id="ct-email" name="email" required></div>
+            <div class="form-group"><label for="ct-tel">Téléphone</label><input type="tel" id="ct-tel" name="telephone"></div>
+            <div class="form-row">
+              <div class="form-group"><label for="ct-formation">Formation concernée</label><select id="ct-formation" name="formation"><option value="Français A1">Français A1</option><option value="Français A2">Français A2</option><option value="Information générale">Information générale</option></select></div>
+              <div class="form-group"><label for="ct-sujet">Sujet *</label><select id="ct-sujet" name="sujet" required><option value="Information générale">Information générale</option><option value="Partenariat">Partenariat</option><option value="Demande pédagogique">Demande pédagogique</option><option value="Autre">Autre</option></select></div>
+            </div>
+            <div class="form-group"><label for="ct-message">Message *</label><textarea id="ct-message" name="message" placeholder="Expliquez votre demande…" required></textarea></div>
+            <label class="checkbox-row"><input type="checkbox" required><span>J'accepte d'être recontacté par LOGIX FORMA au sujet de ma demande.</span></label>
+            <button type="submit" class="btn btn-green" style="width:100%;font-size:1rem;padding:14px">Envoyer mon message →</button>
+          </form>
+        </div>
+      </div>
+    </div>
+  </section>
+</div>
+
+<!-- ═══════════ PAGE : MERCI ═══════════ -->
+<div id="page-merci" class="page-section">
+  <div class="merci-page">
+    <div class="container">
+      <div class="merci-icon">✅</div>
+      <h2 class="section-title" style="text-align:center;margin-bottom:12px">Message envoyé !</h2>
+      <p class="section-sub" style="text-align:center;margin:0 auto 32px">Merci de nous avoir contactés. Nous vous répondrons dans les meilleurs délais.</p>
+      <div style="text-align:center"><a onclick="navigate('home')" class="btn btn-navy" style="cursor:pointer">← Retour à l'accueil</a></div>
+    </div>
+  </div>
+</div>
+
+<!-- ═══════════ PAGE : MENTIONS LÉGALES ═══════════ -->
+<div id="page-mentions-legales" class="page-section">
+  <div class="legal-page"><div class="container"><div class="legal-box">
+    <h2>Mentions Légales</h2>
+    <p>Conformément aux dispositions de la loi n° 2004-575 du 21 juin 2004 pour la confiance en l'économie numérique, il est précisé aux utilisateurs du site LOGIX FORMA l'identité des différents intervenants dans le cadre de sa réalisation et de son suivi.</p>
+    <h3>1. Édition du site</h3>
+    <p>Le présent site est édité par l'association LOGIX FORMA.</p>
+    <ul><li>SIREN : 902 349 943</li><li>RNA : W931025228</li><li>Siège social : France</li><li>Email : logix.forma@gmail.com</li></ul>
+    <h3>2. Hébergement</h3>
+    <p>Le site est hébergé par un prestataire situé sur le territoire français.</p>
+    <h3>3. Propriété intellectuelle</h3>
+    <p>L'ensemble de ce site relève de la législation française et internationale sur le droit d'auteur et la propriété intellectuelle. Tous les droits de reproduction sont réservés.</p>
+    <h3>4. Responsabilité</h3>
+    <p>Les informations contenues sur ce site sont aussi précises que possible. LOGIX FORMA ne pourra être tenu responsable des omissions, des inexactitudes et des carences dans la mise à jour.</p>
+    <div style="margin-top:32px"><a onclick="navigate('home')" class="btn btn-ghost-navy" style="cursor:pointer">← Retour à l'accueil</a></div>
+  </div></div></div>
+</div>
+
+<!-- ═══════════ PAGE : CGU ═══════════ -->
+<div id="page-cgu" class="page-section">
+  <div class="legal-page"><div class="container"><div class="legal-box">
+    <h2>Conditions Générales d'Utilisation</h2>
+    <p>L'utilisation du site LOGIX FORMA implique l'acceptation pleine et entière des conditions générales d'utilisation ci-après décrites.</p>
+    <h3>1. Objet</h3>
+    <p>Les présentes CGU ont pour objet de définir les modalités de mise à disposition des services du site et les conditions d'utilisation par l'Utilisateur.</p>
+    <h3>2. Accès au site</h3>
+    <p>Le site est accessible par tout endroit, 7j/7, 24h/24 sauf cas de force majeure, interruption programmée ou non et pouvant découlant d'une nécessité de maintenance.</p>
+    <h3>3. Propriété intellectuelle</h3>
+    <p>Les marques, logos, signes ainsi que tous les contenus du site (textes, images, son…) font l'objet d'une protection par le Code de la propriété intellectuelle et plus particulièrement par le droit d'auteur.</p>
+    <h3>4. Limitations de responsabilité</h3>
+    <p>LOGIX FORMA ne pourra être tenu responsable des dommages directs et indirects causés au matériel de l'utilisateur, lors de l'accès au site, et résultant soit de l'utilisation d'un matériel ne répondant pas aux spécifications, soit de l'apparition d'un bug ou d'une incompatibilité.</p>
+    <div style="margin-top:32px"><a onclick="navigate('home')" class="btn btn-ghost-navy" style="cursor:pointer">← Retour à l'accueil</a></div>
+  </div></div></div>
+</div>
+
+<!-- ═══════════ PAGE : POLITIQUE DE CONFIDENTIALITÉ ═══════════ -->
+<div id="page-politique-confidentialite" class="page-section">
+  <div class="legal-page"><div class="container"><div class="legal-box">
+    <h2>Politique de Protection des Données Personnelles</h2>
+    <p>LOGIX FORMA attache une grande importance à la protection des données personnelles de ses utilisateurs, conformément au Règlement Général sur la Protection des Données (RGPD).</p>
+    <h3>1. Collecte des données</h3>
+    <p>Les données collectées sont principalement : Nom, Prénom, Adresse email, Téléphone. Ces données sont nécessaires pour la gestion des inscriptions et le suivi pédagogique.</p>
+    <h3>2. Utilisation des données</h3>
+    <ul><li>La gestion administrative des formations.</li><li>L'envoi d'informations (avec accord explicite).</li><li>L'amélioration de nos services.</li></ul>
+    <h3>3. Durée de conservation</h3>
+    <p>Les données sont conservées pendant la durée nécessaire à l'accomplissement des finalités pour lesquelles elles ont été collectées, et au maximum pendant 3 ans à compter du dernier contact.</p>
+    <h3>4. Vos droits</h3>
+    <p>Conformément au RGPD, vous disposez d'un droit d'accès, de rectification, d'effacement, de portabilité et d'opposition. Pour exercer ces droits, contactez-nous à : logix.forma@gmail.com</p>
+    <div style="margin-top:32px"><a onclick="navigate('home')" class="btn btn-ghost-navy" style="cursor:pointer">← Retour à l'accueil</a></div>
+  </div></div></div>
+</div>
+
+<!-- ═══════════ PAGE : COOKIES ═══════════ -->
+<div id="page-cookies" class="page-section">
+  <div class="legal-page"><div class="container"><div class="legal-box">
+    <h2>Politique relative aux Cookies</h2>
+    <p>Un cookie est un fichier texte susceptible d'être enregistré dans un espace dédié du disque dur de votre terminal lors de la consultation d'un service en ligne.</p>
+    <h3>1. Types de cookies utilisés</h3>
+    <ul><li><strong>Cookies de fonctionnement :</strong> Indispensables au bon fonctionnement du site.</li><li><strong>Cookies d'analyse :</strong> Nous permettent de mesurer l'audience du site de façon anonyme.</li></ul>
+    <h3>2. Gestion des cookies</h3>
+    <p>Vous pouvez configurer votre navigateur pour accepter ou refuser les cookies. Le paramétrage dépend de votre navigateur. Cependant, le refus peut limiter certaines fonctionnalités du site.</p>
+    <h3>3. Durée de vie des cookies</h3>
+    <p>Les cookies de session expirent à la fermeture du navigateur. Les cookies persistants ont une durée maximale de 13 mois conformément aux recommandations de la CNIL.</p>
+    <div style="margin-top:32px"><a onclick="navigate('home')" class="btn btn-ghost-navy" style="cursor:pointer">← Retour à l'accueil</a></div>
+  </div></div></div>
+</div>
+
+<!-- ═══════════ PAGE : ACCESSIBILITÉ ═══════════ -->
+<div id="page-accessibilite" class="page-section">
+  <div class="legal-page"><div class="container"><div class="legal-box">
+    <h2>Déclaration d'Accessibilité</h2>
+    <p>LOGIX FORMA s'engage à rendre son site accessible, conformément à l'article 47 de la loi n° 2005-102 du 11 février 2005.</p>
+    <h3>1. État de conformité</h3>
+    <p>Le site LOGIX FORMA est partiellement conforme au RGAA 4.1 en raison des non-conformités et des dérogations énumérées ci-dessous.</p>
+    <h3>2. Contenu non accessible</h3>
+    <ul><li>Certains contenus multimédias ne disposent pas encore de transcriptions textuelles complètes.</li><li>Quelques contrastes de couleurs sur les anciens éléments graphiques sont en cours de correction.</li></ul>
+    <h3>3. Signaler un dysfonctionnement</h3>
+    <p>Si vous rencontrez un défaut d'accessibilité vous empêchant d'accéder à un contenu ou une fonctionnalité du site, merci de nous le signaler à logix.forma@gmail.com.</p>
+    <div style="margin-top:32px"><a onclick="navigate('home')" class="btn btn-ghost-navy" style="cursor:pointer">← Retour à l'accueil</a></div>
+  </div></div></div>
+</div>
+
+<!-- ═══════════ PAGE : SÉCURITÉ ═══════════ -->
+<div id="page-securite" class="page-section">
+  <div class="legal-page"><div class="container"><div class="legal-box">
+    <h2>Sécurité des Données</h2>
+    <p>La sécurité de vos données est une priorité absolue pour LOGIX FORMA.</p>
+    <h3>1. Mesures techniques</h3>
+    <p>Nous utilisons le protocole HTTPS pour chiffrer les échanges de données entre votre navigateur et notre serveur. Nos bases de données sont sécurisées et accessibles uniquement au personnel autorisé.</p>
+    <h3>2. Surveillance et vigilance</h3>
+    <p>Nous surveillons activement nos systèmes pour prévenir toute tentative d'intrusion ou de fraude. En cas de faille de sécurité avérée, nous nous engageons à informer les utilisateurs concernés dans les délais légaux.</p>
+    <h3>3. Signalement</h3>
+    <p>Pour tout signalement de vulnérabilité ou de problème de sécurité, contactez-nous à : logix.forma@gmail.com</p>
+    <div style="margin-top:32px"><a onclick="navigate('home')" class="btn btn-ghost-navy" style="cursor:pointer">← Retour à l'accueil</a></div>
+  </div></div></div>
+</div>
+
+</main><!-- /main -->
+
+<!-- ═══════════ FOOTER ═══════════ -->
+<footer>
+  <div class="container">
+    <div class="footer-top">
+      <div class="footer-brand">
+        <span class="footer-logo-text">LOGIX <span>FORMA</span></span>
+        <p>Association de formation en ligne pour adultes.</p>
+        <p>Insertion · Reconversion · Montée en compétences</p>
+        <p style="margin-top:12px;font-size:0.8rem">SIREN : 902 349 943 · RNA : W931025228</p>
+      </div>
+      <div class="footer-col">
+        <div class="footer-accent"></div>
+        <h4>Navigation</h4>
+        <a onclick="navigate('home')">Accueil</a>
+        <a onclick="navigate('home');setTimeout(()=>document.getElementById('formations').scrollIntoView({behavior:'smooth'}),100)">Formations</a>
+        <a href="blog.html">Blog</a>
+        <a onclick="navigate('home');setTimeout(()=>document.getElementById('acces-prioritaire').scrollIntoView({behavior:'smooth'}),100)">Accès prioritaire</a>
+        <a onclick="navigate('contact')">Nous contacter</a>
+      </div>
+      <div class="footer-col">
+        <div class="footer-accent"></div>
+        <h4>Formations</h4>
+        <a onclick="navigate('home');setTimeout(()=>document.getElementById('formations').scrollIntoView({behavior:'smooth'}),100)">Français A1</a>
+        <a onclick="navigate('home');setTimeout(()=>document.getElementById('formations').scrollIntoView({behavior:'smooth'}),100)">Français A2</a>
+        <a onclick="navigate('home');setTimeout(()=>document.getElementById('formations').scrollIntoView({behavior:'smooth'}),100)">Parcours à venir</a>
+      </div>
+      <div class="footer-col">
+        <div class="footer-accent"></div>
+        <h4>Légal</h4>
+        <a onclick="navigate('mentions-legales')">Mentions légales</a>
+        <a onclick="navigate('cgu')">CGU</a>
+        <a onclick="navigate('politique-confidentialite')">Données personnelles</a>
+        <a onclick="navigate('cookies')">Cookies</a>
+        <a onclick="navigate('accessibilite')">Accessibilité</a>
+        <a onclick="navigate('securite')">Sécurité</a>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>© 2026 LOGIX FORMA — Tous droits réservés</span>
+      <span>
+        <a onclick="navigate('mentions-legales')">Mentions légales</a> ·
+        <a onclick="navigate('politique-confidentialite')">Confidentialité</a> ·
+        <a onclick="navigate('cookies')">Cookies</a>
+      </span>
+    </div>
+  </div>
+</footer>
+
+<script>
+  function navigate(page) {
+    // Hide all
+    document.querySelectorAll('.page-section').forEach(s => s.classList.remove('active'));
+    // Show target
+    const target = document.getElementById('page-' + page);
+    if (target) { target.classList.add('active'); window.scrollTo({top:0,behavior:'smooth'}); }
+    // Update nav active state
+    document.querySelectorAll('.nav-links a').forEach(a => a.classList.remove('active'));
+    const navEl = document.getElementById('nav-' + page);
+    if (navEl) navEl.classList.add('active');
+  }
+</script>
+
 </body>
 </html>
