@@ -12,6 +12,13 @@
   <meta property="og:description" content="Formations en ligne pour adultes : français, progression professionnelle et accès prioritaire.">
   <meta property="og:image" content="https://i.postimg.cc/xdj77pwZ/logo-logix-forma.jpg">
   <meta property="og:type" content="website">
+  <meta property="og:url" content="https://logixforma.com/">
+
+  <!-- Sécurité et bonnes pratiques -->
+  <meta http-equiv="Content-Security-Policy" content="default-src 'self'; img-src 'self' https://i.postimg.cc data:; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src https://fonts.gstatic.com; script-src 'self' 'unsafe-inline'; connect-src 'self' https://formspree.io https://api.stripe.com; frame-src https://js.stripe.com https://hooks.stripe.com https://checkout.stripe.com; form-action 'self' https://formspree.io; base-uri 'self'; object-src 'none'">
+  <meta name="referrer" content="strict-origin-when-cross-origin">
+  <meta name="color-scheme" content="light">
+  <meta name="theme-color" content="#1F365D">
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -54,7 +61,7 @@
       overflow-x:hidden; display:flex; flex-direction:column; min-height:100vh;
     }
 
-    a { color:inherit; text-decoration:none; }
+    a { color:inherit; text-decoration:none; cursor:pointer; }
     img { max-width:100%; display:block; }
     .container { width:min(100% - 32px, var(--max)); margin:0 auto; }
 
@@ -343,6 +350,9 @@
     .footer-bottom a { color:#64748B; transition:var(--t); cursor:pointer; }
     .footer-bottom a:hover { color:#94A3B8; }
 
+    /* HONEYPOT */
+    .honeypot { position:absolute; left:-9999px; top:auto; width:1px; height:1px; overflow:hidden; }
+
     /* RESPONSIVE */
     @media (max-width:1024px) {
       .hero-grid { grid-template-columns:1fr; } .hero-card { display:none; }
@@ -372,7 +382,7 @@
 </head>
 <body>
 
-<!-- ═══════════ HEADER ═══════════ -->
+<!-- HEADER -->
 <header>
   <div class="container">
     <nav class="nav">
@@ -397,7 +407,7 @@
 
 <main style="flex:1">
 
-<!-- ═══════════ PAGE : HOME ═══════════ -->
+<!-- PAGE HOME -->
 <div id="page-home" class="page-section active">
 
   <!-- HERO -->
@@ -612,16 +622,20 @@
           <form action="https://formspree.io/f/mjgpekwe" method="POST">
             <input type="hidden" name="source" value="site_logix_forma">
             <input type="hidden" name="type_demande" value="acces_prioritaire">
-            <input type="hidden" name="_next" value="https://logixforma.com/merci.html">
+            <input type="hidden" name="_next" value="/merci.html">
             <input type="hidden" name="_subject" value="Nouvelle demande d'accès prioritaire — LOGIX FORMA">
             <div class="form-row">
-              <div class="form-group"><label for="ap-prenom">Prénom *</label><input type="text" id="ap-prenom" name="prenom" required placeholder="Marie"></div>
-              <div class="form-group"><label for="ap-nom">Nom *</label><input type="text" id="ap-nom" name="nom" required placeholder="Dupont"></div>
+              <div class="form-group"><label for="ap-prenom">Prénom *</label><input type="text" id="ap-prenom" name="prenom" required placeholder="Marie" autocomplete="given-name"></div>
+              <div class="form-group"><label for="ap-nom">Nom *</label><input type="text" id="ap-nom" name="nom" required placeholder="Dupont" autocomplete="family-name"></div>
             </div>
-            <div class="form-group"><label for="ap-email">Email *</label><input type="email" id="ap-email" name="email" required placeholder="marie@exemple.fr"></div>
-            <div class="form-group"><label for="ap-tel">Téléphone</label><input type="tel" id="ap-tel" name="telephone" placeholder="06 XX XX XX XX"></div>
+            <div class="form-group"><label for="ap-email">Email *</label><input type="email" id="ap-email" name="email" required placeholder="marie@exemple.fr" autocomplete="email"></div>
+            <div class="form-group"><label for="ap-tel">Téléphone</label><input type="tel" id="ap-tel" name="telephone" placeholder="06 XX XX XX XX" autocomplete="tel"></div>
             <div class="form-group"><label for="ap-formation">Formation souhaitée</label><select id="ap-formation" name="formation"><option value="Français A1">Français A1</option><option value="Français A2">Français A2</option><option value="Information générale">Information générale</option></select></div>
             <div class="form-group"><label for="ap-message">Message</label><textarea id="ap-message" name="message" placeholder="Votre situation, vos besoins, vos objectifs…"></textarea></div>
+            <!-- Honeypot anti-spam -->
+            <div class="honeypot" aria-hidden="true">
+              <label>Ne pas remplir ce champ <input type="text" name="_gotcha" tabindex="-1" autocomplete="off"></label>
+            </div>
             <label class="checkbox-row"><input type="checkbox" required><span>J'accepte d'être recontacté par LOGIX FORMA au sujet de ma demande.</span></label>
             <button type="submit" class="btn btn-navy" style="width:100%;font-size:1rem;padding:14px">Je demande un accès prioritaire →</button>
           </form>
@@ -656,7 +670,7 @@
 
 </div><!-- /page-home -->
 
-<!-- ═══════════ PAGE : CONTACT ═══════════ -->
+<!-- PAGE CONTACT -->
 <div id="page-contact" class="page-section">
   <section class="section">
     <div class="container">
@@ -678,19 +692,23 @@
           <form action="https://formspree.io/f/mjgpekwe" method="POST">
             <input type="hidden" name="source" value="site_logix_forma">
             <input type="hidden" name="type_demande" value="contact">
-            <input type="hidden" name="_next" value="https://logixforma.com/merci.html">
+            <input type="hidden" name="_next" value="/merci.html">
             <input type="hidden" name="_subject" value="Nouveau message de contact — LOGIX FORMA">
             <div class="form-row">
-              <div class="form-group"><label for="ct-prenom">Prénom *</label><input type="text" id="ct-prenom" name="prenom" required></div>
-              <div class="form-group"><label for="ct-nom">Nom *</label><input type="text" id="ct-nom" name="nom" required></div>
+              <div class="form-group"><label for="ct-prenom">Prénom *</label><input type="text" id="ct-prenom" name="prenom" required autocomplete="given-name"></div>
+              <div class="form-group"><label for="ct-nom">Nom *</label><input type="text" id="ct-nom" name="nom" required autocomplete="family-name"></div>
             </div>
-            <div class="form-group"><label for="ct-email">Email *</label><input type="email" id="ct-email" name="email" required></div>
-            <div class="form-group"><label for="ct-tel">Téléphone</label><input type="tel" id="ct-tel" name="telephone"></div>
+            <div class="form-group"><label for="ct-email">Email *</label><input type="email" id="ct-email" name="email" required autocomplete="email"></div>
+            <div class="form-group"><label for="ct-tel">Téléphone</label><input type="tel" id="ct-tel" name="telephone" autocomplete="tel"></div>
             <div class="form-row">
               <div class="form-group"><label for="ct-formation">Formation concernée</label><select id="ct-formation" name="formation"><option value="Français A1">Français A1</option><option value="Français A2">Français A2</option><option value="Information générale">Information générale</option></select></div>
               <div class="form-group"><label for="ct-sujet">Sujet *</label><select id="ct-sujet" name="sujet" required><option value="Information générale">Information générale</option><option value="Partenariat">Partenariat</option><option value="Demande pédagogique">Demande pédagogique</option><option value="Autre">Autre</option></select></div>
             </div>
             <div class="form-group"><label for="ct-message">Message *</label><textarea id="ct-message" name="message" placeholder="Expliquez votre demande…" required></textarea></div>
+            <!-- Honeypot anti-spam -->
+            <div class="honeypot" aria-hidden="true">
+              <label>Ne pas remplir ce champ <input type="text" name="_gotcha" tabindex="-1" autocomplete="off"></label>
+            </div>
             <label class="checkbox-row"><input type="checkbox" required><span>J'accepte d'être recontacté par LOGIX FORMA au sujet de ma demande.</span></label>
             <button type="submit" class="btn btn-green" style="width:100%;font-size:1rem;padding:14px">Envoyer mon message →</button>
           </form>
@@ -700,19 +718,7 @@
   </section>
 </div>
 
-<!-- ═══════════ PAGE : MERCI ═══════════ -->
-<div id="page-merci" class="page-section">
-  <div class="merci-page">
-    <div class="container">
-      <div class="merci-icon">✅</div>
-      <h2 class="section-title" style="text-align:center;margin-bottom:12px">Message envoyé !</h2>
-      <p class="section-sub" style="text-align:center;margin:0 auto 32px">Merci de nous avoir contactés. Nous vous répondrons dans les meilleurs délais.</p>
-      <div style="text-align:center"><a onclick="navigate('home')" class="btn btn-navy" style="cursor:pointer">← Retour à l'accueil</a></div>
-    </div>
-  </div>
-</div>
-
-<!-- ═══════════ PAGE : MENTIONS LÉGALES ═══════════ -->
+<!-- PAGE MENTIONS LÉGALES -->
 <div id="page-mentions-legales" class="page-section">
   <div class="legal-page"><div class="container"><div class="legal-box">
     <h2>Mentions Légales</h2>
@@ -721,7 +727,7 @@
     <p>Le présent site est édité par l'association LOGIX FORMA.</p>
     <ul><li>SIREN : 902 349 943</li><li>RNA : W931025228</li><li>Siège social : France</li><li>Email : logix.forma@gmail.com</li></ul>
     <h3>2. Hébergement</h3>
-    <p>Le site est hébergé par un prestataire situé sur le territoire français.</p>
+    <p>Le site est hébergé par GitHub, Inc., 88 Colin P. Kelly Jr St, San Francisco, CA 94107, États-Unis, via le service GitHub Pages.</p>
     <h3>3. Propriété intellectuelle</h3>
     <p>L'ensemble de ce site relève de la législation française et internationale sur le droit d'auteur et la propriété intellectuelle. Tous les droits de reproduction sont réservés.</p>
     <h3>4. Responsabilité</h3>
@@ -730,7 +736,7 @@
   </div></div></div>
 </div>
 
-<!-- ═══════════ PAGE : CGU ═══════════ -->
+<!-- PAGE CGU -->
 <div id="page-cgu" class="page-section">
   <div class="legal-page"><div class="container"><div class="legal-box">
     <h2>Conditions Générales d'Utilisation</h2>
@@ -747,7 +753,7 @@
   </div></div></div>
 </div>
 
-<!-- ═══════════ PAGE : POLITIQUE DE CONFIDENTIALITÉ ═══════════ -->
+<!-- PAGE POLITIQUE DE CONFIDENTIALITÉ -->
 <div id="page-politique-confidentialite" class="page-section">
   <div class="legal-page"><div class="container"><div class="legal-box">
     <h2>Politique de Protection des Données Personnelles</h2>
@@ -764,7 +770,7 @@
   </div></div></div>
 </div>
 
-<!-- ═══════════ PAGE : COOKIES ═══════════ -->
+<!-- PAGE COOKIES -->
 <div id="page-cookies" class="page-section">
   <div class="legal-page"><div class="container"><div class="legal-box">
     <h2>Politique relative aux Cookies</h2>
@@ -779,7 +785,7 @@
   </div></div></div>
 </div>
 
-<!-- ═══════════ PAGE : ACCESSIBILITÉ ═══════════ -->
+<!-- PAGE ACCESSIBILITÉ -->
 <div id="page-accessibilite" class="page-section">
   <div class="legal-page"><div class="container"><div class="legal-box">
     <h2>Déclaration d'Accessibilité</h2>
@@ -794,13 +800,13 @@
   </div></div></div>
 </div>
 
-<!-- ═══════════ PAGE : SÉCURITÉ ═══════════ -->
+<!-- PAGE SÉCURITÉ -->
 <div id="page-securite" class="page-section">
   <div class="legal-page"><div class="container"><div class="legal-box">
     <h2>Sécurité des Données</h2>
     <p>La sécurité de vos données est une priorité absolue pour LOGIX FORMA.</p>
     <h3>1. Mesures techniques</h3>
-    <p>Nous utilisons le protocole HTTPS pour chiffrer les échanges de données entre votre navigateur et notre serveur. Nos bases de données sont sécurisées et accessibles uniquement au personnel autorisé.</p>
+    <p>Les échanges avec le site public sont servis en HTTPS via GitHub Pages. Les formulaires sont transmis via Formspree et les paiements sont traités par Stripe sur leurs infrastructures respectives. LOGIX FORMA limite au maximum la collecte de données sur le site public et applique des mesures organisationnelles pour restreindre l'accès aux informations reçues.</p>
     <h3>2. Surveillance et vigilance</h3>
     <p>Nous surveillons activement nos systèmes pour prévenir toute tentative d'intrusion ou de fraude. En cas de faille de sécurité avérée, nous nous engageons à informer les utilisateurs concernés dans les délais légaux.</p>
     <h3>3. Signalement</h3>
@@ -809,9 +815,9 @@
   </div></div></div>
 </div>
 
-</main><!-- /main -->
+</main>
 
-<!-- ═══════════ FOOTER ═══════════ -->
+<!-- FOOTER -->
 <footer>
   <div class="container">
     <div class="footer-top">
@@ -861,16 +867,48 @@
 
 <script>
   function navigate(page) {
-    // Hide all
+    // Hide all page sections
     document.querySelectorAll('.page-section').forEach(s => s.classList.remove('active'));
     // Show target
     const target = document.getElementById('page-' + page);
-    if (target) { target.classList.add('active'); window.scrollTo({top:0,behavior:'smooth'}); }
+    if (target) {
+      target.classList.add('active');
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+      // Update URL hash without triggering scroll
+      history.pushState(null, '', '#' + page);
+    }
     // Update nav active state
     document.querySelectorAll('.nav-links a').forEach(a => a.classList.remove('active'));
     const navEl = document.getElementById('nav-' + page);
     if (navEl) navEl.classList.add('active');
   }
+
+  // Handle initial hash on page load
+  window.addEventListener('DOMContentLoaded', () => {
+    const hash = window.location.hash.replace('#', '');
+    if (hash && document.getElementById('page-' + hash)) {
+      navigate(hash);
+    }
+  });
+
+  // Handle browser back/forward buttons
+  window.addEventListener('popstate', () => {
+    const hash = window.location.hash.replace('#', '');
+    if (hash && document.getElementById('page-' + hash)) {
+      document.querySelectorAll('.page-section').forEach(s => s.classList.remove('active'));
+      document.getElementById('page-' + hash).classList.add('active');
+      document.querySelectorAll('.nav-links a').forEach(a => a.classList.remove('active'));
+      const navEl = document.getElementById('nav-' + hash);
+      if (navEl) navEl.classList.add('active');
+    } else if (!hash) {
+      // Default to home
+      document.querySelectorAll('.page-section').forEach(s => s.classList.remove('active'));
+      document.getElementById('page-home').classList.add('active');
+      document.querySelectorAll('.nav-links a').forEach(a => a.classList.remove('active'));
+      const homeNav = document.getElementById('nav-home');
+      if (homeNav) homeNav.classList.add('active');
+    }
+  });
 </script>
 
 </body>
