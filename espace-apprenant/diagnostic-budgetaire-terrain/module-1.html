@@ -1,0 +1,1006 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <title>Module 1 – Diagnostic sous contrainte | LOGIX FORMA</title>
+  <meta
+    name="description"
+    content="Module 1 de la formation Diagnostic budgétaire terrain – Méthode LOGIX FORMA."
+  />
+  <meta name="robots" content="noindex, nofollow" />
+  <link rel="canonical" href="https://logixforma.com/espace-apprenant/diagnostic-budgetaire-terrain/module-1.html" />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Outfit:wght@600;700;800&display=swap"
+    rel="stylesheet"
+  />
+
+  <style>
+    :root {
+      --navy: #16325c;
+      --navy-2: #21457a;
+      --navy-3: #0d203c;
+      --green: #6ba32a;
+      --green-2: #4f7d17;
+      --gold: #e3b229;
+      --gold-2: #ca9916;
+      --ink: #101828;
+      --text: #253244;
+      --muted: #667085;
+      --muted-2: #98a2b3;
+      --bg: #f4f7fb;
+      --card: #ffffff;
+      --surface: #eef2f8;
+      --line: #dde3ee;
+      --success: #ebf7df;
+      --warning: #fff3e0;
+      --error: #fee2e2;
+      --shadow-xs: 0 1px 3px rgba(16, 24, 40, 0.06);
+      --shadow-sm: 0 10px 26px rgba(16, 24, 40, 0.08);
+      --shadow-md: 0 18px 48px rgba(16, 24, 40, 0.12);
+      --radius-sm: 10px;
+      --radius: 16px;
+      --radius-lg: 24px;
+      --max: 980px;
+      --transition: 220ms ease;
+    }
+
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+
+    body {
+      margin: 0;
+      font-family: Inter, sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      line-height: 1.65;
+      -webkit-font-smoothing: antialiased;
+      text-rendering: optimizeLegibility;
+    }
+
+    a { color: inherit; text-decoration: none; }
+    img { display: block; max-width: 100%; }
+    button, input { font: inherit; }
+
+    .container {
+      width: min(calc(100% - 32px), var(--max));
+      margin: 0 auto;
+    }
+
+    .skip-link {
+      position: absolute;
+      left: 12px;
+      top: -48px;
+      background: var(--navy);
+      color: white;
+      padding: 10px 14px;
+      border-radius: 10px;
+      z-index: 1000;
+    }
+
+    .skip-link:focus { top: 12px; }
+
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 10px;
+      border: 0;
+      border-radius: 14px;
+      padding: 12px 18px;
+      font-weight: 700;
+      cursor: pointer;
+      text-align: center;
+      transition:
+        transform var(--transition),
+        background var(--transition),
+        color var(--transition),
+        border-color var(--transition),
+        box-shadow var(--transition);
+    }
+
+    .btn:hover { transform: translateY(-1px); }
+
+    .btn:focus-visible,
+    .nav-link:focus-visible,
+    input:focus-visible,
+    details summary:focus-visible {
+      outline: 3px solid rgba(227, 178, 41, 0.45);
+      outline-offset: 2px;
+    }
+
+    .btn-dark {
+      background: var(--navy);
+      color: white;
+      box-shadow: 0 10px 24px rgba(22, 50, 92, 0.25);
+    }
+
+    .btn-dark:hover { background: var(--navy-3); }
+
+    .btn-outline {
+      background: transparent;
+      color: var(--navy);
+      border: 2px solid rgba(22, 50, 92, 0.16);
+    }
+
+    .btn-outline:hover {
+      border-color: var(--navy);
+      background: rgba(22, 50, 92, 0.04);
+    }
+
+    .btn-primary {
+      background: var(--gold);
+      color: var(--navy-3);
+      box-shadow: 0 10px 24px rgba(227, 178, 41, 0.28);
+    }
+
+    .btn-primary:hover { background: var(--gold-2); }
+
+    header {
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      backdrop-filter: blur(14px);
+      background: rgba(255, 255, 255, 0.92);
+      border-bottom: 1px solid rgba(221, 227, 238, 0.85);
+    }
+
+    .topbar {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 16px;
+      min-height: 76px;
+    }
+
+    .brand {
+      display: inline-flex;
+      align-items: center;
+      gap: 12px;
+      min-width: 0;
+    }
+
+    .brand img {
+      width: 48px;
+      height: 48px;
+      object-fit: cover;
+      border-radius: 12px;
+      box-shadow: var(--shadow-xs);
+    }
+
+    .brand-text {
+      display: flex;
+      flex-direction: column;
+      line-height: 1.05;
+    }
+
+    .brand-title {
+      font-family: Outfit, sans-serif;
+      font-size: 1.22rem;
+      font-weight: 800;
+      color: var(--navy);
+      letter-spacing: -0.03em;
+    }
+
+    .brand-title span { color: var(--green); }
+
+    .brand-sub {
+      font-size: 0.78rem;
+      color: var(--muted);
+      font-weight: 600;
+      margin-top: 4px;
+    }
+
+    .top-actions {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      flex-wrap: wrap;
+    }
+
+    .hero {
+      background:
+        radial-gradient(circle at 85% 20%, rgba(107, 163, 42, 0.18), transparent 24%),
+        radial-gradient(circle at 10% 90%, rgba(227, 178, 41, 0.16), transparent 18%),
+        linear-gradient(135deg, #0d203c 0%, #16325c 58%, #173d27 100%);
+      color: white;
+      padding: 48px 0 38px;
+    }
+
+    .hero h1 {
+      margin: 0 0 10px;
+      font-family: Outfit, sans-serif;
+      font-size: clamp(1.9rem, 4vw, 3rem);
+      line-height: 1.05;
+      letter-spacing: -0.04em;
+    }
+
+    .hero p {
+      margin: 0;
+      max-width: 760px;
+      color: rgba(255,255,255,0.86);
+      font-size: 1rem;
+    }
+
+    .hero-meta {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+      margin-top: 20px;
+    }
+
+    .hero-pill {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      padding: 8px 14px;
+      border-radius: 999px;
+      background: rgba(255,255,255,0.1);
+      border: 1px solid rgba(255,255,255,0.14);
+      font-size: 0.84rem;
+      font-weight: 700;
+      color: rgba(255,255,255,0.92);
+    }
+
+    main {
+      padding: 30px 0 56px;
+    }
+
+    .module-nav {
+      display: flex;
+      justify-content: space-between;
+      gap: 12px;
+      flex-wrap: wrap;
+      margin-bottom: 20px;
+    }
+
+    .module-nav a {
+      color: var(--navy);
+      font-weight: 700;
+      text-decoration: none;
+    }
+
+    .card {
+      background: var(--card);
+      border: 1px solid var(--line);
+      border-radius: var(--radius-lg);
+      box-shadow: var(--shadow-sm);
+      padding: 24px;
+      margin-bottom: 22px;
+    }
+
+    .card h2,
+    .card h3 {
+      margin: 0 0 12px;
+      color: var(--ink);
+    }
+
+    .card h2 {
+      font-family: Outfit, sans-serif;
+      font-size: 1.55rem;
+      letter-spacing: -0.03em;
+    }
+
+    .card h3 {
+      font-size: 1.12rem;
+    }
+
+    .card p {
+      margin: 0 0 12px;
+      color: var(--text);
+    }
+
+    .card p:last-child { margin-bottom: 0; }
+
+    .badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 6px 10px;
+      border-radius: 999px;
+      background: #e8f5e9;
+      border: 1px solid #cde8d1;
+      color: #256c2f;
+      font-size: 0.74rem;
+      font-weight: 800;
+      letter-spacing: 0.03em;
+      text-transform: uppercase;
+      margin-bottom: 14px;
+    }
+
+    .warning-box,
+    .success-box,
+    .memo,
+    .zone-protected,
+    .zone-invisible {
+      border-radius: 14px;
+      padding: 16px 18px;
+      margin: 16px 0 0;
+      border: 1px solid var(--line);
+    }
+
+    .warning-box {
+      background: var(--error);
+      border-left: 4px solid #dc2626;
+    }
+
+    .success-box {
+      background: var(--success);
+      border-left: 4px solid var(--green);
+    }
+
+    .memo {
+      background: var(--surface);
+      border-left: 4px solid var(--navy);
+      font-weight: 500;
+    }
+
+    .zone-protected {
+      background: var(--success);
+      border-left: 4px solid var(--green);
+    }
+
+    .zone-invisible {
+      background: var(--warning);
+      border-left: 4px solid var(--gold);
+    }
+
+    .grid-2 {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 16px;
+    }
+
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      margin: 14px 0 0;
+      font-size: 0.94rem;
+      overflow: hidden;
+      border-radius: 12px;
+    }
+
+    th, td {
+      border: 1px solid var(--line);
+      padding: 10px 12px;
+      text-align: left;
+      vertical-align: top;
+    }
+
+    th {
+      background: var(--surface);
+      font-weight: 800;
+      color: var(--ink);
+    }
+
+    ul, ol {
+      margin: 0;
+      padding-left: 22px;
+    }
+
+    li + li { margin-top: 8px; }
+
+    details {
+      background: var(--card);
+      border: 1px solid var(--line);
+      border-radius: 14px;
+      padding: 14px 16px;
+      margin-top: 16px;
+    }
+
+    summary {
+      cursor: pointer;
+      font-weight: 800;
+      color: var(--navy);
+    }
+
+    .quiz-card {
+      scroll-margin-top: 100px;
+    }
+
+    .quiz-intro {
+      color: var(--muted);
+      margin-bottom: 18px;
+    }
+
+    .question {
+      padding: 18px;
+      border: 1px solid var(--line);
+      border-radius: 16px;
+      background: #fbfcff;
+      margin-bottom: 16px;
+    }
+
+    .question p {
+      margin: 0 0 12px;
+      font-weight: 700;
+      color: var(--ink);
+    }
+
+    .option {
+      display: block;
+      padding: 10px 12px;
+      border: 1px solid var(--line);
+      border-radius: 12px;
+      background: white;
+      margin-bottom: 10px;
+      cursor: pointer;
+      transition: var(--transition);
+    }
+
+    .option:hover {
+      border-color: var(--navy);
+      background: #f8fbff;
+    }
+
+    .option input {
+      margin-right: 10px;
+    }
+
+    .text-answer {
+      width: 100%;
+      border: 1.5px solid var(--line);
+      border-radius: 12px;
+      padding: 12px 14px;
+      background: white;
+      color: var(--ink);
+      transition: border-color var(--transition), box-shadow var(--transition);
+    }
+
+    .text-answer:focus {
+      border-color: var(--navy);
+      box-shadow: 0 0 0 4px rgba(22, 50, 92, 0.08);
+      outline: none;
+    }
+
+    .quiz-actions {
+      display: flex;
+      gap: 12px;
+      flex-wrap: wrap;
+      margin-top: 20px;
+    }
+
+    .result {
+      display: none;
+      margin-top: 18px;
+      padding: 16px 18px;
+      border-radius: 14px;
+      font-weight: 600;
+      border: 1px solid transparent;
+    }
+
+    .result.success {
+      display: block;
+      background: var(--success);
+      color: var(--green-2);
+      border-color: #cde8d1;
+    }
+
+    .result.error {
+      display: block;
+      background: var(--error);
+      color: #b42318;
+      border-color: #f5c2c7;
+    }
+
+    .bottom-nav {
+      display: flex;
+      justify-content: space-between;
+      gap: 14px;
+      flex-wrap: wrap;
+      margin-top: 24px;
+    }
+
+    footer {
+      background: var(--navy-3);
+      color: #9aa8bf;
+      padding: 34px 0 28px;
+      margin-top: 40px;
+    }
+
+    .footer-line {
+      display: flex;
+      justify-content: space-between;
+      gap: 16px;
+      flex-wrap: wrap;
+      font-size: 0.88rem;
+    }
+
+    @media (max-width: 760px) {
+      .topbar {
+        flex-direction: column;
+        align-items: flex-start;
+        padding: 14px 0;
+      }
+
+      .top-actions {
+        width: 100%;
+      }
+
+      .top-actions .btn,
+      .top-actions a {
+        width: 100%;
+      }
+
+      .grid-2 {
+        grid-template-columns: 1fr;
+      }
+
+      .bottom-nav {
+        flex-direction: column;
+      }
+
+      .bottom-nav .btn,
+      .bottom-nav a {
+        width: 100%;
+      }
+
+      table {
+        display: block;
+        overflow-x: auto;
+      }
+    }
+  </style>
+</head>
+<body>
+  <a class="skip-link" href="#main-content">Aller au contenu</a>
+
+  <header>
+    <div class="container">
+      <div class="topbar">
+        <a class="brand" href="/" aria-label="Retour à l'accueil LOGIX FORMA">
+          <img src="https://i.postimg.cc/xdj77pwZ/logo-logix-forma.jpg" alt="Logo LOGIX FORMA" />
+          <span class="brand-text">
+            <span class="brand-title">LOGIX <span>FORMA</span></span>
+            <span class="brand-sub">Former pour produire, tester, mesurer</span>
+          </span>
+        </a>
+
+        <div class="top-actions">
+          <a class="btn btn-outline" href="/espace-apprenant/diagnostic-budgetaire-terrain/index.html">Retour à la formation</a>
+          <a class="btn btn-dark" href="/contact.html">Contact</a>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <section class="hero">
+    <div class="container">
+      <h1>Module 1 – Diagnostic sous contrainte</h1>
+      <p>
+        Apprendre à établir un diagnostic budgétaire fiable en 15 minutes, identifier les zones protégées et repérer les dépenses invisibles.
+      </p>
+      <div class="hero-meta">
+        <div class="hero-pill">Module 1 / 4</div>
+        <div class="hero-pill">Niveau débutant</div>
+        <div class="hero-pill">Durée estimée : 8 h</div>
+        <div class="hero-pill">Quiz de validation inclus</div>
+      </div>
+    </div>
+  </section>
+
+  <main id="main-content">
+    <div class="container">
+      <nav class="module-nav" aria-label="Navigation du module">
+        <a href="/espace-apprenant/diagnostic-budgetaire-terrain/index.html">← Retour au plan de formation</a>
+        <a href="#quiz">Aller au quiz ↓</a>
+      </nav>
+
+      <section class="card">
+        <span class="badge">Module 1 • Débutant</span>
+        <h2>Objectif du module</h2>
+        <p>
+          À l’issue de ce module, vous devez être capable de réaliser un premier diagnostic budgétaire rapide,
+          de distinguer les dépenses à protéger des dépenses à cibler, et de proposer au maximum deux ajustements réalistes.
+        </p>
+      </section>
+
+      <section class="card">
+        <h3>🧩 Mise en situation – Sabrina</h3>
+        <p><strong>Profil :</strong> Sabrina, 34 ans, mère isolée avec 2 enfants.</p>
+        <p><strong>Revenus mensuels :</strong> 1 680 €</p>
+        <p>• Salaire : 980 €<br>• RSA : 420 €<br>• APL : 280 €</p>
+
+        <table>
+          <thead>
+            <tr>
+              <th>Dépense déclarée</th>
+              <th>Montant annoncé</th>
+              <th>Montant réel relevé</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>Cantine scolaire</td>
+              <td>80 €</td>
+              <td>120 €</td>
+            </tr>
+            <tr>
+              <td>Frais bancaires</td>
+              <td>Non déclaré</td>
+              <td>9 €</td>
+            </tr>
+            <tr>
+              <td>Abonnement streaming</td>
+              <td>Non déclaré</td>
+              <td>12 €</td>
+            </tr>
+          </tbody>
+        </table>
+
+        <div class="warning-box">
+          <strong>⚠️ Le point clé :</strong> le déclaratif ne suffit jamais.  
+          Le diagnostic professionnel commence quand on confronte les propos aux relevés.
+        </div>
+      </section>
+
+      <section class="card">
+        <h3>🎯 Le principe central</h3>
+        <p>
+          En diagnostic budgétaire terrain, on ne cherche pas d’abord à “faire des économies”.
+          On cherche d’abord à voir juste.
+        </p>
+        <p>
+          Une personne peut oublier, minimiser, arrondir, cacher par honte ou simplement ne plus savoir exactement ce qu’elle paie.
+          Le professionnel doit donc travailler sur des faits vérifiés.
+        </p>
+
+        <div class="memo">
+          <strong>Règle fondatrice :</strong><br>
+          on ne croit pas contre la personne, mais on ne travaille jamais sans preuve.
+        </div>
+      </section>
+
+      <section class="card">
+        <h3>📊 Les 3 règles d’or du diagnostic LOGIX FORMA</h3>
+        <ol>
+          <li><strong>Demander 3 mois de relevés bancaires.</strong></li>
+          <li><strong>Protéger les dépenses vitales :</strong> alimentation, logement, énergie, santé.</li>
+          <li><strong>Traquer les dépenses invisibles :</strong> frais bancaires, abonnements, micro-prélèvements, achats oubliés.</li>
+        </ol>
+      </section>
+
+      <section class="card">
+        <h3>🏷️ Les 4 zones de lecture budgétaire</h3>
+        <div class="grid-2">
+          <div class="zone-protected">
+            <strong>🔒 Zone protégée</strong><br>
+            Dépenses qu’on évite de toucher en premier : alimentation, logement, énergie, santé.
+          </div>
+          <div class="zone-invisible">
+            <strong>👻 Zone invisible</strong><br>
+            Dépenses peu visibles mais réelles : frais bancaires, abonnements oubliés, petits prélèvements.
+          </div>
+          <div class="success-box">
+            <strong>⚙️ Zone négociable</strong><br>
+            Dépenses qu’on peut ajuster : téléphone, assurances, certains abonnements utiles mais surdimensionnés.
+          </div>
+          <div class="memo">
+            <strong>🎯 Zone secondaire</strong><br>
+            Dépenses non vitales qu’on peut réduire ou suspendre selon la situation.
+          </div>
+        </div>
+      </section>
+
+      <section class="card">
+        <h3>🛠️ Méthode en 6 étapes – Diagnostic en 15 minutes</h3>
+        <ol>
+          <li><strong>Recueillir les 3 mois de relevés</strong> pour disposer d’une base fiable.</li>
+          <li><strong>Repérer toutes les sorties d’argent</strong> sans interprétation morale.</li>
+          <li><strong>Marquer les zones protégées</strong> pour éviter les fausses économies.</li>
+          <li><strong>Comparer déclaratif et réel</strong> pour repérer les écarts.</li>
+          <li><strong>Identifier les dépenses invisibles</strong> qui pèsent sans être vues.</li>
+          <li><strong>Proposer 2 ajustements maximum</strong> pour rester réaliste et actionnable.</li>
+        </ol>
+      </section>
+
+      <section class="card">
+        <h3>📌 Pourquoi on limite à 2 ajustements</h3>
+        <p>
+          Le professionnel débutant commet souvent la même erreur : proposer trop de changements d’un coup.
+        </p>
+        <p>
+          Or une personne en difficulté budgétaire ne manque pas seulement d’argent. Elle manque souvent aussi de stabilité,
+          de disponibilité mentale et de confiance.
+        </p>
+        <div class="success-box">
+          <strong>Règle pratique :</strong> deux ajustements concrets valent mieux qu’un plan parfait mais abandonné.
+        </div>
+      </section>
+
+      <section class="card">
+        <h3>🧪 Cas pratique – Lecture du budget</h3>
+        <p><strong>Situation :</strong> vous observez les dépenses suivantes :</p>
+        <table>
+          <thead>
+            <tr>
+              <th>Dépense</th>
+              <th>Montant</th>
+              <th>Lecture attendue</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>Loyer</td>
+              <td>580 €</td>
+              <td>Zone protégée</td>
+            </tr>
+            <tr>
+              <td>Courses</td>
+              <td>500 €</td>
+              <td>Zone protégée</td>
+            </tr>
+            <tr>
+              <td>Téléphone</td>
+              <td>45 €</td>
+              <td>Zone négociable</td>
+            </tr>
+            <tr>
+              <td>Frais bancaires</td>
+              <td>9 €</td>
+              <td>Zone invisible</td>
+            </tr>
+            <tr>
+              <td>Streaming</td>
+              <td>12 €</td>
+              <td>Zone invisible / secondaire</td>
+            </tr>
+          </tbody>
+        </table>
+      </section>
+
+      <section class="card">
+        <h3>✍️ Exemple de formulation professionnelle</h3>
+        <p>Voici une rédaction simple et utile dans un dossier :</p>
+        <div class="memo">
+          Le budget présente plusieurs dépenses protégées à maintenir, notamment le logement et l’alimentation.
+          L’analyse des relevés met également en évidence des dépenses invisibles non déclarées, en particulier des frais bancaires
+          et un abonnement de streaming. Deux ajustements apparaissent réalistes à ce stade : la suppression de l’abonnement inutile
+          et la réduction du coût téléphonique.
+        </div>
+      </section>
+
+      <section class="card">
+        <h3>❌ Les erreurs fréquentes du débutant</h3>
+        <ul>
+          <li>Réduire trop vite l’alimentation ou les dépenses familiales essentielles.</li>
+          <li>Ne pas demander les relevés bancaires.</li>
+          <li>Confondre une dépense “désagréable” avec une dépense réellement supprimable.</li>
+          <li>Proposer trop d’actions d’un coup.</li>
+          <li>Moraliser les écarts de budget au lieu de les objectiver.</li>
+        </ul>
+      </section>
+
+      <section class="card">
+        <h3>✅ Exercice corrigé</h3>
+        <p><strong>Question :</strong> dans le budget suivant, quels sont les deux premiers ajustements réalistes ?</p>
+        <p>Loyer 620 € • Courses 430 € • Téléphone 54 € • Frais bancaires 11 € • Salle de sport 29 € • Électricité 88 €</p>
+
+        <details>
+          <summary>Voir le corrigé</summary>
+          <p>
+            Les dépenses protégées sont le loyer, les courses et l’électricité.
+            Les deux premiers ajustements réalistes sont :
+          </p>
+          <ol>
+            <li>Réduire le forfait téléphone</li>
+            <li>Supprimer l’abonnement de salle de sport si inutilisé</li>
+          </ol>
+          <p>
+            Les frais bancaires doivent aussi être traités, mais selon la situation ils peuvent arriver en troisième priorité.
+          </p>
+        </details>
+      </section>
+
+      <section class="card">
+        <h3>🧠 À retenir avant le quiz</h3>
+        <div class="memo">
+          • On protège : alimentation, logement, énergie, santé<br>
+          • On vérifie toujours avec 3 mois de relevés<br>
+          • On traque l’invisible : frais, abonnements, prélèvements oubliés<br>
+          • On propose 2 ajustements maximum
+        </div>
+      </section>
+
+      <section class="card quiz-card" id="quiz">
+        <h2>Quiz du module 1</h2>
+        <p class="quiz-intro">
+          Validation recommandée : <strong>70 % minimum</strong>.  
+          Une fois le quiz validé, le module 2 sera considéré comme débloqué dans votre progression locale.
+        </p>
+
+        <div class="question">
+          <p>1. Quelles sont les 4 zones protégées selon la méthode LOGIX FORMA ?</p>
+          <label class="option"><input type="radio" name="q1" value="a"> Alimentation, logement, énergie, santé</label>
+          <label class="option"><input type="radio" name="q1" value="b"> Alimentation, transport, téléphone, santé</label>
+          <label class="option"><input type="radio" name="q1" value="c"> Loyer, vêtements, loisirs, énergie</label>
+        </div>
+
+        <div class="question">
+          <p>2. Vrai ou Faux : on peut proposer de réduire les courses alimentaires dès le premier entretien pour aller plus vite.</p>
+          <label class="option"><input type="radio" name="q2" value="vrai"> Vrai</label>
+          <label class="option"><input type="radio" name="q2" value="faux"> Faux</label>
+        </div>
+
+        <div class="question">
+          <p>3. Combien de mois de relevés bancaires faut-il demander ?</p>
+          <label class="option"><input type="radio" name="q3" value="a"> 1 mois</label>
+          <label class="option"><input type="radio" name="q3" value="b"> 2 mois</label>
+          <label class="option"><input type="radio" name="q3" value="c"> 3 mois</label>
+        </div>
+
+        <div class="question">
+          <p>4. Les frais bancaires sont classés dans quelle catégorie ?</p>
+          <label class="option"><input type="radio" name="q4" value="a"> Zone protégée</label>
+          <label class="option"><input type="radio" name="q4" value="b"> Zone invisible</label>
+          <label class="option"><input type="radio" name="q4" value="c"> Zone santé</label>
+        </div>
+
+        <div class="question">
+          <p>5. Combien d’ajustements maximum propose-t-on à ce stade du diagnostic ?</p>
+          <label class="option"><input type="radio" name="q5" value="a"> 1</label>
+          <label class="option"><input type="radio" name="q5" value="b"> 2</label>
+          <label class="option"><input type="radio" name="q5" value="c"> 5</label>
+        </div>
+
+        <div class="question">
+          <p>6. Vrai ou Faux : le déclaratif de la personne suffit à établir un diagnostic fiable.</p>
+          <label class="option"><input type="radio" name="q6" value="vrai"> Vrai</label>
+          <label class="option"><input type="radio" name="q6" value="faux"> Faux</label>
+        </div>
+
+        <div class="question">
+          <p>7. Quelle est la première finalité du diagnostic budgétaire ?</p>
+          <label class="option"><input type="radio" name="q7" value="a"> Faire la morale sur les dépenses</label>
+          <label class="option"><input type="radio" name="q7" value="b"> Voir juste avant d’agir</label>
+          <label class="option"><input type="radio" name="q7" value="c"> Réduire toutes les dépenses</label>
+        </div>
+
+        <div class="question">
+          <p>8. Citez 2 exemples de dépenses invisibles.</p>
+          <input class="text-answer" type="text" id="q8" placeholder="Exemple : frais bancaires, abonnement..." />
+        </div>
+
+        <div class="quiz-actions">
+          <button class="btn btn-primary" type="button" onclick="corrigerQuiz()">Valider le quiz</button>
+          <button class="btn btn-outline" type="button" onclick="reinitialiserQuiz()">Réinitialiser</button>
+        </div>
+
+        <div id="result" class="result"></div>
+      </section>
+
+      <div class="bottom-nav">
+        <a class="btn btn-outline" href="/espace-apprenant/diagnostic-budgetaire-terrain/index.html">← Retour à la formation</a>
+        <a class="btn btn-dark" href="/espace-apprenant/diagnostic-budgetaire-terrain/module-2.html" id="nextBtn" style="display:none;">Passer au module 2 →</a>
+      </div>
+    </div>
+  </main>
+
+  <footer>
+    <div class="container">
+      <div class="footer-line">
+        <span>© 2026 LOGIX FORMA — Tous droits réservés</span>
+        <span>Module 1 — progression locale</span>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    function getProgression() {
+      try {
+        return JSON.parse(localStorage.getItem('logix_progression') || '{}');
+      } catch {
+        return {};
+      }
+    }
+
+    function getQuizReussis() {
+      try {
+        return JSON.parse(localStorage.getItem('logix_quiz_reussis') || '{}');
+      } catch {
+        return {};
+      }
+    }
+
+    function saveProgression(moduleId) {
+      const progression = getProgression();
+      progression[moduleId] = true;
+      localStorage.setItem('logix_progression', JSON.stringify(progression));
+    }
+
+    function saveQuiz(moduleId) {
+      const quizReussis = getQuizReussis();
+      quizReussis[moduleId] = true;
+      localStorage.setItem('logix_quiz_reussis', JSON.stringify(quizReussis));
+    }
+
+    function corrigerQuiz() {
+      let score = 0;
+      const total = 8;
+
+      const q1 = document.querySelector('input[name="q1"]:checked');
+      if (q1 && q1.value === 'a') score++;
+
+      const q2 = document.querySelector('input[name="q2"]:checked');
+      if (q2 && q2.value === 'faux') score++;
+
+      const q3 = document.querySelector('input[name="q3"]:checked');
+      if (q3 && q3.value === 'c') score++;
+
+      const q4 = document.querySelector('input[name="q4"]:checked');
+      if (q4 && q4.value === 'b') score++;
+
+      const q5 = document.querySelector('input[name="q5"]:checked');
+      if (q5 && q5.value === 'b') score++;
+
+      const q6 = document.querySelector('input[name="q6"]:checked');
+      if (q6 && q6.value === 'faux') score++;
+
+      const q7 = document.querySelector('input[name="q7"]:checked');
+      if (q7 && q7.value === 'b') score++;
+
+      const q8 = (document.getElementById('q8').value || '').toLowerCase();
+      const q8Ok =
+        q8.includes('frais banc') ||
+        q8.includes('abonnement') ||
+        q8.includes('stream') ||
+        q8.includes('prélèvement') ||
+        q8.includes('prelevement');
+
+      if (q8Ok) score++;
+
+      const pourcentage = Math.round((score / total) * 100);
+      const resultDiv = document.getElementById('result');
+      const nextBtn = document.getElementById('nextBtn');
+
+      if (pourcentage >= 70) {
+        resultDiv.className = 'result success';
+        resultDiv.style.display = 'block';
+        resultDiv.innerHTML = `✅ Quiz validé. Score : ${score}/${total} (${pourcentage}%). Le module 1 est terminé.`;
+
+        saveProgression(1);
+        saveQuiz(1);
+
+        nextBtn.style.display = 'inline-flex';
+      } else {
+        resultDiv.className = 'result error';
+        resultDiv.style.display = 'block';
+        resultDiv.innerHTML = `❌ Score insuffisant : ${score}/${total} (${pourcentage}%). Le seuil de validation est fixé à 70 %.`;
+      }
+    }
+
+    function reinitialiserQuiz() {
+      document.querySelectorAll('input[type="radio"]').forEach(input => {
+        input.checked = false;
+      });
+      document.getElementById('q8').value = '';
+      const resultDiv = document.getElementById('result');
+      resultDiv.style.display = 'none';
+      resultDiv.className = 'result';
+      resultDiv.innerHTML = '';
+    }
+
+    function restoreState() {
+      const progression = getProgression();
+      const quizReussis = getQuizReussis();
+
+      if (progression[1] === true && quizReussis[1] === true) {
+        const resultDiv = document.getElementById('result');
+        const nextBtn = document.getElementById('nextBtn');
+
+        resultDiv.className = 'result success';
+        resultDiv.style.display = 'block';
+        resultDiv.innerHTML = '✅ Module déjà validé. Vous pouvez poursuivre vers le module 2.';
+
+        nextBtn.style.display = 'inline-flex';
+      }
+    }
+
+    restoreState();
+  </script>
+</body>
+</html>
