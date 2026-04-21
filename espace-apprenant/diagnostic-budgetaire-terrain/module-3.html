@@ -1,0 +1,964 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <title>Module 3 – Gestion de la résistance | LOGIX FORMA</title>
+  <meta
+    name="description"
+    content="Module 3 de la formation Diagnostic budgétaire terrain – Gestion de la résistance selon la méthode LOGIX FORMA."
+  />
+  <meta name="robots" content="noindex, nofollow" />
+  <link rel="canonical" href="https://logixforma.com/espace-apprenant/diagnostic-budgetaire-terrain/module-3.html" />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Outfit:wght@600;700;800&display=swap"
+    rel="stylesheet"
+  />
+
+  <style>
+    :root {
+      --navy: #16325c;
+      --navy-2: #21457a;
+      --navy-3: #0d203c;
+      --green: #6ba32a;
+      --green-2: #4f7d17;
+      --gold: #e3b229;
+      --gold-2: #ca9916;
+      --ink: #101828;
+      --text: #253244;
+      --muted: #667085;
+      --bg: #f4f7fb;
+      --card: #ffffff;
+      --surface: #eef2f8;
+      --line: #dde3ee;
+      --success: #ebf7df;
+      --warning: #fff3e0;
+      --error: #fee2e2;
+      --shadow-xs: 0 1px 3px rgba(16, 24, 40, 0.06);
+      --shadow-sm: 0 10px 26px rgba(16, 24, 40, 0.08);
+      --radius: 16px;
+      --radius-lg: 24px;
+      --max: 980px;
+      --transition: 220ms ease;
+    }
+
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+
+    body {
+      margin: 0;
+      font-family: Inter, sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      line-height: 1.65;
+      -webkit-font-smoothing: antialiased;
+      text-rendering: optimizeLegibility;
+    }
+
+    a { color: inherit; text-decoration: none; }
+    img { display: block; max-width: 100%; }
+    button, input { font: inherit; }
+
+    .container {
+      width: min(calc(100% - 32px), var(--max));
+      margin: 0 auto;
+    }
+
+    .skip-link {
+      position: absolute;
+      left: 12px;
+      top: -48px;
+      background: var(--navy);
+      color: white;
+      padding: 10px 14px;
+      border-radius: 10px;
+      z-index: 1000;
+    }
+
+    .skip-link:focus { top: 12px; }
+
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 10px;
+      border: 0;
+      border-radius: 14px;
+      padding: 12px 18px;
+      font-weight: 700;
+      cursor: pointer;
+      text-align: center;
+      transition:
+        transform var(--transition),
+        background var(--transition),
+        color var(--transition),
+        border-color var(--transition),
+        box-shadow var(--transition);
+    }
+
+    .btn:hover { transform: translateY(-1px); }
+
+    .btn:focus-visible,
+    input:focus-visible,
+    details summary:focus-visible {
+      outline: 3px solid rgba(227, 178, 41, 0.45);
+      outline-offset: 2px;
+    }
+
+    .btn-dark {
+      background: var(--navy);
+      color: white;
+      box-shadow: 0 10px 24px rgba(22, 50, 92, 0.25);
+    }
+
+    .btn-dark:hover { background: var(--navy-3); }
+
+    .btn-outline {
+      background: transparent;
+      color: var(--navy);
+      border: 2px solid rgba(22, 50, 92, 0.16);
+    }
+
+    .btn-outline:hover {
+      border-color: var(--navy);
+      background: rgba(22, 50, 92, 0.04);
+    }
+
+    .btn-primary {
+      background: var(--gold);
+      color: var(--navy-3);
+      box-shadow: 0 10px 24px rgba(227, 178, 41, 0.28);
+    }
+
+    .btn-primary:hover { background: var(--gold-2); }
+
+    header {
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      backdrop-filter: blur(14px);
+      background: rgba(255, 255, 255, 0.92);
+      border-bottom: 1px solid rgba(221, 227, 238, 0.85);
+    }
+
+    .topbar {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 16px;
+      min-height: 76px;
+    }
+
+    .brand {
+      display: inline-flex;
+      align-items: center;
+      gap: 12px;
+      min-width: 0;
+    }
+
+    .brand img {
+      width: 48px;
+      height: 48px;
+      object-fit: cover;
+      border-radius: 12px;
+      box-shadow: var(--shadow-xs);
+    }
+
+    .brand-text {
+      display: flex;
+      flex-direction: column;
+      line-height: 1.05;
+    }
+
+    .brand-title {
+      font-family: Outfit, sans-serif;
+      font-size: 1.22rem;
+      font-weight: 800;
+      color: var(--navy);
+      letter-spacing: -0.03em;
+    }
+
+    .brand-title span { color: var(--green); }
+
+    .brand-sub {
+      font-size: 0.78rem;
+      color: var(--muted);
+      font-weight: 600;
+      margin-top: 4px;
+    }
+
+    .top-actions {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      flex-wrap: wrap;
+    }
+
+    .hero {
+      background:
+        radial-gradient(circle at 85% 20%, rgba(107, 163, 42, 0.18), transparent 24%),
+        radial-gradient(circle at 10% 90%, rgba(227, 178, 41, 0.16), transparent 18%),
+        linear-gradient(135deg, #0d203c 0%, #16325c 58%, #173d27 100%);
+      color: white;
+      padding: 48px 0 38px;
+    }
+
+    .hero h1 {
+      margin: 0 0 10px;
+      font-family: Outfit, sans-serif;
+      font-size: clamp(1.9rem, 4vw, 3rem);
+      line-height: 1.05;
+      letter-spacing: -0.04em;
+    }
+
+    .hero p {
+      margin: 0;
+      max-width: 760px;
+      color: rgba(255,255,255,0.86);
+      font-size: 1rem;
+    }
+
+    .hero-meta {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+      margin-top: 20px;
+    }
+
+    .hero-pill {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      padding: 8px 14px;
+      border-radius: 999px;
+      background: rgba(255,255,255,0.1);
+      border: 1px solid rgba(255,255,255,0.14);
+      font-size: 0.84rem;
+      font-weight: 700;
+      color: rgba(255,255,255,0.92);
+    }
+
+    main {
+      padding: 30px 0 56px;
+    }
+
+    .module-nav {
+      display: flex;
+      justify-content: space-between;
+      gap: 12px;
+      flex-wrap: wrap;
+      margin-bottom: 20px;
+    }
+
+    .module-nav a {
+      color: var(--navy);
+      font-weight: 700;
+      text-decoration: none;
+    }
+
+    .card {
+      background: var(--card);
+      border: 1px solid var(--line);
+      border-radius: var(--radius-lg);
+      box-shadow: var(--shadow-sm);
+      padding: 24px;
+      margin-bottom: 22px;
+    }
+
+    .card h2,
+    .card h3 {
+      margin: 0 0 12px;
+      color: var(--ink);
+    }
+
+    .card h2 {
+      font-family: Outfit, sans-serif;
+      font-size: 1.55rem;
+      letter-spacing: -0.03em;
+    }
+
+    .card h3 {
+      font-size: 1.12rem;
+    }
+
+    .card p {
+      margin: 0 0 12px;
+      color: var(--text);
+    }
+
+    .card p:last-child { margin-bottom: 0; }
+
+    .badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 6px 10px;
+      border-radius: 999px;
+      background: #fee2e2;
+      border: 1px solid #f5c2c7;
+      color: #b42318;
+      font-size: 0.74rem;
+      font-weight: 800;
+      letter-spacing: 0.03em;
+      text-transform: uppercase;
+      margin-bottom: 14px;
+    }
+
+    .warning-box,
+    .success-box,
+    .memo,
+    .protocol-box {
+      border-radius: 14px;
+      padding: 16px 18px;
+      margin: 16px 0 0;
+      border: 1px solid var(--line);
+    }
+
+    .warning-box {
+      background: var(--error);
+      border-left: 4px solid #dc2626;
+    }
+
+    .success-box {
+      background: var(--success);
+      border-left: 4px solid var(--green);
+    }
+
+    .memo {
+      background: var(--surface);
+      border-left: 4px solid var(--navy);
+      font-weight: 500;
+    }
+
+    .protocol-box {
+      background: #fbfcff;
+      border-left: 4px solid var(--gold);
+    }
+
+    .grid-2 {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 16px;
+    }
+
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      margin: 14px 0 0;
+      font-size: 0.94rem;
+      overflow: hidden;
+      border-radius: 12px;
+    }
+
+    th, td {
+      border: 1px solid var(--line);
+      padding: 10px 12px;
+      text-align: left;
+      vertical-align: top;
+    }
+
+    th {
+      background: var(--surface);
+      font-weight: 800;
+      color: var(--ink);
+    }
+
+    ul, ol {
+      margin: 0;
+      padding-left: 22px;
+    }
+
+    li + li { margin-top: 8px; }
+
+    details {
+      background: var(--card);
+      border: 1px solid var(--line);
+      border-radius: 14px;
+      padding: 14px 16px;
+      margin-top: 16px;
+    }
+
+    summary {
+      cursor: pointer;
+      font-weight: 800;
+      color: var(--navy);
+    }
+
+    .quiz-card {
+      scroll-margin-top: 100px;
+    }
+
+    .quiz-intro {
+      color: var(--muted);
+      margin-bottom: 18px;
+    }
+
+    .question {
+      padding: 18px;
+      border: 1px solid var(--line);
+      border-radius: 16px;
+      background: #fbfcff;
+      margin-bottom: 16px;
+    }
+
+    .question p {
+      margin: 0 0 12px;
+      font-weight: 700;
+      color: var(--ink);
+    }
+
+    .option {
+      display: block;
+      padding: 10px 12px;
+      border: 1px solid var(--line);
+      border-radius: 12px;
+      background: white;
+      margin-bottom: 10px;
+      cursor: pointer;
+      transition: var(--transition);
+    }
+
+    .option:hover {
+      border-color: var(--navy);
+      background: #f8fbff;
+    }
+
+    .option input {
+      margin-right: 10px;
+    }
+
+    .text-answer {
+      width: 100%;
+      border: 1.5px solid var(--line);
+      border-radius: 12px;
+      padding: 12px 14px;
+      background: white;
+      color: var(--ink);
+      transition: border-color var(--transition), box-shadow var(--transition);
+    }
+
+    .text-answer:focus {
+      border-color: var(--navy);
+      box-shadow: 0 0 0 4px rgba(22, 50, 92, 0.08);
+      outline: none;
+    }
+
+    .quiz-actions {
+      display: flex;
+      gap: 12px;
+      flex-wrap: wrap;
+      margin-top: 20px;
+    }
+
+    .result {
+      display: none;
+      margin-top: 18px;
+      padding: 16px 18px;
+      border-radius: 14px;
+      font-weight: 600;
+      border: 1px solid transparent;
+    }
+
+    .result.success {
+      display: block;
+      background: var(--success);
+      color: var(--green-2);
+      border-color: #cde8d1;
+    }
+
+    .result.error {
+      display: block;
+      background: var(--error);
+      color: #b42318;
+      border-color: #f5c2c7;
+    }
+
+    .bottom-nav {
+      display: flex;
+      justify-content: space-between;
+      gap: 14px;
+      flex-wrap: wrap;
+      margin-top: 24px;
+    }
+
+    footer {
+      background: var(--navy-3);
+      color: #9aa8bf;
+      padding: 34px 0 28px;
+      margin-top: 40px;
+    }
+
+    .footer-line {
+      display: flex;
+      justify-content: space-between;
+      gap: 16px;
+      flex-wrap: wrap;
+      font-size: 0.88rem;
+    }
+
+    @media (max-width: 760px) {
+      .topbar {
+        flex-direction: column;
+        align-items: flex-start;
+        padding: 14px 0;
+      }
+
+      .top-actions {
+        width: 100%;
+      }
+
+      .top-actions .btn,
+      .top-actions a {
+        width: 100%;
+      }
+
+      .grid-2 {
+        grid-template-columns: 1fr;
+      }
+
+      .bottom-nav {
+        flex-direction: column;
+      }
+
+      .bottom-nav .btn,
+      .bottom-nav a {
+        width: 100%;
+      }
+
+      table {
+        display: block;
+        overflow-x: auto;
+      }
+    }
+  </style>
+</head>
+<body>
+  <a class="skip-link" href="#main-content">Aller au contenu</a>
+
+  <header>
+    <div class="container">
+      <div class="topbar">
+        <a class="brand" href="/" aria-label="Retour à l'accueil LOGIX FORMA">
+          <img src="https://i.postimg.cc/xdj77pwZ/logo-logix-forma.jpg" alt="Logo LOGIX FORMA" />
+          <span class="brand-text">
+            <span class="brand-title">LOGIX <span>FORMA</span></span>
+            <span class="brand-sub">Former pour produire, tester, mesurer</span>
+          </span>
+        </a>
+
+        <div class="top-actions">
+          <a class="btn btn-outline" href="/espace-apprenant/diagnostic-budgetaire-terrain/index.html">Retour à la formation</a>
+          <a class="btn btn-dark" href="/contact.html">Contact</a>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <section class="hero">
+    <div class="container">
+      <h1>Module 3 – Gestion de la résistance</h1>
+      <p>
+        Gérer le refus, l’oubli et le mensonge sans rupture relationnelle, afin d’obtenir un accord minimal et exploitable.
+      </p>
+      <div class="hero-meta">
+        <div class="hero-pill">Module 3 / 4</div>
+        <div class="hero-pill">Niveau avancé</div>
+        <div class="hero-pill">Durée estimée : 10 h</div>
+        <div class="hero-pill">Quiz de validation inclus</div>
+      </div>
+    </div>
+  </section>
+
+  <main id="main-content">
+    <div class="container">
+      <nav class="module-nav" aria-label="Navigation du module">
+        <a href="/espace-apprenant/diagnostic-budgetaire-terrain/index.html">← Retour au plan de formation</a>
+        <a href="#quiz">Aller au quiz ↓</a>
+      </nav>
+
+      <section class="card">
+        <span class="badge">Module 3 • Avancé</span>
+        <h2>Objectif du module</h2>
+        <p>
+          À l’issue de ce module, vous devez être capable de gérer les résistances les plus fréquentes
+          en entretien budgétaire : refus, oubli, minimisation, contradiction et mensonge.
+        </p>
+      </section>
+
+      <section class="card">
+        <h3>🎯 Ce qu’on cherche réellement</h3>
+        <p>
+          Le but n’est pas de gagner un bras de fer. Le but n’est pas non plus de “faire avouer”.
+          Le but est d’obtenir un mouvement minimal, concret, sans casser la relation de travail.
+        </p>
+
+        <div class="memo">
+          <strong>Principe LOGIX FORMA :</strong><br>
+          en situation de résistance, on cherche un petit accord réaliste, pas une adhésion totale immédiate.
+        </div>
+      </section>
+
+      <section class="card">
+        <h3>🛡️ Les 3 résistances principales</h3>
+        <div class="grid-2">
+          <div class="protocol-box">
+            <strong>1. Le refus</strong><br>
+            La personne dit non, rejette l’action, évite l’engagement ou se ferme.
+          </div>
+          <div class="protocol-box">
+            <strong>2. L’oubli</strong><br>
+            La personne ne fait pas ce qui était prévu, ne ramène pas les documents ou reporte sans fin.
+          </div>
+          <div class="protocol-box">
+            <strong>3. Le mensonge ou la contradiction</strong><br>
+            Les déclarations ne correspondent pas aux relevés ou au contexte observé.
+          </div>
+        </div>
+      </section>
+
+      <section class="card">
+        <h3>📌 Pourquoi la résistance apparaît</h3>
+        <p>
+          La résistance n’est pas seulement un manque de bonne volonté.
+          Elle peut venir de la honte, de la peur d’être jugé, d’un épuisement mental, d’un vécu administratif difficile
+          ou d’un sentiment de perte de contrôle.
+        </p>
+
+        <div class="warning-box">
+          <strong>Erreur à éviter :</strong> interpréter trop vite la résistance comme de la mauvaise foi pure.
+          Une lecture trop morale dégrade l’entretien et réduit vos chances d’obtenir une action.
+        </div>
+      </section>
+
+      <section class="card">
+        <h3>🧩 Protocole 1 – Gérer le refus</h3>
+        <ol>
+          <li><strong>Reformuler sans juger</strong> : “Je comprends que ce soit difficile.”</li>
+          <li><strong>Montrer un fait concret</strong> : relevé, montant, répétition, charge invisible.</li>
+          <li><strong>Ramener à une micro-action</strong> : appel, suppression, vérification, simulation.</li>
+          <li><strong>Valider le petit accord obtenu</strong>.</li>
+        </ol>
+
+        <div class="success-box">
+          <strong>Exemple :</strong><br>
+          “Je comprends que vous ne vouliez pas tout changer.  
+          Est-ce qu’on peut au moins vérifier ensemble le forfait téléphone ?”
+        </div>
+      </section>
+
+      <section class="card">
+        <h3>🧩 Protocole 2 – Gérer l’oubli</h3>
+        <ol>
+          <li><strong>Ne pas humilier</strong> : éviter “vous aviez pourtant promis”.</li>
+          <li><strong>Désamorcer la faute</strong> : “Ce n’est pas grave, on repart de maintenant.”</li>
+          <li><strong>Faire avec la personne</strong> quand c’est possible.</li>
+          <li><strong>Réduire la tâche</strong> si elle était trop lourde.</li>
+        </ol>
+
+        <div class="memo">
+          Un oubli répété peut signaler une surcharge mentale, pas seulement un manque d’implication.
+        </div>
+      </section>
+
+      <section class="card">
+        <h3>🧩 Protocole 3 – Gérer le mensonge ou la contradiction</h3>
+        <ol>
+          <li><strong>Recouper calmement les faits</strong> avec les relevés.</li>
+          <li><strong>Reformuler sans accuser</strong> : “Peut-être que j’ai mal compris.”</li>
+          <li><strong>Pointer l’écart</strong> sans utiliser le mot mensonge si ce n’est pas nécessaire.</li>
+          <li><strong>Ramener au travail utile</strong> : “Ce qui compte, c’est ce qu’on fait maintenant.”</li>
+        </ol>
+
+        <div class="warning-box">
+          <strong>À ne pas faire :</strong><br>
+          accuser brutalement, ironiser, humilier, “coincer” la personne ou prouver que vous avez raison pour la dominer.
+        </div>
+      </section>
+
+      <section class="card">
+        <h3>💬 Exemple d’entretien – Face au refus</h3>
+        <p><strong>Personne :</strong> “Je ne veux rien changer.”</p>
+        <p><strong>Professionnel :</strong> “Je comprends. On ne va pas tout changer aujourd’hui.”</p>
+        <p><strong>Professionnel :</strong> “Par contre, on voit ici 9 € de frais bancaires tous les mois. Est-ce qu’on peut juste appeler la banque ensemble ?”</p>
+        <p><strong>Personne :</strong> “Oui, ça on peut voir.”</p>
+
+        <div class="success-box">
+          Ici, l’objectif n’était pas d’obtenir une adhésion globale.  
+          L’objectif était d’obtenir un premier accord exploitable.
+        </div>
+      </section>
+
+      <section class="card">
+        <h3>💬 Exemple d’entretien – Face à l’oubli</h3>
+        <p><strong>Professionnel :</strong> “Vous n’avez pas apporté les documents ?”</p>
+        <p><strong>Réponse utile :</strong> “Ce n’est pas grave. On va déjà lister ensemble ce qu’il manque, puis on fait le premier appel maintenant.”</p>
+
+        <div class="memo">
+          L’entretien reste productif si vous transformez l’oubli en tâche plus simple.
+        </div>
+      </section>
+
+      <section class="card">
+        <h3>💬 Exemple d’entretien – Face à une contradiction</h3>
+        <p><strong>Déclaratif :</strong> “Je n’ai plus d’abonnement.”</p>
+        <p><strong>Relevé :</strong> prélèvement mensuel récurrent de 12 €.</p>
+        <p><strong>Formulation professionnelle :</strong> “Je vois ici un prélèvement régulier de 12 €. Peut-être qu’on peut regarder ensemble ce que c’est exactement.”</p>
+
+        <div class="success-box">
+          La formulation garde la relation ouverte tout en revenant au réel.
+        </div>
+      </section>
+
+      <section class="card">
+        <h3>🧪 Cas pratique – Quel protocole utiliser ?</h3>
+        <table>
+          <thead>
+            <tr>
+              <th>Situation</th>
+              <th>Lecture</th>
+              <th>Réponse attendue</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>“Je ne ferai pas cet appel.”</td>
+              <td>Refus</td>
+              <td>Reformuler + petit accord</td>
+            </tr>
+            <tr>
+              <td>Documents encore oubliés au rendez-vous</td>
+              <td>Oubli / surcharge</td>
+              <td>Réduire la tâche + faire ensemble</td>
+            </tr>
+            <tr>
+              <td>Déclaration incompatible avec les relevés</td>
+              <td>Contradiction / mensonge</td>
+              <td>Recouper + reformuler sans accuser</td>
+            </tr>
+          </tbody>
+        </table>
+      </section>
+
+      <section class="card">
+        <h3>❌ Les erreurs fréquentes</h3>
+        <ul>
+          <li>Insister frontalement jusqu’au blocage.</li>
+          <li>Humilier la personne quand elle oublie.</li>
+          <li>Dire “vous mentez” trop tôt.</li>
+          <li>Vouloir régler tout le problème dans le même échange.</li>
+          <li>Confondre vérité factuelle et domination relationnelle.</li>
+        </ul>
+      </section>
+
+      <section class="card">
+        <h3>🧠 À retenir avant le quiz</h3>
+        <div class="memo">
+          • Refus = reformuler + fait concret + petit accord<br>
+          • Oubli = pas de jugement + faire ensemble + réduire la tâche<br>
+          • Mensonge = recouper + reformuler + ne pas accuser frontalement<br>
+          • On cherche une avancée minimale mais réelle
+        </div>
+      </section>
+
+      <section class="card quiz-card" id="quiz">
+        <h2>Quiz du module 3</h2>
+        <p class="quiz-intro">
+          Validation recommandée : <strong>70 % minimum</strong>.  
+          Une fois le quiz validé, le module 4 sera considéré comme débloqué dans votre progression locale.
+        </p>
+
+        <div class="question">
+          <p>1. Face à un refus, quelle est la première posture utile ?</p>
+          <label class="option"><input type="radio" name="q1" value="a"> Insister immédiatement</label>
+          <label class="option"><input type="radio" name="q1" value="b"> Reformuler sans juger</label>
+          <label class="option"><input type="radio" name="q1" value="c"> Mettre fin à l’entretien</label>
+        </div>
+
+        <div class="question">
+          <p>2. Vrai ou Faux : l’objectif principal est de faire reconnaître à la personne qu’elle a tort.</p>
+          <label class="option"><input type="radio" name="q2" value="vrai"> Vrai</label>
+          <label class="option"><input type="radio" name="q2" value="faux"> Faux</label>
+        </div>
+
+        <div class="question">
+          <p>3. En cas d’oubli répété, quelle réponse est la plus utile ?</p>
+          <label class="option"><input type="radio" name="q3" value="a"> “Vous n’êtes pas sérieux.”</label>
+          <label class="option"><input type="radio" name="q3" value="b"> “Ce n’est pas grave, on repart d’une tâche plus simple.”</label>
+          <label class="option"><input type="radio" name="q3" value="c"> “On arrête ici.”</label>
+        </div>
+
+        <div class="question">
+          <p>4. Que faut-il éviter face à une contradiction dans les relevés ?</p>
+          <label class="option"><input type="radio" name="q4" value="a"> Accuser immédiatement de mensonge</label>
+          <label class="option"><input type="radio" name="q4" value="b"> Recouper calmement</label>
+          <label class="option"><input type="radio" name="q4" value="c"> Reformuler sans accuser</label>
+        </div>
+
+        <div class="question">
+          <p>5. Vrai ou Faux : un petit accord est souvent plus utile qu’un grand engagement non tenu.</p>
+          <label class="option"><input type="radio" name="q5" value="vrai"> Vrai</label>
+          <label class="option"><input type="radio" name="q5" value="faux"> Faux</label>
+        </div>
+
+        <div class="question">
+          <p>6. Lequel de ces objectifs correspond à la méthode ?</p>
+          <label class="option"><input type="radio" name="q6" value="a"> Gagner le conflit</label>
+          <label class="option"><input type="radio" name="q6" value="b"> Obtenir une avancée concrète sans casser la relation</label>
+          <label class="option"><input type="radio" name="q6" value="c"> Mettre la personne face à ses contradictions publiquement</label>
+        </div>
+
+        <div class="question">
+          <p>7. Vrai ou Faux : l’oubli peut être lié à la surcharge mentale.</p>
+          <label class="option"><input type="radio" name="q7" value="vrai"> Vrai</label>
+          <label class="option"><input type="radio" name="q7" value="faux"> Faux</label>
+        </div>
+
+        <div class="question">
+          <p>8. Citez deux choses à ne pas faire face à un mensonge ou une contradiction.</p>
+          <input class="text-answer" type="text" id="q8" placeholder="Votre réponse..." />
+        </div>
+
+        <div class="quiz-actions">
+          <button class="btn btn-primary" type="button" onclick="corrigerQuiz()">Valider le quiz</button>
+          <button class="btn btn-outline" type="button" onclick="reinitialiserQuiz()">Réinitialiser</button>
+        </div>
+
+        <div id="result" class="result"></div>
+      </section>
+
+      <div class="bottom-nav">
+        <a class="btn btn-outline" href="/espace-apprenant/diagnostic-budgetaire-terrain/module-2.html">← Revenir au module 2</a>
+        <a class="btn btn-dark" href="/espace-apprenant/diagnostic-budgetaire-terrain/module-4.html" id="nextBtn" style="display:none;">Passer au module 4 →</a>
+      </div>
+    </div>
+  </main>
+
+  <footer>
+    <div class="container">
+      <div class="footer-line">
+        <span>© 2026 LOGIX FORMA — Tous droits réservés</span>
+        <span>Module 3 — progression locale</span>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    function getProgression() {
+      try {
+        return JSON.parse(localStorage.getItem('logix_progression') || '{}');
+      } catch {
+        return {};
+      }
+    }
+
+    function getQuizReussis() {
+      try {
+        return JSON.parse(localStorage.getItem('logix_quiz_reussis') || '{}');
+      } catch {
+        return {};
+      }
+    }
+
+    function saveProgression(moduleId) {
+      const progression = getProgression();
+      progression[moduleId] = true;
+      localStorage.setItem('logix_progression', JSON.stringify(progression));
+    }
+
+    function saveQuiz(moduleId) {
+      const quizReussis = getQuizReussis();
+      quizReussis[moduleId] = true;
+      localStorage.setItem('logix_quiz_reussis', JSON.stringify(quizReussis));
+    }
+
+    function corrigerQuiz() {
+      let score = 0;
+      const total = 8;
+
+      const q1 = document.querySelector('input[name="q1"]:checked');
+      if (q1 && q1.value === 'b') score++;
+
+      const q2 = document.querySelector('input[name="q2"]:checked');
+      if (q2 && q2.value === 'faux') score++;
+
+      const q3 = document.querySelector('input[name="q3"]:checked');
+      if (q3 && q3.value === 'b') score++;
+
+      const q4 = document.querySelector('input[name="q4"]:checked');
+      if (q4 && q4.value === 'a') score++;
+
+      const q5 = document.querySelector('input[name="q5"]:checked');
+      if (q5 && q5.value === 'vrai') score++;
+
+      const q6 = document.querySelector('input[name="q6"]:checked');
+      if (q6 && q6.value === 'b') score++;
+
+      const q7 = document.querySelector('input[name="q7"]:checked');
+      if (q7 && q7.value === 'vrai') score++;
+
+      const q8 = (document.getElementById('q8').value || '').toLowerCase();
+      const q8Ok =
+        q8.includes('accuser') ||
+        q8.includes('humilier') ||
+        q8.includes('ironiser') ||
+        q8.includes('forcer') ||
+        q8.includes('coincer') ||
+        q8.includes('mettre la pression');
+
+      if (q8Ok) score++;
+
+      const pourcentage = Math.round((score / total) * 100);
+      const resultDiv = document.getElementById('result');
+      const nextBtn = document.getElementById('nextBtn');
+
+      if (pourcentage >= 70) {
+        resultDiv.className = 'result success';
+        resultDiv.style.display = 'block';
+        resultDiv.innerHTML = `✅ Quiz validé. Score : ${score}/${total} (${pourcentage}%). Le module 3 est terminé.`;
+
+        saveProgression(3);
+        saveQuiz(3);
+
+        nextBtn.style.display = 'inline-flex';
+      } else {
+        resultDiv.className = 'result error';
+        resultDiv.style.display = 'block';
+        resultDiv.innerHTML = `❌ Score insuffisant : ${score}/${total} (${pourcentage}%). Le seuil de validation est fixé à 70 %.`;
+      }
+    }
+
+    function reinitialiserQuiz() {
+      document.querySelectorAll('input[type="radio"]').forEach(input => {
+        input.checked = false;
+      });
+      document.getElementById('q8').value = '';
+      const resultDiv = document.getElementById('result');
+      resultDiv.style.display = 'none';
+      resultDiv.className = 'result';
+      resultDiv.innerHTML = '';
+    }
+
+    function restoreState() {
+      const progression = getProgression();
+      const quizReussis = getQuizReussis();
+
+      if (progression[3] === true && quizReussis[3] === true) {
+        const resultDiv = document.getElementById('result');
+        const nextBtn = document.getElementById('nextBtn');
+
+        resultDiv.className = 'result success';
+        resultDiv.style.display = 'block';
+        resultDiv.innerHTML = '✅ Module déjà validé. Vous pouvez poursuivre vers le module 4.';
+
+        nextBtn.style.display = 'inline-flex';
+      }
+    }
+
+    restoreState();
+  </script>
+</body>
+</html>
