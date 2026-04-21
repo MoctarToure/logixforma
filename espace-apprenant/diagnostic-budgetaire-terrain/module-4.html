@@ -1,0 +1,1027 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <title>Module 4 – Production professionnelle | LOGIX FORMA</title>
+  <meta
+    name="description"
+    content="Module 4 de la formation Diagnostic budgétaire terrain – Production professionnelle selon la méthode LOGIX FORMA."
+  />
+  <meta name="robots" content="noindex, nofollow" />
+  <link rel="canonical" href="https://logixforma.com/espace-apprenant/diagnostic-budgetaire-terrain/module-4.html" />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Outfit:wght@600;700;800&display=swap"
+    rel="stylesheet"
+  />
+
+  <style>
+    :root {
+      --navy: #16325c;
+      --navy-2: #21457a;
+      --navy-3: #0d203c;
+      --green: #6ba32a;
+      --green-2: #4f7d17;
+      --gold: #e3b229;
+      --gold-2: #ca9916;
+      --ink: #101828;
+      --text: #253244;
+      --muted: #667085;
+      --bg: #f4f7fb;
+      --card: #ffffff;
+      --surface: #eef2f8;
+      --line: #dde3ee;
+      --success: #ebf7df;
+      --warning: #fff3e0;
+      --error: #fee2e2;
+      --shadow-xs: 0 1px 3px rgba(16, 24, 40, 0.06);
+      --shadow-sm: 0 10px 26px rgba(16, 24, 40, 0.08);
+      --radius: 16px;
+      --radius-lg: 24px;
+      --max: 980px;
+      --transition: 220ms ease;
+    }
+
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+
+    body {
+      margin: 0;
+      font-family: Inter, sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      line-height: 1.65;
+      -webkit-font-smoothing: antialiased;
+      text-rendering: optimizeLegibility;
+    }
+
+    a { color: inherit; text-decoration: none; }
+    img { display: block; max-width: 100%; }
+    button, input { font: inherit; }
+
+    .container {
+      width: min(calc(100% - 32px), var(--max));
+      margin: 0 auto;
+    }
+
+    .skip-link {
+      position: absolute;
+      left: 12px;
+      top: -48px;
+      background: var(--navy);
+      color: white;
+      padding: 10px 14px;
+      border-radius: 10px;
+      z-index: 1000;
+    }
+
+    .skip-link:focus { top: 12px; }
+
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 10px;
+      border: 0;
+      border-radius: 14px;
+      padding: 12px 18px;
+      font-weight: 700;
+      cursor: pointer;
+      text-align: center;
+      transition:
+        transform var(--transition),
+        background var(--transition),
+        color var(--transition),
+        border-color var(--transition),
+        box-shadow var(--transition);
+    }
+
+    .btn:hover { transform: translateY(-1px); }
+
+    .btn:focus-visible,
+    input:focus-visible,
+    details summary:focus-visible {
+      outline: 3px solid rgba(227, 178, 41, 0.45);
+      outline-offset: 2px;
+    }
+
+    .btn-dark {
+      background: var(--navy);
+      color: white;
+      box-shadow: 0 10px 24px rgba(22, 50, 92, 0.25);
+    }
+
+    .btn-dark:hover { background: var(--navy-3); }
+
+    .btn-outline {
+      background: transparent;
+      color: var(--navy);
+      border: 2px solid rgba(22, 50, 92, 0.16);
+    }
+
+    .btn-outline:hover {
+      border-color: var(--navy);
+      background: rgba(22, 50, 92, 0.04);
+    }
+
+    .btn-primary {
+      background: var(--gold);
+      color: var(--navy-3);
+      box-shadow: 0 10px 24px rgba(227, 178, 41, 0.28);
+    }
+
+    .btn-primary:hover { background: var(--gold-2); }
+
+    header {
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      backdrop-filter: blur(14px);
+      background: rgba(255, 255, 255, 0.92);
+      border-bottom: 1px solid rgba(221, 227, 238, 0.85);
+    }
+
+    .topbar {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 16px;
+      min-height: 76px;
+    }
+
+    .brand {
+      display: inline-flex;
+      align-items: center;
+      gap: 12px;
+      min-width: 0;
+    }
+
+    .brand img {
+      width: 48px;
+      height: 48px;
+      object-fit: cover;
+      border-radius: 12px;
+      box-shadow: var(--shadow-xs);
+    }
+
+    .brand-text {
+      display: flex;
+      flex-direction: column;
+      line-height: 1.05;
+    }
+
+    .brand-title {
+      font-family: Outfit, sans-serif;
+      font-size: 1.22rem;
+      font-weight: 800;
+      color: var(--navy);
+      letter-spacing: -0.03em;
+    }
+
+    .brand-title span { color: var(--green); }
+
+    .brand-sub {
+      font-size: 0.78rem;
+      color: var(--muted);
+      font-weight: 600;
+      margin-top: 4px;
+    }
+
+    .top-actions {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      flex-wrap: wrap;
+    }
+
+    .hero {
+      background:
+        radial-gradient(circle at 85% 20%, rgba(107, 163, 42, 0.18), transparent 24%),
+        radial-gradient(circle at 10% 90%, rgba(227, 178, 41, 0.16), transparent 18%),
+        linear-gradient(135deg, #0d203c 0%, #16325c 58%, #173d27 100%);
+      color: white;
+      padding: 48px 0 38px;
+    }
+
+    .hero h1 {
+      margin: 0 0 10px;
+      font-family: Outfit, sans-serif;
+      font-size: clamp(1.9rem, 4vw, 3rem);
+      line-height: 1.05;
+      letter-spacing: -0.04em;
+    }
+
+    .hero p {
+      margin: 0;
+      max-width: 760px;
+      color: rgba(255,255,255,0.86);
+      font-size: 1rem;
+    }
+
+    .hero-meta {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+      margin-top: 20px;
+    }
+
+    .hero-pill {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      padding: 8px 14px;
+      border-radius: 999px;
+      background: rgba(255,255,255,0.1);
+      border: 1px solid rgba(255,255,255,0.14);
+      font-size: 0.84rem;
+      font-weight: 700;
+      color: rgba(255,255,255,0.92);
+    }
+
+    main {
+      padding: 30px 0 56px;
+    }
+
+    .module-nav {
+      display: flex;
+      justify-content: space-between;
+      gap: 12px;
+      flex-wrap: wrap;
+      margin-bottom: 20px;
+    }
+
+    .module-nav a {
+      color: var(--navy);
+      font-weight: 700;
+      text-decoration: none;
+    }
+
+    .card {
+      background: var(--card);
+      border: 1px solid var(--line);
+      border-radius: var(--radius-lg);
+      box-shadow: var(--shadow-sm);
+      padding: 24px;
+      margin-bottom: 22px;
+    }
+
+    .card h2,
+    .card h3 {
+      margin: 0 0 12px;
+      color: var(--ink);
+    }
+
+    .card h2 {
+      font-family: Outfit, sans-serif;
+      font-size: 1.55rem;
+      letter-spacing: -0.03em;
+    }
+
+    .card h3 {
+      font-size: 1.12rem;
+    }
+
+    .card p {
+      margin: 0 0 12px;
+      color: var(--text);
+    }
+
+    .card p:last-child { margin-bottom: 0; }
+
+    .badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 6px 10px;
+      border-radius: 999px;
+      background: #f3e8ff;
+      border: 1px solid #e2cef7;
+      color: #7a3fb2;
+      font-size: 0.74rem;
+      font-weight: 800;
+      letter-spacing: 0.03em;
+      text-transform: uppercase;
+      margin-bottom: 14px;
+    }
+
+    .warning-box,
+    .success-box,
+    .memo,
+    .template-box {
+      border-radius: 14px;
+      padding: 16px 18px;
+      margin: 16px 0 0;
+      border: 1px solid var(--line);
+    }
+
+    .warning-box {
+      background: var(--error);
+      border-left: 4px solid #dc2626;
+    }
+
+    .success-box {
+      background: var(--success);
+      border-left: 4px solid var(--green);
+    }
+
+    .memo {
+      background: var(--surface);
+      border-left: 4px solid var(--navy);
+      font-weight: 500;
+    }
+
+    .template-box {
+      background: #fbfcff;
+      border-left: 4px solid var(--gold);
+    }
+
+    .grid-2 {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 16px;
+    }
+
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      margin: 14px 0 0;
+      font-size: 0.94rem;
+      overflow: hidden;
+      border-radius: 12px;
+    }
+
+    th, td {
+      border: 1px solid var(--line);
+      padding: 10px 12px;
+      text-align: left;
+      vertical-align: top;
+    }
+
+    th {
+      background: var(--surface);
+      font-weight: 800;
+      color: var(--ink);
+    }
+
+    ul, ol {
+      margin: 0;
+      padding-left: 22px;
+    }
+
+    li + li { margin-top: 8px; }
+
+    details {
+      background: var(--card);
+      border: 1px solid var(--line);
+      border-radius: 14px;
+      padding: 14px 16px;
+      margin-top: 16px;
+    }
+
+    summary {
+      cursor: pointer;
+      font-weight: 800;
+      color: var(--navy);
+    }
+
+    .quiz-card {
+      scroll-margin-top: 100px;
+    }
+
+    .quiz-intro {
+      color: var(--muted);
+      margin-bottom: 18px;
+    }
+
+    .question {
+      padding: 18px;
+      border: 1px solid var(--line);
+      border-radius: 16px;
+      background: #fbfcff;
+      margin-bottom: 16px;
+    }
+
+    .question p {
+      margin: 0 0 12px;
+      font-weight: 700;
+      color: var(--ink);
+    }
+
+    .option {
+      display: block;
+      padding: 10px 12px;
+      border: 1px solid var(--line);
+      border-radius: 12px;
+      background: white;
+      margin-bottom: 10px;
+      cursor: pointer;
+      transition: var(--transition);
+    }
+
+    .option:hover {
+      border-color: var(--navy);
+      background: #f8fbff;
+    }
+
+    .option input {
+      margin-right: 10px;
+    }
+
+    .text-answer {
+      width: 100%;
+      border: 1.5px solid var(--line);
+      border-radius: 12px;
+      padding: 12px 14px;
+      background: white;
+      color: var(--ink);
+      transition: border-color var(--transition), box-shadow var(--transition);
+    }
+
+    .text-answer:focus {
+      border-color: var(--navy);
+      box-shadow: 0 0 0 4px rgba(22, 50, 92, 0.08);
+      outline: none;
+    }
+
+    .quiz-actions {
+      display: flex;
+      gap: 12px;
+      flex-wrap: wrap;
+      margin-top: 20px;
+    }
+
+    .result {
+      display: none;
+      margin-top: 18px;
+      padding: 16px 18px;
+      border-radius: 14px;
+      font-weight: 600;
+      border: 1px solid transparent;
+    }
+
+    .result.success {
+      display: block;
+      background: var(--success);
+      color: var(--green-2);
+      border-color: #cde8d1;
+    }
+
+    .result.error {
+      display: block;
+      background: var(--error);
+      color: #b42318;
+      border-color: #f5c2c7;
+    }
+
+    .bottom-nav {
+      display: flex;
+      justify-content: space-between;
+      gap: 14px;
+      flex-wrap: wrap;
+      margin-top: 24px;
+    }
+
+    footer {
+      background: var(--navy-3);
+      color: #9aa8bf;
+      padding: 34px 0 28px;
+      margin-top: 40px;
+    }
+
+    .footer-line {
+      display: flex;
+      justify-content: space-between;
+      gap: 16px;
+      flex-wrap: wrap;
+      font-size: 0.88rem;
+    }
+
+    @media (max-width: 760px) {
+      .topbar {
+        flex-direction: column;
+        align-items: flex-start;
+        padding: 14px 0;
+      }
+
+      .top-actions {
+        width: 100%;
+      }
+
+      .top-actions .btn,
+      .top-actions a {
+        width: 100%;
+      }
+
+      .grid-2 {
+        grid-template-columns: 1fr;
+      }
+
+      .bottom-nav {
+        flex-direction: column;
+      }
+
+      .bottom-nav .btn,
+      .bottom-nav a {
+        width: 100%;
+      }
+
+      table {
+        display: block;
+        overflow-x: auto;
+      }
+    }
+  </style>
+</head>
+<body>
+  <a class="skip-link" href="#main-content">Aller au contenu</a>
+
+  <header>
+    <div class="container">
+      <div class="topbar">
+        <a class="brand" href="/" aria-label="Retour à l'accueil LOGIX FORMA">
+          <img src="https://i.postimg.cc/xdj77pwZ/logo-logix-forma.jpg" alt="Logo LOGIX FORMA" />
+          <span class="brand-text">
+            <span class="brand-title">LOGIX <span>FORMA</span></span>
+            <span class="brand-sub">Former pour produire, tester, mesurer</span>
+          </span>
+        </a>
+
+        <div class="top-actions">
+          <a class="btn btn-outline" href="/espace-apprenant/diagnostic-budgetaire-terrain/index.html">Retour à la formation</a>
+          <a class="btn btn-dark" href="/contact.html">Contact</a>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <section class="hero">
+    <div class="container">
+      <h1>Module 4 – Production professionnelle</h1>
+      <p>
+        Produire un dossier budgétaire structuré, lisible et transmissible, en 4 pages claires, orientées décision et suivi.
+      </p>
+      <div class="hero-meta">
+        <div class="hero-pill">Module 4 / 4</div>
+        <div class="hero-pill">Niveau expert</div>
+        <div class="hero-pill">Durée estimée : 9 h</div>
+        <div class="hero-pill">Quiz de validation inclus</div>
+      </div>
+    </div>
+  </section>
+
+  <main id="main-content">
+    <div class="container">
+      <nav class="module-nav" aria-label="Navigation du module">
+        <a href="/espace-apprenant/diagnostic-budgetaire-terrain/index.html">← Retour au plan de formation</a>
+        <a href="#quiz">Aller au quiz ↓</a>
+      </nav>
+
+      <section class="card">
+        <span class="badge">Module 4 • Expert</span>
+        <h2>Objectif du module</h2>
+        <p>
+          À l’issue de ce module, vous devez être capable de transformer l’entretien budgétaire
+          en document professionnel exploitable par un responsable, un collègue ou un partenaire.
+        </p>
+      </section>
+
+      <section class="card">
+        <h3>🎯 Pourquoi produire un vrai dossier</h3>
+        <p>
+          Le travail budgétaire ne s’arrête pas à l’entretien. Il doit déboucher sur une trace claire,
+          transmissible, relisible et utile.
+        </p>
+        <p>
+          Un bon dossier n’est pas un dossier long. C’est un dossier qui permet à un tiers
+          de comprendre la situation, la logique d’action et le suivi à venir.
+        </p>
+
+        <div class="memo">
+          <strong>Principe LOGIX FORMA :</strong><br>
+          un bon dossier doit pouvoir être lu rapidement et permettre une décision ou une continuité de prise en charge.
+        </div>
+      </section>
+
+      <section class="card">
+        <h3>📄 Structure imposée du dossier – 4 pages</h3>
+        <ol>
+          <li><strong>Page 1 – Diagnostic</strong> : revenus, dépenses, reste à vivre, zones protégées.</li>
+          <li><strong>Page 2 – Analyse</strong> : points de fragilité, résistances, écarts observés.</li>
+          <li><strong>Page 3 – Plan d’action</strong> : actions priorisées, calendrier, responsable.</li>
+          <li><strong>Page 4 – Suivi</strong> : projection sur 3 mois, indicateurs, points de vigilance.</li>
+        </ol>
+      </section>
+
+      <section class="card">
+        <h3>📌 Page 1 – Diagnostic</h3>
+        <p>
+          Cette page présente les chiffres essentiels. Elle doit être lisible en quelques secondes.
+        </p>
+
+        <table>
+          <thead>
+            <tr>
+              <th>Revenus</th>
+              <th>Montant</th>
+              <th>Dépenses</th>
+              <th>Montant</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>Salaire</td>
+              <td>980 €</td>
+              <td>Loyer</td>
+              <td>580 €</td>
+            </tr>
+            <tr>
+              <td>RSA</td>
+              <td>420 €</td>
+              <td>Courses</td>
+              <td>500 €</td>
+            </tr>
+            <tr>
+              <td>APL</td>
+              <td>280 €</td>
+              <td>Téléphone</td>
+              <td>45 €</td>
+            </tr>
+            <tr>
+              <td><strong>Total</strong></td>
+              <td><strong>1 680 €</strong></td>
+              <td><strong>Total</strong></td>
+              <td><strong>1 570 €</strong></td>
+            </tr>
+          </tbody>
+        </table>
+
+        <div class="success-box">
+          <strong>À faire apparaître clairement :</strong><br>
+          • total revenus<br>
+          • total dépenses<br>
+          • reste à vivre<br>
+          • dépenses protégées
+        </div>
+      </section>
+
+      <section class="card">
+        <h3>📌 Page 2 – Analyse</h3>
+        <p>
+          Cette page ne répète pas les chiffres. Elle explique ce qu’ils signifient.
+        </p>
+
+        <div class="template-box">
+          <strong>Exemple d’analyse :</strong><br>
+          Le budget présente un reste à vivre faible. Les dépenses protégées sont déjà fortement contraintes.
+          Deux éléments fragilisent la situation : des frais invisibles récurrents et une faible marge de manœuvre immédiate.
+          La personne manifeste une résistance modérée à la modification des habitudes de consommation,
+          mais accepte une action ciblée à court terme.
+        </div>
+      </section>
+
+      <section class="card">
+        <h3>📌 Page 3 – Plan d’action</h3>
+        <p>
+          Cette page indique ce qui va être fait, dans quel ordre et par qui.
+        </p>
+
+        <table>
+          <thead>
+            <tr>
+              <th>Échéance</th>
+              <th>Action</th>
+              <th>Responsable</th>
+              <th>Gain estimé</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>Semaine 1</td>
+              <td>Changer le forfait téléphone</td>
+              <td>Usager + accompagnant</td>
+              <td>25 €</td>
+            </tr>
+            <tr>
+              <td>Semaine 2</td>
+              <td>Supprimer les frais bancaires évitables</td>
+              <td>Usager</td>
+              <td>9 €</td>
+            </tr>
+            <tr>
+              <td>Mois 2</td>
+              <td>Négocier un échéancier énergie</td>
+              <td>Accompagnant</td>
+              <td>15 €</td>
+            </tr>
+          </tbody>
+        </table>
+
+        <div class="memo">
+          Le plan d’action doit être concret, daté et réaliste.  
+          Une action floue n’est pas une action professionnelle.
+        </div>
+      </section>
+
+      <section class="card">
+        <h3>📌 Page 4 – Suivi sur 3 mois</h3>
+        <p>
+          Cette page montre la logique d’évolution et permet une lecture rapide de la trajectoire budgétaire.
+        </p>
+
+        <table>
+          <thead>
+            <tr>
+              <th>Mois</th>
+              <th>Revenus</th>
+              <th>Dépenses</th>
+              <th>Reste à vivre</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>Mois 1</td>
+              <td>1 680 €</td>
+              <td>1 545 €</td>
+              <td>135 €</td>
+            </tr>
+            <tr>
+              <td>Mois 2</td>
+              <td>1 680 €</td>
+              <td>1 530 €</td>
+              <td>150 €</td>
+            </tr>
+            <tr>
+              <td>Mois 3</td>
+              <td>1 680 €</td>
+              <td>1 515 €</td>
+              <td>165 €</td>
+            </tr>
+          </tbody>
+        </table>
+
+        <div class="success-box">
+          L’objectif n’est pas la perfection budgétaire immédiate, mais une amélioration mesurable.
+        </div>
+      </section>
+
+      <section class="card">
+        <h3>🧩 Les qualités d’un dossier professionnel</h3>
+        <div class="grid-2">
+          <div class="template-box">
+            <strong>Lisible</strong><br>
+            Peu de texte inutile, structure claire, vocabulaire stable.
+          </div>
+          <div class="template-box">
+            <strong>Objectivé</strong><br>
+            Les observations reposent sur des faits, pas sur des impressions.
+          </div>
+          <div class="template-box">
+            <strong>Actionnable</strong><br>
+            Le lecteur comprend immédiatement la priorité et la suite.
+          </div>
+          <div class="template-box">
+            <strong>Transmissible</strong><br>
+            Un collègue peut reprendre le dossier sans tout refaire.
+          </div>
+        </div>
+      </section>
+
+      <section class="card">
+        <h3>✍️ Exemple de rédaction professionnelle</h3>
+        <div class="memo">
+          La situation budgétaire présente une marge très faible. Les dépenses vitales sont déjà fortement compressées.
+          L’analyse des relevés met en évidence plusieurs dépenses invisibles et une action prioritaire immédiatement réalisable :
+          la réduction du coût téléphonique. La personne accompagnée accepte cette première démarche. Un suivi sur trois mois est proposé.
+        </div>
+      </section>
+
+      <section class="card">
+        <h3>❌ Les erreurs fréquentes</h3>
+        <ul>
+          <li>Écrire un dossier trop long et peu lisible.</li>
+          <li>Multiplier les jugements sur la personne.</li>
+          <li>Ne pas distinguer diagnostic, analyse et plan d’action.</li>
+          <li>Laisser des actions non datées ou non attribuées.</li>
+          <li>Produire un document incompréhensible pour un tiers.</li>
+        </ul>
+
+        <div class="warning-box">
+          <strong>Erreur majeure :</strong> confondre dossier professionnel et récit intégral de l’entretien.
+        </div>
+      </section>
+
+      <section class="card">
+        <h3>🧠 À retenir avant le quiz</h3>
+        <div class="memo">
+          • Page 1 = chiffres essentiels<br>
+          • Page 2 = analyse courte et factuelle<br>
+          • Page 3 = plan d’action daté et priorisé<br>
+          • Page 4 = suivi sur 3 mois<br>
+          • Le dossier doit être lisible, actionnable et transmissible
+        </div>
+      </section>
+
+      <section class="card quiz-card" id="quiz">
+        <h2>Quiz du module 4</h2>
+        <p class="quiz-intro">
+          Validation recommandée : <strong>70 % minimum</strong>.  
+          Une fois le quiz validé, vous aurez terminé les 4 modules de la formation.
+        </p>
+
+        <div class="question">
+          <p>1. Combien de pages comporte le dossier professionnel LOGIX FORMA ?</p>
+          <label class="option"><input type="radio" name="q1" value="a"> 2 pages</label>
+          <label class="option"><input type="radio" name="q1" value="b"> 4 pages</label>
+          <label class="option"><input type="radio" name="q1" value="c"> 8 pages</label>
+        </div>
+
+        <div class="question">
+          <p>2. Que doit contenir la page 1 ?</p>
+          <label class="option"><input type="radio" name="q2" value="a"> Seulement l’avis du professionnel</label>
+          <label class="option"><input type="radio" name="q2" value="b"> Le diagnostic chiffré</label>
+          <label class="option"><input type="radio" name="q2" value="c"> Le calendrier sur 3 mois</label>
+        </div>
+
+        <div class="question">
+          <p>3. Vrai ou Faux : la page 2 doit expliquer la lecture de la situation, pas seulement répéter les montants.</p>
+          <label class="option"><input type="radio" name="q3" value="vrai"> Vrai</label>
+          <label class="option"><input type="radio" name="q3" value="faux"> Faux</label>
+        </div>
+
+        <div class="question">
+          <p>4. Que doit contenir la page 3 ?</p>
+          <label class="option"><input type="radio" name="q4" value="a"> Les actions datées et priorisées</label>
+          <label class="option"><input type="radio" name="q4" value="b"> Un historique personnel détaillé</label>
+          <label class="option"><input type="radio" name="q4" value="c"> Les justificatifs en annexe</label>
+        </div>
+
+        <div class="question">
+          <p>5. Vrai ou Faux : un bon dossier doit être lisible rapidement par un tiers.</p>
+          <label class="option"><input type="radio" name="q5" value="vrai"> Vrai</label>
+          <label class="option"><input type="radio" name="q5" value="faux"> Faux</label>
+        </div>
+
+        <div class="question">
+          <p>6. La page 4 sert principalement à :</p>
+          <label class="option"><input type="radio" name="q6" value="a"> raconter l’entretien</label>
+          <label class="option"><input type="radio" name="q6" value="b"> projeter et suivre l’évolution budgétaire</label>
+          <label class="option"><input type="radio" name="q6" value="c"> archiver les relevés</label>
+        </div>
+
+        <div class="question">
+          <p>7. Quelle est une erreur fréquente ?</p>
+          <label class="option"><input type="radio" name="q7" value="a"> structurer clairement le document</label>
+          <label class="option"><input type="radio" name="q7" value="b"> dater les actions</label>
+          <label class="option"><input type="radio" name="q7" value="c"> écrire un dossier trop long et peu lisible</label>
+        </div>
+
+        <div class="question">
+          <p>8. Citez deux qualités attendues d’un dossier professionnel.</p>
+          <input class="text-answer" type="text" id="q8" placeholder="Votre réponse..." />
+        </div>
+
+        <div class="quiz-actions">
+          <button class="btn btn-primary" type="button" onclick="corrigerQuiz()">Valider le quiz</button>
+          <button class="btn btn-outline" type="button" onclick="reinitialiserQuiz()">Réinitialiser</button>
+        </div>
+
+        <div id="result" class="result"></div>
+      </section>
+
+      <div class="bottom-nav">
+        <a class="btn btn-outline" href="/espace-apprenant/diagnostic-budgetaire-terrain/module-3.html">← Revenir au module 3</a>
+        <a class="btn btn-dark" href="/espace-apprenant/diagnostic-budgetaire-terrain/index.html" id="finishBtn" style="display:none;">Retour à la formation →</a>
+      </div>
+    </div>
+  </main>
+
+  <footer>
+    <div class="container">
+      <div class="footer-line">
+        <span>© 2026 LOGIX FORMA — Tous droits réservés</span>
+        <span>Module 4 — progression locale</span>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    function getProgression() {
+      try {
+        return JSON.parse(localStorage.getItem('logix_progression') || '{}');
+      } catch {
+        return {};
+      }
+    }
+
+    function getQuizReussis() {
+      try {
+        return JSON.parse(localStorage.getItem('logix_quiz_reussis') || '{}');
+      } catch {
+        return {};
+      }
+    }
+
+    function saveProgression(moduleId) {
+      const progression = getProgression();
+      progression[moduleId] = true;
+      localStorage.setItem('logix_progression', JSON.stringify(progression));
+    }
+
+    function saveQuiz(moduleId) {
+      const quizReussis = getQuizReussis();
+      quizReussis[moduleId] = true;
+      localStorage.setItem('logix_quiz_reussis', JSON.stringify(quizReussis));
+    }
+
+    function corrigerQuiz() {
+      let score = 0;
+      const total = 8;
+
+      const q1 = document.querySelector('input[name="q1"]:checked');
+      if (q1 && q1.value === 'b') score++;
+
+      const q2 = document.querySelector('input[name="q2"]:checked');
+      if (q2 && q2.value === 'b') score++;
+
+      const q3 = document.querySelector('input[name="q3"]:checked');
+      if (q3 && q3.value === 'vrai') score++;
+
+      const q4 = document.querySelector('input[name="q4"]:checked');
+      if (q4 && q4.value === 'a') score++;
+
+      const q5 = document.querySelector('input[name="q5"]:checked');
+      if (q5 && q5.value === 'vrai') score++;
+
+      const q6 = document.querySelector('input[name="q6"]:checked');
+      if (q6 && q6.value === 'b') score++;
+
+      const q7 = document.querySelector('input[name="q7"]:checked');
+      if (q7 && q7.value === 'c') score++;
+
+      const q8 = (document.getElementById('q8').value || '').toLowerCase();
+      const q8Ok =
+        q8.includes('lisible') ||
+        q8.includes('actionnable') ||
+        q8.includes('transmissible') ||
+        q8.includes('clair') ||
+        q8.includes('clair') ||
+        q8.includes('object') ||
+        q8.includes('structur');
+
+      if (q8Ok) score++;
+
+      const pourcentage = Math.round((score / total) * 100);
+      const resultDiv = document.getElementById('result');
+      const finishBtn = document.getElementById('finishBtn');
+
+      if (pourcentage >= 70) {
+        resultDiv.className = 'result success';
+        resultDiv.style.display = 'block';
+        resultDiv.innerHTML = `✅ Quiz validé. Score : ${score}/${total} (${pourcentage}%). Le module 4 est terminé. Vous avez fini les 4 modules.`;
+
+        saveProgression(4);
+        saveQuiz(4);
+
+        finishBtn.style.display = 'inline-flex';
+      } else {
+        resultDiv.className = 'result error';
+        resultDiv.style.display = 'block';
+        resultDiv.innerHTML = `❌ Score insuffisant : ${score}/${total} (${pourcentage}%). Le seuil de validation est fixé à 70 %.`;
+      }
+    }
+
+    function reinitialiserQuiz() {
+      document.querySelectorAll('input[type="radio"]').forEach(input => {
+        input.checked = false;
+      });
+      document.getElementById('q8').value = '';
+      const resultDiv = document.getElementById('result');
+      resultDiv.style.display = 'none';
+      resultDiv.className = 'result';
+      resultDiv.innerHTML = '';
+    }
+
+    function restoreState() {
+      const progression = getProgression();
+      const quizReussis = getQuizReussis();
+
+      if (progression[4] === true && quizReussis[4] === true) {
+        const resultDiv = document.getElementById('result');
+        const finishBtn = document.getElementById('finishBtn');
+
+        resultDiv.className = 'result success';
+        resultDiv.style.display = 'block';
+        resultDiv.innerHTML = '✅ Module déjà validé. Les 4 modules de la formation sont terminés.';
+
+        finishBtn.style.display = 'inline-flex';
+      }
+    }
+
+    restoreState();
+  </script>
+</body>
+</html>
