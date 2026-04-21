@@ -1,0 +1,1002 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <title>Module 2 – Arbitrage budgétaire | LOGIX FORMA</title>
+  <meta
+    name="description"
+    content="Module 2 de la formation Diagnostic budgétaire terrain – Arbitrage budgétaire selon la méthode LOGIX FORMA."
+  />
+  <meta name="robots" content="noindex, nofollow" />
+  <link rel="canonical" href="https://logixforma.com/espace-apprenant/diagnostic-budgetaire-terrain/module-2.html" />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Outfit:wght@600;700;800&display=swap"
+    rel="stylesheet"
+  />
+
+  <style>
+    :root {
+      --navy: #16325c;
+      --navy-2: #21457a;
+      --navy-3: #0d203c;
+      --green: #6ba32a;
+      --green-2: #4f7d17;
+      --gold: #e3b229;
+      --gold-2: #ca9916;
+      --ink: #101828;
+      --text: #253244;
+      --muted: #667085;
+      --muted-2: #98a2b3;
+      --bg: #f4f7fb;
+      --card: #ffffff;
+      --surface: #eef2f8;
+      --line: #dde3ee;
+      --success: #ebf7df;
+      --warning: #fff3e0;
+      --error: #fee2e2;
+      --shadow-xs: 0 1px 3px rgba(16, 24, 40, 0.06);
+      --shadow-sm: 0 10px 26px rgba(16, 24, 40, 0.08);
+      --shadow-md: 0 18px 48px rgba(16, 24, 40, 0.12);
+      --radius-sm: 10px;
+      --radius: 16px;
+      --radius-lg: 24px;
+      --max: 980px;
+      --transition: 220ms ease;
+    }
+
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+
+    body {
+      margin: 0;
+      font-family: Inter, sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      line-height: 1.65;
+      -webkit-font-smoothing: antialiased;
+      text-rendering: optimizeLegibility;
+    }
+
+    a { color: inherit; text-decoration: none; }
+    img { display: block; max-width: 100%; }
+    button, input { font: inherit; }
+
+    .container {
+      width: min(calc(100% - 32px), var(--max));
+      margin: 0 auto;
+    }
+
+    .skip-link {
+      position: absolute;
+      left: 12px;
+      top: -48px;
+      background: var(--navy);
+      color: white;
+      padding: 10px 14px;
+      border-radius: 10px;
+      z-index: 1000;
+    }
+
+    .skip-link:focus { top: 12px; }
+
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 10px;
+      border: 0;
+      border-radius: 14px;
+      padding: 12px 18px;
+      font-weight: 700;
+      cursor: pointer;
+      text-align: center;
+      transition:
+        transform var(--transition),
+        background var(--transition),
+        color var(--transition),
+        border-color var(--transition),
+        box-shadow var(--transition);
+    }
+
+    .btn:hover { transform: translateY(-1px); }
+
+    .btn:focus-visible,
+    .nav-link:focus-visible,
+    input:focus-visible,
+    details summary:focus-visible {
+      outline: 3px solid rgba(227, 178, 41, 0.45);
+      outline-offset: 2px;
+    }
+
+    .btn-dark {
+      background: var(--navy);
+      color: white;
+      box-shadow: 0 10px 24px rgba(22, 50, 92, 0.25);
+    }
+
+    .btn-dark:hover { background: var(--navy-3); }
+
+    .btn-outline {
+      background: transparent;
+      color: var(--navy);
+      border: 2px solid rgba(22, 50, 92, 0.16);
+    }
+
+    .btn-outline:hover {
+      border-color: var(--navy);
+      background: rgba(22, 50, 92, 0.04);
+    }
+
+    .btn-primary {
+      background: var(--gold);
+      color: var(--navy-3);
+      box-shadow: 0 10px 24px rgba(227, 178, 41, 0.28);
+    }
+
+    .btn-primary:hover { background: var(--gold-2); }
+
+    header {
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      backdrop-filter: blur(14px);
+      background: rgba(255, 255, 255, 0.92);
+      border-bottom: 1px solid rgba(221, 227, 238, 0.85);
+    }
+
+    .topbar {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 16px;
+      min-height: 76px;
+    }
+
+    .brand {
+      display: inline-flex;
+      align-items: center;
+      gap: 12px;
+      min-width: 0;
+    }
+
+    .brand img {
+      width: 48px;
+      height: 48px;
+      object-fit: cover;
+      border-radius: 12px;
+      box-shadow: var(--shadow-xs);
+    }
+
+    .brand-text {
+      display: flex;
+      flex-direction: column;
+      line-height: 1.05;
+    }
+
+    .brand-title {
+      font-family: Outfit, sans-serif;
+      font-size: 1.22rem;
+      font-weight: 800;
+      color: var(--navy);
+      letter-spacing: -0.03em;
+    }
+
+    .brand-title span { color: var(--green); }
+
+    .brand-sub {
+      font-size: 0.78rem;
+      color: var(--muted);
+      font-weight: 600;
+      margin-top: 4px;
+    }
+
+    .top-actions {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      flex-wrap: wrap;
+    }
+
+    .hero {
+      background:
+        radial-gradient(circle at 85% 20%, rgba(107, 163, 42, 0.18), transparent 24%),
+        radial-gradient(circle at 10% 90%, rgba(227, 178, 41, 0.16), transparent 18%),
+        linear-gradient(135deg, #0d203c 0%, #16325c 58%, #173d27 100%);
+      color: white;
+      padding: 48px 0 38px;
+    }
+
+    .hero h1 {
+      margin: 0 0 10px;
+      font-family: Outfit, sans-serif;
+      font-size: clamp(1.9rem, 4vw, 3rem);
+      line-height: 1.05;
+      letter-spacing: -0.04em;
+    }
+
+    .hero p {
+      margin: 0;
+      max-width: 760px;
+      color: rgba(255,255,255,0.86);
+      font-size: 1rem;
+    }
+
+    .hero-meta {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+      margin-top: 20px;
+    }
+
+    .hero-pill {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      padding: 8px 14px;
+      border-radius: 999px;
+      background: rgba(255,255,255,0.1);
+      border: 1px solid rgba(255,255,255,0.14);
+      font-size: 0.84rem;
+      font-weight: 700;
+      color: rgba(255,255,255,0.92);
+    }
+
+    main {
+      padding: 30px 0 56px;
+    }
+
+    .module-nav {
+      display: flex;
+      justify-content: space-between;
+      gap: 12px;
+      flex-wrap: wrap;
+      margin-bottom: 20px;
+    }
+
+    .module-nav a {
+      color: var(--navy);
+      font-weight: 700;
+      text-decoration: none;
+    }
+
+    .card {
+      background: var(--card);
+      border: 1px solid var(--line);
+      border-radius: var(--radius-lg);
+      box-shadow: var(--shadow-sm);
+      padding: 24px;
+      margin-bottom: 22px;
+    }
+
+    .card h2,
+    .card h3 {
+      margin: 0 0 12px;
+      color: var(--ink);
+    }
+
+    .card h2 {
+      font-family: Outfit, sans-serif;
+      font-size: 1.55rem;
+      letter-spacing: -0.03em;
+    }
+
+    .card h3 {
+      font-size: 1.12rem;
+    }
+
+    .card p {
+      margin: 0 0 12px;
+      color: var(--text);
+    }
+
+    .card p:last-child { margin-bottom: 0; }
+
+    .badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 6px 10px;
+      border-radius: 999px;
+      background: #fff3e0;
+      border: 1px solid #f5ddae;
+      color: #a56300;
+      font-size: 0.74rem;
+      font-weight: 800;
+      letter-spacing: 0.03em;
+      text-transform: uppercase;
+      margin-bottom: 14px;
+    }
+
+    .warning-box,
+    .success-box,
+    .memo,
+    .zone-protected,
+    .zone-invisible {
+      border-radius: 14px;
+      padding: 16px 18px;
+      margin: 16px 0 0;
+      border: 1px solid var(--line);
+    }
+
+    .warning-box {
+      background: var(--error);
+      border-left: 4px solid #dc2626;
+    }
+
+    .success-box {
+      background: var(--success);
+      border-left: 4px solid var(--green);
+    }
+
+    .memo {
+      background: var(--surface);
+      border-left: 4px solid var(--navy);
+      font-weight: 500;
+    }
+
+    .zone-protected {
+      background: var(--success);
+      border-left: 4px solid var(--green);
+    }
+
+    .zone-invisible {
+      background: var(--warning);
+      border-left: 4px solid var(--gold);
+    }
+
+    .grid-2 {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 16px;
+    }
+
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      margin: 14px 0 0;
+      font-size: 0.94rem;
+      overflow: hidden;
+      border-radius: 12px;
+    }
+
+    th, td {
+      border: 1px solid var(--line);
+      padding: 10px 12px;
+      text-align: left;
+      vertical-align: top;
+    }
+
+    th {
+      background: var(--surface);
+      font-weight: 800;
+      color: var(--ink);
+    }
+
+    ul, ol {
+      margin: 0;
+      padding-left: 22px;
+    }
+
+    li + li { margin-top: 8px; }
+
+    details {
+      background: var(--card);
+      border: 1px solid var(--line);
+      border-radius: 14px;
+      padding: 14px 16px;
+      margin-top: 16px;
+    }
+
+    summary {
+      cursor: pointer;
+      font-weight: 800;
+      color: var(--navy);
+    }
+
+    .quiz-card {
+      scroll-margin-top: 100px;
+    }
+
+    .quiz-intro {
+      color: var(--muted);
+      margin-bottom: 18px;
+    }
+
+    .question {
+      padding: 18px;
+      border: 1px solid var(--line);
+      border-radius: 16px;
+      background: #fbfcff;
+      margin-bottom: 16px;
+    }
+
+    .question p {
+      margin: 0 0 12px;
+      font-weight: 700;
+      color: var(--ink);
+    }
+
+    .option {
+      display: block;
+      padding: 10px 12px;
+      border: 1px solid var(--line);
+      border-radius: 12px;
+      background: white;
+      margin-bottom: 10px;
+      cursor: pointer;
+      transition: var(--transition);
+    }
+
+    .option:hover {
+      border-color: var(--navy);
+      background: #f8fbff;
+    }
+
+    .option input {
+      margin-right: 10px;
+    }
+
+    .text-answer {
+      width: 100%;
+      border: 1.5px solid var(--line);
+      border-radius: 12px;
+      padding: 12px 14px;
+      background: white;
+      color: var(--ink);
+      transition: border-color var(--transition), box-shadow var(--transition);
+    }
+
+    .text-answer:focus {
+      border-color: var(--navy);
+      box-shadow: 0 0 0 4px rgba(22, 50, 92, 0.08);
+      outline: none;
+    }
+
+    .quiz-actions {
+      display: flex;
+      gap: 12px;
+      flex-wrap: wrap;
+      margin-top: 20px;
+    }
+
+    .result {
+      display: none;
+      margin-top: 18px;
+      padding: 16px 18px;
+      border-radius: 14px;
+      font-weight: 600;
+      border: 1px solid transparent;
+    }
+
+    .result.success {
+      display: block;
+      background: var(--success);
+      color: var(--green-2);
+      border-color: #cde8d1;
+    }
+
+    .result.error {
+      display: block;
+      background: var(--error);
+      color: #b42318;
+      border-color: #f5c2c7;
+    }
+
+    .bottom-nav {
+      display: flex;
+      justify-content: space-between;
+      gap: 14px;
+      flex-wrap: wrap;
+      margin-top: 24px;
+    }
+
+    footer {
+      background: var(--navy-3);
+      color: #9aa8bf;
+      padding: 34px 0 28px;
+      margin-top: 40px;
+    }
+
+    .footer-line {
+      display: flex;
+      justify-content: space-between;
+      gap: 16px;
+      flex-wrap: wrap;
+      font-size: 0.88rem;
+    }
+
+    @media (max-width: 760px) {
+      .topbar {
+        flex-direction: column;
+        align-items: flex-start;
+        padding: 14px 0;
+      }
+
+      .top-actions {
+        width: 100%;
+      }
+
+      .top-actions .btn,
+      .top-actions a {
+        width: 100%;
+      }
+
+      .grid-2 {
+        grid-template-columns: 1fr;
+      }
+
+      .bottom-nav {
+        flex-direction: column;
+      }
+
+      .bottom-nav .btn,
+      .bottom-nav a {
+        width: 100%;
+      }
+
+      table {
+        display: block;
+        overflow-x: auto;
+      }
+    }
+  </style>
+</head>
+<body>
+  <a class="skip-link" href="#main-content">Aller au contenu</a>
+
+  <header>
+    <div class="container">
+      <div class="topbar">
+        <a class="brand" href="/" aria-label="Retour à l'accueil LOGIX FORMA">
+          <img src="https://i.postimg.cc/xdj77pwZ/logo-logix-forma.jpg" alt="Logo LOGIX FORMA" />
+          <span class="brand-text">
+            <span class="brand-title">LOGIX <span>FORMA</span></span>
+            <span class="brand-sub">Former pour produire, tester, mesurer</span>
+          </span>
+        </a>
+
+        <div class="top-actions">
+          <a class="btn btn-outline" href="/espace-apprenant/diagnostic-budgetaire-terrain/index.html">Retour à la formation</a>
+          <a class="btn btn-dark" href="/contact.html">Contact</a>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <section class="hero">
+    <div class="container">
+      <h1>Module 2 – Arbitrage budgétaire</h1>
+      <p>
+        Choisir UNE action prioritaire parmi plusieurs et justifier l’arbitrage selon le gain, le délai et le risque de conflit.
+      </p>
+      <div class="hero-meta">
+        <div class="hero-pill">Module 2 / 4</div>
+        <div class="hero-pill">Niveau intermédiaire</div>
+        <div class="hero-pill">Durée estimée : 8 h</div>
+        <div class="hero-pill">Quiz de validation inclus</div>
+      </div>
+    </div>
+  </section>
+
+  <main id="main-content">
+    <div class="container">
+      <nav class="module-nav" aria-label="Navigation du module">
+        <a href="/espace-apprenant/diagnostic-budgetaire-terrain/index.html">← Retour au plan de formation</a>
+        <a href="#quiz">Aller au quiz ↓</a>
+      </nav>
+
+      <section class="card">
+        <span class="badge">Module 2 • Intermédiaire</span>
+        <h2>Objectif du module</h2>
+        <p>
+          À l’issue de ce module, vous devez être capable de hiérarchiser plusieurs pistes d’action,
+          d’en retenir une seule comme priorité immédiate, puis de la justifier avec une logique professionnelle claire.
+        </p>
+      </section>
+
+      <section class="card">
+        <h3>🎯 Pourquoi l’arbitrage est indispensable</h3>
+        <p>
+          Dans le travail budgétaire terrain, le problème n’est pas de trouver beaucoup d’idées.
+          Le problème est de choisir la bonne première action.
+        </p>
+        <p>
+          Une personne en difficulté ne peut pas tout changer en même temps.
+          Le professionnel doit donc éviter l’empilement des conseils et retenir une priorité utile, réaliste et faisable.
+        </p>
+
+        <div class="memo">
+          <strong>Principe LOGIX FORMA :</strong><br>
+          une action claire, faisable, mesurable vaut mieux que trois pistes abandonnées.
+        </div>
+      </section>
+
+      <section class="card">
+        <h3>📊 La grille d’arbitrage</h3>
+        <table>
+          <thead>
+            <tr>
+              <th>Action possible</th>
+              <th>Gain mensuel</th>
+              <th>Délai</th>
+              <th>Risque de conflit</th>
+              <th>Lecture</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>Changer le forfait téléphone</td>
+              <td>25 €</td>
+              <td>48 h</td>
+              <td>Nul</td>
+              <td>Très prioritaire</td>
+            </tr>
+            <tr>
+              <td>Supprimer un abonnement streaming</td>
+              <td>12 €</td>
+              <td>5 min</td>
+              <td>Nul</td>
+              <td>Utile mais gain plus faible</td>
+            </tr>
+            <tr>
+              <td>Négocier un échéancier EDF</td>
+              <td>15 €</td>
+              <td>15 jours</td>
+              <td>Moyen</td>
+              <td>À traiter plus tard</td>
+            </tr>
+          </tbody>
+        </table>
+
+        <div class="success-box">
+          <strong>Conclusion :</strong> l’action prioritaire retenue est ici le changement du forfait téléphone,
+          car elle combine bon gain, mise en œuvre rapide et absence de conflit immédiat.
+        </div>
+      </section>
+
+      <section class="card">
+        <h3>🧠 Les 3 critères d’arbitrage LOGIX FORMA</h3>
+        <div class="grid-2">
+          <div class="zone-protected">
+            <strong>1. Gain</strong><br>
+            Quel montant peut être récupéré ou économisé chaque mois ?
+          </div>
+          <div class="zone-invisible">
+            <strong>2. Délai</strong><br>
+            En combien de temps l’action produit-elle un effet réel ?
+          </div>
+          <div class="zone-protected">
+            <strong>3. Risque de conflit</strong><br>
+            L’action va-t-elle provoquer une résistance, une honte, un blocage ou un abandon ?
+          </div>
+          <div class="memo">
+            <strong>Règle de choix :</strong><br>
+            on privilégie l’action avec le meilleur rapport entre gain élevé, délai court et risque faible.
+          </div>
+        </div>
+      </section>
+
+      <section class="card">
+        <h3>🛠️ Méthode d’arbitrage en 4 étapes</h3>
+        <ol>
+          <li><strong>Lister 3 actions maximum</strong> à partir du diagnostic.</li>
+          <li><strong>Comparer chaque action</strong> selon gain, délai, risque.</li>
+          <li><strong>Éliminer les actions trop lentes ou trop conflictuelles</strong> pour la première étape.</li>
+          <li><strong>Justifier la priorité retenue</strong> dans une formulation courte et professionnelle.</li>
+        </ol>
+      </section>
+
+      <section class="card">
+        <h3>✍️ Formulation professionnelle attendue</h3>
+        <p>Voici une formulation simple pour un dossier ou un compte rendu :</p>
+        <div class="memo">
+          L’action priorisée est la réduction du coût téléphonique.  
+          Elle permet un gain mensuel de 25 €, peut être mise en œuvre sous 48 heures
+          et ne présente pas de risque de conflit majeur.  
+          Elle constitue donc la priorité opérationnelle immédiate.
+        </div>
+      </section>
+
+      <section class="card">
+        <h3>📌 Pourquoi il ne faut pas tout traiter d’un coup</h3>
+        <p>
+          Quand un professionnel propose trop d’actions en même temps, il croit aider davantage.
+          En réalité, il augmente souvent la charge mentale de la personne accompagnée.
+        </p>
+        <div class="warning-box">
+          <strong>Erreur fréquente :</strong> multiplier les objectifs.  
+          Une personne sous tension budgétaire a souvent besoin d’un chemin simple, pas d’un catalogue de solutions.
+        </div>
+      </section>
+
+      <section class="card">
+        <h3>🧪 Cas pratique – Nadia</h3>
+        <p><strong>Situation :</strong> Nadia présente trois leviers possibles.</p>
+        <table>
+          <thead>
+            <tr>
+              <th>Action</th>
+              <th>Gain</th>
+              <th>Délai</th>
+              <th>Risque</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>Changer forfait mobile</td>
+              <td>22 €</td>
+              <td>48 h</td>
+              <td>Faible</td>
+            </tr>
+            <tr>
+              <td>Demander un remboursement CAF</td>
+              <td>90 €</td>
+              <td>1 mois</td>
+              <td>Moyen</td>
+            </tr>
+            <tr>
+              <td>Supprimer deux abonnements</td>
+              <td>18 €</td>
+              <td>10 min</td>
+              <td>Faible</td>
+            </tr>
+          </tbody>
+        </table>
+
+        <details>
+          <summary>Voir le corrigé</summary>
+          <p>
+            L’action prioritaire la plus cohérente est le changement de forfait mobile :
+            bon gain, mise en œuvre rapide, faible risque.
+          </p>
+          <p>
+            Le remboursement CAF est potentiellement plus rentable mais trop lent pour constituer la priorité immédiate.
+          </p>
+        </details>
+      </section>
+
+      <section class="card">
+        <h3>🧪 Cas pratique – Choisir entre utile et urgent</h3>
+        <p>
+          Vous avez le choix entre :
+          un gain de 9 € obtenu demain sans difficulté, et un gain de 30 € dans trois semaines avec forte résistance.
+        </p>
+
+        <details>
+          <summary>Voir le corrigé</summary>
+          <p>
+            Dans une logique de première étape, le gain de 9 € peut être retenu en priorité
+            s’il permet une action immédiate et une première réussite concrète.
+          </p>
+          <p>
+            L’arbitrage dépend du contexte, mais la méthode privilégie souvent l’action réalisable sans blocage.
+          </p>
+        </details>
+      </section>
+
+      <section class="card">
+        <h3>❌ Les erreurs fréquentes</h3>
+        <ul>
+          <li>Choisir l’action la plus spectaculaire au lieu de la plus faisable.</li>
+          <li>Vouloir traiter trois problèmes dès la première semaine.</li>
+          <li>Ne pas justifier la priorité retenue dans le dossier.</li>
+          <li>Confondre rentabilité théorique et faisabilité concrète.</li>
+          <li>Oublier le risque de conflit dans la décision.</li>
+        </ul>
+      </section>
+
+      <section class="card">
+        <h3>🧠 À retenir avant le quiz</h3>
+        <div class="memo">
+          • On choisit UNE priorité immédiate<br>
+          • On compare gain, délai, risque<br>
+          • Une action faite vaut mieux que plusieurs actions laissées en suspens<br>
+          • La justification fait partie du travail professionnel
+        </div>
+      </section>
+
+      <section class="card quiz-card" id="quiz">
+        <h2>Quiz du module 2</h2>
+        <p class="quiz-intro">
+          Validation recommandée : <strong>70 % minimum</strong>.  
+          Une fois le quiz validé, le module 3 sera considéré comme débloqué dans votre progression locale.
+        </p>
+
+        <div class="question">
+          <p>1. Combien d’actions prioritaires propose-t-on pour la première étape ?</p>
+          <label class="option"><input type="radio" name="q1" value="a"> 1</label>
+          <label class="option"><input type="radio" name="q1" value="b"> 3</label>
+          <label class="option"><input type="radio" name="q1" value="c"> Autant que possible</label>
+        </div>
+
+        <div class="question">
+          <p>2. Quels sont les 3 critères d’arbitrage LOGIX FORMA ?</p>
+          <label class="option"><input type="radio" name="q2" value="a"> Gain, délai, risque de conflit</label>
+          <label class="option"><input type="radio" name="q2" value="b"> Motivation, intuition, rapidité</label>
+          <label class="option"><input type="radio" name="q2" value="c"> Coût, humeur, ancienneté</label>
+        </div>
+
+        <div class="question">
+          <p>3. Vrai ou Faux : proposer plusieurs actions en même temps garantit un meilleur résultat.</p>
+          <label class="option"><input type="radio" name="q3" value="vrai"> Vrai</label>
+          <label class="option"><input type="radio" name="q3" value="faux"> Faux</label>
+        </div>
+
+        <div class="question">
+          <p>4. Quelle action est priorisée selon la méthode ?</p>
+          <label class="option"><input type="radio" name="q4" value="a"> Celle qui a le plus grand effet théorique, même si elle est très difficile</label>
+          <label class="option"><input type="radio" name="q4" value="b"> Celle qui combine bon gain, délai court et risque faible</label>
+          <label class="option"><input type="radio" name="q4" value="c"> Celle que le professionnel préfère personnellement</label>
+        </div>
+
+        <div class="question">
+          <p>5. Vrai ou Faux : la justification écrite de la priorité fait partie du travail professionnel.</p>
+          <label class="option"><input type="radio" name="q5" value="vrai"> Vrai</label>
+          <label class="option"><input type="radio" name="q5" value="faux"> Faux</label>
+        </div>
+
+        <div class="question">
+          <p>6. Que faut-il faire d’abord quand plusieurs leviers existent ?</p>
+          <label class="option"><input type="radio" name="q6" value="a"> En choisir trois immédiatement</label>
+          <label class="option"><input type="radio" name="q6" value="b"> Les comparer avec une grille d’arbitrage</label>
+          <label class="option"><input type="radio" name="q6" value="c"> Attendre le rendez-vous suivant</label>
+        </div>
+
+        <div class="question">
+          <p>7. Une action rentable mais très lente peut-elle être repoussée ?</p>
+          <label class="option"><input type="radio" name="q7" value="vrai"> Vrai</label>
+          <label class="option"><input type="radio" name="q7" value="faux"> Faux</label>
+        </div>
+
+        <div class="question">
+          <p>8. Pourquoi une seule priorité est-elle souvent préférable ?</p>
+          <input class="text-answer" type="text" id="q8" placeholder="Votre réponse..." />
+        </div>
+
+        <div class="quiz-actions">
+          <button class="btn btn-primary" type="button" onclick="corrigerQuiz()">Valider le quiz</button>
+          <button class="btn btn-outline" type="button" onclick="reinitialiserQuiz()">Réinitialiser</button>
+        </div>
+
+        <div id="result" class="result"></div>
+      </section>
+
+      <div class="bottom-nav">
+        <a class="btn btn-outline" href="/espace-apprenant/diagnostic-budgetaire-terrain/module-1.html">← Revenir au module 1</a>
+        <a class="btn btn-dark" href="/espace-apprenant/diagnostic-budgetaire-terrain/module-3.html" id="nextBtn" style="display:none;">Passer au module 3 →</a>
+      </div>
+    </div>
+  </main>
+
+  <footer>
+    <div class="container">
+      <div class="footer-line">
+        <span>© 2026 LOGIX FORMA — Tous droits réservés</span>
+        <span>Module 2 — progression locale</span>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    function getProgression() {
+      try {
+        return JSON.parse(localStorage.getItem('logix_progression') || '{}');
+      } catch {
+        return {};
+      }
+    }
+
+    function getQuizReussis() {
+      try {
+        return JSON.parse(localStorage.getItem('logix_quiz_reussis') || '{}');
+      } catch {
+        return {};
+      }
+    }
+
+    function saveProgression(moduleId) {
+      const progression = getProgression();
+      progression[moduleId] = true;
+      localStorage.setItem('logix_progression', JSON.stringify(progression));
+    }
+
+    function saveQuiz(moduleId) {
+      const quizReussis = getQuizReussis();
+      quizReussis[moduleId] = true;
+      localStorage.setItem('logix_quiz_reussis', JSON.stringify(quizReussis));
+    }
+
+    function corrigerQuiz() {
+      let score = 0;
+      const total = 8;
+
+      const q1 = document.querySelector('input[name="q1"]:checked');
+      if (q1 && q1.value === 'a') score++;
+
+      const q2 = document.querySelector('input[name="q2"]:checked');
+      if (q2 && q2.value === 'a') score++;
+
+      const q3 = document.querySelector('input[name="q3"]:checked');
+      if (q3 && q3.value === 'faux') score++;
+
+      const q4 = document.querySelector('input[name="q4"]:checked');
+      if (q4 && q4.value === 'b') score++;
+
+      const q5 = document.querySelector('input[name="q5"]:checked');
+      if (q5 && q5.value === 'vrai') score++;
+
+      const q6 = document.querySelector('input[name="q6"]:checked');
+      if (q6 && q6.value === 'b') score++;
+
+      const q7 = document.querySelector('input[name="q7"]:checked');
+      if (q7 && q7.value === 'vrai') score++;
+
+      const q8 = (document.getElementById('q8').value || '').toLowerCase();
+      const q8Ok =
+        q8.includes('une action') ||
+        q8.includes('priorité') ||
+        q8.includes('priorite') ||
+        q8.includes('plus simple') ||
+        q8.includes('plus faisable') ||
+        q8.includes('charge mentale') ||
+        q8.includes('plus réaliste') ||
+        q8.includes('plus realiste');
+
+      if (q8Ok) score++;
+
+      const pourcentage = Math.round((score / total) * 100);
+      const resultDiv = document.getElementById('result');
+      const nextBtn = document.getElementById('nextBtn');
+
+      if (pourcentage >= 70) {
+        resultDiv.className = 'result success';
+        resultDiv.style.display = 'block';
+        resultDiv.innerHTML = `✅ Quiz validé. Score : ${score}/${total} (${pourcentage}%). Le module 2 est terminé.`;
+
+        saveProgression(2);
+        saveQuiz(2);
+
+        nextBtn.style.display = 'inline-flex';
+      } else {
+        resultDiv.className = 'result error';
+        resultDiv.style.display = 'block';
+        resultDiv.innerHTML = `❌ Score insuffisant : ${score}/${total} (${pourcentage}%). Le seuil de validation est fixé à 70 %.`;
+      }
+    }
+
+    function reinitialiserQuiz() {
+      document.querySelectorAll('input[type="radio"]').forEach(input => {
+        input.checked = false;
+      });
+      document.getElementById('q8').value = '';
+      const resultDiv = document.getElementById('result');
+      resultDiv.style.display = 'none';
+      resultDiv.className = 'result';
+      resultDiv.innerHTML = '';
+    }
+
+    function restoreState() {
+      const progression = getProgression();
+      const quizReussis = getQuizReussis();
+
+      if (progression[2] === true && quizReussis[2] === true) {
+        const resultDiv = document.getElementById('result');
+        const nextBtn = document.getElementById('nextBtn');
+
+        resultDiv.className = 'result success';
+        resultDiv.style.display = 'block';
+        resultDiv.innerHTML = '✅ Module déjà validé. Vous pouvez poursuivre vers le module 3.';
+
+        nextBtn.style.display = 'inline-flex';
+      }
+    }
+
+    restoreState();
+  </script>
+</body>
+</html>
