@@ -3,13 +3,24 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>LOGIX FORMA — Formations en ligne à venir</title>
-  <meta name="description" content="LOGIX FORMA prépare des formations en ligne centrées sur l'action, la production et l'efficacité pédagogique. Découvrez la formation signature EDUCONCRET™ et les prochaines ouvertures." />
-  <meta name="keywords" content="formation formateur, animation de formation, formation à distance, ingénierie pédagogique, EDUCONCRET, formation entreprise" />
+
+  <title>LOGIX FORMA — Formation disponible et formations à venir</title>
+  <meta
+    name="description"
+    content="LOGIX FORMA propose une formation disponible en diagnostic budgétaire terrain et prépare de nouvelles formations à distance en pédagogie, insertion et français professionnel."
+  />
+  <meta
+    name="keywords"
+    content="diagnostic budgétaire terrain, formation insertion, formation à distance, français professionnel, ingénierie pédagogique, LOGIX FORMA"
+  />
   <meta name="robots" content="index, follow" />
   <link rel="canonical" href="https://logixforma.com/" />
-  <meta property="og:title" content="LOGIX FORMA — Formations en ligne à venir" />
-  <meta property="og:description" content="Des formations conçues pour produire, tester et mesurer. Découvrez la méthode EDUCONCRET™ et les prochaines ouvertures LOGIX FORMA." />
+
+  <meta property="og:title" content="LOGIX FORMA — Formation disponible et formations à venir" />
+  <meta
+    property="og:description"
+    content="Découvrez la formation Diagnostic budgétaire terrain – Méthode LOGIX FORMA, ainsi que les prochaines ouvertures de formation."
+  />
   <meta property="og:image" content="https://i.postimg.cc/xdj77pwZ/logo-logix-forma.jpg" />
   <meta property="og:type" content="website" />
   <meta property="og:url" content="https://logixforma.com/" />
@@ -17,11 +28,27 @@
   <meta name="color-scheme" content="light" />
   <meta name="referrer" content="strict-origin-when-cross-origin" />
 
-  <meta http-equiv="Content-Security-Policy" content="default-src 'self'; img-src 'self' https://i.postimg.cc data:; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src https://fonts.gstatic.com; script-src 'self' 'unsafe-inline'; connect-src 'self' https://formspree.io https://api.stripe.com; frame-src https://js.stripe.com https://hooks.stripe.com https://checkout.stripe.com; form-action 'self' https://formspree.io; base-uri 'self'; object-src 'none'" />
+  <meta
+    http-equiv="Content-Security-Policy"
+    content="
+      default-src 'self';
+      img-src 'self' https://i.postimg.cc data:;
+      style-src 'self' 'unsafe-inline' https://fonts.googleapis.com;
+      font-src https://fonts.gstatic.com;
+      script-src 'self' 'unsafe-inline';
+      connect-src 'self' https://formspree.io https://api.sumup.com;
+      form-action 'self' https://formspree.io;
+      base-uri 'self';
+      object-src 'none';
+    "
+  />
 
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Outfit:wght@600;700;800&display=swap" rel="stylesheet" />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Outfit:wght@600;700;800&display=swap"
+    rel="stylesheet"
+  />
 
   <script type="application/ld+json">
   {
@@ -78,6 +105,7 @@
 
     * { box-sizing: border-box; }
     html { scroll-behavior: smooth; }
+
     body {
       margin: 0;
       font-family: Inter, sans-serif;
@@ -87,10 +115,12 @@
       -webkit-font-smoothing: antialiased;
       text-rendering: optimizeLegibility;
     }
+
     img { display: block; max-width: 100%; }
     a { color: inherit; text-decoration: none; }
     button, input, select, textarea { font: inherit; }
     .container { width: min(calc(100% - 32px), var(--max)); margin: 0 auto; }
+
     .skip-link {
       position: absolute;
       left: 12px;
@@ -101,6 +131,7 @@
       border-radius: 10px;
       z-index: 1000;
     }
+
     .skip-link:focus { top: 12px; }
 
     .btn {
@@ -113,10 +144,17 @@
       padding: 14px 20px;
       font-weight: 700;
       cursor: pointer;
-      transition: transform var(--transition), background var(--transition), color var(--transition), border-color var(--transition), box-shadow var(--transition);
+      transition:
+        transform var(--transition),
+        background var(--transition),
+        color var(--transition),
+        border-color var(--transition),
+        box-shadow var(--transition);
       text-align: center;
     }
+
     .btn:hover { transform: translateY(-1px); }
+
     .btn:focus-visible,
     .nav-link:focus-visible,
     .mobile-nav a:focus-visible,
@@ -128,15 +166,46 @@
       outline: 3px solid rgba(227, 178, 41, 0.45);
       outline-offset: 2px;
     }
-    .btn-primary { background: var(--gold); color: var(--navy-3); box-shadow: 0 10px 24px rgba(227, 178, 41, 0.28); }
+
+    .btn-primary {
+      background: var(--gold);
+      color: var(--navy-3);
+      box-shadow: 0 10px 24px rgba(227, 178, 41, 0.28);
+    }
+
     .btn-primary:hover { background: var(--gold-2); }
-    .btn-dark { background: var(--navy); color: white; box-shadow: 0 10px 24px rgba(22, 50, 92, 0.25); }
+
+    .btn-dark {
+      background: var(--navy);
+      color: white;
+      box-shadow: 0 10px 24px rgba(22, 50, 92, 0.25);
+    }
+
     .btn-dark:hover { background: var(--navy-3); }
-    .btn-secondary { background: white; color: var(--navy); box-shadow: var(--shadow-sm); }
+
+    .btn-secondary {
+      background: white;
+      color: var(--navy);
+      box-shadow: var(--shadow-sm);
+    }
+
     .btn-secondary:hover { background: #f9fbff; }
-    .btn-outline { background: transparent; color: var(--navy); border: 2px solid rgba(22, 50, 92, 0.16); }
-    .btn-outline:hover { border-color: var(--navy); background: rgba(22, 50, 92, 0.04); }
-    .btn-soft { background: rgba(107, 163, 42, 0.12); color: var(--green-2); }
+
+    .btn-outline {
+      background: transparent;
+      color: var(--navy);
+      border: 2px solid rgba(22, 50, 92, 0.16);
+    }
+
+    .btn-outline:hover {
+      border-color: var(--navy);
+      background: rgba(22, 50, 92, 0.04);
+    }
+
+    .btn-soft {
+      background: rgba(107, 163, 42, 0.12);
+      color: var(--green-2);
+    }
 
     header {
       position: sticky;
@@ -146,6 +215,7 @@
       background: rgba(255, 255, 255, 0.92);
       border-bottom: 1px solid rgba(221, 227, 238, 0.85);
     }
+
     .topbar {
       display: flex;
       align-items: center;
@@ -153,12 +223,14 @@
       gap: 16px;
       min-height: 76px;
     }
+
     .brand {
       display: inline-flex;
       align-items: center;
       gap: 12px;
       min-width: 0;
     }
+
     .brand img {
       width: 48px;
       height: 48px;
@@ -166,11 +238,13 @@
       border-radius: 12px;
       box-shadow: var(--shadow-xs);
     }
+
     .brand-text {
       display: flex;
       flex-direction: column;
       line-height: 1.05;
     }
+
     .brand-title {
       font-family: Outfit, sans-serif;
       font-size: 1.22rem;
@@ -178,18 +252,22 @@
       color: var(--navy);
       letter-spacing: -0.03em;
     }
+
     .brand-title span { color: var(--green); }
+
     .brand-sub {
       font-size: 0.78rem;
       color: var(--muted);
       font-weight: 600;
       margin-top: 4px;
     }
+
     .desktop-nav {
       display: flex;
       align-items: center;
       gap: 6px;
     }
+
     .nav-link {
       padding: 10px 14px;
       border-radius: 12px;
@@ -198,16 +276,19 @@
       font-weight: 600;
       transition: var(--transition);
     }
+
     .nav-link:hover,
     .nav-link.active {
       background: var(--surface);
       color: var(--navy);
     }
+
     .desktop-actions {
       display: flex;
       align-items: center;
       gap: 10px;
     }
+
     .mobile-toggle {
       display: none;
       width: 46px;
@@ -220,17 +301,21 @@
       color: var(--navy);
       box-shadow: var(--shadow-xs);
     }
+
     .mobile-panel {
       display: none;
       padding: 0 0 14px;
     }
+
     .mobile-panel.open { display: block; }
+
     .mobile-nav {
       display: grid;
       gap: 10px;
       padding-top: 10px;
       border-top: 1px solid var(--line);
     }
+
     .mobile-nav a,
     .mobile-nav button {
       padding: 14px 16px;
@@ -252,12 +337,14 @@
       color: white;
       padding: 84px 0 70px;
     }
+
     .hero-grid {
       display: grid;
       grid-template-columns: minmax(0, 1.12fr) minmax(320px, 420px);
       gap: 40px;
       align-items: center;
     }
+
     .eyebrow {
       display: inline-flex;
       align-items: center;
@@ -273,31 +360,36 @@
       margin-bottom: 18px;
       color: #d8e8ff;
     }
+
     .hero h1 {
       font-family: Outfit, sans-serif;
-      font-size: clamp(2.45rem, 5vw, 4.45rem);
+      font-size: clamp(2.45rem, 5vw, 4.35rem);
       line-height: 1.02;
       letter-spacing: -0.04em;
       margin: 0 0 18px;
       max-width: 780px;
     }
+
     .hero h1 .accent {
       background: linear-gradient(90deg, #f6cc54, #8ec44a);
       -webkit-background-clip: text;
       -webkit-text-fill-color: transparent;
     }
+
     .hero p.lead {
       max-width: 720px;
       color: rgba(255, 255, 255, 0.84);
       font-size: 1.04rem;
       margin: 0 0 26px;
     }
+
     .hero-points {
       display: flex;
       flex-wrap: wrap;
       gap: 12px;
       margin-bottom: 28px;
     }
+
     .hero-point {
       display: inline-flex;
       align-items: center;
@@ -310,12 +402,14 @@
       font-size: 0.92rem;
       font-weight: 600;
     }
+
     .hero-actions {
       display: flex;
       flex-wrap: wrap;
       gap: 12px;
       margin-bottom: 18px;
     }
+
     .hero-note {
       color: rgba(255,255,255,0.72);
       font-size: 0.88rem;
@@ -329,6 +423,7 @@
       box-shadow: var(--shadow-lg);
       border: 1px solid rgba(255,255,255,0.12);
     }
+
     .hero-card-top {
       padding: 22px;
       border-radius: 18px;
@@ -336,12 +431,14 @@
       color: white;
       margin-bottom: 18px;
     }
+
     .hero-card-top small {
       display: block;
       color: rgba(255,255,255,0.72);
       margin-bottom: 8px;
       font-weight: 600;
     }
+
     .hero-card-top h2 {
       margin: 0 0 8px;
       font-family: Outfit, sans-serif;
@@ -349,11 +446,13 @@
       line-height: 1.1;
       letter-spacing: -0.03em;
     }
+
     .hero-card-top p {
       margin: 0;
       color: rgba(255,255,255,0.82);
       font-size: 0.92rem;
     }
+
     .hero-card ul {
       list-style: none;
       padding: 0;
@@ -361,6 +460,7 @@
       display: grid;
       gap: 10px;
     }
+
     .hero-card li {
       display: flex;
       gap: 10px;
@@ -368,6 +468,7 @@
       color: var(--text);
       font-size: 0.92rem;
     }
+
     .check {
       width: 22px;
       height: 22px;
@@ -382,6 +483,7 @@
       flex: 0 0 auto;
       margin-top: 1px;
     }
+
     .mini-trust {
       font-size: 0.82rem;
       color: var(--muted);
@@ -393,11 +495,13 @@
       border-bottom: 1px solid var(--line);
       padding: 18px 0;
     }
+
     .trust-grid {
       display: grid;
       grid-template-columns: repeat(4, 1fr);
       gap: 14px;
     }
+
     .trust-item {
       display: flex;
       gap: 12px;
@@ -407,6 +511,7 @@
       border-radius: 16px;
       background: linear-gradient(180deg, #fff, #fcfdff);
     }
+
     .trust-icon {
       width: 42px;
       height: 42px;
@@ -418,12 +523,14 @@
       background: linear-gradient(135deg, rgba(22, 50, 92, 0.08), rgba(107, 163, 42, 0.12));
       flex: 0 0 auto;
     }
+
     .trust-item strong {
       display: block;
       color: var(--ink);
       font-size: 0.9rem;
       line-height: 1.3;
     }
+
     .trust-item span {
       display: block;
       color: var(--muted);
@@ -432,12 +539,14 @@
     }
 
     section { padding: 78px 0; }
+
     .section-head {
       display: flex;
       flex-direction: column;
       gap: 10px;
       margin-bottom: 34px;
     }
+
     .label {
       display: inline-block;
       font-size: 0.78rem;
@@ -446,6 +555,7 @@
       font-weight: 800;
       color: var(--green);
     }
+
     .section-head h2 {
       font-family: Outfit, sans-serif;
       font-size: clamp(1.9rem, 4vw, 2.9rem);
@@ -455,18 +565,12 @@
       margin: 0;
       max-width: 820px;
     }
+
     .section-head p {
       margin: 0;
       color: var(--muted);
       max-width: 760px;
       font-size: 1rem;
-    }
-    .section-split {
-      display: flex;
-      justify-content: space-between;
-      gap: 16px;
-      align-items: end;
-      margin-bottom: 28px;
     }
 
     .signature-grid {
@@ -475,21 +579,23 @@
       gap: 24px;
       align-items: stretch;
     }
+
     .card {
       background: white;
       border: 1px solid var(--line);
       border-radius: 24px;
       box-shadow: var(--shadow-sm);
     }
-    .signature-main {
-      overflow: hidden;
-    }
+
+    .signature-main { overflow: hidden; }
+
     .signature-cover {
       padding: 26px;
       background: linear-gradient(135deg, #0d203c, #16325c, #173d27);
       color: white;
       position: relative;
     }
+
     .signature-badge {
       display: inline-flex;
       align-items: center;
@@ -504,37 +610,44 @@
       border: 1px solid rgba(255,255,255,0.14);
       margin-bottom: 14px;
     }
+
     .signature-cover h3 {
       margin: 0 0 10px;
       font-family: Outfit, sans-serif;
-      font-size: clamp(1.8rem, 3vw, 2.5rem);
+      font-size: clamp(1.8rem, 3vw, 2.45rem);
       line-height: 1.06;
       letter-spacing: -0.03em;
     }
+
     .signature-cover p {
       margin: 0;
       color: rgba(255,255,255,0.84);
       max-width: 760px;
     }
+
     .signature-body {
       padding: 26px;
       display: grid;
       gap: 22px;
     }
+
     .signature-columns {
       display: grid;
       grid-template-columns: 1fr 1fr;
       gap: 18px;
     }
+
     .signature-block h4 {
       margin: 0 0 10px;
       color: var(--navy);
       font-size: 1rem;
     }
+
     .signature-block p {
       margin: 0;
       color: var(--text);
     }
+
     .list-check {
       list-style: none;
       padding: 0;
@@ -542,6 +655,7 @@
       display: grid;
       gap: 10px;
     }
+
     .list-check li {
       display: flex;
       gap: 10px;
@@ -549,17 +663,20 @@
       color: var(--text);
       font-size: 0.94rem;
     }
+
     .signature-meta {
       display: grid;
-      grid-template-columns: repeat(3, 1fr);
+      grid-template-columns: repeat(4, 1fr);
       gap: 12px;
     }
+
     .meta-box {
       padding: 16px;
       border-radius: 16px;
       background: var(--surface);
       border: 1px solid var(--line);
     }
+
     .meta-box strong {
       display: block;
       color: var(--navy);
@@ -568,50 +685,57 @@
       letter-spacing: 0.06em;
       margin-bottom: 6px;
     }
+
     .meta-box span {
       display: block;
       color: var(--ink);
       font-weight: 700;
       line-height: 1.4;
     }
+
     .signature-cta {
       display: flex;
       flex-wrap: wrap;
       gap: 12px;
       align-items: center;
     }
+
     .signature-note {
       font-size: 0.88rem;
       color: var(--muted);
     }
 
-    .framework-card {
-      padding: 24px;
-    }
+    .framework-card { padding: 24px; }
+
     .framework-card h3 {
       margin: 0 0 12px;
       color: var(--navy);
       font-size: 1.15rem;
     }
+
     .framework-card p {
       margin: 0 0 18px;
       color: var(--muted);
     }
+
     .framework-grid {
       display: grid;
       gap: 12px;
     }
+
     .framework-step {
       padding: 16px;
       border-radius: 16px;
       border: 1px solid var(--line);
       background: #fbfcff;
     }
+
     .framework-step strong {
       display: block;
       margin-bottom: 6px;
       color: var(--ink);
     }
+
     .framework-step span {
       color: var(--muted);
       font-size: 0.92rem;
@@ -623,6 +747,7 @@
       position: relative;
       overflow: hidden;
     }
+
     .proof::before {
       content: "";
       position: absolute;
@@ -630,12 +755,14 @@
       background: radial-gradient(circle at 50% 50%, rgba(107,163,42,0.14), transparent 30%);
       pointer-events: none;
     }
+
     .proof-grid {
       position: relative;
       display: grid;
       grid-template-columns: repeat(4, 1fr);
       gap: 20px;
     }
+
     .proof-card {
       padding: 28px 20px;
       border-radius: 22px;
@@ -643,6 +770,7 @@
       border: 1px solid rgba(255,255,255,0.08);
       text-align: center;
     }
+
     .proof-card strong {
       display: block;
       font-family: Outfit, sans-serif;
@@ -651,6 +779,7 @@
       line-height: 1;
       margin-bottom: 10px;
     }
+
     .proof-card span {
       color: rgba(255,255,255,0.8);
       font-size: 0.92rem;
@@ -665,6 +794,7 @@
       grid-template-columns: repeat(3, 1fr);
       gap: 20px;
     }
+
     .info-card {
       background: white;
       border: 1px solid var(--line);
@@ -673,22 +803,26 @@
       box-shadow: var(--shadow-xs);
       transition: transform var(--transition), box-shadow var(--transition), border-color var(--transition);
     }
+
     .info-card:hover {
       transform: translateY(-3px);
       box-shadow: var(--shadow-sm);
       border-color: transparent;
     }
+
     .info-card h3 {
       margin: 0 0 10px;
       color: var(--ink);
       font-size: 1.05rem;
       line-height: 1.35;
     }
+
     .info-card p {
       margin: 0;
       color: var(--muted);
       font-size: 0.94rem;
     }
+
     .card-tag {
       display: inline-flex;
       align-items: center;
@@ -711,31 +845,33 @@
         linear-gradient(135deg, #0d203c 0%, #16325c 58%, #122b1e 100%);
       color: white;
     }
+
     .form-layout {
       display: grid;
       grid-template-columns: .95fr 1.05fr;
       gap: 30px;
       align-items: start;
     }
+
     .form-copy h2,
     .contact-copy h2,
     .faq-copy h2,
-    .blog-copy h2,
-    .openings-copy h2 {
+    .blog-copy h2 {
       font-family: Outfit, sans-serif;
       font-size: clamp(1.95rem, 4vw, 2.8rem);
       line-height: 1.08;
       letter-spacing: -0.03em;
       margin: 0 0 14px;
     }
+
     .form-copy p,
     .contact-copy p,
     .faq-copy p,
-    .blog-copy p,
-    .openings-copy p {
+    .blog-copy p {
       margin: 0 0 20px;
       color: rgba(255,255,255,0.8);
     }
+
     .perks {
       list-style: none;
       padding: 0;
@@ -743,12 +879,14 @@
       display: grid;
       gap: 14px;
     }
+
     .perks li {
       display: flex;
       gap: 12px;
       align-items: flex-start;
       color: rgba(255,255,255,0.92);
     }
+
     .perk-badge {
       width: 28px;
       height: 28px;
@@ -762,6 +900,7 @@
       flex: 0 0 auto;
       font-weight: 800;
     }
+
     .form-card {
       background: rgba(255,255,255,0.98);
       color: var(--text);
@@ -769,22 +908,27 @@
       padding: 28px;
       box-shadow: var(--shadow-lg);
     }
+
     .form-card h3 {
       margin: 0 0 6px;
       color: var(--navy);
       font-size: 1.25rem;
     }
+
     .form-card .sub {
       margin: 0 0 18px;
       color: var(--muted);
       font-size: 0.92rem;
     }
+
     .grid-2 {
       display: grid;
       grid-template-columns: repeat(2, 1fr);
       gap: 14px;
     }
+
     .field { margin-bottom: 14px; }
+
     .field label {
       display: block;
       margin-bottom: 7px;
@@ -792,6 +936,7 @@
       font-size: 0.86rem;
       font-weight: 700;
     }
+
     .field input,
     .field select,
     .field textarea {
@@ -803,6 +948,7 @@
       color: var(--ink);
       transition: border-color var(--transition), box-shadow var(--transition), background var(--transition);
     }
+
     .field input:focus,
     .field select:focus,
     .field textarea:focus {
@@ -810,10 +956,12 @@
       box-shadow: 0 0 0 4px rgba(22, 50, 92, 0.08);
       outline: none;
     }
+
     .field textarea {
       min-height: 120px;
       resize: vertical;
     }
+
     .consent {
       display: flex;
       gap: 10px;
@@ -822,16 +970,19 @@
       font-size: 0.88rem;
       margin: 8px 0 18px;
     }
+
     .consent input {
       margin-top: 3px;
       accent-color: var(--green);
     }
+
     .form-note {
       margin-top: 14px;
       font-size: 0.8rem;
       color: var(--muted);
       text-align: center;
     }
+
     .honeypot {
       position: absolute;
       left: -9999px;
@@ -840,61 +991,21 @@
       overflow: hidden;
     }
 
-    .openings-section {
-      background: white;
-    }
-    .openings-layout {
-      display: grid;
-      grid-template-columns: 0.95fr 1.05fr;
-      gap: 24px;
-      align-items: start;
-    }
-    .opening-panel {
-      background: linear-gradient(135deg, #0d203c, #16325c, #173d27);
-      color: white;
-      border-radius: 24px;
-      padding: 28px;
-      box-shadow: var(--shadow-md);
-    }
-    .opening-panel p {
-      color: rgba(255,255,255,0.82);
-      margin: 0 0 18px;
-    }
-    .opening-list {
-      display: grid;
-      gap: 14px;
-    }
-    .opening-item {
-      background: white;
-      border: 1px solid var(--line);
-      border-radius: 18px;
-      padding: 18px;
-      box-shadow: var(--shadow-xs);
-    }
-    .opening-item strong {
-      display: block;
-      color: var(--ink);
-      margin-bottom: 6px;
-    }
-    .opening-item span {
-      color: var(--muted);
-      font-size: 0.92rem;
-    }
-
     .faq-layout {
       display: grid;
       grid-template-columns: .95fr 1.05fr;
       gap: 24px;
       align-items: start;
     }
-    .faq-copy {
-      color: var(--ink);
-    }
+
+    .faq-copy { color: var(--ink); }
     .faq-copy p { color: var(--muted); }
+
     .faq-list {
       display: grid;
       gap: 12px;
     }
+
     details.faq-item {
       background: white;
       border-radius: 18px;
@@ -902,10 +1013,12 @@
       padding: 0 18px;
       box-shadow: var(--shadow-xs);
     }
+
     details.faq-item[open] {
       box-shadow: var(--shadow-sm);
       border-color: rgba(22, 50, 92, 0.14);
     }
+
     details summary {
       list-style: none;
       cursor: pointer;
@@ -917,21 +1030,23 @@
       align-items: center;
       gap: 16px;
     }
+
     details summary::-webkit-details-marker { display: none; }
+
     .faq-answer {
       padding: 0 0 18px;
       color: var(--muted);
       font-size: 0.94rem;
     }
 
-    .blog-section {
-      background: #f8fafc;
-    }
+    .blog-section { background: #f8fafc; }
+
     .blog-grid {
       display: grid;
       grid-template-columns: repeat(4, 1fr);
       gap: 20px;
     }
+
     .article-card {
       display: flex;
       flex-direction: column;
@@ -942,7 +1057,12 @@
       box-shadow: var(--shadow-xs);
       transition: var(--transition);
     }
-    .article-card:hover { transform: translateY(-3px); box-shadow: var(--shadow-sm); }
+
+    .article-card:hover {
+      transform: translateY(-3px);
+      box-shadow: var(--shadow-sm);
+    }
+
     .article-top {
       min-height: 160px;
       display: flex;
@@ -951,16 +1071,19 @@
       font-size: 2.3rem;
       color: white;
     }
+
     .grad-1 { background: linear-gradient(135deg, #16325c, #385ba0); }
     .grad-2 { background: linear-gradient(135deg, #2f5e14, #6ba32a); }
     .grad-3 { background: linear-gradient(135deg, #6b4a00, #d39a11); }
     .grad-4 { background: linear-gradient(135deg, #3c244e, #6f4893); }
+
     .article-body {
       padding: 18px;
       display: flex;
       flex-direction: column;
       flex: 1;
     }
+
     .article-cat {
       color: var(--green);
       font-size: 0.76rem;
@@ -969,18 +1092,21 @@
       letter-spacing: 0.08em;
       margin-bottom: 8px;
     }
+
     .article-body h3 {
       margin: 0 0 8px;
       color: var(--ink);
       font-size: 1rem;
       line-height: 1.38;
     }
+
     .article-body p {
       margin: 0 0 16px;
       color: var(--muted);
       font-size: 0.9rem;
       flex: 1;
     }
+
     .article-link {
       color: var(--navy);
       font-weight: 700;
@@ -995,6 +1121,7 @@
       position: relative;
       overflow: hidden;
     }
+
     .cta::before {
       content: "";
       position: absolute;
@@ -1002,11 +1129,13 @@
       background: radial-gradient(circle at 50% 50%, rgba(255,255,255,0.12), transparent 30%);
       pointer-events: none;
     }
+
     .cta-inner {
       position: relative;
       max-width: 760px;
       margin: 0 auto;
     }
+
     .cta h2 {
       margin: 0 0 12px;
       font-family: Outfit, sans-serif;
@@ -1014,11 +1143,13 @@
       line-height: 1.05;
       letter-spacing: -0.03em;
     }
+
     .cta p {
       margin: 0 auto 24px;
       max-width: 620px;
       color: rgba(255,255,255,0.9);
     }
+
     .cta-actions {
       display: flex;
       flex-wrap: wrap;
@@ -1026,18 +1157,19 @@
       gap: 12px;
     }
 
-    .contact-section {
-      background: white;
-    }
+    .contact-section { background: white; }
+
     .contact-layout {
       display: grid;
       grid-template-columns: 340px 1fr;
       gap: 24px;
     }
+
     .contact-stack {
       display: grid;
       gap: 14px;
     }
+
     .contact-box {
       padding: 22px;
       border-radius: 20px;
@@ -1045,49 +1177,32 @@
       background: #fbfcff;
       box-shadow: var(--shadow-xs);
     }
+
     .contact-box h3 {
       margin: 0 0 8px;
       font-size: 1rem;
       color: var(--navy);
     }
+
     .contact-box p {
       margin: 0;
       color: var(--muted);
       font-size: 0.92rem;
     }
 
-    .legal-page { padding: 56px 0 78px; }
-    .legal-card {
-      background: white;
-      border: 1px solid var(--line);
-      border-radius: 24px;
-      padding: 38px;
-      box-shadow: var(--shadow-sm);
-      max-width: 920px;
-      margin: 0 auto;
-    }
-    .legal-card h1,
-    .legal-card h2 {
-      font-family: Outfit, sans-serif;
-      letter-spacing: -0.03em;
-      color: var(--navy);
-    }
-    .legal-card h1 { margin-top: 0; font-size: 2rem; }
-    .legal-card h2 { font-size: 1.2rem; margin-top: 24px; }
-    .legal-card p,
-    .legal-card li { color: var(--muted); }
-
     footer {
       background: var(--navy-3);
       color: #9aa8bf;
       padding: 52px 0 30px;
     }
+
     .footer-grid {
       display: grid;
       grid-template-columns: 1.15fr .85fr .85fr .85fr;
       gap: 28px;
       margin-bottom: 28px;
     }
+
     .footer-brand h3 {
       margin: 0 0 10px;
       font-family: Outfit, sans-serif;
@@ -1095,12 +1210,15 @@
       color: white;
       letter-spacing: -0.03em;
     }
+
     .footer-brand h3 span { color: #8ec44a; }
+
     .footer-brand p {
       margin: 0 0 8px;
       color: #9aa8bf;
       font-size: 0.9rem;
     }
+
     .footer-col h4 {
       margin: 0 0 14px;
       color: white;
@@ -1108,20 +1226,16 @@
       text-transform: uppercase;
       letter-spacing: 0.08em;
     }
-    .footer-col a,
-    .footer-col button {
+
+    .footer-col a {
       display: block;
-      background: none;
-      border: 0;
-      padding: 0;
       margin: 0 0 10px;
       color: #9aa8bf;
-      text-align: left;
-      cursor: pointer;
       font-size: 0.9rem;
     }
-    .footer-col a:hover,
-    .footer-col button:hover { color: white; }
+
+    .footer-col a:hover { color: white; }
+
     .footer-bottom {
       border-top: 1px solid rgba(255,255,255,0.08);
       padding-top: 18px;
@@ -1130,16 +1244,6 @@
       gap: 16px;
       flex-wrap: wrap;
       font-size: 0.84rem;
-    }
-
-    .page {
-      display: none;
-      animation: fade .25s ease;
-    }
-    .page.active { display: block; }
-    @keyframes fade {
-      from { opacity: 0; transform: translateY(4px); }
-      to { opacity: 1; transform: translateY(0); }
     }
 
     .sticky-mobile-cta {
@@ -1156,6 +1260,7 @@
       border-radius: 18px;
       padding: 10px;
     }
+
     .sticky-mobile-cta .btn { width: 100%; }
 
     @media (max-width: 1120px) {
@@ -1163,7 +1268,6 @@
       .signature-grid,
       .form-layout,
       .faq-layout,
-      .openings-layout,
       .contact-layout,
       .blog-grid,
       .offer-grid,
@@ -1176,16 +1280,21 @@
       .footer-grid {
         grid-template-columns: repeat(2, 1fr);
       }
+
       .signature-columns,
-      .signature-meta { grid-template-columns: 1fr; }
+      .signature-meta {
+        grid-template-columns: 1fr;
+      }
+
       .hero-grid { grid-template-columns: 1fr; }
     }
 
     @media (max-width: 860px) {
       .desktop-nav,
       .desktop-actions { display: none; }
+
       .mobile-toggle { display: inline-flex; }
-      .section-split { display: block; }
+
       .grid-2,
       .hero-grid,
       .signature-grid,
@@ -1201,25 +1310,36 @@
       .trust-grid,
       .form-layout,
       .faq-layout,
-      .openings-layout,
       .contact-layout,
       .footer-grid {
         grid-template-columns: 1fr;
       }
+
       .hero { padding-top: 56px; }
+
       .hero-actions,
       .cta-actions,
-      .signature-cta { flex-direction: column; }
+      .signature-cta {
+        flex-direction: column;
+      }
+
       .hero-actions .btn,
       .cta-actions .btn,
-      .signature-cta .btn { width: 100%; }
+      .signature-cta .btn {
+        width: 100%;
+      }
+
       .hero-card,
       .card,
-      .form-card,
-      .legal-card { padding: 18px; }
+      .form-card {
+        padding: 18px;
+      }
+
       .signature-body,
-      .framework-card,
-      .opening-panel { padding: 20px; }
+      .framework-card {
+        padding: 20px;
+      }
+
       .sticky-mobile-cta { display: block; }
       body { padding-bottom: 86px; }
     }
@@ -1231,7 +1351,7 @@
   <header>
     <div class="container">
       <div class="topbar">
-        <a class="brand" href="#home" onclick="navigate('home')" aria-label="Retour à l'accueil LOGIX FORMA">
+        <a class="brand" href="/" aria-label="Retour à l'accueil LOGIX FORMA">
           <img src="https://i.postimg.cc/xdj77pwZ/logo-logix-forma.jpg" alt="Logo LOGIX FORMA" />
           <span class="brand-text">
             <span class="brand-title">LOGIX <span>FORMA</span></span>
@@ -1240,742 +1360,686 @@
         </a>
 
         <nav class="desktop-nav" aria-label="Navigation principale">
-          <a class="nav-link active" id="nav-home" href="#home" onclick="navigate('home')">Accueil</a>
-          <a class="nav-link" href="#formation-signature" onclick="navigate('home'); scrollToId('formation-signature')">Formation signature</a>
-          <a class="nav-link" href="#formations-avenir" onclick="navigate('home'); scrollToId('formations-avenir')">Formations à venir</a>
-          <a class="nav-link" href="#formations-fle" onclick="navigate('home'); scrollToId('formations-fle')">FLE à venir</a>
-          <a class="nav-link" href="#faq" onclick="navigate('home'); scrollToId('faq')">FAQ</a>
-          <a class="nav-link" href="blog.html">Blog</a>
+          <a class="nav-link active" href="/">Accueil</a>
+          <a class="nav-link" href="/formations/diagnostic-budgetaire-terrain.html">Formation disponible</a>
+          <a class="nav-link" href="/formations/index.html">Formations</a>
+          <a class="nav-link" href="/fle/index.html">FLE</a>
+          <a class="nav-link" href="/blog/index.html">Blog</a>
         </nav>
 
         <div class="desktop-actions">
-          <a class="btn btn-outline" href="#acces-prioritaire" onclick="navigate('home'); scrollToId('acces-prioritaire')">Être informé</a>
-          <a class="btn btn-dark" href="#contact" onclick="navigate('contact')">Contact</a>
+          <a class="btn btn-outline" href="/contact.html">Être informé</a>
+          <a class="btn btn-dark" href="/connexion.html">Espace apprenant</a>
         </div>
 
-        <button class="mobile-toggle" type="button" aria-label="Ouvrir le menu" aria-expanded="false" aria-controls="mobile-panel" onclick="toggleMenu(this)">
-          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 7h16M4 12h16M4 17h16"/></svg>
+        <button
+          class="mobile-toggle"
+          type="button"
+          aria-label="Ouvrir le menu"
+          aria-expanded="false"
+          aria-controls="mobile-panel"
+          onclick="toggleMenu(this)"
+        >
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <path d="M4 7h16M4 12h16M4 17h16"/>
+          </svg>
         </button>
       </div>
 
       <div class="mobile-panel" id="mobile-panel">
         <nav class="mobile-nav" aria-label="Navigation mobile">
-          <a href="#home" onclick="closeMenu(); navigate('home')">Accueil</a>
-          <a href="#formation-signature" onclick="closeMenu(); navigate('home'); scrollToId('formation-signature')">Formation signature</a>
-          <a href="#formations-avenir" onclick="closeMenu(); navigate('home'); scrollToId('formations-avenir')">Formations à venir</a>
-          <a href="#formations-fle" onclick="closeMenu(); navigate('home'); scrollToId('formations-fle')">FLE à venir</a>
-          <a href="#faq" onclick="closeMenu(); navigate('home'); scrollToId('faq')">FAQ</a>
-          <a href="blog.html" onclick="closeMenu()">Blog</a>
-          <button type="button" onclick="closeMenu(); navigate('home'); scrollToId('acces-prioritaire')">Être informé</button>
-          <button type="button" onclick="closeMenu(); navigate('contact')">Contact</button>
+          <a href="/">Accueil</a>
+          <a href="/formations/diagnostic-budgetaire-terrain.html">Formation disponible</a>
+          <a href="/formations/index.html">Formations</a>
+          <a href="/fle/index.html">FLE</a>
+          <a href="/blog/index.html">Blog</a>
+          <a href="/contact.html">Être informé</a>
+          <a href="/connexion.html">Espace apprenant</a>
         </nav>
       </div>
     </div>
   </header>
 
   <main id="main-content">
-    <div id="page-home" class="page active">
-      <section class="hero">
-        <div class="container">
-          <div class="hero-grid">
+    <section class="hero">
+      <div class="container">
+        <div class="hero-grid">
+          <div>
+            <div class="eyebrow">1 formation disponible · nouvelles formations ajoutées progressivement</div>
+            <h1>
+              Une formation déjà disponible, <span class="accent">de nouvelles ouvertures à venir</span>
+            </h1>
+            <p class="lead">
+              LOGIX FORMA propose dès maintenant une formation professionnalisante en diagnostic budgétaire terrain,
+              tout en développant progressivement de nouvelles formations à distance en pédagogie, insertion et français professionnel.
+            </p>
+
+            <div class="hero-points" aria-label="Points clés">
+              <div class="hero-point">🎯 Résultat concret</div>
+              <div class="hero-point">💻 100 % à distance</div>
+              <div class="hero-point">📘 1 formation disponible</div>
+              <div class="hero-point">👤 Espace apprenant prévu</div>
+            </div>
+
+            <div class="hero-actions">
+              <a class="btn btn-primary" href="/formations/diagnostic-budgetaire-terrain.html">Découvrir la formation disponible</a>
+              <a class="btn btn-secondary" href="/contact.html">Être informé des prochaines ouvertures</a>
+            </div>
+
+            <div class="hero-note">
+              Association déclarée · SIREN 902 349 943 · Demande d’information gratuite
+            </div>
+          </div>
+
+          <aside class="hero-card" aria-label="Résumé de l’offre LOGIX FORMA">
+            <div class="hero-card-top">
+              <small>LOGIX FORMA</small>
+              <h2>Former pour produire, tester, mesurer</h2>
+              <p>Une logique de formation orientée terrain, utilité immédiate et progression réelle.</p>
+            </div>
+
+            <ul>
+              <li><span class="check">✓</span><span>Une formation disponible dès maintenant</span></li>
+              <li><span class="check">✓</span><span>Des formations à venir ajoutées progressivement</span></li>
+              <li><span class="check">✓</span><span>Un futur espace apprenant relié à votre compte</span></li>
+              <li><span class="check">✓</span><span>Une base prête pour intégrer SumUp et l’accès après achat</span></li>
+              <li><span class="check">✓</span><span>Une offre claire pour particuliers, structures et professionnels de terrain</span></li>
+            </ul>
+
+            <a class="btn btn-primary" style="width:100%; margin-bottom:10px;" href="/formations/diagnostic-budgetaire-terrain.html">
+              Voir la formation disponible
+            </a>
+            <div class="mini-trust">Les autres formations seront publiées progressivement sur logixforma.com.</div>
+          </aside>
+        </div>
+      </div>
+    </section>
+
+    <div class="trust-band" aria-label="Éléments de confiance">
+      <div class="container">
+        <div class="trust-grid">
+          <div class="trust-item">
+            <div class="trust-icon">🏛️</div>
             <div>
-              <div class="eyebrow">Formations à venir · Inscriptions bientôt disponibles</div>
-              <h1>Des formations conçues pour <span class="accent">produire, tester, mesurer</span></h1>
-              <p class="lead">Chez LOGIX FORMA, chaque formation poursuit un objectif simple : obtenir un résultat concret, mesurable et directement applicable. Le site met d’abord en avant une formation signature, puis des parcours à venir organisés de façon claire et lisible.</p>
-
-              <div class="hero-points" aria-label="Points clés">
-                <div class="hero-point">🎯 Résultat concret</div>
-                <div class="hero-point">💻 100 % à distance</div>
-                <div class="hero-point">🧠 Méthode EDUCONCRET™</div>
-                <div class="hero-point">📩 Capture de contacts prioritaire</div>
-              </div>
-
-              <div class="hero-actions">
-                <a class="btn btn-primary" href="#formation-signature" onclick="scrollToId('formation-signature')">Découvrir la formation principale</a>
-                <a class="btn btn-secondary" href="#acces-prioritaire" onclick="scrollToId('acces-prioritaire')">Être informé des prochaines sessions</a>
-              </div>
-
-              <div class="hero-note">Association déclarée · SIREN 902 349 943 · Pré-inscription gratuite et sans engagement</div>
+              <strong>Association déclarée</strong>
+              <span>SIREN 902 349 943 · RNA W931025228</span>
             </div>
-
-            <aside class="hero-card" aria-label="Promesse de la méthode">
-              <div class="hero-card-top">
-                <small>Principe central</small>
-                <h2>Produire, tester, mesurer</h2>
-                <p>Une logique de formation qui vise l’action utile, l’évaluation concrète et l’amélioration continue.</p>
-              </div>
-
-              <ul>
-                <li><span class="check">✓</span><span>Des formats pensés pour un usage réel</span></li>
-                <li><span class="check">✓</span><span>Une offre hiérarchisée et compréhensible rapidement</span></li>
-                <li><span class="check">✓</span><span>Une formation signature clairement identifiable</span></li>
-                <li><span class="check">✓</span><span>Des formations spécialisées, métier, entreprise et avancées</span></li>
-                <li><span class="check">✓</span><span>Un dispositif orienté capture de contacts avant lancement</span></li>
-              </ul>
-
-              <a class="btn btn-primary" style="width:100%; margin-bottom:10px;" href="#acces-prioritaire" onclick="scrollToId('acces-prioritaire')">Je veux être informé</a>
-              <div class="mini-trust">Les prochaines sessions seront annoncées prochainement.</div>
-            </aside>
           </div>
-        </div>
-      </section>
-
-      <div class="trust-band" aria-label="Éléments de confiance">
-        <div class="container">
-          <div class="trust-grid">
-            <div class="trust-item"><div class="trust-icon">🏛️</div><div><strong>Association déclarée</strong><span>SIREN 902 349 943 · RNA W931025228</span></div></div>
-            <div class="trust-item"><div class="trust-icon">🧭</div><div><strong>Offre hiérarchisée</strong><span>Une formation principale, puis des parcours à venir</span></div></div>
-            <div class="trust-item"><div class="trust-icon">⚙️</div><div><strong>Méthode claire</strong><span>Produire, tester, mesurer</span></div></div>
-            <div class="trust-item"><div class="trust-icon">📩</div><div><strong>Information prioritaire</strong><span>Formulaire simple pour capter les premiers contacts</span></div></div>
+          <div class="trust-item">
+            <div class="trust-icon">📘</div>
+            <div>
+              <strong>Formation disponible</strong>
+              <span>Diagnostic budgétaire terrain – Méthode LOGIX FORMA</span>
+            </div>
+          </div>
+          <div class="trust-item">
+            <div class="trust-icon">⚙️</div>
+            <div>
+              <strong>Offre évolutive</strong>
+              <span>Nouvelles formations ajoutées progressivement</span>
+            </div>
+          </div>
+          <div class="trust-item">
+            <div class="trust-icon">👤</div>
+            <div>
+              <strong>Espace apprenant</strong>
+              <span>Connexion prévue pour l’accès aux contenus</span>
+            </div>
           </div>
         </div>
       </div>
+    </div>
 
-      <section id="formation-signature">
-        <div class="container">
-          <div class="section-head">
-            <span class="label">Formation principale</span>
-            <h2>La formation signature à mettre en avant</h2>
-            <p>Le site doit d’abord porter une offre forte et identifiable. Cette section place la formation EDUCONCRET™ au centre, avec un bénéfice clair, un objectif simple et une action immédiate.</p>
-          </div>
-
-          <div class="signature-grid">
-            <article class="card signature-main">
-              <div class="signature-cover">
-                <div class="signature-badge">Formation signature</div>
-                <h3>Technicien(ne) de l’animation de formation – Méthode EDUCONCRET™</h3>
-                <p>Animer des séquences de formation courtes, concrètes et efficaces, en présentiel comme à distance.</p>
-              </div>
-
-              <div class="signature-body">
-                <div class="signature-columns">
-                  <div class="signature-block">
-                    <h4>Objectif</h4>
-                    <p>Animer des séquences de formation courtes de 15 à 20 minutes avec impact, dans des contextes variés et avec une logique de résultat mesurable.</p>
-                  </div>
-                  <div class="signature-block">
-                    <h4>Vous saurez</h4>
-                    <ul class="list-check">
-                      <li><span class="check">✓</span><span>Construire une séquence efficace avec le canevas EDUCONCRET™</span></li>
-                      <li><span class="check">✓</span><span>Animer en groupe ou en individuel</span></li>
-                      <li><span class="check">✓</span><span>Mesurer l’efficacité avec l’Indice EDUCONCRET™</span></li>
-                      <li><span class="check">✓</span><span>Corriger une séquence inefficace</span></li>
-                    </ul>
-                  </div>
-                </div>
-
-                <div class="signature-meta">
-                  <div class="meta-box"><strong>Format</strong><span>100 % à distance</span></div>
-                  <div class="meta-box"><strong>Durée</strong><span>10 séances de 45 minutes</span></div>
-                  <div class="meta-box"><strong>Certification</strong><span>Certification d’excellence opérationnelle – Label interne LOGIX FORMA</span></div>
-                </div>
-
-                <div class="signature-cta">
-                  <a class="btn btn-dark" href="#acces-prioritaire" onclick="scrollToId('acces-prioritaire')">Être informé de l’ouverture</a>
-                  <a class="btn btn-outline" href="#prochaines-ouvertures" onclick="scrollToId('prochaines-ouvertures')">Voir les prochaines ouvertures</a>
-                </div>
-                <div class="signature-note">Ouverture prochaine — inscriptions bientôt disponibles.</div>
-              </div>
-            </article>
-
-            <aside class="card framework-card">
-              <h3>Pourquoi cette formation doit dominer la page</h3>
-              <p>Elle sert de point d’entrée commercial. Elle donne une identité forte à LOGIX FORMA. Elle rend l’offre mémorable. Elle aide le visiteur à comprendre immédiatement ce que vous proposez.</p>
-              <div class="framework-grid">
-                <div class="framework-step"><strong>1. Une promesse claire</strong><span>Animer efficacement des formats courts avec impact.</span></div>
-                <div class="framework-step"><strong>2. Une méthode nommée</strong><span>La méthode EDUCONCRET™ structure la proposition de valeur.</span></div>
-                <div class="framework-step"><strong>3. Un résultat mesurable</strong><span>L’Indice EDUCONCRET™ renforce la crédibilité du dispositif.</span></div>
-                <div class="framework-step"><strong>4. Une action simple</strong><span>Le visiteur laisse son contact pour être informé des prochaines sessions.</span></div>
-              </div>
-            </aside>
-          </div>
+    <section id="formation-disponible">
+      <div class="container">
+        <div class="section-head">
+          <span class="label">Formation disponible</span>
+          <h2>Diagnostic budgétaire terrain – Méthode LOGIX FORMA</h2>
+          <p>
+            Formation professionnalisante à l’intervention budgétaire de premier niveau en contexte d’insertion.
+            Cette offre devient le point d’entrée principal de LOGIX FORMA.
+          </p>
         </div>
-      </section>
 
-      <section class="proof">
-        <div class="container">
-          <div class="proof-grid">
-            <div class="proof-card"><strong>1</strong><span>formation signature à mettre au centre</span></div>
-            <div class="proof-card"><strong>10</strong><span>séances de 45 minutes pour la formation principale</span></div>
-            <div class="proof-card"><strong>15–20 min</strong><span>format court ciblé pour les séquences animées</span></div>
-            <div class="proof-card"><strong>100 %</strong><span>à distance pour les parcours affichés</span></div>
-          </div>
-        </div>
-      </section>
-
-      <section id="formations-avenir" style="background:white;">
-        <div class="container">
-          <div class="section-head">
-            <span class="label">Nos formations à venir</span>
-            <h2>Une offre structurée, hiérarchisée et orientée action</h2>
-            <p>Le visiteur doit comprendre rapidement ce que vous proposez, pour qui, et pour quel résultat concret. Cette organisation évite l’effet “liste brute” et améliore la lisibilité commerciale.</p>
-          </div>
-
-          <div class="section-split">
-            <div></div>
-            <a class="btn btn-soft" href="#acces-prioritaire" onclick="scrollToId('acces-prioritaire')">Recevoir les annonces d’ouverture</a>
-          </div>
-
-          <div class="offer-grid">
-            <article class="info-card">
-              <div class="card-tag">Formation spécialisée</div>
-              <h3>Animer une formation à distance avec impact</h3>
-              <p>Maintenir l’attention, faire produire et gérer le silence en visio avec une logique d’animation concrète.</p>
-            </article>
-            <article class="info-card">
-              <div class="card-tag">Formation spécialisée</div>
-              <h3>Concevoir une formation courte et efficace</h3>
-              <p>Créer un module clair, structuré et directement applicable, sans surcharge inutile.</p>
-            </article>
-            <article class="info-card">
-              <div class="card-tag">Formation spécialisée</div>
-              <h3>Mesurer l’efficacité d’une formation</h3>
-              <p>Utiliser l’Indice EDUCONCRET™ pour évaluer une séquence et améliorer son impact.</p>
-            </article>
-            <article class="info-card">
-              <div class="card-tag">Formation spécialisée</div>
-              <h3>Adapter une formation à tous les formats</h3>
-              <p>Transformer une formation sans perdre en efficacité : présentiel, distanciel, groupe ou individuel.</p>
-            </article>
-          </div>
-        </div>
-      </section>
-
-      <section id="formations-fle">
-        <div class="container">
-          <div class="section-head">
-            <span class="label">Formations FLE à venir</span>
-            <h2>Le FLE reste un pilier de l’offre LOGIX FORMA</h2>
-            <p>Ces formations à venir complètent l’offre en pédagogie et permettent de conserver une entrée claire pour les apprenants et les structures qui recherchent des parcours de français langue étrangère orientés vers l’autonomie et l’usage professionnel.</p>
-          </div>
-
-          <div class="offer-grid">
-            <article class="info-card">
-              <div class="card-tag">FLE</div>
-              <h3>Français professionnel A1 — Niveau débutant</h3>
-              <p>Acquérir les bases utiles pour comprendre, communiquer et agir dans les premières situations du quotidien et du travail.</p>
-            </article>
-            <article class="info-card">
-              <div class="card-tag">FLE</div>
-              <h3>Français professionnel A2 — Niveau élémentaire</h3>
-              <p>Renforcer son autonomie, mieux interagir et progresser dans des situations professionnelles plus variées.</p>
-            </article>
-            <article class="info-card">
-              <div class="card-tag">FLE</div>
-              <h3>Français professionnel — Parcours insertion</h3>
-              <p>Développer les compétences linguistiques nécessaires pour évoluer dans un parcours d’insertion et accéder plus facilement à l’emploi.</p>
-            </article>
-            <article class="info-card">
-              <div class="card-tag">FLE</div>
-              <h3>Français professionnel — Parcours reconversion</h3>
-              <p>Consolider son expression et sa compréhension pour accompagner un changement de trajectoire professionnelle.</p>
-            </article>
-            <article class="info-card">
-              <div class="card-tag">FLE</div>
-              <h3>Communication professionnelle en français</h3>
-              <p>Travailler les échanges utiles en contexte professionnel : comprendre, répondre, reformuler, interagir avec plus d’aisance.</p>
-            </article>
-            <article class="info-card">
-              <div class="card-tag">FLE</div>
-              <h3>Français à visée emploi</h3>
-              <p>Développer un français directement mobilisable dans les démarches, les échanges professionnels et les situations concrètes liées à l’emploi.</p>
-            </article>
-          </div>
-        </div>
-      </section>
-
-      <section>
-        <div class="container">
-          <div class="section-head">
-            <span class="label">Parcours métier</span>
-            <h2>Des parcours pensés pour des besoins professionnels réels</h2>
-            <p>Les parcours métier permettent de regrouper plusieurs compétences sous une promesse simple et utile pour le terrain.</p>
-          </div>
-          <div class="parcours-grid">
-            <article class="info-card">
-              <div class="card-tag">Parcours métier</div>
-              <h3>Devenir formateur opérationnel</h3>
-              <p>Construire et animer des formations concrètes, sans théorie inutile, avec une logique de performance pédagogique.</p>
-            </article>
-            <article class="info-card">
-              <div class="card-tag">Parcours métier</div>
-              <h3>Perfectionner ses techniques d’animation</h3>
-              <p>Réduire son temps de parole et augmenter la production des apprenants au sein de la séance.</p>
-            </article>
-          </div>
-        </div>
-      </section>
-
-      <section style="background:white;">
-        <div class="container">
-          <div class="section-head">
-            <span class="label">Formations entreprises</span>
-            <h2>Des offres conçues pour les structures et les équipes internes</h2>
-            <p>Cette partie ouvre la porte à une cible B2B et crédibilise votre capacité à intervenir dans les organisations.</p>
-          </div>
-          <div class="entreprise-grid">
-            <article class="info-card">
-              <div class="card-tag">Entreprise</div>
-              <h3>Former ses équipes internes efficacement</h3>
-              <p>Transformer les formations internes en actions concrètes, compréhensibles et directement opérationnelles.</p>
-            </article>
-            <article class="info-card">
-              <div class="card-tag">Entreprise</div>
-              <h3>Transformer les réunions en sessions productives</h3>
-              <p>Appliquer les principes EDUCONCRET™ aux réunions de travail pour produire davantage en moins de temps.</p>
-            </article>
-            <article class="info-card">
-              <div class="card-tag">Entreprise</div>
-              <h3>Former des formateurs en interne (Train the Trainer)</h3>
-              <p>Standardiser les pratiques pédagogiques dans l’organisation avec une approche claire et reproductible.</p>
-            </article>
-          </div>
-        </div>
-      </section>
-
-      <section>
-        <div class="container">
-          <div class="section-head">
-            <span class="label">Formations avancées</span>
-            <h2>Des parcours pour aller vers un niveau d’expertise plus élevé</h2>
-            <p>Ces offres renforcent la profondeur de l’écosystème LOGIX FORMA sans surcharger l’entrée de gamme commerciale.</p>
-          </div>
-          <div class="advanced-grid">
-            <article class="info-card">
-              <div class="card-tag">Avancé</div>
-              <h3>Certification formateur EDUCONCRET™</h3>
-              <p>Devenir formateur certifié à la méthode et porter plus clairement l’identité pédagogique du dispositif.</p>
-            </article>
-            <article class="info-card">
-              <div class="card-tag">Avancé</div>
-              <h3>Ingénierie pédagogique avancée</h3>
-              <p>Concevoir des parcours complets, cohérents et performants à partir d’exigences de résultat.</p>
-            </article>
-          </div>
-        </div>
-      </section>
-
-      <section style="background:white;">
-        <div class="container">
-          <div class="section-head">
-            <span class="label">Formats courts</span>
-            <h2>Des capsules ciblées pour répondre à un besoin précis</h2>
-            <p>Ces formats servent d’offre d’entrée ou de complément. Ils sont simples à comprendre et faciles à annoncer lors d’une prochaine ouverture.</p>
-          </div>
-          <div class="short-grid">
-            <article class="info-card">
-              <div class="card-tag">Format court</div>
-              <h3>Faire produire un apprenant en 15 minutes</h3>
-              <p>Passer plus vite à l’action et réduire le temps perdu en explications peu utiles.</p>
-            </article>
-            <article class="info-card">
-              <div class="card-tag">Format court</div>
-              <h3>Réduire son temps de parole</h3>
-              <p>Créer une animation plus active en laissant davantage de place à la production réelle des apprenants.</p>
-            </article>
-            <article class="info-card">
-              <div class="card-tag">Format court</div>
-              <h3>Créer une consigne efficace</h3>
-              <p>Formuler des consignes plus claires, plus actionnables et mieux comprises.</p>
-            </article>
-          </div>
-        </div>
-      </section>
-
-      <section class="form-section" id="acces-prioritaire">
-        <div class="container">
-          <div class="form-layout">
-            <div class="form-copy">
-              <span class="label" style="color:#b8de80;">Être informé</span>
-              <h2>Le site doit capter des contacts avant de vendre</h2>
-              <p>Le rôle principal de cette page consiste à identifier les personnes intéressées avant les ouvertures. Le formulaire doit donc rester simple, direct et orienté annonce des prochaines sessions.</p>
-              <ul class="perks">
-                <li><span class="perk-badge">✓</span><span>Être informé des prochaines sessions en priorité</span></li>
-                <li><span class="perk-badge">✓</span><span>Recevoir les informations sur la formation qui vous intéresse</span></li>
-                <li><span class="perk-badge">✓</span><span>Suivre l’ouverture progressive des nouvelles offres</span></li>
-                <li><span class="perk-badge">✓</span><span>Être recontacté selon votre profil et vos besoins</span></li>
-              </ul>
+        <div class="signature-grid">
+          <article class="card signature-main">
+            <div class="signature-cover">
+              <div class="signature-badge">Disponible</div>
+              <h3>Diagnostic budgétaire terrain – Méthode LOGIX FORMA</h3>
+              <p>
+                Réaliser un diagnostic budgétaire simple, fiable et utile en contexte d’accompagnement,
+                avec une logique de terrain et d’action immédiate.
+              </p>
             </div>
 
-            <div class="form-card">
-              <h3>Être informé des prochaines sessions</h3>
-              <p class="sub">Inscription gratuite et sans engagement.</p>
-              <form action="https://formspree.io/f/mjgpekwe" method="POST">
-                <input type="hidden" name="source" value="site_logix_forma" />
-                <input type="hidden" name="type_demande" value="information_prochaines_sessions" />
-                <input type="hidden" name="_next" value="/merci.html" />
-                <input type="hidden" name="_subject" value="Nouvelle demande d'information — prochaines sessions LOGIX FORMA" />
-
-                <div class="grid-2">
-                  <div class="field">
-                    <label for="ap-prenom">Prénom *</label>
-                    <input id="ap-prenom" name="prenom" type="text" placeholder="Marie" required autocomplete="given-name" />
-                  </div>
-                  <div class="field">
-                    <label for="ap-nom">Nom *</label>
-                    <input id="ap-nom" name="nom" type="text" placeholder="Dupont" required autocomplete="family-name" />
-                  </div>
+            <div class="signature-body">
+              <div class="signature-columns">
+                <div class="signature-block">
+                  <h4>Objectif</h4>
+                  <p>
+                    Être capable de conduire un diagnostic budgétaire de premier niveau, d’identifier les
+                    déséquilibres et de formuler des recommandations simples, compréhensibles et directement actionnables.
+                  </p>
                 </div>
 
+                <div class="signature-block">
+                  <h4>Vous saurez</h4>
+                  <ul class="list-check">
+                    <li><span class="check">✓</span><span>Identifier ressources, charges et déséquilibres</span></li>
+                    <li><span class="check">✓</span><span>Conduire un entretien budgétaire de premier niveau</span></li>
+                    <li><span class="check">✓</span><span>Repérer les signaux d’alerte</span></li>
+                    <li><span class="check">✓</span><span>Formuler des recommandations simples et utiles</span></li>
+                  </ul>
+                </div>
+              </div>
+
+              <div class="signature-meta">
+                <div class="meta-box">
+                  <strong>Format</strong>
+                  <span>100 % à distance</span>
+                </div>
+                <div class="meta-box">
+                  <strong>Public</strong>
+                  <span>Insertion, accompagnement, terrain</span>
+                </div>
+                <div class="meta-box">
+                  <strong>Accès</strong>
+                  <span>Espace apprenant après activation</span>
+                </div>
+                <div class="meta-box">
+                  <strong>Attestation</strong>
+                  <span>Attestation interne LOGIX FORMA</span>
+                </div>
+              </div>
+
+              <div class="signature-cta">
+                <a class="btn btn-dark" href="/formations/diagnostic-budgetaire-terrain.html">Voir la page complète</a>
+                <a class="btn btn-outline" href="/connexion.html">Accéder à l’espace apprenant</a>
+              </div>
+
+              <div class="signature-note">
+                La page détaillée de cette formation doit être créée ici :
+                <strong>/formations/diagnostic-budgetaire-terrain.html</strong>
+              </div>
+            </div>
+          </article>
+
+          <aside class="card framework-card">
+            <h3>Pour qui ?</h3>
+            <p>
+              Cette formation s’adresse aux conseillers en insertion, travailleurs sociaux, médiateurs,
+              chargés d’accompagnement, formateurs et professionnels confrontés à l’analyse rapide de situations budgétaires.
+            </p>
+
+            <div class="framework-grid">
+              <div class="framework-step">
+                <strong>1. Lire une situation</strong>
+                <span>Repérer les revenus, les charges, les tensions et les écarts.</span>
+              </div>
+              <div class="framework-step">
+                <strong>2. Diagnostiquer rapidement</strong>
+                <span>Qualifier la situation et prioriser les difficultés réelles.</span>
+              </div>
+              <div class="framework-step">
+                <strong>3. Intervenir avec méthode</strong>
+                <span>Questionner, reformuler, orienter et proposer des pistes utiles.</span>
+              </div>
+              <div class="framework-step">
+                <strong>4. Formaliser simplement</strong>
+                <span>Produire un diagnostic clair et exploitable dans le cadre professionnel.</span>
+              </div>
+            </div>
+          </aside>
+        </div>
+      </div>
+    </section>
+
+    <section class="proof">
+      <div class="container">
+        <div class="proof-grid">
+          <div class="proof-card"><strong>1</strong><span>formation disponible dès maintenant</span></div>
+          <div class="proof-card"><strong>100 %</strong><span>à distance</span></div>
+          <div class="proof-card"><strong>1er niveau</strong><span>intervention budgétaire terrain</span></div>
+          <div class="proof-card"><strong>+ à venir</strong><span>nouvelles formations publiées progressivement</span></div>
+        </div>
+      </div>
+    </section>
+
+    <section id="formations-avenir" style="background:white;">
+      <div class="container">
+        <div class="section-head">
+          <span class="label">Formations à venir</span>
+          <h2>De nouvelles formations seront ajoutées progressivement</h2>
+          <p>
+            Cette section reste volontairement souple pour vous permettre d’ajouter facilement de nouvelles formations
+            au fil de vos créations, sans modifier toute la structure du site.
+          </p>
+        </div>
+
+        <div class="offer-grid">
+          <article class="info-card">
+            <div class="card-tag">À venir</div>
+            <h3>Animer une formation à distance avec impact</h3>
+            <p>Maintenir l’attention, faire produire et gérer le silence en visio avec une logique d’animation concrète.</p>
+          </article>
+
+          <article class="info-card">
+            <div class="card-tag">À venir</div>
+            <h3>Concevoir une formation courte et efficace</h3>
+            <p>Créer un module clair, structuré et directement applicable, sans surcharge inutile.</p>
+          </article>
+
+          <article class="info-card">
+            <div class="card-tag">À venir</div>
+            <h3>Mesurer l’efficacité d’une formation</h3>
+            <p>Évaluer une séquence, identifier les écarts et améliorer l’impact pédagogique réel.</p>
+          </article>
+
+          <article class="info-card">
+            <div class="card-tag">À venir</div>
+            <h3>Adapter une formation à tous les formats</h3>
+            <p>Transformer une formation sans perdre en efficacité : présentiel, distanciel, groupe ou individuel.</p>
+          </article>
+
+          <article class="info-card">
+            <div class="card-tag">À venir</div>
+            <h3>Devenir formateur opérationnel</h3>
+            <p>Construire et animer des formations concrètes avec une logique de terrain et de performance pédagogique.</p>
+          </article>
+
+          <article class="info-card">
+            <div class="card-tag">À venir</div>
+            <h3>Ingénierie pédagogique avancée</h3>
+            <p>Concevoir des parcours cohérents, structurés et orientés résultat pour des publics adultes.</p>
+          </article>
+        </div>
+
+        <div style="margin-top:28px;">
+          <a class="btn btn-soft" href="/formations/index.html">Voir toutes les formations</a>
+        </div>
+      </div>
+    </section>
+
+    <section id="formations-fle">
+      <div class="container">
+        <div class="section-head">
+          <span class="label">Formations FLE à venir</span>
+          <h2>Le français professionnel reste un axe important de l’offre</h2>
+          <p>
+            Ces parcours à venir complètent l’offre LOGIX FORMA pour les apprenants, les structures
+            et les professionnels recherchant des formations orientées autonomie, insertion et usage concret du français.
+          </p>
+        </div>
+
+        <div class="offer-grid">
+          <article class="info-card">
+            <div class="card-tag">FLE</div>
+            <h3>Français professionnel A1 — Niveau débutant</h3>
+            <p>Acquérir les bases utiles pour comprendre, communiquer et agir dans les premières situations du quotidien et du travail.</p>
+          </article>
+
+          <article class="info-card">
+            <div class="card-tag">FLE</div>
+            <h3>Français professionnel A2 — Niveau élémentaire</h3>
+            <p>Renforcer son autonomie et progresser dans des situations professionnelles plus variées.</p>
+          </article>
+
+          <article class="info-card">
+            <div class="card-tag">FLE</div>
+            <h3>Français professionnel — Parcours insertion</h3>
+            <p>Développer les compétences linguistiques nécessaires pour évoluer dans un parcours d’insertion.</p>
+          </article>
+
+          <article class="info-card">
+            <div class="card-tag">FLE</div>
+            <h3>Français professionnel — Parcours reconversion</h3>
+            <p>Consolider son expression et sa compréhension pour accompagner un changement de trajectoire professionnelle.</p>
+          </article>
+
+          <article class="info-card">
+            <div class="card-tag">FLE</div>
+            <h3>Communication professionnelle en français</h3>
+            <p>Travailler les échanges utiles en contexte professionnel : comprendre, répondre, reformuler, interagir.</p>
+          </article>
+
+          <article class="info-card">
+            <div class="card-tag">FLE</div>
+            <h3>Français à visée emploi</h3>
+            <p>Développer un français directement mobilisable dans les démarches et les situations concrètes liées à l’emploi.</p>
+          </article>
+        </div>
+
+        <div style="margin-top:28px;">
+          <a class="btn btn-soft" href="/fle/index.html">Voir l’espace FLE</a>
+        </div>
+      </div>
+    </section>
+
+    <section class="form-section" id="acces-prioritaire">
+      <div class="container">
+        <div class="form-layout">
+          <div class="form-copy">
+            <span class="label" style="color:#b8de80;">Être informé</span>
+            <h2>Recevoir les ouvertures et les informations utiles</h2>
+            <p>
+              Utilisez ce formulaire pour demander des informations sur la formation disponible, les prochaines ouvertures
+              ou les futurs parcours LOGIX FORMA.
+            </p>
+
+            <ul class="perks">
+              <li><span class="perk-badge">✓</span><span>Être informé des nouvelles publications de formation</span></li>
+              <li><span class="perk-badge">✓</span><span>Recevoir les informations sur la formation qui vous intéresse</span></li>
+              <li><span class="perk-badge">✓</span><span>Être recontacté selon votre profil et votre besoin</span></li>
+              <li><span class="perk-badge">✓</span><span>Préparer l’ouverture de votre futur accès apprenant</span></li>
+            </ul>
+          </div>
+
+          <div class="form-card">
+            <h3>Demande d’information</h3>
+            <p class="sub">Inscription gratuite et sans engagement.</p>
+
+            <form action="https://formspree.io/f/mjgpekwe" method="POST">
+              <input type="hidden" name="source" value="site_logix_forma" />
+              <input type="hidden" name="type_demande" value="information_formations_logix_forma" />
+              <input type="hidden" name="_next" value="https://logixforma.com/merci.html" />
+              <input type="hidden" name="_subject" value="Nouvelle demande d'information — LOGIX FORMA" />
+
+              <div class="grid-2">
                 <div class="field">
-                  <label for="ap-email">Email *</label>
-                  <input id="ap-email" name="email" type="email" placeholder="marie@exemple.fr" required autocomplete="email" />
+                  <label for="ap-prenom">Prénom *</label>
+                  <input id="ap-prenom" name="prenom" type="text" placeholder="Marie" required autocomplete="given-name" />
                 </div>
-
-                <div class="grid-2">
-                  <div class="field">
-                    <label for="ap-tel">Téléphone</label>
-                    <input id="ap-tel" name="telephone" type="tel" placeholder="06 XX XX XX XX" autocomplete="tel" />
-                  </div>
-                  <div class="field">
-                    <label for="ap-formation">Formation souhaitée</label>
-                    <select id="ap-formation" name="formation">
-                      <option value="Technicien(ne) de l’animation de formation – Méthode EDUCONCRET™">Technicien(ne) de l’animation de formation – EDUCONCRET™</option>
-                      <option value="Animer une formation à distance avec impact">Animer une formation à distance avec impact</option>
-                      <option value="Concevoir une formation courte et efficace">Concevoir une formation courte et efficace</option>
-                      <option value="Mesurer l’efficacité d’une formation">Mesurer l’efficacité d’une formation</option>
-                      <option value="Français professionnel A1 — Niveau débutant">Français professionnel A1 — Niveau débutant</option>
-                      <option value="Français professionnel A2 — Niveau élémentaire">Français professionnel A2 — Niveau élémentaire</option>
-                      <option value="Français professionnel — Parcours insertion">Français professionnel — Parcours insertion</option>
-                      <option value="Français professionnel — Parcours reconversion">Français professionnel — Parcours reconversion</option>
-                      <option value="Communication professionnelle en français">Communication professionnelle en français</option>
-                      <option value="Français à visée emploi">Français à visée emploi</option>
-                      <option value="Français professionnel A1 — Niveau débutant">Français professionnel A1 — Niveau débutant</option>
-                      <option value="Français professionnel A2 — Niveau élémentaire">Français professionnel A2 — Niveau élémentaire</option>
-                      <option value="Formation signature EDUCONCRET™">Formation signature EDUCONCRET™</option>
-                      <option value="Formations spécialisées">Formations spécialisées</option>
-                      <option value="Parcours métier">Parcours métier</option>
-                      <option value="Formations entreprises">Formations entreprises</option>
-                      <option value="Information générale">Information générale</option>
-                    </select>
-                  </div>
-                </div>
-
                 <div class="field">
-                  <label for="ap-message">Message</label>
-                  <textarea id="ap-message" name="message" placeholder="Votre besoin, votre contexte, la formation qui vous intéresse…"></textarea>
+                  <label for="ap-nom">Nom *</label>
+                  <input id="ap-nom" name="nom" type="text" placeholder="Dupont" required autocomplete="family-name" />
                 </div>
-
-                <div class="honeypot" aria-hidden="true">
-                  <label>Ne pas remplir ce champ <input type="text" name="_gotcha" tabindex="-1" autocomplete="off" /></label>
-                </div>
-
-                <label class="consent"><input type="checkbox" required /><span>J’accepte d’être recontacté par LOGIX FORMA au sujet des prochaines sessions et de ma demande.</span></label>
-                <button type="submit" class="btn btn-dark" style="width:100%;">Être informé des prochaines sessions</button>
-                <div class="form-note">Les données transmises servent uniquement à traiter votre demande et à vous recontacter.</div>
-              </form>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      <section class="openings-section" id="prochaines-ouvertures">
-        <div class="container">
-          <div class="openings-layout">
-            <div class="opening-panel openings-copy">
-              <span class="label" style="color:#b8de80;">Prochaines ouvertures</span>
-              <h2>Les prochaines sessions seront annoncées prochainement</h2>
-              <p>Cette section doit rester simple. Elle sert à préparer les annonces futures sans promettre trop tôt un calendrier détaillé. Le bouton principal doit conduire au formulaire de contact ou d’information.</p>
-              <a class="btn btn-primary" href="#acces-prioritaire" onclick="scrollToId('acces-prioritaire')">Être informé des prochaines sessions</a>
-            </div>
-            <div class="opening-list">
-              <div class="opening-item"><strong>Formation signature</strong><span>Technicien(ne) de l’animation de formation – Méthode EDUCONCRET™</span></div>
-              <div class="opening-item"><strong>Formations spécialisées</strong><span>Des annonces seront publiées progressivement à partir des priorités de lancement.</span></div>
-              <div class="opening-item"><strong>Formats courts</strong><span>Ces offres pourront servir de point d’entrée rapide lors des prochaines communications.</span></div>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      <section id="faq">
-        <div class="container">
-          <div class="faq-layout">
-            <div class="faq-copy">
-              <span class="label">FAQ</span>
-              <h2>Questions fréquentes</h2>
-              <p>Cette section facilite la compréhension commerciale et réduit les hésitations avant la prise de contact.</p>
-            </div>
-            <div class="faq-list">
-              <details class="faq-item"><summary>Les formations sont-elles déjà ouvertes ? <span>+</span></summary><div class="faq-answer">Non. La page présente des formations à venir. Les prochaines ouvertures seront annoncées prochainement.</div></details>
-              <details class="faq-item"><summary>Quelle formation est mise en avant en priorité ? <span>+</span></summary><div class="faq-answer">La formation principale affichée est “Technicien(ne) de l’animation de formation – Méthode EDUCONCRET™”.</div></details>
-              <details class="faq-item"><summary>Quel est l’objectif de la méthode EDUCONCRET™ ? <span>+</span></summary><div class="faq-answer">La méthode est présentée comme un cadre pour produire, tester et mesurer, avec une logique de résultat concret et mesurable.</div></details>
-              <details class="faq-item"><summary>Les formations sont-elles à distance ? <span>+</span></summary><div class="faq-answer">Oui. Le site présente les formations comme 100 % à distance.</div></details>
-              <details class="faq-item"><summary>Comment être informé des ouvertures ? <span>+</span></summary><div class="faq-answer">Il suffit de remplir le formulaire “Être informé des prochaines sessions”.</div></details>
-              <details class="faq-item"><summary>Le site vend-il déjà les formations ? <span>+</span></summary><div class="faq-answer">Le rôle principal actuel du site est de capter des contacts qualifiés avant l’ouverture des inscriptions.</div></details>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      <section class="blog-section">
-        <div class="container">
-          <div class="section-head blog-copy">
-            <span class="label">Ressources</span>
-            <h2>Le blog LOGIX FORMA</h2>
-            <p>Des articles pour nourrir la réflexion sur la pédagogie, la formation, l’employabilité et la structuration d’une offre utile.</p>
-          </div>
-
-          <div class="blog-grid">
-            <a class="article-card" href="blog.html#article-1">
-              <div class="article-top grad-1">💼</div>
-              <div class="article-body">
-                <div class="article-cat">Reconversion</div>
-                <h3>Comment financer sa reconversion professionnelle</h3>
-                <p>Clarifier son projet, comprendre les possibilités et avancer avec méthode.</p>
-                <span class="article-link">Lire l’article →</span>
               </div>
-            </a>
-            <a class="article-card" href="blog.html#article-2">
-              <div class="article-top grad-2">📊</div>
-              <div class="article-body">
-                <div class="article-cat">Employabilité</div>
-                <h3>Pourquoi la montée en compétences reste un levier d’employabilité</h3>
-                <p>Développer des compétences utiles pour rester actif sur le marché du travail.</p>
-                <span class="article-link">Lire l’article →</span>
+
+              <div class="field">
+                <label for="ap-email">Email *</label>
+                <input id="ap-email" name="email" type="email" placeholder="marie@exemple.fr" required autocomplete="email" />
               </div>
-            </a>
-            <a class="article-card" href="blog.html#article-3">
-              <div class="article-top grad-3">🗣️</div>
-              <div class="article-body">
-                <div class="article-cat">Apprentissage</div>
-                <h3>Apprendre le français pour gagner en autonomie professionnelle</h3>
-                <p>Comprendre, répondre, interagir et progresser dans des situations concrètes.</p>
-                <span class="article-link">Lire l’article →</span>
-              </div>
-            </a>
-            <a class="article-card" href="blog.html#article-4">
-              <div class="article-top grad-4">🚀</div>
-              <div class="article-body">
-                <div class="article-cat">Transition</div>
-                <h3>Changer de trajectoire sans tout bouleverser d’un coup</h3>
-                <p>Construire une transition progressive, cohérente et réaliste.</p>
-                <span class="article-link">Lire l’article →</span>
-              </div>
-            </a>
-          </div>
-        </div>
-      </section>
 
-      <section class="cta">
-        <div class="container">
-          <div class="cta-inner">
-            <h2>Vous voulez être informé avant les autres ?</h2>
-            <p>Laissez vos coordonnées et recevez les annonces des prochaines sessions dès leur ouverture.</p>
-            <div class="cta-actions">
-              <a class="btn btn-primary" href="#acces-prioritaire" onclick="scrollToId('acces-prioritaire')">Être informé des prochaines sessions</a>
-              <a class="btn btn-secondary" href="#formation-signature" onclick="scrollToId('formation-signature')">Revoir la formation principale</a>
-            </div>
-          </div>
-        </div>
-      </section>
-    </div>
-
-    <div id="page-contact" class="page">
-      <section class="contact-section">
-        <div class="container">
-          <div class="section-head contact-copy">
-            <span class="label">Contact</span>
-            <h2>Une question ? Écrivez à LOGIX FORMA</h2>
-            <p>Utilisez ce formulaire pour une demande générale, une demande pédagogique, un partenariat ou une demande liée aux futures ouvertures.</p>
-          </div>
-
-          <div class="contact-layout">
-            <aside class="contact-stack">
-              <div class="contact-box"><h3>📧 Email</h3><p><strong>logix.forma@gmail.com</strong><br />Réponse selon la nature de la demande.</p></div>
-              <div class="contact-box"><h3>🎓 Offre affichée</h3><p>Formation signature EDUCONCRET™<br />Formations spécialisées, métier, entreprise et avancées à venir</p></div>
-              <div class="contact-box"><h3>💻 Modalité</h3><p>Les formations présentées sur le site sont annoncées comme 100 % à distance.</p></div>
-              <div class="contact-box"><h3>⚠️ Information importante</h3><p>Le site a pour fonction principale de capter des contacts avant l’ouverture officielle des inscriptions.</p></div>
-            </aside>
-
-            <div class="form-card">
-              <h3>Formulaire de contact</h3>
-              <p class="sub">Toute demande générale, partenariat ou demande spécifique.</p>
-              <form action="https://formspree.io/f/mjgpekwe" method="POST">
-                <input type="hidden" name="source" value="site_logix_forma" />
-                <input type="hidden" name="type_demande" value="contact" />
-                <input type="hidden" name="_next" value="/merci.html" />
-                <input type="hidden" name="_subject" value="Nouveau message de contact — LOGIX FORMA" />
-
-                <div class="grid-2">
-                  <div class="field">
-                    <label for="ct-prenom">Prénom *</label>
-                    <input id="ct-prenom" name="prenom" type="text" required autocomplete="given-name" />
-                  </div>
-                  <div class="field">
-                    <label for="ct-nom">Nom *</label>
-                    <input id="ct-nom" name="nom" type="text" required autocomplete="family-name" />
-                  </div>
-                </div>
-
-                <div class="grid-2">
-                  <div class="field">
-                    <label for="ct-email">Email *</label>
-                    <input id="ct-email" name="email" type="email" required autocomplete="email" />
-                  </div>
-                  <div class="field">
-                    <label for="ct-tel">Téléphone</label>
-                    <input id="ct-tel" name="telephone" type="tel" autocomplete="tel" />
-                  </div>
-                </div>
-
-                <div class="grid-2">
-                  <div class="field">
-                    <label for="ct-formation">Sujet principal</label>
-                    <select id="ct-formation" name="formation">
-                      <option value="Formation signature EDUCONCRET™">Formation signature EDUCONCRET™</option>
-                      <option value="Formations spécialisées">Formations spécialisées</option>
-                      <option value="Parcours métier">Parcours métier</option>
-                      <option value="Formations entreprises">Formations entreprises</option>
-                      <option value="Information générale">Information générale</option>
-                    </select>
-                  </div>
-                  <div class="field">
-                    <label for="ct-sujet">Sujet *</label>
-                    <select id="ct-sujet" name="sujet" required>
-                      <option value="Information générale">Information générale</option>
-                      <option value="Partenariat">Partenariat</option>
-                      <option value="Demande pédagogique">Demande pédagogique</option>
-                      <option value="Entreprise">Entreprise</option>
-                      <option value="Autre">Autre</option>
-                    </select>
-                  </div>
-                </div>
-
+              <div class="grid-2">
                 <div class="field">
-                  <label for="ct-message">Message *</label>
-                  <textarea id="ct-message" name="message" placeholder="Expliquez votre demande…" required></textarea>
+                  <label for="ap-tel">Téléphone</label>
+                  <input id="ap-tel" name="telephone" type="tel" placeholder="06 XX XX XX XX" autocomplete="tel" />
                 </div>
-
-                <div class="honeypot" aria-hidden="true">
-                  <label>Ne pas remplir ce champ <input type="text" name="_gotcha" tabindex="-1" autocomplete="off" /></label>
+                <div class="field">
+                  <label for="ap-formation">Formation souhaitée</label>
+                  <select id="ap-formation" name="formation">
+                    <option value="Diagnostic budgétaire terrain – Méthode LOGIX FORMA">Diagnostic budgétaire terrain – Méthode LOGIX FORMA</option>
+                    <option value="Animer une formation à distance avec impact">Animer une formation à distance avec impact</option>
+                    <option value="Concevoir une formation courte et efficace">Concevoir une formation courte et efficace</option>
+                    <option value="Mesurer l’efficacité d’une formation">Mesurer l’efficacité d’une formation</option>
+                    <option value="Français professionnel A1 — Niveau débutant">Français professionnel A1 — Niveau débutant</option>
+                    <option value="Français professionnel A2 — Niveau élémentaire">Français professionnel A2 — Niveau élémentaire</option>
+                    <option value="Français professionnel — Parcours insertion">Français professionnel — Parcours insertion</option>
+                    <option value="Français professionnel — Parcours reconversion">Français professionnel — Parcours reconversion</option>
+                    <option value="Communication professionnelle en français">Communication professionnelle en français</option>
+                    <option value="Français à visée emploi">Français à visée emploi</option>
+                    <option value="Information générale">Information générale</option>
+                  </select>
                 </div>
+              </div>
 
-                <label class="consent"><input type="checkbox" required /><span>J’accepte d’être recontacté par LOGIX FORMA au sujet de ma demande.</span></label>
-                <button type="submit" class="btn btn-dark" style="width:100%;">Envoyer mon message</button>
-              </form>
-            </div>
+              <div class="field">
+                <label for="ap-message">Message</label>
+                <textarea
+                  id="ap-message"
+                  name="message"
+                  placeholder="Votre besoin, votre contexte, la formation qui vous intéresse…"
+                ></textarea>
+              </div>
+
+              <div class="honeypot" aria-hidden="true">
+                <label>
+                  Ne pas remplir ce champ
+                  <input type="text" name="_gotcha" tabindex="-1" autocomplete="off" />
+                </label>
+              </div>
+
+              <label class="consent">
+                <input type="checkbox" name="consentement" value="oui" required />
+                <span>J’accepte d’être recontacté par LOGIX FORMA au sujet de ma demande.</span>
+              </label>
+
+              <button type="submit" class="btn btn-dark" style="width:100%;">Envoyer ma demande</button>
+              <div class="form-note">
+                Les données transmises servent uniquement à traiter votre demande et à vous recontacter.
+              </div>
+            </form>
           </div>
         </div>
-      </section>
-    </div>
+      </div>
+    </section>
 
-    <div id="page-mentions-legales" class="page legal-page">
+    <section id="faq">
       <div class="container">
-        <div class="legal-card">
-          <h1>Mentions légales</h1>
-          <p>Conformément aux dispositions de la loi n° 2004-575 du 21 juin 2004 pour la confiance en l’économie numérique, il est précisé aux utilisateurs du site LOGIX FORMA l’identité des différents intervenants dans le cadre de sa réalisation et de son suivi.</p>
-          <h2>1. Édition du site</h2>
-          <p>Le présent site est édité par l’association LOGIX FORMA.</p>
-          <ul>
-            <li>SIREN : 902 349 943</li>
-            <li>RNA : W931025228</li>
-            <li>Siège social : France</li>
-            <li>Email : logix.forma@gmail.com</li>
-          </ul>
-          <h2>2. Hébergement</h2>
-          <p>Le site est hébergé par GitHub, Inc., 88 Colin P. Kelly Jr St, San Francisco, CA 94107, États-Unis, via le service GitHub Pages.</p>
-          <h2>3. Propriété intellectuelle</h2>
-          <p>L’ensemble du site relève de la législation française et internationale sur le droit d’auteur et la propriété intellectuelle. Tous les droits de reproduction sont réservés.</p>
-          <h2>4. Responsabilité</h2>
-          <p>Les informations contenues sur ce site sont présentées avec un souci de clarté. LOGIX FORMA ne pourra être tenu responsable des omissions, inexactitudes ou carences dans la mise à jour.</p>
-          <a class="btn btn-outline" href="#home" onclick="navigate('home')">Retour à l’accueil</a>
+        <div class="faq-layout">
+          <div class="faq-copy">
+            <span class="label">FAQ</span>
+            <h2>Questions fréquentes</h2>
+            <p>Cette section facilite la compréhension de l’offre et prépare l’ouverture de l’espace apprenant.</p>
+          </div>
+
+          <div class="faq-list">
+            <details class="faq-item">
+              <summary>Une formation est-elle déjà disponible ? <span>+</span></summary>
+              <div class="faq-answer">
+                Oui. La formation actuellement mise en avant est “Diagnostic budgétaire terrain – Méthode LOGIX FORMA”.
+              </div>
+            </details>
+
+            <details class="faq-item">
+              <summary>Les autres formations sont-elles déjà ouvertes ? <span>+</span></summary>
+              <div class="faq-answer">
+                Non. Les autres offres présentées sur la page correspondent aux formations qui seront publiées progressivement.
+              </div>
+            </details>
+
+            <details class="faq-item">
+              <summary>Les formations sont-elles à distance ? <span>+</span></summary>
+              <div class="faq-answer">
+                Oui. Les formations présentées sur le site sont pensées pour un usage 100 % à distance.
+              </div>
+            </details>
+
+            <details class="faq-item">
+              <summary>Y aura-t-il un espace apprenant ? <span>+</span></summary>
+              <div class="faq-answer">
+                Oui. Le site est préparé pour intégrer un espace apprenant avec connexion et accès aux contenus après activation.
+              </div>
+            </details>
+
+            <details class="faq-item">
+              <summary>Comment payer une formation ? <span>+</span></summary>
+              <div class="faq-answer">
+                Le site est en cours de préparation pour intégrer un paiement en ligne relié à SumUp et un accès apprenant après achat.
+              </div>
+            </details>
+
+            <details class="faq-item">
+              <summary>Comment être informé des prochaines ouvertures ? <span>+</span></summary>
+              <div class="faq-answer">
+                Il suffit de remplir le formulaire de demande d’information sur cette page ou de passer par la page contact.
+              </div>
+            </details>
+          </div>
         </div>
       </div>
-    </div>
+    </section>
 
-    <div id="page-cgu" class="page legal-page">
+    <section class="blog-section">
       <div class="container">
-        <div class="legal-card">
-          <h1>Conditions générales d’utilisation</h1>
-          <p>L’utilisation du site LOGIX FORMA implique l’acceptation pleine et entière des conditions générales d’utilisation décrites ci-dessous.</p>
-          <h2>1. Objet</h2>
-          <p>Les présentes CGU définissent les modalités de mise à disposition des services du site et les conditions d’utilisation par l’utilisateur.</p>
-          <h2>2. Accès au site</h2>
-          <p>Le site est accessible 24h/24 et 7j/7 sauf interruption programmée, nécessité de maintenance ou cas de force majeure.</p>
-          <h2>3. Propriété intellectuelle</h2>
-          <p>Les marques, logos, textes, images et contenus présents sur le site sont protégés par le Code de la propriété intellectuelle.</p>
-          <h2>4. Limitations de responsabilité</h2>
-          <p>LOGIX FORMA ne pourra être tenu responsable des dommages directs ou indirects causés au matériel de l’utilisateur lors de l’accès au site.</p>
-          <a class="btn btn-outline" href="#home" onclick="navigate('home')">Retour à l’accueil</a>
+        <div class="section-head blog-copy">
+          <span class="label">Ressources</span>
+          <h2>Le blog LOGIX FORMA</h2>
+          <p>Des articles pour nourrir la réflexion sur la pédagogie, la formation, l’employabilité et l’insertion.</p>
+        </div>
+
+        <div class="blog-grid">
+          <a class="article-card" href="/blog/index.html#article-1">
+            <div class="article-top grad-1">💼</div>
+            <div class="article-body">
+              <div class="article-cat">Reconversion</div>
+              <h3>Comment financer sa reconversion professionnelle</h3>
+              <p>Clarifier son projet, comprendre les possibilités et avancer avec méthode.</p>
+              <span class="article-link">Lire l’article →</span>
+            </div>
+          </a>
+
+          <a class="article-card" href="/blog/index.html#article-2">
+            <div class="article-top grad-2">📊</div>
+            <div class="article-body">
+              <div class="article-cat">Employabilité</div>
+              <h3>Pourquoi la montée en compétences reste un levier d’employabilité</h3>
+              <p>Développer des compétences utiles pour rester actif sur le marché du travail.</p>
+              <span class="article-link">Lire l’article →</span>
+            </div>
+          </a>
+
+          <a class="article-card" href="/blog/index.html#article-3">
+            <div class="article-top grad-3">🗣️</div>
+            <div class="article-body">
+              <div class="article-cat">Apprentissage</div>
+              <h3>Apprendre le français pour gagner en autonomie professionnelle</h3>
+              <p>Comprendre, répondre, interagir et progresser dans des situations concrètes.</p>
+              <span class="article-link">Lire l’article →</span>
+            </div>
+          </a>
+
+          <a class="article-card" href="/blog/index.html#article-4">
+            <div class="article-top grad-4">🚀</div>
+            <div class="article-body">
+              <div class="article-cat">Transition</div>
+              <h3>Changer de trajectoire sans tout bouleverser d’un coup</h3>
+              <p>Construire une transition progressive, cohérente et réaliste.</p>
+              <span class="article-link">Lire l’article →</span>
+            </div>
+          </a>
         </div>
       </div>
-    </div>
+    </section>
 
-    <div id="page-politique-confidentialite" class="page legal-page">
+    <section class="cta">
       <div class="container">
-        <div class="legal-card">
-          <h1>Politique de protection des données personnelles</h1>
-          <p>LOGIX FORMA accorde une attention particulière à la protection des données personnelles, conformément au RGPD.</p>
-          <h2>1. Données collectées</h2>
-          <p>Les données collectées via les formulaires peuvent inclure le nom, le prénom, l’adresse email, le téléphone et le contenu du message transmis.</p>
-          <h2>2. Finalités</h2>
-          <ul>
-            <li>Traitement des demandes d’information ou de contact</li>
-            <li>Gestion administrative liée aux demandes reçues</li>
-            <li>Recontact en lien avec l’objet de la demande</li>
-          </ul>
-          <h2>3. Durée de conservation</h2>
-          <p>Les données sont conservées pendant la durée nécessaire à la finalité de traitement, et au maximum pendant 3 ans à compter du dernier contact.</p>
-          <h2>4. Vos droits</h2>
-          <p>Vous disposez d’un droit d’accès, de rectification, d’effacement, d’opposition et de portabilité. Pour les exercer, contactez : logix.forma@gmail.com</p>
-          <a class="btn btn-outline" href="#home" onclick="navigate('home')">Retour à l’accueil</a>
+        <div class="cta-inner">
+          <h2>Vous voulez suivre les prochaines ouvertures ?</h2>
+          <p>Laissez vos coordonnées pour recevoir les annonces des nouvelles formations LOGIX FORMA.</p>
+          <div class="cta-actions">
+            <a class="btn btn-primary" href="/contact.html">Être informé</a>
+            <a class="btn btn-secondary" href="/connexion.html">Espace apprenant</a>
+          </div>
         </div>
       </div>
-    </div>
+    </section>
 
-    <div id="page-cookies" class="page legal-page">
+    <section class="contact-section" id="contact">
       <div class="container">
-        <div class="legal-card">
-          <h1>Politique relative aux cookies</h1>
-          <p>Un cookie est un fichier texte susceptible d’être enregistré sur votre terminal lors de la consultation d’un service en ligne.</p>
-          <h2>1. Types de cookies</h2>
-          <ul>
-            <li>Cookies de fonctionnement nécessaires au bon affichage du site</li>
-            <li>Cookies éventuels de mesure d’audience si des outils sont ajoutés ultérieurement</li>
-          </ul>
-          <h2>2. Gestion des cookies</h2>
-          <p>Vous pouvez accepter ou refuser les cookies via les paramètres de votre navigateur. Le refus de certains cookies peut limiter certaines fonctionnalités.</p>
-          <h2>3. Durée</h2>
-          <p>Les cookies persistants éventuels ont une durée maximale de 13 mois, conformément aux recommandations de la CNIL.</p>
-          <a class="btn btn-outline" href="#home" onclick="navigate('home')">Retour à l’accueil</a>
+        <div class="section-head contact-copy">
+          <span class="label">Contact</span>
+          <h2>Une question ? Écrivez à LOGIX FORMA</h2>
+          <p>Pour une demande générale, pédagogique, professionnelle ou liée aux futures ouvertures.</p>
+        </div>
+
+        <div class="contact-layout">
+          <aside class="contact-stack">
+            <div class="contact-box">
+              <h3>📧 Email</h3>
+              <p><strong>logix.forma@gmail.com</strong><br />Réponse selon la nature de la demande.</p>
+            </div>
+            <div class="contact-box">
+              <h3>🎓 Offre affichée</h3>
+              <p>Diagnostic budgétaire terrain – Méthode LOGIX FORMA<br />Autres formations ajoutées progressivement</p>
+            </div>
+            <div class="contact-box">
+              <h3>💻 Modalité</h3>
+              <p>Les formations présentées sur le site sont pensées pour un usage à distance.</p>
+            </div>
+            <div class="contact-box">
+              <h3>👤 Espace apprenant</h3>
+              <p>Une connexion apprenant est prévue pour l’accès aux contenus et au suivi de progression.</p>
+            </div>
+          </aside>
+
+          <div class="form-card">
+            <h3>Formulaire de contact</h3>
+            <p class="sub">Toute demande générale, partenariat ou demande spécifique.</p>
+
+            <form action="https://formspree.io/f/mjgpekwe" method="POST">
+              <input type="hidden" name="source" value="site_logix_forma" />
+              <input type="hidden" name="type_demande" value="contact" />
+              <input type="hidden" name="_next" value="https://logixforma.com/merci.html" />
+              <input type="hidden" name="_subject" value="Nouveau message de contact — LOGIX FORMA" />
+
+              <div class="grid-2">
+                <div class="field">
+                  <label for="ct-prenom">Prénom *</label>
+                  <input id="ct-prenom" name="prenom" type="text" required autocomplete="given-name" />
+                </div>
+                <div class="field">
+                  <label for="ct-nom">Nom *</label>
+                  <input id="ct-nom" name="nom" type="text" required autocomplete="family-name" />
+                </div>
+              </div>
+
+              <div class="grid-2">
+                <div class="field">
+                  <label for="ct-email">Email *</label>
+                  <input id="ct-email" name="email" type="email" required autocomplete="email" />
+                </div>
+                <div class="field">
+                  <label for="ct-tel">Téléphone</label>
+                  <input id="ct-tel" name="telephone" type="tel" autocomplete="tel" />
+                </div>
+              </div>
+
+              <div class="grid-2">
+                <div class="field">
+                  <label for="ct-formation">Sujet principal</label>
+                  <select id="ct-formation" name="formation">
+                    <option value="Diagnostic budgétaire terrain – Méthode LOGIX FORMA">Diagnostic budgétaire terrain – Méthode LOGIX FORMA</option>
+                    <option value="Formations à venir">Formations à venir</option>
+                    <option value="Formations FLE à venir">Formations FLE à venir</option>
+                    <option value="Information générale">Information générale</option>
+                  </select>
+                </div>
+                <div class="field">
+                  <label for="ct-sujet">Sujet *</label>
+                  <select id="ct-sujet" name="sujet" required>
+                    <option value="Information générale">Information générale</option>
+                    <option value="Partenariat">Partenariat</option>
+                    <option value="Demande pédagogique">Demande pédagogique</option>
+                    <option value="Entreprise">Entreprise</option>
+                    <option value="Autre">Autre</option>
+                  </select>
+                </div>
+              </div>
+
+              <div class="field">
+                <label for="ct-message">Message *</label>
+                <textarea id="ct-message" name="message" placeholder="Expliquez votre demande…" required></textarea>
+              </div>
+
+              <div class="honeypot" aria-hidden="true">
+                <label>
+                  Ne pas remplir ce champ
+                  <input type="text" name="_gotcha" tabindex="-1" autocomplete="off" />
+                </label>
+              </div>
+
+              <label class="consent">
+                <input type="checkbox" name="consentement_contact" value="oui" required />
+                <span>J’accepte d’être recontacté par LOGIX FORMA au sujet de ma demande.</span>
+              </label>
+
+              <button type="submit" class="btn btn-dark" style="width:100%;">Envoyer mon message</button>
+            </form>
+          </div>
         </div>
       </div>
-    </div>
-
-    <div id="page-accessibilite" class="page legal-page">
-      <div class="container">
-        <div class="legal-card">
-          <h1>Déclaration d’accessibilité</h1>
-          <p>LOGIX FORMA s’engage à améliorer l’accessibilité de son site conformément aux exigences applicables.</p>
-          <h2>1. État de conformité</h2>
-          <p>Le site est partiellement conforme au RGAA 4.1. Des améliorations peuvent encore être apportées sur certains contenus et certains parcours utilisateurs.</p>
-          <h2>2. Contenus potentiellement non accessibles</h2>
-          <ul>
-            <li>Certains contenus externes ou médias peuvent ne pas disposer d’alternatives complètes</li>
-            <li>Des ajustements peuvent encore être nécessaires sur certains contrastes ou éléments dynamiques</li>
-          </ul>
-          <h2>3. Contact</h2>
-          <p>Pour signaler un problème d’accessibilité, contactez : logix.forma@gmail.com</p>
-          <a class="btn btn-outline" href="#home" onclick="navigate('home')">Retour à l’accueil</a>
-        </div>
-      </div>
-    </div>
-
-    <div id="page-securite" class="page legal-page">
-      <div class="container">
-        <div class="legal-card">
-          <h1>Sécurité des données</h1>
-          <p>La sécurité des données transmises via le site est traitée avec vigilance.</p>
-          <h2>1. Mesures techniques</h2>
-          <p>Le site public est servi en HTTPS via GitHub Pages. Les formulaires sont transmis via Formspree. Les paiements, lorsqu’ils seront activés, pourront être traités par Stripe sur leurs infrastructures respectives.</p>
-          <h2>2. Mesures organisationnelles</h2>
-          <p>LOGIX FORMA limite la collecte de données sur le site public et restreint l’accès aux informations reçues aux besoins de traitement des demandes.</p>
-          <h2>3. Signalement</h2>
-          <p>Pour tout signalement de vulnérabilité ou de problème de sécurité : logix.forma@gmail.com</p>
-          <a class="btn btn-outline" href="#home" onclick="navigate('home')">Retour à l’accueil</a>
-        </div>
-      </div>
-    </div>
+    </section>
   </main>
 
   <footer>
@@ -1987,57 +2051,51 @@
           <p>Former pour produire, tester, mesurer.</p>
           <p>SIREN : 902 349 943 · RNA : W931025228</p>
         </div>
+
         <div class="footer-col">
           <h4>Navigation</h4>
-          <button type="button" onclick="navigate('home')">Accueil</button>
-          <button type="button" onclick="navigate('home'); scrollToId('formation-signature')">Formation signature</button>
-          <button type="button" onclick="navigate('home'); scrollToId('formations-avenir')">Formations à venir</button>
-          <button type="button" onclick="navigate('home'); scrollToId('formations-fle')">FLE à venir</button>
-          <button type="button" onclick="navigate('home'); scrollToId('acces-prioritaire')">Être informé</button>
-          <button type="button" onclick="navigate('contact')">Contact</button>
+          <a href="/">Accueil</a>
+          <a href="/formations/diagnostic-budgetaire-terrain.html">Formation disponible</a>
+          <a href="/formations/index.html">Formations</a>
+          <a href="/fle/index.html">FLE</a>
+          <a href="/contact.html">Être informé</a>
+          <a href="/connexion.html">Espace apprenant</a>
         </div>
+
         <div class="footer-col">
           <h4>Offre</h4>
-          <button type="button" onclick="navigate('home'); scrollToId('formation-signature')">EDUCONCRET™</button>
-          <button type="button" onclick="navigate('home'); scrollToId('formations-avenir')">Formations spécialisées</button>
-          <button type="button" onclick="navigate('home'); scrollToId('prochaines-ouvertures')">Prochaines ouvertures</button>
+          <a href="/formations/diagnostic-budgetaire-terrain.html">Diagnostic budgétaire terrain</a>
+          <a href="/formations/index.html">Autres formations</a>
+          <a href="/fle/index.html">Offre FLE</a>
         </div>
+
         <div class="footer-col">
           <h4>Légal</h4>
-          <button type="button" onclick="navigate('mentions-legales')">Mentions légales</button>
-          <button type="button" onclick="navigate('cgu')">CGU</button>
-          <button type="button" onclick="navigate('politique-confidentialite')">Confidentialité</button>
-          <button type="button" onclick="navigate('cookies')">Cookies</button>
-          <button type="button" onclick="navigate('accessibilite')">Accessibilité</button>
-          <button type="button" onclick="navigate('securite')">Sécurité</button>
+          <a href="/legal/mentions-legales.html">Mentions légales</a>
+          <a href="/legal/cgu.html">CGU</a>
+          <a href="/legal/confidentialite.html">Confidentialité</a>
+          <a href="/legal/cookies.html">Cookies</a>
+          <a href="/legal/accessibilite.html">Accessibilité</a>
+          <a href="/legal/securite.html">Sécurité</a>
         </div>
       </div>
 
       <div class="footer-bottom">
         <span>© 2026 LOGIX FORMA — Tous droits réservés</span>
         <span>
-          <button type="button" onclick="navigate('mentions-legales')" style="background:none;border:0;color:inherit;cursor:pointer;padding:0;">Mentions légales</button>
-          ·
-          <button type="button" onclick="navigate('politique-confidentialite')" style="background:none;border:0;color:inherit;cursor:pointer;padding:0;">Confidentialité</button>
-          ·
-          <button type="button" onclick="navigate('cookies')" style="background:none;border:0;color:inherit;cursor:pointer;padding:0;">Cookies</button>
+          <a href="/legal/mentions-legales.html">Mentions légales</a> ·
+          <a href="/legal/confidentialite.html">Confidentialité</a> ·
+          <a href="/legal/cookies.html">Cookies</a>
         </span>
       </div>
     </div>
   </footer>
 
   <div class="sticky-mobile-cta">
-    <a class="btn btn-primary" href="#acces-prioritaire" onclick="navigate('home'); scrollToId('acces-prioritaire')">Être informé</a>
+    <a class="btn btn-primary" href="/formations/diagnostic-budgetaire-terrain.html">Voir la formation disponible</a>
   </div>
 
   <script>
-    function scrollToId(id) {
-      const section = document.getElementById(id);
-      if (section) {
-        setTimeout(() => section.scrollIntoView({ behavior: 'smooth', block: 'start' }), 30);
-      }
-    }
-
     function toggleMenu(button) {
       const panel = document.getElementById('mobile-panel');
       const isOpen = panel.classList.toggle('open');
@@ -2051,40 +2109,9 @@
       if (button) button.setAttribute('aria-expanded', 'false');
     }
 
-    function setActiveNav(page) {
-      document.querySelectorAll('.nav-link').forEach(link => link.classList.remove('active'));
-      const active = document.getElementById('nav-' + page);
-      if (active) active.classList.add('active');
-    }
-
-    function navigate(page) {
-      document.querySelectorAll('.page').forEach(el => el.classList.remove('active'));
-      const target = document.getElementById('page-' + page);
-      if (target) {
-        target.classList.add('active');
-        window.scrollTo({ top: 0, behavior: 'smooth' });
-        history.pushState({ page }, '', '#' + page);
-      }
-      setActiveNav(page);
-      closeMenu();
-    }
-
-    function applyHashNavigation() {
-      const hash = window.location.hash.replace('#', '');
-      const target = document.getElementById('page-' + hash);
-      document.querySelectorAll('.page').forEach(el => el.classList.remove('active'));
-
-      if (target) {
-        target.classList.add('active');
-        setActiveNav(hash);
-      } else {
-        document.getElementById('page-home').classList.add('active');
-        setActiveNav('home');
-      }
-    }
-
-    window.addEventListener('DOMContentLoaded', applyHashNavigation);
-    window.addEventListener('popstate', applyHashNavigation);
+    document.querySelectorAll('.mobile-nav a').forEach((link) => {
+      link.addEventListener('click', closeMenu);
+    });
   </script>
 </body>
 </html>
