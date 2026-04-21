@@ -1,0 +1,653 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <title>Quiz final – Diagnostic budgétaire terrain | LOGIX FORMA</title>
+  <meta
+    name="description"
+    content="Quiz final de la formation Diagnostic budgétaire terrain – Méthode LOGIX FORMA."
+  />
+  <meta name="robots" content="noindex, nofollow" />
+  <link rel="canonical" href="https://logixforma.com/espace-apprenant/diagnostic-budgetaire-terrain/quiz-final.html" />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Outfit:wght@600;700;800&display=swap"
+    rel="stylesheet"
+  />
+
+  <style>
+    :root {
+      --navy: #16325c;
+      --navy-2: #21457a;
+      --navy-3: #0d203c;
+      --green: #6ba32a;
+      --green-2: #4f7d17;
+      --gold: #e3b229;
+      --gold-2: #ca9916;
+      --ink: #101828;
+      --text: #253244;
+      --muted: #667085;
+      --bg: #f4f7fb;
+      --card: #ffffff;
+      --surface: #eef2f8;
+      --line: #dde3ee;
+      --success: #ebf7df;
+      --error: #fee2e2;
+      --shadow-xs: 0 1px 3px rgba(16, 24, 40, 0.06);
+      --shadow-sm: 0 10px 26px rgba(16, 24, 40, 0.08);
+      --radius: 16px;
+      --radius-lg: 24px;
+      --max: 980px;
+      --transition: 220ms ease;
+    }
+
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+
+    body {
+      margin: 0;
+      font-family: Inter, sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      line-height: 1.65;
+      -webkit-font-smoothing: antialiased;
+      text-rendering: optimizeLegibility;
+    }
+
+    a { color: inherit; text-decoration: none; }
+    button, input, textarea { font: inherit; }
+
+    .container {
+      width: min(calc(100% - 32px), var(--max));
+      margin: 0 auto;
+    }
+
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 10px;
+      border: 0;
+      border-radius: 14px;
+      padding: 12px 18px;
+      font-weight: 700;
+      cursor: pointer;
+      text-align: center;
+      transition:
+        transform var(--transition),
+        background var(--transition),
+        color var(--transition),
+        border-color var(--transition),
+        box-shadow var(--transition);
+    }
+
+    .btn:hover { transform: translateY(-1px); }
+
+    .btn-primary {
+      background: var(--gold);
+      color: var(--navy-3);
+      box-shadow: 0 10px 24px rgba(227, 178, 41, 0.28);
+    }
+
+    .btn-primary:hover { background: var(--gold-2); }
+
+    .btn-dark {
+      background: var(--navy);
+      color: white;
+      box-shadow: 0 10px 24px rgba(22, 50, 92, 0.25);
+    }
+
+    .btn-dark:hover { background: var(--navy-3); }
+
+    .btn-outline {
+      background: transparent;
+      color: var(--navy);
+      border: 2px solid rgba(22, 50, 92, 0.16);
+    }
+
+    .btn-outline:hover {
+      border-color: var(--navy);
+      background: rgba(22, 50, 92, 0.04);
+    }
+
+    header {
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      backdrop-filter: blur(14px);
+      background: rgba(255, 255, 255, 0.92);
+      border-bottom: 1px solid rgba(221, 227, 238, 0.85);
+    }
+
+    .topbar {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 16px;
+      min-height: 76px;
+    }
+
+    .brand {
+      display: inline-flex;
+      align-items: center;
+      gap: 12px;
+      min-width: 0;
+    }
+
+    .brand img {
+      width: 48px;
+      height: 48px;
+      object-fit: cover;
+      border-radius: 12px;
+      box-shadow: var(--shadow-xs);
+    }
+
+    .brand-text {
+      display: flex;
+      flex-direction: column;
+      line-height: 1.05;
+    }
+
+    .brand-title {
+      font-family: Outfit, sans-serif;
+      font-size: 1.22rem;
+      font-weight: 800;
+      color: var(--navy);
+      letter-spacing: -0.03em;
+    }
+
+    .brand-title span { color: var(--green); }
+
+    .brand-sub {
+      font-size: 0.78rem;
+      color: var(--muted);
+      font-weight: 600;
+      margin-top: 4px;
+    }
+
+    .top-actions {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      flex-wrap: wrap;
+    }
+
+    .hero {
+      background:
+        radial-gradient(circle at 85% 20%, rgba(107, 163, 42, 0.18), transparent 24%),
+        radial-gradient(circle at 10% 90%, rgba(227, 178, 41, 0.16), transparent 18%),
+        linear-gradient(135deg, #0d203c 0%, #16325c 58%, #173d27 100%);
+      color: white;
+      padding: 48px 0 38px;
+    }
+
+    .hero h1 {
+      margin: 0 0 10px;
+      font-family: Outfit, sans-serif;
+      font-size: clamp(1.9rem, 4vw, 3rem);
+      line-height: 1.05;
+      letter-spacing: -0.04em;
+    }
+
+    .hero p {
+      margin: 0;
+      max-width: 760px;
+      color: rgba(255,255,255,0.86);
+      font-size: 1rem;
+    }
+
+    main {
+      padding: 30px 0 56px;
+    }
+
+    .card {
+      background: var(--card);
+      border: 1px solid var(--line);
+      border-radius: var(--radius-lg);
+      box-shadow: var(--shadow-sm);
+      padding: 24px;
+      margin-bottom: 22px;
+    }
+
+    .card h2,
+    .card h3 {
+      margin: 0 0 12px;
+      color: var(--ink);
+    }
+
+    .card h2 {
+      font-family: Outfit, sans-serif;
+      font-size: 1.55rem;
+      letter-spacing: -0.03em;
+    }
+
+    .card h3 {
+      font-size: 1.12rem;
+    }
+
+    .card p {
+      margin: 0 0 12px;
+      color: var(--text);
+    }
+
+    .intro-box,
+    .success-box,
+    .error-box {
+      border-radius: 14px;
+      padding: 16px 18px;
+      margin-top: 16px;
+      border: 1px solid var(--line);
+    }
+
+    .intro-box {
+      background: var(--surface);
+      border-left: 4px solid var(--navy);
+    }
+
+    .success-box {
+      background: var(--success);
+      border-left: 4px solid var(--green);
+    }
+
+    .error-box {
+      background: var(--error);
+      border-left: 4px solid #dc2626;
+    }
+
+    .question {
+      padding: 18px;
+      border: 1px solid var(--line);
+      border-radius: 16px;
+      background: #fbfcff;
+      margin-bottom: 16px;
+    }
+
+    .question p {
+      margin: 0 0 12px;
+      font-weight: 700;
+      color: var(--ink);
+    }
+
+    .option {
+      display: block;
+      padding: 10px 12px;
+      border: 1px solid var(--line);
+      border-radius: 12px;
+      background: white;
+      margin-bottom: 10px;
+      cursor: pointer;
+      transition: var(--transition);
+    }
+
+    .option:hover {
+      border-color: var(--navy);
+      background: #f8fbff;
+    }
+
+    .option input {
+      margin-right: 10px;
+    }
+
+    .text-answer {
+      width: 100%;
+      border: 1.5px solid var(--line);
+      border-radius: 12px;
+      padding: 12px 14px;
+      background: white;
+      color: var(--ink);
+    }
+
+    .quiz-actions {
+      display: flex;
+      gap: 12px;
+      flex-wrap: wrap;
+      margin-top: 20px;
+    }
+
+    .result {
+      display: none;
+      margin-top: 18px;
+      padding: 16px 18px;
+      border-radius: 14px;
+      font-weight: 600;
+      border: 1px solid transparent;
+    }
+
+    .result.success {
+      display: block;
+      background: var(--success);
+      color: var(--green-2);
+      border-color: #cde8d1;
+    }
+
+    .result.error {
+      display: block;
+      background: var(--error);
+      color: #b42318;
+      border-color: #f5c2c7;
+    }
+
+    .nav-actions {
+      display: flex;
+      justify-content: space-between;
+      gap: 14px;
+      flex-wrap: wrap;
+      margin-top: 24px;
+    }
+
+    footer {
+      background: var(--navy-3);
+      color: #9aa8bf;
+      padding: 34px 0 28px;
+      margin-top: 40px;
+    }
+
+    .footer-line {
+      display: flex;
+      justify-content: space-between;
+      gap: 16px;
+      flex-wrap: wrap;
+      font-size: 0.88rem;
+    }
+
+    @media (max-width: 760px) {
+      .topbar {
+        flex-direction: column;
+        align-items: flex-start;
+        padding: 14px 0;
+      }
+
+      .top-actions {
+        width: 100%;
+      }
+
+      .top-actions .btn,
+      .top-actions a {
+        width: 100%;
+      }
+
+      .nav-actions {
+        flex-direction: column;
+      }
+
+      .nav-actions .btn,
+      .nav-actions a {
+        width: 100%;
+      }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <div class="container">
+      <div class="topbar">
+        <a class="brand" href="/" aria-label="Retour à l'accueil LOGIX FORMA">
+          <img src="https://i.postimg.cc/xdj77pwZ/logo-logix-forma.jpg" alt="Logo LOGIX FORMA" />
+          <span class="brand-text">
+            <span class="brand-title">LOGIX <span>FORMA</span></span>
+            <span class="brand-sub">Former pour produire, tester, mesurer</span>
+          </span>
+        </a>
+
+        <div class="top-actions">
+          <a class="btn btn-outline" href="/espace-apprenant/diagnostic-budgetaire-terrain/index.html">Retour à la formation</a>
+          <a class="btn btn-dark" href="/contact.html">Contact</a>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <section class="hero">
+    <div class="container">
+      <h1>Quiz final</h1>
+      <p>
+        Ce quiz final vérifie la maîtrise globale des 4 modules :
+        diagnostic, arbitrage, gestion de la résistance et production professionnelle.
+      </p>
+    </div>
+  </section>
+
+  <main>
+    <div class="container">
+      <section class="card">
+        <h2>Conditions de validation</h2>
+        <div class="intro-box">
+          <strong>Pour valider le quiz final :</strong><br>
+          • avoir terminé les 4 modules<br>
+          • obtenir au moins 70 % de bonnes réponses<br>
+          • une fois validé, l’attestation devient accessible
+        </div>
+      </section>
+
+      <section class="card">
+        <h2>Questions</h2>
+
+        <div class="question">
+          <p>1. Combien de mois de relevés bancaires la méthode LOGIX FORMA demande-t-elle au départ ?</p>
+          <label class="option"><input type="radio" name="q1" value="a"> 1 mois</label>
+          <label class="option"><input type="radio" name="q1" value="b"> 2 mois</label>
+          <label class="option"><input type="radio" name="q1" value="c"> 3 mois</label>
+        </div>
+
+        <div class="question">
+          <p>2. Quelle est la bonne liste des zones protégées ?</p>
+          <label class="option"><input type="radio" name="q2" value="a"> Alimentation, logement, énergie, santé</label>
+          <label class="option"><input type="radio" name="q2" value="b"> Téléphone, transport, habillement, santé</label>
+          <label class="option"><input type="radio" name="q2" value="c"> Loyer, loisirs, essence, santé</label>
+        </div>
+
+        <div class="question">
+          <p>3. En arbitrage budgétaire, la première priorité est généralement :</p>
+          <label class="option"><input type="radio" name="q3" value="a"> l’action la plus difficile mais la plus noble</label>
+          <label class="option"><input type="radio" name="q3" value="b"> l’action avec bon gain, délai court et risque faible</label>
+          <label class="option"><input type="radio" name="q3" value="c"> l’action la plus longue à mettre en place</label>
+        </div>
+
+        <div class="question">
+          <p>4. Vrai ou Faux : face à une résistance, le but est d’obtenir un petit accord exploitable.</p>
+          <label class="option"><input type="radio" name="q4" value="vrai"> Vrai</label>
+          <label class="option"><input type="radio" name="q4" value="faux"> Faux</label>
+        </div>
+
+        <div class="question">
+          <p>5. Que faut-il éviter face à un mensonge ou une contradiction ?</p>
+          <label class="option"><input type="radio" name="q5" value="a"> recouper les faits</label>
+          <label class="option"><input type="radio" name="q5" value="b"> reformuler calmement</label>
+          <label class="option"><input type="radio" name="q5" value="c"> accuser brutalement</label>
+        </div>
+
+        <div class="question">
+          <p>6. Combien de pages comporte le dossier professionnel final ?</p>
+          <label class="option"><input type="radio" name="q6" value="a"> 2 pages</label>
+          <label class="option"><input type="radio" name="q6" value="b"> 4 pages</label>
+          <label class="option"><input type="radio" name="q6" value="c"> 6 pages</label>
+        </div>
+
+        <div class="question">
+          <p>7. Que doit contenir la page 3 du dossier ?</p>
+          <label class="option"><input type="radio" name="q7" value="a"> le plan d’action</label>
+          <label class="option"><input type="radio" name="q7" value="b"> uniquement le diagnostic brut</label>
+          <label class="option"><input type="radio" name="q7" value="c"> les relevés bancaires</label>
+        </div>
+
+        <div class="question">
+          <p>8. Vrai ou Faux : proposer trop d’actions d’un coup peut réduire les chances de réussite.</p>
+          <label class="option"><input type="radio" name="q8" value="vrai"> Vrai</label>
+          <label class="option"><input type="radio" name="q8" value="faux"> Faux</label>
+        </div>
+
+        <div class="question">
+          <p>9. Citez deux qualités attendues d’un dossier professionnel.</p>
+          <input class="text-answer" type="text" id="q9" placeholder="Exemple : lisible, actionnable..." />
+        </div>
+
+        <div class="question">
+          <p>10. Citez un exemple de dépense invisible.</p>
+          <input class="text-answer" type="text" id="q10" placeholder="Exemple : frais bancaires..." />
+        </div>
+
+        <div class="quiz-actions">
+          <button class="btn btn-primary" type="button" onclick="corrigerQuizFinal()">Valider le quiz final</button>
+          <button class="btn btn-outline" type="button" onclick="resetQuizFinal()">Réinitialiser</button>
+        </div>
+
+        <div id="result" class="result"></div>
+      </section>
+
+      <div class="nav-actions">
+        <a class="btn btn-outline" href="/espace-apprenant/diagnostic-budgetaire-terrain/module-4.html">← Retour au module 4</a>
+        <a class="btn btn-dark" href="/espace-apprenant/diagnostic-budgetaire-terrain/attestation.html" id="attestationBtn" style="display:none;">Accéder à l’attestation →</a>
+      </div>
+    </div>
+  </main>
+
+  <footer>
+    <div class="container">
+      <div class="footer-line">
+        <span>© 2026 LOGIX FORMA — Tous droits réservés</span>
+        <span>Quiz final — progression locale</span>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    function getProgression() {
+      try {
+        return JSON.parse(localStorage.getItem('logix_progression') || '{}');
+      } catch {
+        return {};
+      }
+    }
+
+    function getQuizReussis() {
+      try {
+        return JSON.parse(localStorage.getItem('logix_quiz_reussis') || '{}');
+      } catch {
+        return {};
+      }
+    }
+
+    function allModulesValidated() {
+      const progression = getProgression();
+      const quizReussis = getQuizReussis();
+
+      return [1, 2, 3, 4].every(moduleId =>
+        progression[moduleId] === true && quizReussis[moduleId] === true
+      );
+    }
+
+    function saveFinalQuizStatus() {
+      localStorage.setItem('logix_quiz_final_reussi', 'true');
+    }
+
+    function corrigerQuizFinal() {
+      const resultDiv = document.getElementById('result');
+      const attestationBtn = document.getElementById('attestationBtn');
+
+      if (!allModulesValidated()) {
+        resultDiv.className = 'result error';
+        resultDiv.style.display = 'block';
+        resultDiv.innerHTML = '❌ Vous devez d’abord valider les 4 modules avant de passer le quiz final.';
+        return;
+      }
+
+      let score = 0;
+      const total = 10;
+
+      const q1 = document.querySelector('input[name="q1"]:checked');
+      if (q1 && q1.value === 'c') score++;
+
+      const q2 = document.querySelector('input[name="q2"]:checked');
+      if (q2 && q2.value === 'a') score++;
+
+      const q3 = document.querySelector('input[name="q3"]:checked');
+      if (q3 && q3.value === 'b') score++;
+
+      const q4 = document.querySelector('input[name="q4"]:checked');
+      if (q4 && q4.value === 'vrai') score++;
+
+      const q5 = document.querySelector('input[name="q5"]:checked');
+      if (q5 && q5.value === 'c') score++;
+
+      const q6 = document.querySelector('input[name="q6"]:checked');
+      if (q6 && q6.value === 'b') score++;
+
+      const q7 = document.querySelector('input[name="q7"]:checked');
+      if (q7 && q7.value === 'a') score++;
+
+      const q8 = document.querySelector('input[name="q8"]:checked');
+      if (q8 && q8.value === 'vrai') score++;
+
+      const q9 = (document.getElementById('q9').value || '').toLowerCase();
+      if (
+        q9.includes('lisible') ||
+        q9.includes('actionnable') ||
+        q9.includes('transmissible') ||
+        q9.includes('clair') ||
+        q9.includes('structur')
+      ) {
+        score++;
+      }
+
+      const q10 = (document.getElementById('q10').value || '').toLowerCase();
+      if (
+        q10.includes('frais banc') ||
+        q10.includes('abonnement') ||
+        q10.includes('stream') ||
+        q10.includes('prélèvement') ||
+        q10.includes('prelevement')
+      ) {
+        score++;
+      }
+
+      const percentage = Math.round((score / total) * 100);
+
+      if (percentage >= 70) {
+        resultDiv.className = 'result success';
+        resultDiv.style.display = 'block';
+        resultDiv.innerHTML = `✅ Quiz final validé. Score : ${score}/${total} (${percentage}%). Votre attestation est maintenant accessible.`;
+
+        saveFinalQuizStatus();
+        attestationBtn.style.display = 'inline-flex';
+      } else {
+        resultDiv.className = 'result error';
+        resultDiv.style.display = 'block';
+        resultDiv.innerHTML = `❌ Score insuffisant : ${score}/${total} (${percentage}%). Le seuil de validation est fixé à 70 %.`;
+      }
+    }
+
+    function resetQuizFinal() {
+      document.querySelectorAll('input[type="radio"]').forEach(input => {
+        input.checked = false;
+      });
+
+      document.getElementById('q9').value = '';
+      document.getElementById('q10').value = '';
+
+      const resultDiv = document.getElementById('result');
+      resultDiv.style.display = 'none';
+      resultDiv.className = 'result';
+      resultDiv.innerHTML = '';
+    }
+
+    function restoreFinalQuizState() {
+      const finalQuizOk = localStorage.getItem('logix_quiz_final_reussi');
+      const attestationBtn = document.getElementById('attestationBtn');
+      const resultDiv = document.getElementById('result');
+
+      if (finalQuizOk === 'true') {
+        attestationBtn.style.display = 'inline-flex';
+        resultDiv.className = 'result success';
+        resultDiv.style.display = 'block';
+        resultDiv.innerHTML = '✅ Quiz final déjà validé. Vous pouvez accéder à votre attestation.';
+      }
+    }
+
+    restoreFinalQuizState();
+  </script>
+</body>
+</html>
