@@ -1,0 +1,7 @@
+<script>
+  const accessPaid = localStorage.getItem('logix_paid_diagnostic_budgetaire');
+
+  if (accessPaid !== 'true') {
+    window.location.href = '/formations/diagnostic-budgetaire-terrain.html';
+  }
+</script>
