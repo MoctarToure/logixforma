@@ -1,0 +1,893 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <title>Formation – Diagnostic budgétaire terrain | LOGIX FORMA</title>
+  <meta
+    name="description"
+    content="Accueil de la formation Diagnostic budgétaire terrain – Méthode LOGIX FORMA. Accédez aux modules, suivez votre progression et préparez votre validation."
+  />
+  <meta name="robots" content="noindex, nofollow" />
+  <link rel="canonical" href="https://logixforma.com/espace-apprenant/diagnostic-budgetaire-terrain/index.html" />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Outfit:wght@600;700;800&display=swap"
+    rel="stylesheet"
+  />
+
+  <style>
+    :root {
+      --navy: #16325c;
+      --navy-2: #21457a;
+      --navy-3: #0d203c;
+      --green: #6ba32a;
+      --green-2: #4f7d17;
+      --gold: #e3b229;
+      --gold-2: #ca9916;
+      --ink: #101828;
+      --text: #253244;
+      --muted: #667085;
+      --muted-2: #98a2b3;
+      --bg: #f4f7fb;
+      --card: #ffffff;
+      --surface: #eef2f8;
+      --line: #dde3ee;
+      --success: #ebf7df;
+      --warning: #fff3e0;
+      --shadow-xs: 0 1px 3px rgba(16, 24, 40, 0.06);
+      --shadow-sm: 0 10px 26px rgba(16, 24, 40, 0.08);
+      --shadow-md: 0 18px 48px rgba(16, 24, 40, 0.12);
+      --shadow-lg: 0 26px 64px rgba(16, 24, 40, 0.16);
+      --radius-sm: 10px;
+      --radius: 16px;
+      --radius-lg: 24px;
+      --max: 1240px;
+      --transition: 220ms ease;
+    }
+
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+
+    body {
+      margin: 0;
+      font-family: Inter, sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      line-height: 1.65;
+      -webkit-font-smoothing: antialiased;
+      text-rendering: optimizeLegibility;
+    }
+
+    a { color: inherit; text-decoration: none; }
+    img { display: block; max-width: 100%; }
+    button { font: inherit; }
+
+    .container {
+      width: min(calc(100% - 32px), var(--max));
+      margin: 0 auto;
+    }
+
+    .skip-link {
+      position: absolute;
+      left: 12px;
+      top: -48px;
+      background: var(--navy);
+      color: white;
+      padding: 10px 14px;
+      border-radius: 10px;
+      z-index: 1000;
+    }
+
+    .skip-link:focus { top: 12px; }
+
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 10px;
+      border: 0;
+      border-radius: 14px;
+      padding: 12px 18px;
+      font-weight: 700;
+      cursor: pointer;
+      text-align: center;
+      transition:
+        transform var(--transition),
+        background var(--transition),
+        color var(--transition),
+        border-color var(--transition),
+        box-shadow var(--transition);
+    }
+
+    .btn:hover { transform: translateY(-1px); }
+
+    .btn:focus-visible,
+    .nav-link:focus-visible,
+    .module-link:focus-visible {
+      outline: 3px solid rgba(227, 178, 41, 0.45);
+      outline-offset: 2px;
+    }
+
+    .btn-dark {
+      background: var(--navy);
+      color: white;
+      box-shadow: 0 10px 24px rgba(22, 50, 92, 0.25);
+    }
+
+    .btn-dark:hover { background: var(--navy-3); }
+
+    .btn-outline {
+      background: transparent;
+      color: var(--navy);
+      border: 2px solid rgba(22, 50, 92, 0.16);
+    }
+
+    .btn-outline:hover {
+      border-color: var(--navy);
+      background: rgba(22, 50, 92, 0.04);
+    }
+
+    .btn-primary {
+      background: var(--gold);
+      color: var(--navy-3);
+      box-shadow: 0 10px 24px rgba(227, 178, 41, 0.28);
+    }
+
+    .btn-primary:hover { background: var(--gold-2); }
+
+    header {
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      backdrop-filter: blur(14px);
+      background: rgba(255, 255, 255, 0.92);
+      border-bottom: 1px solid rgba(221, 227, 238, 0.85);
+    }
+
+    .topbar {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 16px;
+      min-height: 76px;
+    }
+
+    .brand {
+      display: inline-flex;
+      align-items: center;
+      gap: 12px;
+      min-width: 0;
+    }
+
+    .brand img {
+      width: 48px;
+      height: 48px;
+      object-fit: cover;
+      border-radius: 12px;
+      box-shadow: var(--shadow-xs);
+    }
+
+    .brand-text {
+      display: flex;
+      flex-direction: column;
+      line-height: 1.05;
+    }
+
+    .brand-title {
+      font-family: Outfit, sans-serif;
+      font-size: 1.22rem;
+      font-weight: 800;
+      color: var(--navy);
+      letter-spacing: -0.03em;
+    }
+
+    .brand-title span { color: var(--green); }
+
+    .brand-sub {
+      font-size: 0.78rem;
+      color: var(--muted);
+      font-weight: 600;
+      margin-top: 4px;
+    }
+
+    .top-actions {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      flex-wrap: wrap;
+    }
+
+    .hero {
+      background:
+        radial-gradient(circle at 85% 20%, rgba(107, 163, 42, 0.18), transparent 24%),
+        radial-gradient(circle at 10% 90%, rgba(227, 178, 41, 0.16), transparent 18%),
+        linear-gradient(135deg, #0d203c 0%, #16325c 58%, #173d27 100%);
+      color: white;
+      padding: 56px 0 44px;
+    }
+
+    .hero h1 {
+      margin: 0 0 12px;
+      font-family: Outfit, sans-serif;
+      font-size: clamp(2rem, 4vw, 3.2rem);
+      line-height: 1.05;
+      letter-spacing: -0.04em;
+    }
+
+    .hero p {
+      margin: 0;
+      max-width: 760px;
+      color: rgba(255,255,255,0.86);
+      font-size: 1rem;
+    }
+
+    .hero-pills {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+      margin-top: 24px;
+    }
+
+    .hero-pill {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      padding: 9px 14px;
+      border-radius: 999px;
+      background: rgba(255,255,255,0.1);
+      border: 1px solid rgba(255,255,255,0.14);
+      font-size: 0.86rem;
+      font-weight: 700;
+      color: rgba(255,255,255,0.92);
+    }
+
+    main {
+      padding: 34px 0 56px;
+    }
+
+    .dashboard-grid {
+      display: grid;
+      grid-template-columns: 1.08fr 0.92fr;
+      gap: 24px;
+      margin-bottom: 26px;
+    }
+
+    .card {
+      background: var(--card);
+      border: 1px solid var(--line);
+      border-radius: var(--radius-lg);
+      box-shadow: var(--shadow-sm);
+      padding: 24px;
+    }
+
+    .card h2,
+    .card h3 {
+      margin: 0 0 10px;
+      color: var(--ink);
+    }
+
+    .card h2 {
+      font-family: Outfit, sans-serif;
+      font-size: 1.6rem;
+      letter-spacing: -0.03em;
+    }
+
+    .card p {
+      margin: 0;
+      color: var(--muted);
+    }
+
+    .progress-wrap {
+      margin-top: 18px;
+    }
+
+    .progress-head {
+      display: flex;
+      justify-content: space-between;
+      gap: 12px;
+      align-items: center;
+      margin-bottom: 10px;
+      font-size: 0.95rem;
+      font-weight: 700;
+      color: var(--ink);
+      flex-wrap: wrap;
+    }
+
+    .progress-bar {
+      background: var(--surface);
+      border-radius: 999px;
+      height: 14px;
+      overflow: hidden;
+      border: 1px solid var(--line);
+    }
+
+    .progress-fill {
+      height: 100%;
+      width: 0%;
+      background: linear-gradient(90deg, var(--green), #8cc84a);
+      border-radius: 999px;
+      transition: width .35s ease;
+    }
+
+    .progress-note {
+      margin-top: 10px;
+      font-size: 0.9rem;
+      color: var(--muted);
+    }
+
+    .stats-list {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 12px;
+      margin-top: 18px;
+    }
+
+    .stat-box {
+      padding: 16px;
+      border-radius: 16px;
+      background: var(--surface);
+      border: 1px solid var(--line);
+    }
+
+    .stat-box strong {
+      display: block;
+      color: var(--navy);
+      font-size: 0.82rem;
+      text-transform: uppercase;
+      letter-spacing: 0.06em;
+      margin-bottom: 6px;
+    }
+
+    .stat-box span {
+      display: block;
+      color: var(--ink);
+      font-weight: 800;
+      font-size: 1.06rem;
+      line-height: 1.2;
+    }
+
+    .info-list {
+      list-style: none;
+      padding: 0;
+      margin: 14px 0 0;
+      display: grid;
+      gap: 10px;
+    }
+
+    .info-list li {
+      display: flex;
+      gap: 10px;
+      align-items: flex-start;
+      font-size: 0.94rem;
+      color: var(--text);
+    }
+
+    .check {
+      width: 22px;
+      height: 22px;
+      border-radius: 999px;
+      background: var(--success);
+      color: var(--green-2);
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 0.82rem;
+      font-weight: 800;
+      flex: 0 0 auto;
+      margin-top: 1px;
+    }
+
+    .section-title {
+      display: flex;
+      justify-content: space-between;
+      align-items: end;
+      gap: 16px;
+      margin: 0 0 18px;
+      flex-wrap: wrap;
+    }
+
+    .section-title h2 {
+      margin: 0;
+      font-family: Outfit, sans-serif;
+      font-size: 1.8rem;
+      letter-spacing: -0.03em;
+      color: var(--ink);
+    }
+
+    .section-title p {
+      margin: 0;
+      color: var(--muted);
+    }
+
+    .modules {
+      display: grid;
+      gap: 18px;
+    }
+
+    .module-card {
+      background: white;
+      border: 1px solid var(--line);
+      border-radius: 22px;
+      padding: 22px;
+      box-shadow: var(--shadow-xs);
+      display: grid;
+      grid-template-columns: 1fr auto;
+      gap: 18px;
+      align-items: center;
+    }
+
+    .module-card h3 {
+      margin: 0 0 8px;
+      color: var(--ink);
+      font-size: 1.08rem;
+      line-height: 1.3;
+    }
+
+    .module-card p {
+      margin: 0;
+      color: var(--muted);
+      max-width: 760px;
+      font-size: 0.94rem;
+    }
+
+    .module-meta {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      margin-top: 14px;
+    }
+
+    .pill {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 7px 12px;
+      border-radius: 999px;
+      border: 1px solid var(--line);
+      background: var(--surface);
+      color: var(--navy);
+      font-size: 0.78rem;
+      font-weight: 800;
+      letter-spacing: 0.02em;
+    }
+
+    .level-start { background: #e8f5e9; color: #256c2f; border-color: #cde8d1; }
+    .level-mid { background: #fff3e0; color: #a56300; border-color: #f5ddae; }
+    .level-advanced { background: #fee2e2; color: #b42318; border-color: #f5c2c7; }
+    .level-expert { background: #f3e8ff; color: #7a3fb2; border-color: #e2cef7; }
+
+    .module-status {
+      text-align: right;
+      min-width: 250px;
+    }
+
+    .status-badge {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      padding: 7px 12px;
+      border-radius: 999px;
+      font-size: 0.78rem;
+      font-weight: 800;
+      letter-spacing: 0.03em;
+      margin-bottom: 12px;
+    }
+
+    .status-locked {
+      background: #f2f4f7;
+      color: #667085;
+    }
+
+    .status-start {
+      background: var(--warning);
+      color: #9a6700;
+    }
+
+    .status-done {
+      background: var(--success);
+      color: var(--green-2);
+    }
+
+    .status-text {
+      font-size: 0.9rem;
+      color: var(--muted);
+      margin-bottom: 14px;
+    }
+
+    .module-link {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 10px;
+      background: var(--navy);
+      color: white;
+      border-radius: 14px;
+      padding: 12px 18px;
+      font-weight: 700;
+      transition: var(--transition);
+      text-decoration: none;
+    }
+
+    .module-link:hover {
+      background: var(--navy-3);
+      transform: translateY(-1px);
+    }
+
+    .module-link.locked {
+      background: #d0d5dd;
+      color: #667085;
+      cursor: not-allowed;
+      pointer-events: none;
+    }
+
+    .final-card {
+      margin-top: 28px;
+      background: linear-gradient(135deg, #0d203c, #16325c);
+      color: white;
+      border-radius: 24px;
+      padding: 28px;
+      box-shadow: var(--shadow-md);
+    }
+
+    .final-card h2 {
+      margin: 0 0 10px;
+      font-family: Outfit, sans-serif;
+      letter-spacing: -0.03em;
+    }
+
+    .final-card p {
+      margin: 0;
+      color: rgba(255,255,255,0.85);
+    }
+
+    .final-actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+      margin-top: 18px;
+    }
+
+    .final-actions .btn-outline {
+      border-color: rgba(255,255,255,0.28);
+      color: white;
+      background: transparent;
+    }
+
+    .final-actions .btn-outline:hover {
+      background: rgba(255,255,255,0.08);
+      border-color: rgba(255,255,255,0.38);
+    }
+
+    footer {
+      background: var(--navy-3);
+      color: #9aa8bf;
+      padding: 34px 0 28px;
+      margin-top: 42px;
+    }
+
+    .footer-line {
+      display: flex;
+      justify-content: space-between;
+      gap: 16px;
+      flex-wrap: wrap;
+      font-size: 0.88rem;
+    }
+
+    @media (max-width: 980px) {
+      .dashboard-grid,
+      .module-card {
+        grid-template-columns: 1fr;
+      }
+
+      .module-status {
+        text-align: left;
+        min-width: 0;
+      }
+    }
+
+    @media (max-width: 720px) {
+      .topbar {
+        flex-direction: column;
+        align-items: flex-start;
+        padding: 14px 0;
+      }
+
+      .top-actions {
+        width: 100%;
+      }
+
+      .top-actions .btn,
+      .top-actions a {
+        width: 100%;
+      }
+
+      .stats-list {
+        grid-template-columns: 1fr;
+      }
+
+      .final-actions {
+        flex-direction: column;
+      }
+
+      .final-actions .btn,
+      .final-actions a {
+        width: 100%;
+      }
+    }
+  </style>
+</head>
+<body>
+  <a class="skip-link" href="#main-content">Aller au contenu</a>
+
+  <header>
+    <div class="container">
+      <div class="topbar">
+        <a class="brand" href="/" aria-label="Retour à l'accueil LOGIX FORMA">
+          <img src="https://i.postimg.cc/xdj77pwZ/logo-logix-forma.jpg" alt="Logo LOGIX FORMA" />
+          <span class="brand-text">
+            <span class="brand-title">LOGIX <span>FORMA</span></span>
+            <span class="brand-sub">Former pour produire, tester, mesurer</span>
+          </span>
+        </a>
+
+        <div class="top-actions">
+          <a class="btn btn-outline" href="/espace-apprenant/index.html">Tableau de bord</a>
+          <a class="btn btn-dark" href="/contact.html">Contact</a>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <section class="hero">
+    <div class="container">
+      <h1>Diagnostic budgétaire terrain</h1>
+      <p>
+        Formation professionnalisante à l’intervention budgétaire de premier niveau en contexte d’insertion.
+      </p>
+
+      <div class="hero-pills">
+        <div class="hero-pill">35 h</div>
+        <div class="hero-pill">4 modules</div>
+        <div class="hero-pill">100 % à distance</div>
+        <div class="hero-pill">Attestation interne</div>
+      </div>
+    </div>
+  </section>
+
+  <main id="main-content">
+    <div class="container">
+      <div class="dashboard-grid">
+        <section class="card" aria-labelledby="progress-title">
+          <h2 id="progress-title">Votre progression</h2>
+          <p>
+            Suivez l’avancement de votre parcours module par module.
+          </p>
+
+          <div class="progress-wrap">
+            <div class="progress-head">
+              <span>Progression de la formation</span>
+              <span id="progressText">0%</span>
+            </div>
+            <div class="progress-bar" aria-hidden="true">
+              <div class="progress-fill" id="progressFill"></div>
+            </div>
+            <div class="progress-note" id="progressNote">Aucun module terminé pour le moment.</div>
+          </div>
+
+          <div class="stats-list">
+            <div class="stat-box">
+              <strong>Modules terminés</strong>
+              <span id="modulesCount">0 / 4</span>
+            </div>
+            <div class="stat-box">
+              <strong>Quiz validés</strong>
+              <span id="quizCount">0 / 4</span>
+            </div>
+            <div class="stat-box">
+              <strong>Statut</strong>
+              <span id="trainingStatus">À commencer</span>
+            </div>
+          </div>
+        </section>
+
+        <aside class="card" aria-labelledby="method-title">
+          <h3 id="method-title">Ce parcours vous amène à :</h3>
+          <ul class="info-list">
+            <li><span class="check">✓</span><span>Réaliser un diagnostic budgétaire fiable en 15 minutes.</span></li>
+            <li><span class="check">✓</span><span>Choisir une action prioritaire selon une logique de terrain.</span></li>
+            <li><span class="check">✓</span><span>Gérer le refus, l’oubli et la résistance sans rupture relationnelle.</span></li>
+            <li><span class="check">✓</span><span>Produire un dossier budgétaire professionnel structuré.</span></li>
+          </ul>
+        </aside>
+      </div>
+
+      <section aria-labelledby="modules-title">
+        <div class="section-title">
+          <div>
+            <h2 id="modules-title">Modules de la formation</h2>
+            <p>Chaque module comprend un cours, des exemples, des cas pratiques et une validation.</p>
+          </div>
+        </div>
+
+        <div class="modules" id="modulesList"></div>
+      </section>
+
+      <section class="final-card" aria-labelledby="final-title">
+        <h2 id="final-title">Validation finale</h2>
+        <p>
+          Une fois les 4 modules terminés et les quiz validés, vous pourrez accéder au quiz final puis à l’attestation.
+        </p>
+
+        <div class="final-actions">
+          <a class="btn btn-primary" id="finalQuizBtn" href="/espace-apprenant/diagnostic-budgetaire-terrain/quiz-final.html">Accéder au quiz final</a>
+          <a class="btn btn-outline" id="certificateBtn" href="/espace-apprenant/diagnostic-budgetaire-terrain/attestation.html">Voir l’attestation</a>
+        </div>
+      </section>
+    </div>
+  </main>
+
+  <footer>
+    <div class="container">
+      <div class="footer-line">
+        <span>© 2026 LOGIX FORMA — Tous droits réservés</span>
+        <span>Espace apprenant — prototype local</span>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    function getProgression() {
+      try {
+        return JSON.parse(localStorage.getItem('logix_progression') || '{}');
+      } catch {
+        return {};
+      }
+    }
+
+    function getQuizReussis() {
+      try {
+        return JSON.parse(localStorage.getItem('logix_quiz_reussis') || '{}');
+      } catch {
+        return {};
+      }
+    }
+
+    function renderTrainingDashboard() {
+      const progression = getProgression();
+      const quizReussis = getQuizReussis();
+      const moduleIds = [1, 2, 3, 4];
+
+      const moduleTitles = {
+        1: 'Diagnostic sous contrainte',
+        2: 'Arbitrage budgétaire',
+        3: 'Gestion de la résistance',
+        4: 'Production professionnelle'
+      };
+
+      const moduleDescriptions = {
+        1: 'Apprendre à établir un diagnostic fiable en 15 minutes et repérer les zones protégées.',
+        2: 'Choisir UNE action prioritaire selon le gain, le délai et le risque de conflit.',
+        3: 'Gérer le refus, l’oubli et le mensonge avec une posture professionnelle stable.',
+        4: 'Produire un dossier budgétaire structuré en 4 pages, lisible et transmissible.'
+      };
+
+      const moduleLevels = {
+        1: { label: 'Débutant', className: 'level-start' },
+        2: { label: 'Intermédiaire', className: 'level-mid' },
+        3: { label: 'Avancé', className: 'level-advanced' },
+        4: { label: 'Expert', className: 'level-expert' }
+      };
+
+      const completedModules = moduleIds.filter(id => progression[id] === true).length;
+      const passedQuiz = moduleIds.filter(id => quizReussis[id] === true).length;
+      const progressPercent = Math.round((completedModules / moduleIds.length) * 100);
+
+      document.getElementById('progressFill').style.width = progressPercent + '%';
+      document.getElementById('progressText').textContent = progressPercent + '%';
+      document.getElementById('modulesCount').textContent = `${completedModules} / 4`;
+      document.getElementById('quizCount').textContent = `${passedQuiz} / 4`;
+
+      let progressNote = 'Aucun module terminé pour le moment.';
+      let trainingStatus = 'À commencer';
+
+      if (completedModules > 0 && completedModules < 4) {
+        progressNote = `Vous avez terminé ${completedModules} module${completedModules > 1 ? 's' : ''} sur 4.`;
+        trainingStatus = 'En cours';
+      }
+
+      if (completedModules === 4 && passedQuiz < 4) {
+        progressNote = 'Tous les modules sont terminés. Il reste au moins un quiz à valider.';
+        trainingStatus = 'Modules terminés';
+      }
+
+      if (completedModules === 4 && passedQuiz === 4) {
+        progressNote = 'Tous les modules et tous les quiz sont validés. Vous pouvez passer à la validation finale.';
+        trainingStatus = 'Prêt pour la suite';
+      }
+
+      document.getElementById('progressNote').textContent = progressNote;
+      document.getElementById('trainingStatus').textContent = trainingStatus;
+
+      const modulesList = document.getElementById('modulesList');
+      modulesList.innerHTML = '';
+
+      moduleIds.forEach((id) => {
+        const previousModuleDone = id === 1 ? true : progression[id - 1] === true;
+        const isUnlocked = previousModuleDone;
+        const isDone = progression[id] === true;
+        const isQuizDone = quizReussis[id] === true;
+
+        let statusBadge = '<span class="status-badge status-locked">Verrouillé</span>';
+        let statusText = 'Terminez le module précédent pour débloquer celui-ci.';
+        let actionHtml = `<span class="module-link locked">Accès verrouillé</span>`;
+
+        if (isUnlocked && !isDone) {
+          statusBadge = '<span class="status-badge status-start">À commencer</span>';
+          statusText = 'Ce module est disponible.';
+          actionHtml = `<a class="module-link" href="/espace-apprenant/diagnostic-budgetaire-terrain/module-${id}.html">Commencer le module</a>`;
+        }
+
+        if (isUnlocked && isDone && !isQuizDone) {
+          statusBadge = '<span class="status-badge status-start">Quiz à valider</span>';
+          statusText = 'Le module est terminé, mais le quiz doit encore être validé.';
+          actionHtml = `<a class="module-link" href="/espace-apprenant/diagnostic-budgetaire-terrain/module-${id}.html#quiz">Revenir au module</a>`;
+        }
+
+        if (isUnlocked && isDone && isQuizDone) {
+          statusBadge = '<span class="status-badge status-done">Validé</span>';
+          statusText = 'Module et quiz validés.';
+          actionHtml = `<a class="module-link" href="/espace-apprenant/diagnostic-budgetaire-terrain/module-${id}.html">Revoir le module</a>`;
+        }
+
+        const article = document.createElement('article');
+        article.className = 'module-card';
+        article.innerHTML = `
+          <div>
+            <h3>Module ${id} – ${moduleTitles[id]}</h3>
+            <p>${moduleDescriptions[id]}</p>
+            <div class="module-meta">
+              <span class="pill ${moduleLevels[id].className}">${moduleLevels[id].label}</span>
+              <span class="pill">Quiz inclus</span>
+              <span class="pill">Suivi local</span>
+            </div>
+          </div>
+
+          <div class="module-status">
+            ${statusBadge}
+            <div class="status-text">${statusText}</div>
+            ${actionHtml}
+          </div>
+        `;
+
+        modulesList.appendChild(article);
+      });
+
+      const allModulesDone = completedModules === 4;
+      const allQuizDone = passedQuiz === 4;
+
+      const finalQuizBtn = document.getElementById('finalQuizBtn');
+      const certificateBtn = document.getElementById('certificateBtn');
+
+      if (!allModulesDone || !allQuizDone) {
+        finalQuizBtn.classList.remove('btn-primary');
+        finalQuizBtn.classList.add('btn-outline');
+        finalQuizBtn.style.pointerEvents = 'none';
+        finalQuizBtn.style.opacity = '0.55';
+        finalQuizBtn.setAttribute('aria-disabled', 'true');
+
+        certificateBtn.classList.remove('btn-outline');
+        certificateBtn.classList.add('btn-dark');
+        certificateBtn.style.pointerEvents = 'none';
+        certificateBtn.style.opacity = '0.55';
+        certificateBtn.setAttribute('aria-disabled', 'true');
+      }
+    }
+
+    renderTrainingDashboard();
+  </script>
+</body>
+</html>
