@@ -1,0 +1,802 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>LOGIX FORMA — Diagnostic budgétaire terrain</title>
+  <meta name="description" content="Formation professionnelle : Diagnostic budgétaire terrain en 15 minutes. Méthode Logix Forma pour médiateurs budgétaires et travailleurs sociaux." />
+  <link rel="canonical" href="https://logixforma.com/formations/index.html" />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Outfit:wght@600;700;800&display=swap" rel="stylesheet" />
+
+  <style>
+    :root {
+      --navy: #16325c;
+      --navy-2: #21457a;
+      --navy-3: #0d203c;
+      --green: #6ba32a;
+      --green-2: #4f7d17;
+      --gold: #e3b229;
+      --gold-2: #ca9916;
+      --ink: #101828;
+      --text: #253244;
+      --muted: #667085;
+      --muted-2: #98a2b3;
+      --bg: #f4f7fb;
+      --card: #ffffff;
+      --surface: #eef2f8;
+      --line: #dde3ee;
+      --success: #ebf7df;
+      --shadow-xs: 0 1px 3px rgba(16, 24, 40, 0.06);
+      --shadow-sm: 0 10px 26px rgba(16, 24, 40, 0.08);
+      --shadow-md: 0 18px 48px rgba(16, 24, 40, 0.12);
+      --radius-sm: 10px;
+      --radius: 16px;
+      --radius-lg: 24px;
+      --max: 1240px;
+      --transition: 220ms ease;
+    }
+
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body {
+      font-family: Inter, sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      line-height: 1.65;
+      -webkit-font-smoothing: antialiased;
+    }
+    .container { width: min(calc(100% - 32px), var(--max)); margin: 0 auto; }
+
+    /* Header */
+    header {
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      backdrop-filter: blur(14px);
+      background: rgba(255, 255, 255, 0.92);
+      border-bottom: 1px solid rgba(221, 227, 238, 0.85);
+    }
+    .topbar {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 16px;
+      min-height: 76px;
+    }
+    .brand {
+      display: inline-flex;
+      align-items: center;
+      gap: 12px;
+      text-decoration: none;
+    }
+    .brand img {
+      width: 48px;
+      height: 48px;
+      object-fit: cover;
+      border-radius: 12px;
+      box-shadow: var(--shadow-xs);
+    }
+    .brand-text {
+      display: flex;
+      flex-direction: column;
+      line-height: 1.05;
+    }
+    .brand-title {
+      font-family: Outfit, sans-serif;
+      font-size: 1.22rem;
+      font-weight: 800;
+      color: var(--navy);
+      letter-spacing: -0.03em;
+    }
+    .brand-title span { color: var(--green); }
+    .brand-sub {
+      font-size: 0.78rem;
+      color: var(--muted);
+      font-weight: 600;
+      margin-top: 4px;
+    }
+    .desktop-nav {
+      display: flex;
+      align-items: center;
+      gap: 6px;
+    }
+    .nav-link {
+      padding: 10px 14px;
+      border-radius: 12px;
+      color: var(--text);
+      font-size: 0.94rem;
+      font-weight: 600;
+      text-decoration: none;
+      transition: var(--transition);
+    }
+    .nav-link:hover,
+    .nav-link.active {
+      background: var(--surface);
+      color: var(--navy);
+    }
+    .desktop-actions {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+    .btn-outline {
+      background: transparent;
+      color: var(--navy);
+      border: 2px solid rgba(22, 50, 92, 0.16);
+      padding: 10px 18px;
+      border-radius: 14px;
+      font-weight: 700;
+      text-decoration: none;
+      transition: var(--transition);
+    }
+    .btn-outline:hover {
+      border-color: var(--navy);
+      background: rgba(22, 50, 92, 0.04);
+    }
+    .btn-dark {
+      background: var(--navy);
+      color: white;
+      padding: 10px 20px;
+      border-radius: 14px;
+      font-weight: 700;
+      text-decoration: none;
+      transition: var(--transition);
+    }
+    .btn-dark:hover { background: var(--navy-3); }
+    .btn-primary {
+      background: var(--gold);
+      color: var(--navy-3);
+      padding: 12px 24px;
+      border-radius: 14px;
+      font-weight: 700;
+      text-decoration: none;
+      transition: var(--transition);
+    }
+    .btn-primary:hover { background: var(--gold-2); transform: translateY(-1px); }
+
+    /* Hero formation */
+    .hero-formation {
+      background: linear-gradient(135deg, #0d203c 0%, #16325c 58%, #173d27 100%);
+      color: white;
+      padding: 60px 0 48px;
+    }
+    .hero-formation h1 {
+      font-family: Outfit, sans-serif;
+      font-size: clamp(2rem, 5vw, 3.5rem);
+      margin-bottom: 16px;
+      letter-spacing: -0.03em;
+    }
+    .hero-stats {
+      display: flex;
+      gap: 16px;
+      margin-top: 24px;
+      flex-wrap: wrap;
+    }
+    .hero-stats span {
+      background: rgba(255,255,255,0.1);
+      padding: 8px 16px;
+      border-radius: 40px;
+      font-size: 0.85rem;
+      font-weight: 600;
+    }
+
+    /* Module tabs */
+    .module-tabs {
+      display: flex;
+      gap: 8px;
+      margin: 40px 0 24px;
+      flex-wrap: wrap;
+      border-bottom: 2px solid var(--line);
+      padding-bottom: 8px;
+    }
+    .tab-btn {
+      background: none;
+      border: none;
+      padding: 12px 24px;
+      font-size: 0.95rem;
+      font-weight: 700;
+      color: var(--muted);
+      cursor: pointer;
+      border-radius: 40px;
+      transition: all 0.2s;
+    }
+    .tab-btn.active {
+      background: var(--navy);
+      color: white;
+    }
+    .tab-btn:hover:not(.active) {
+      background: var(--surface);
+      color: var(--navy);
+    }
+
+    /* Module content */
+    .module-content {
+      display: none;
+      animation: fade 0.3s ease;
+    }
+    .module-content.active { display: block; }
+    @keyframes fade {
+      from { opacity: 0; transform: translateY(8px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    /* Cards */
+    .card {
+      background: var(--card);
+      border: 1px solid var(--line);
+      border-radius: var(--radius-lg);
+      padding: 28px;
+      margin-bottom: 24px;
+      box-shadow: var(--shadow-xs);
+    }
+    .card h2 {
+      color: var(--navy);
+      margin-bottom: 16px;
+      font-size: 1.5rem;
+      font-family: Outfit, sans-serif;
+    }
+    .card h3 {
+      color: var(--ink);
+      margin: 20px 0 12px;
+      font-size: 1.2rem;
+    }
+    .badge {
+      display: inline-block;
+      background: var(--green);
+      color: white;
+      padding: 4px 12px;
+      border-radius: 20px;
+      font-size: 0.75rem;
+      font-weight: 700;
+      margin-bottom: 16px;
+    }
+
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      margin: 16px 0;
+      font-size: 0.9rem;
+    }
+    th, td {
+      border: 1px solid var(--line);
+      padding: 10px 12px;
+      text-align: left;
+    }
+    th {
+      background: var(--surface);
+      font-weight: 700;
+    }
+
+    .grid-2 {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 20px;
+    }
+    .zone-protected {
+      background: #ebf7df;
+      border-left: 4px solid var(--green);
+      padding: 14px;
+      margin: 12px 0;
+      border-radius: 8px;
+    }
+    .zone-invisible {
+      background: #fff3e0;
+      border-left: 4px solid var(--gold);
+      padding: 14px;
+      margin: 12px 0;
+      border-radius: 8px;
+    }
+    .warning-box {
+      background: #fee2e2;
+      border-left: 4px solid #dc2626;
+      padding: 16px;
+      margin: 16px 0;
+      border-radius: 8px;
+    }
+    .success-box {
+      background: var(--success);
+      border-left: 4px solid var(--green);
+      padding: 16px;
+      margin: 16px 0;
+      border-radius: 8px;
+    }
+    .memo {
+      background: var(--surface);
+      padding: 20px;
+      border-radius: var(--radius);
+      margin: 20px 0;
+      border: 1px solid var(--line);
+      font-weight: 500;
+    }
+
+    details {
+      background: var(--card);
+      border: 1px solid var(--line);
+      border-radius: 12px;
+      padding: 12px 16px;
+      margin: 12px 0;
+    }
+    summary {
+      cursor: pointer;
+      font-weight: 700;
+      color: var(--navy);
+    }
+
+    /* Pricing card */
+    .pricing-card {
+      background: linear-gradient(135deg, #0d203c, #16325c);
+      color: white;
+      text-align: center;
+      padding: 32px;
+      border-radius: var(--radius-lg);
+      margin: 32px 0;
+    }
+    .price {
+      font-size: 2.5rem;
+      font-weight: 800;
+      margin: 16px 0;
+    }
+    .price small {
+      font-size: 0.9rem;
+      font-weight: normal;
+    }
+    .pricing-actions {
+      display: flex;
+      gap: 16px;
+      justify-content: center;
+      flex-wrap: wrap;
+      margin-top: 20px;
+    }
+
+    /* Footer */
+    footer {
+      background: var(--navy-3);
+      color: #9aa8bf;
+      padding: 52px 0 30px;
+      margin-top: 48px;
+    }
+    .footer-grid {
+      display: grid;
+      grid-template-columns: 1.15fr 0.85fr 0.85fr 0.85fr;
+      gap: 28px;
+      margin-bottom: 28px;
+    }
+    .footer-brand h3 {
+      margin: 0 0 10px;
+      font-family: Outfit, sans-serif;
+      font-size: 1.32rem;
+      color: white;
+    }
+    .footer-brand h3 span { color: #8ec44a; }
+    .footer-brand p {
+      margin: 0 0 8px;
+      font-size: 0.9rem;
+    }
+    .footer-col h4 {
+      margin: 0 0 14px;
+      color: white;
+      font-size: 0.84rem;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+    }
+    .footer-col a {
+      display: block;
+      color: #9aa8bf;
+      text-decoration: none;
+      margin-bottom: 10px;
+      font-size: 0.9rem;
+    }
+    .footer-col a:hover { color: white; }
+    .footer-bottom {
+      border-top: 1px solid rgba(255,255,255,0.08);
+      padding-top: 18px;
+      display: flex;
+      justify-content: space-between;
+      gap: 16px;
+      flex-wrap: wrap;
+      font-size: 0.84rem;
+    }
+
+    @media (max-width: 860px) {
+      .desktop-nav, .desktop-actions { display: none; }
+      .footer-grid { grid-template-columns: 1fr; }
+      .grid-2 { grid-template-columns: 1fr; }
+      .module-tabs { flex-direction: column; }
+      .tab-btn { text-align: center; }
+      .card { padding: 18px; }
+    }
+  </style>
+</head>
+<body>
+
+<header>
+  <div class="container">
+    <div class="topbar">
+      <a class="brand" href="/">
+        <img src="https://i.postimg.cc/xdj77pwZ/logo-logix-forma.jpg" alt="Logo LOGIX FORMA" />
+        <span class="brand-text">
+          <span class="brand-title">LOGIX <span>FORMA</span></span>
+          <span class="brand-sub">Former pour produire, tester, mesurer</span>
+        </span>
+      </a>
+
+      <nav class="desktop-nav">
+        <a class="nav-link" href="/">Accueil</a>
+        <a class="nav-link active" href="/formations/index.html">Formation</a>
+        <a class="nav-link" href="/fle/index.html">FLE</a>
+        <a class="nav-link" href="/blog/index.html">Blog</a>
+      </nav>
+
+      <div class="desktop-actions">
+        <a class="btn-outline" href="/connexion.html">Espace apprenant</a>
+        <a class="btn-dark" href="/contact.html">Contact</a>
+      </div>
+    </div>
+  </div>
+</header>
+
+<main>
+  <section class="hero-formation">
+    <div class="container">
+      <h1>Diagnostic budgétaire terrain<br>Méthode LOGIX FORMA</h1>
+      <p>Formez-vous à l’intervention budgétaire de premier niveau en 35 heures.</p>
+      <div class="hero-stats">
+        <span>🎯 Diagnostic en 15 min</span>
+        <span>📋 Dossier pro 4 pages</span>
+        <span>💯 100% à distance</span>
+        <span>🎓 Attestation interne</span>
+      </div>
+    </div>
+  </section>
+
+  <div class="container">
+    <!-- Modules tabs -->
+    <div class="module-tabs">
+      <button class="tab-btn active" data-module="1">Module 1 • Débutant</button>
+      <button class="tab-btn" data-module="2">Module 2 • Intermédiaire</button>
+      <button class="tab-btn" data-module="3">Module 3 • Avancé</button>
+      <button class="tab-btn" data-module="4">Module 4 • Expert</button>
+    </div>
+
+    <!-- MODULE 1 -->
+    <div id="module-1" class="module-content active">
+      <div class="card">
+        <span class="badge">Module 1 • 8h</span>
+        <h2>Diagnostic sous contrainte</h2>
+        <p><strong>Objectif :</strong> établir un diagnostic budgétaire fiable en 15 minutes, identifier les zones protégées et proposer 2 ajustements maximum sans toucher à l'alimentation.</p>
+      </div>
+
+      <div class="card">
+        <h3>🧩 Mise en situation – Sabrina</h3>
+        <p><strong>Profil :</strong> 34 ans, mère isolée, 2 enfants. Revenus : 1 680 € (salaire 980 € + RSA 420 € + APL 280 €).</p>
+        <table>
+          <thead><tr><th>Dépense déclarée</th><th>Montant</th><th>Réel sur relevés</th></tr></thead>
+          <tbody>
+            <tr><td>Cantine scolaire</td><td>80 €</td><td class="zone-invisible">120 €</td></tr>
+            <tr><td>Frais bancaires</td><td>Non déclaré</td><td class="zone-invisible">9 €</td></tr>
+            <tr><td>Abonnement streaming</td><td>Non déclaré</td><td class="zone-invisible">12 €</td></tr>
+          </tbody>
+        </table>
+        <div class="warning-box">
+          <strong>⚠️ Le déclic :</strong> On ne croit jamais sur parole. On recoupe avec 3 mois de relevés bancaires.
+        </div>
+      </div>
+
+      <div class="card">
+        <h3>📊 Les 3 règles d’or</h3>
+        <ul>
+          <li><strong>Règle n°1</strong> – On demande 3 mois de relevés</li>
+          <li><strong>Règle n°2</strong> – On protège : alimentation, logement, énergie, santé</li>
+          <li><strong>Règle n°3</strong> – On traque l’invisible : frais bancaires, abonnements oubliés</li>
+        </ul>
+      </div>
+
+      <div class="card">
+        <h3>🏷️ Classification des dépenses</h3>
+        <div class="grid-2">
+          <div class="zone-protected">🔒 PROTÉGÉE : alimentation, loyer, énergie, santé</div>
+          <div>⚙️ NÉGOCIABLE : téléphone, assurance</div>
+          <div class="zone-invisible">👻 INVISIBLE : frais bancaires, abonnements oubliés</div>
+          <div>🎮 SECONDAIRE : loisirs payants</div>
+        </div>
+      </div>
+
+      <div class="card">
+        <h3>🛠️ Méthode en 6 étapes (15 min)</h3>
+        <ol>
+          <li>Demander 3 mois de relevés (2 min)</li>
+          <li>Lister toutes les sorties (3 min)</li>
+          <li>Colorer les zones protégées (2 min)</li>
+          <li>Comparer déclaratif vs réel (3 min)</li>
+          <li>Identifier les invisibles (3 min)</li>
+          <li>Proposer 2 ajustements max (2 min)</li>
+        </ol>
+      </div>
+
+      <div class="card">
+        <h3>✅ Exercice – Diagnostic chronométré</h3>
+        <p><strong>Cas :</strong> Loyer 600 €, courses 450 €, téléphone 55 €, abonnement salle inutilisé 30 €, frais bancaires 12 €, électricité 90 €.</p>
+        <details>
+          <summary>📌 Voir le corrigé</summary>
+          <p><strong>Protégées :</strong> loyer (600), courses (450), électricité (90)<br>
+          <strong>Ciblées :</strong> téléphone (55 → 20€), abonnement salle (à supprimer), frais bancaires (à supprimer)<br>
+          <strong>Gain :</strong> 35€ + 30€ + 12€ = 77€</p>
+        </details>
+      </div>
+
+      <div class="memo">
+        <strong>🧠 À retenir – Module 1</strong><br>
+        • On protège : alimentation, logement, énergie, santé<br>
+        • On cherche l’invisible : frais, abonnements, petits achats<br>
+        • On propose 2 ajustements maximum
+      </div>
+    </div>
+
+    <!-- MODULE 2 -->
+    <div id="module-2" class="module-content">
+      <div class="card">
+        <span class="badge">Module 2 • 8h</span>
+        <h2>Arbitrage budgétaire</h2>
+        <p><strong>Objectif :</strong> choisir UNE action prioritaire parmi plusieurs et justifier l’arbitrage par gain/délai/risque conflit.</p>
+      </div>
+
+      <div class="card">
+        <h3>🎯 La grille d’arbitrage</h3>
+        <table>
+          <thead><tr><th>Action</th><th>Gain</th><th>Délai</th><th>Risque</th><th>Score</th></tr></thead>
+          <tbody>
+            <tr><td>Changer forfait (45→20€)</td><td>25€</td><td>48h</td><td>Nul</td><td>★★★</td></tr>
+            <tr><td>Supprimer streaming</td><td>12€</td><td>5 min</td><td>Nul</td><td>★★</td></tr>
+            <tr><td>Négocier dette EDF</td><td>15€</td><td>15j</td><td>Moyen</td><td>★</td></tr>
+          </tbody>
+        </table>
+        <div class="success-box">
+          <strong>✅ Arbitrage retenu :</strong> Changer le forfait téléphone (gain max, délai min, risque nul).
+        </div>
+      </div>
+
+      <div class="card">
+        <h3>📝 La méthode en 4 étapes</h3>
+        <ol>
+          <li>Lister 3 actions possibles</li>
+          <li>Noter gain / délai / risque</li>
+          <li>Éliminer 2 actions</li>
+          <li>Justifier en 3 lignes</li>
+        </ol>
+      </div>
+
+      <div class="card">
+        <h3>✍️ Exercice – Arbitrage contraint</h3>
+        <p>Vous n’avez droit qu’à UNE action :<br>
+        A) Téléphone : 25€ – 48h – risque nul<br>
+        B) EDF : 15€ – 15j – risque moyen<br>
+        C) Frais bancaires : 9€ – 24h – risque nul</p>
+        <details>
+          <summary>📌 Réponse</summary>
+          <p>Choix A (téléphone). Justification : gain maximal (25€), délai très court (48h), risque nul. Action exécutable demain.</p>
+        </details>
+      </div>
+
+      <div class="memo">
+        <strong>🧠 À retenir – Module 2</strong><br>
+        • Une action FAITE > trois actions ABANDONNÉES<br>
+        • On choisit : gain max + délai min + risque nul
+      </div>
+    </div>
+
+    <!-- MODULE 3 -->
+    <div id="module-3" class="module-content">
+      <div class="card">
+        <span class="badge">Module 3 • 10h</span>
+        <h2>Gestion de la résistance</h2>
+        <p><strong>Objectif :</strong> gérer refus, oubli et mensonge sans rupture relationnelle, obtenir un petit accord.</p>
+      </div>
+
+      <div class="card">
+        <h3>🛡️ Les 3 protocoles</h3>
+        <div class="grid-2">
+          <div class="zone-protected">
+            <strong>REFUS</strong><br>
+            1. Reformuler : "Je comprends"<br>
+            2. Montrer l’invisible<br>
+            3. Demander un petit accord<br>
+            4. Valider
+          </div>
+          <div>
+            <strong>OUBLI</strong><br>
+            1. "Ce n’est pas grave"<br>
+            2. "On le fait ensemble"<br>
+            3. Reprogrammer
+          </div>
+          <div class="zone-invisible">
+            <strong>MENSONGE</strong><br>
+            1. Recouper avec relevés<br>
+            2. Reformuler : "Peut-être que j’ai mal noté"<br>
+            3. Ne pas accuser
+          </div>
+        </div>
+      </div>
+
+      <div class="card">
+        <h3>💬 Exemple – Face au refus</h3>
+        <p><strong>Sabrina :</strong> "Je ne veux rien changer."<br>
+        <strong>Vous :</strong> "Je comprends. On regarde juste ensemble. Est-ce que vous saviez que vous payez 9€ de frais bancaires ?"<br>
+        <strong>Sabrina :</strong> "Non…"<br>
+        <strong>Vous :</strong> "On peut appeler la banque ensemble ? 5 minutes."<br>
+        <strong>Sabrina :</strong> "D’accord."</p>
+      </div>
+
+      <div class="card">
+        <h3>📝 Exercice – Lettre d’échéancier</h3>
+        <p>Dette EDF : 30€/mois → proposer 15€/mois sur 12 mois</p>
+        <details>
+          <summary>📌 Modèle</summary>
+          <pre style="background:var(--surface); padding:12px; border-radius:8px;">Madame, Monsieur,
+
+Je ne peux pas payer 30€ par mois.
+Je propose 15€ par mois pendant 12 mois.
+Je joins mes 3 derniers relevés.
+
+Dans l’attente de votre accord.</pre>
+        </details>
+      </div>
+
+      <div class="memo">
+        <strong>🧠 À retenir – Module 3</strong><br>
+        • Refus = reformuler + invisible + petit accord<br>
+        • Oubli = pas de jugement + faire ensemble<br>
+        • Mensonge = recouper + reformuler + ne pas accuser
+      </div>
+    </div>
+
+    <!-- MODULE 4 -->
+    <div id="module-4" class="module-content">
+      <div class="card">
+        <span class="badge">Module 4 • 9h</span>
+        <h2>Production professionnelle</h2>
+        <p><strong>Objectif :</strong> produire un dossier budgétaire structuré en 4 pages, lisible en 2 minutes.</p>
+      </div>
+
+      <div class="card">
+        <h3>📄 Structure imposée (4 pages)</h3>
+        <ul>
+          <li><strong>Page 1 : Diagnostic</strong> – tableau revenus/dépenses + zones protégées</li>
+          <li><strong>Page 2 : Analyse</strong> – reste à vivre + résistances identifiées</li>
+          <li><strong>Page 3 : Plan d’action</strong> – semaine 1 / semaine 2 / mois 2</li>
+          <li><strong>Page 4 : Suivi</strong> – tableau prévisionnel 3 mois</li>
+        </ul>
+      </div>
+
+      <div class="card">
+        <h3>📊 Exemple – Page 1 diagnostic</h3>
+        <table>
+          <thead><tr><th>Revenus</th><th>Montant</th><th>Dépenses</th><th>Montant</th></tr></thead>
+          <tbody>
+            <tr><td>Salaire</td><td>980€</td><td>Loyer</td><td>580€</td></tr>
+            <tr><td>RSA</td><td>420€</td><td>Courses</td><td>500€</td></tr>
+            <tr><td>APL</td><td>280€</td><td>Téléphone</td><td>45€</td></tr>
+            <tr><td><strong>Total</strong></td><td><strong>1680€</strong></td><td><strong>Total</strong></td><td><strong>1570€</strong></td></tr>
+          </tbody>
+        </table>
+        <div class="zone-protected">Zones protégées : loyer, courses, électricité, santé</div>
+      </div>
+
+      <div class="card">
+        <h3>📅 Page 3 – Plan d’action</h3>
+        <table>
+          <thead><tr><th>Semaine</th><th>Action</th><th>Gain</th></tr></thead>
+          <tbody>
+            <tr><td>1</td><td>Changer forfait téléphone</td><td>25€</td></tr>
+            <tr><td>2</td><td>Supprimer frais bancaires</td><td>9€</td></tr>
+            <tr><td>Mois 2</td><td>Négocier dette EDF</td><td>15€</td></tr>
+          </tbody>
+        </table>
+      </div>
+
+      <div class="card">
+        <h3>📈 Page 4 – Suivi 3 mois</h3>
+        <table>
+          <thead><tr><th>Mois</th><th>Revenus</th><th>Dépenses</th><th>Reste</th></tr></thead>
+          <tbody>
+            <tr><td>M1</td><td>1680€</td><td>1545€</td><td>135€</td></tr>
+            <tr><td>M2</td><td>1680€</td><td>1530€</td><td>150€</td></tr>
+            <tr><td>M3</td><td>1680€</td><td>1515€</td><td>165€</td></tr>
+          </tbody>
+        </table>
+      </div>
+
+      <div class="memo">
+        <strong>🧠 À retenir – Module 4</strong><br>
+        • Page 1 = diagnostic (chiffres)<br>
+        • Page 2 = analyse (reste à vivre + résistances)<br>
+        • Page 3 = plan (semaines)<br>
+        • Page 4 = suivi (3 mois)
+      </div>
+
+      <div class="success-box">
+        <strong>🎓 Validation finale</strong><br>
+        Dossier professionnel noté sur 12 (seuil 8/12)<br>
+        Quiz final sur 20 (seuil 14/20)<br>
+        Mention "Acquis" si les deux seuils sont atteints.
+      </div>
+    </div>
+
+    <!-- Pricing -->
+    <div class="pricing-card">
+      <h3>Inscription à la formation</h3>
+      <div class="price">297€ <small>TTC</small></div>
+      <p>Accès immédiat à l’intégralité des 4 modules + attestation interne</p>
+      <div class="pricing-actions">
+        <a class="btn-primary" href="https://pay.sumup.com/b2c/XXXXXX" target="_blank">💰 Acheter la formation</a>
+        <a class="btn-outline" href="/connexion.html" style="background:white;">🔑 Espace apprenant</a>
+      </div>
+      <p style="font-size:0.8rem; margin-top:16px;">🔒 Paiement sécurisé par SumUp — Accès immédiat après validation</p>
+    </div>
+  </div>
+</main>
+
+<footer>
+  <div class="container">
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <h3>LOGIX <span>FORMA</span></h3>
+        <p>Association de formation en ligne pour adultes.</p>
+        <p>SIREN : 902 349 943 · RNA : W931025228</p>
+      </div>
+      <div class="footer-col">
+        <h4>Navigation</h4>
+        <a href="/">Accueil</a>
+        <a href="/formations/index.html">Formation</a>
+        <a href="/fle/index.html">FLE</a>
+        <a href="/blog/index.html">Blog</a>
+      </div>
+      <div class="footer-col">
+        <h4>Compte</h4>
+        <a href="/connexion.html">Espace apprenant</a>
+        <a href="/contact.html">Contact</a>
+      </div>
+      <div class="footer-col">
+        <h4>Légal</h4>
+        <a href="/legal/mentions-legales.html">Mentions légales</a>
+        <a href="/legal/cgu.html">CGU</a>
+        <a href="/legal/confidentialite.html">Confidentialité</a>
+        <a href="/legal/cookies.html">Cookies</a>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>© 2026 LOGIX FORMA — Tous droits réservés</span>
+      <span>Attestation interne — Formation non certifiante — Non éligible CPF</span>
+    </div>
+  </div>
+</footer>
+
+<script>
+  // Gestion des onglets
+  const tabs = document.querySelectorAll('.tab-btn');
+  const modules = document.querySelectorAll('.module-content');
+
+  tabs.forEach(tab => {
+    tab.addEventListener('click', () => {
+      const moduleId = tab.getAttribute('data-module');
+      
+      tabs.forEach(t => t.classList.remove('active'));
+      tab.classList.add('active');
+      
+      modules.forEach(module => module.classList.remove('active'));
+      document.getElementById(`module-${moduleId}`).classList.add('active');
+      
+      localStorage.setItem('activeModule', moduleId);
+    });
+  });
+
+  // Restaurer le dernier module consulté
+  const savedModule = localStorage.getItem('activeModule');
+  if (savedModule) {
+    const activeTab = document.querySelector(`.tab-btn[data-module="${savedModule}"]`);
+    if (activeTab) activeTab.click();
+  }
+</script>
+</body>
+</html>
